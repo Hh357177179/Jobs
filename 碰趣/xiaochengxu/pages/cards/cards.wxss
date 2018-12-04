@@ -1,0 +1,36 @@
+/* pages/cards/cards.wxss */
+.cards{
+   padding:64rpx 20rpx 0; 
+   box-sizing:border-box;
+   border-top:1rpx solid #dbdbdb;
+}
+.choose{
+  height:298rpx;
+  width:100%;
+  border:1rpx solid #dbdbdb;
+  text-align: center;
+}
+.choose image{
+  height: 94rpx;
+  width: 96rpx;
+  margin:102rpx 0;
+}
+.cards .text{
+  margin:40rpx auto;
+  text-align: center;
+  font-size:30rpx;
+  color:black;
+}
+button{
+  clear: both;
+  height:86rpx;
+  width:526rpx;
+  margin-top:50rpx;
+  font-size:31rpx;
+  color:white;
+  border-radius:38rpx;
+  background:#fa5757;
+}
+button::after{
+border: none;
+}

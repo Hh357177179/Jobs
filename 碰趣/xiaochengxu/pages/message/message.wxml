@@ -1,0 +1,25 @@
+<!--pages/message/message.wxml-->
+<view class="message">
+    <view class="box" wx:for="{{pagedata}}" wx:for-item="pd" wx:key="pd.id">
+    <!-- ../event/event?title=event -->
+        <!-- <navigator url="#"> -->
+            <button>{{pd.title}}</button>
+        <!-- </navigator> -->
+        <view class="chatbox" wx:if="{{pd.comments.length==0}}">
+    
+        <text class="title nonedata"  decode='true'>暂无数据</text>
+        
+        </view>
+        <view class="chatbox" wx:for="{{pd.comments}}" wx:for-item="pdc" wx:key="pdc.id">
+        
+             <image src="{{pdc.avatarUrl}}" class="head-image"></image>
+            <view class="chat">
+                
+                <text class="title">{{pdc.nickName}}</text>
+                <text class="time">{{pdc.comment_date}}</text>
+                <text class="content">{{pdc.content}}</text>
+            </view>
+        </view>
+
+    </view>
+</view>

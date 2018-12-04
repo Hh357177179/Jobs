@@ -1,0 +1,25 @@
+<!-- pages/companion/Contacts/Contacts.wxml -->
+ 
+  <scroll-view scroll-y class="Contacts" scroll-top="{{scrollTop}}">
+    <block wx:for="{{talkinfo}}" wx:key="index">
+      <!-- 对方发来的 -->
+      <view class='people_left' wx:if="{{item.sender_id!=myuser_id}}">
+        <image class='place-left' src='{{item.sender.avatar}}'></image>
+        <view>{{item.message}}</view>
+      </view>
+      <view class='Split'></view>
+      <!-- 自己的回复 -->
+      <view class='people_right' wx:if="{{item.sender_id==myuser_id}}">
+        <image class='place-right' src='{{item.sender.avatar}}'></image>
+        <view>{{item.message}}</view>
+      </view>
+      <view class='Split'></view>
+    </block>
+  </scroll-view>
+ 
+<view class='bottom'>
+  <form bindsubmit="addTalk">
+    <textarea name="message" value="{{input_msg}}"></textarea>
+    <button class="footer" formType="submit">发送</button>
+  </form>
+</view>

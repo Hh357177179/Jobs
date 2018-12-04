@@ -1,0 +1,41 @@
+/* pages/event/event.wxss */
+
+/* 精彩瞬间展示 */
+.event .e-show{
+  clear:both;
+  background:white;
+  padding:0 23rpx 0 27rpx;
+  box-sizing: border-box;
+  margin-bottom:99rpx;
+  overflow: hidden;
+}
+.event .show{
+  border-bottom:2rpx solid #ddd;
+  padding:27rpx 0 26rpx;
+  box-sizing: border-box;
+  font-size:36rpx;
+  color:#333;
+}
+.event .photo{
+  margin:29rpx 0 40rpx;
+  overflow: hidden;
+}
+.event .photo image{
+  height: 217rpx;
+  width:222rpx;
+  float: left;
+  margin:0 10rpx 0 0;
+}
+.event .ft{
+  position: fixed;
+  bottom:0;
+  left: 0;
+  width:100%;
+  padding:34rpx 0 31rpx;
+  box-sizing: border-box;
+  font-size:33rpx;
+  color:white;
+  background:#999;
+  line-height: 1;
+  text-align: center;
+}

@@ -1,0 +1,74 @@
+<!--pages/modify/modify.wxml-->
+<form bindsubmit="submit">
+<view class='group'>
+  <view class='group_text'>
+    <text decode="{{true}}">标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题：</text>
+    <input placeholder="精彩的标题会吸引更多的人参与哦" bindblur='bindNameInput' />
+  </view>
+  <view class='group_text'>
+    <text>联系方式：</text>
+    <input placeholder="请输入联系方式" bindblur='bindNameInput' />
+  </view>
+  <view class='group_text'>
+    <text>起始时间：</text>
+    <picker mode='date'
+            value='{{selectedproduceDate}}'
+            style='{{startproduceDate}}'
+            end='{{endproducedate}}'
+            field='day'
+            bindchange='dateChange'>
+            <view class='group_xuan'>{{selectedproduceDate}}</view>
+    </picker>
+  </view>
+  <view class='group_text'>
+    <text>结束时间：</text>
+    <picker mode='date'
+            value='{{selectedproduceDate}}'
+            style='{{startproduceDate}}'
+            end='{{endproducedate}}'
+            field='day'
+            bindchange='dateChange'>
+            <view class='group_xuan'>{{selectedproduceDate}}</view>
+    </picker>
+  </view>
+  <view class='group_text'>
+    <text decode="{{true}}">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点：</text>
+    <input class='ca' bindtap='chooseAddressAction'  placeholder="点击选择地点" bindblur='bindNameInput' />
+  </view>
+  <view class='group_text'>
+    <text>成人人数：</text>
+    <input placeholder="请输入成人人数" bindblur='bindNameInput' />
+  </view>
+  <view class='group_text'>
+    <text>成人价格：</text>
+    <input placeholder="请输入成人价格" bindblur='bindNameInput' />
+  </view>
+  <view class='group_text'>
+    <text>儿童人数：</text>
+    <input placeholder="请输入儿童人数" bindblur='bindNameInput' />
+  </view>
+  <view class='group_text'>
+    <text>儿童价格：</text>
+    <input placeholder="请输入儿童价格" bindblur='bindNameInput' />
+  </view>
+  <view class='group_text1'>
+    <text>创建团介绍：</text>
+    <textarea placeholder="请输入创建团介绍"></textarea>
+  </view>
+  <view class='group_text1'>
+    <text>上传精彩图片：</text>
+    <view class='uploadImg_img'>
+    <view class="flex-row">
+      <view class='flex-view-item' wx:for="{{image}}" wx:key='feedbackImg'>
+        <image class='upload_img' src='https://ssl.zhaodaka.net/pengqu/uploads/images/{{image[index]}}'></image><!-- 接口需要改动 -->
+        <button bindtap='delectImg' data-num='{{index}}'>删除</button>
+      </view>
+      <view class='flex-view-item'>
+        <image class='uploadImg' src='../../images/woman.png' bindtap='uploadImg' class='addimg' style='display:{{img_button}}'></image>
+      </view>
+    </view>
+  </view>
+  </view>
+  <button class='footer'>确定修改</button>
+</view>
+</form>

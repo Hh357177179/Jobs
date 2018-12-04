@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/physician/physician",
+    "pages/medata/medata",
+    "pages/details/details",
+    "pages/chooseCity/chooseCity",
+    "pages/storeenter/storeenter",
+    "pages/auditresult/auditresult",
+    "pages/login/login",
+    "pages/searchMap/searchMap",
+    "pages/storeSpecial/storeSpecial"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "种祺",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#7bc27b",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "特色门店",
+        "iconPath": "images/store.png",
+        "selectedIconPath": "images/cstore.png"
+      },
+      {
+        "pagePath": "pages/physician/physician",
+        "text": "专家医师",
+        "iconPath": "images/physician.png",
+        "selectedIconPath": "images/cphysician.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "个人中心",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/cmine.png"
+      }
+    ]
+  }
+}

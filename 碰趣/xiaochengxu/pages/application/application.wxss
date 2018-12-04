@@ -1,0 +1,107 @@
+/* pages/application/application.wxss */
+.picture{
+	width:100%;
+	height:407rpx;
+}
+.picture .phone{
+	width:190rpx;
+  height:190rpx;
+	margin-left:77rpx;
+	margin-top:118rpx;
+	float:left;
+}
+.picture .identity{
+	width:190rpx;
+  height:190rpx;
+	margin-right:78rpx;
+	margin-top:118rpx;
+	float:right;
+}
+.count,.password{
+  height:120rpx;
+  width:auto;
+  box-sizing: border-box;
+  border-bottom:1rpx solid #dbdbdb;
+  margin-left:20rpx;
+  margin-right:20rpx;
+  line-height:120rpx;
+}
+.count .people,.password .people{
+  height:45rpx;
+  width:40rpx;
+  font-style:normal;
+  color:#999999;
+  padding-left:59rpx;
+  padding-right:24rpx;
+  margin-top:45rpx;
+  float:left;
+}
+.count input,.password input{
+  width:auto;
+  height:30rpx;
+  border:none;
+  outline:none;
+  padding-left:22rpx;
+  font-size:32rpx;
+  color:#b8b8b8;
+  margin-top:45rpx;
+  float:left;
+}
+.count .line,.password .line{
+  float: left;
+  height: 32rpx;
+  width:1rpx;
+  background: #ccc;
+  margin-top:55rpx;
+}
+.count input::placeholder{
+  color:#b8b8b8;
+}
+.password input::placeholder{
+  color:#b8b8b8;
+}
+.bottom{
+  width:100%;
+  height:86rpx;
+  margin-top:60rpx;
+}
+.bottom button{
+  width:526rpx;
+  height:100%;
+  line-height:86rpx;
+  background:#fa5757;
+  display:block;
+  margin:0 auto;
+  font-size:30rpx;
+  color:#fff;
+  border-radius:36rpx;
+  border:none;
+  outline:none;
+}
+.bott{
+  width: 90%;
+  margin: auto;
+}
+.bottom_bg_red{
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  font-size: 38rpx;
+}
+.bg_red{
+  width: 100%;
+  text-indent:2em;
+  font-size: 33rpx;
+  margin-top: 20rpx;
+}
+.bottom_bg{
+  display: block;
+  margin-top: 100rpx;
+}
+.bottom_bg button{
+  background: #fa5757;
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+}

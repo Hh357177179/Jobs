@@ -1,0 +1,25 @@
+/* pages/contact/contact.wxss */
+.body{
+  width: 100%;
+  height: auto;
+}
+.head{
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 38rpx;
+}
+.content{
+  width: 100%;
+  height: auto;
+  margin-top: 60rpx;
+}
+.text{
+  display: block;
+  width: 90%;
+  margin: auto;
+  height: auto;
+  font-size: 35rpx;
+}
+

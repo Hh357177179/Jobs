@@ -1,0 +1,9 @@
+<!--pages/pay/pay.wxml-->
+<view class='pay'>
+  <view class='paymain'>
+    <text>支付预约金</text>
+    <text class='pay_num'>￥60</text>
+  </view>
+  <view class='pay_des'>预约金为预支付金额，我们将根据您的具体需求来电话沟通最终金额，上门后多退少补。</view>
+  <view class='submit_pay' bindtap='submit_pay'>支付</view>
+</view>

@@ -1,0 +1,120 @@
+<!--pages/botdetail/botdetail.wxml-->
+<view class='detail'>
+  <view class='detail_title'>{{detailObj.title}}</view>
+  <view class='detail_auther'>作者：{{detailObj.author}}</view>
+  <view class='detail_pic'>
+    <image src='{{detailObj.logo}}'></image>
+  </view>
+  <view class='detail_abstract'>摘要：{{detailObj.abstract}}</view>
+  <view class='detail_content'>内容：{{detailObj.content}}</view>
+
+
+  <!-- 分享 -->
+  <view class='shareCard' wx:if="{{shareCardShow}}">
+    <!-- <view class='shareBtn'>
+      <view class='share_p'>
+        <image src='../../images/links.png'></image>
+      </view>
+      分享链接
+    </view> -->
+    <view class='shareBtn' bindtap='createPic'>
+      <view class='share_p'>
+        <image src='../../images/pics.png'></image>
+      </view>
+      分享图片
+    </view>
+    <view class='clear'></view>
+  </view>
+
+  <view class='create_pic' wx:if="{{cpicshow}}">
+    <view class='closePic' bindtap='closePic'>关闭</view>
+    <view class='pics'>
+      <image src='{{createPic}}'></image>
+    </view>
+    <view class='saveLocal' bindtap='saveLocal'>保存图片</view>
+  </view>
+
+
+  <!-- 底部状态栏 -->
+  <view class='status_bar'>
+    <view class='sendStr' bindtap='sendStr'>写评论...</view>
+    <view class='bar_right'>
+      <view class='bar_list' bindtap='likeSub'>
+        <view class='bar_icon'>
+          <image wx:if="{{like.is_self == true}}" src='../../images/cpraise.png'></image>
+          <image wx:else src='../../images/praise.png'></image>
+        </view>
+        <view class='amount'>{{like.count}}</view>
+      </view>
+      <view class='bar_list' bindtap='checkCom'>
+        <view class='bar_icon'>
+          <image src='../../images/commenticon.png'></image>
+        </view>
+        <view class='amount'>{{comment.count}}</view>
+      </view>
+      <view class='bar_list' bindtap='collectionSub'>
+        <view class='bar_icon'>
+          <image wx:if="{{collection.is_self == true}}" src='../../images/ccollect.png'></image>
+          <image wx:else src='../../images/collect.png'></image>
+        </view>
+        <view class='amount'>{{collection.count}}</view>
+      </view>
+      <view class='bar_list' bindtap='shareBtn'>
+        <view class='bar_icon'>
+          <image src='../../images/shareicon.png'></image>
+        </view>
+        <view class='amount'>{{share.count}}</view>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='clear'></view>
+  </view>
+
+  <!-- 发送评论 -->
+  <view class='send_content' wx:if="{{sendShow}}">
+    <view class='comment_content'>
+      <input bindconfirm="subSend" cursor-spacing='200rpx' type="text" maxlength='36' bindinput='advtextVal' value='{{textVal}}' focus="{{autoFocus}}" placeholder='分享你想说的...'></input>
+    </view>
+    <view class='switchs'>
+      <view class='sw_label'>匿名</view>
+      <view class="body-view">
+        <switch class='switch_small' bindchange="switchChange" />
+      </view>
+      <view class='sendBtn' bindtap='subSend'>发送</view>
+      <view class='clear'></view>
+    </view>
+  </view>
+
+  <!-- 查看评论 -->
+  <view class='check_comment' wx:if="{{commentShow}}">
+    <view class='cc_title'>评论区</view>
+    <scroll-view class='cc_content' scroll-y bindscrolltolower="scrollBot" lower-threshold="0">
+      <block wx:for="{{commentArr}}" wx:key="index">
+        <view class='c_conList'>
+          <view class='conlist_pic'>
+            <image wx:if="{{item.is_anonymous == 1}}" src='../../images/nm.png'></image>
+            <image wx:else src='{{item.avatar}}'></image>
+          </view>
+          <view class='conlist_right'>
+            <view class='conlist_text'>
+              <block>
+                <view class='conlist_name' wx:if="{{item.is_anonymous == 1}}">匿名用户</view>
+                <view class='conlist_name' wx:else>{{item.nickname}}</view>
+              </block>
+              <view class='conlist_content'>{{item.content}}</view>
+            </view>
+            <view class='con_parise' data-id='{{item.id}}' data-index='{{index}}' data-status='{{item.is_like}}' data-num='{{item.like_num}}' bindtap='plParise'>
+              <image wx:if="{{item.is_like == true}}" src='../../images/cpraise.png'></image>
+              <image wx:else src='../../images/praise.png'></image>
+              <view class='con_parise_text'>{{item.like_num}}</view>
+            </view>
+          </view>
+          <view class='clear'></view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+
+  <!-- 遮罩层 -->
+  <view class='mask' wx:if='{{maskShow}}' bindtap='clickMask'></view>
+</view>

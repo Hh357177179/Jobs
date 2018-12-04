@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>班得瑞高尔夫-新用户注册</title>
+  <script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            if (clientWidth >= 750) {
+              docEl.style.fontSize = '100px';
+            } else {
+              docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+            }
+          };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+      })(document, window);
+    </script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/register.css">
+  <link rel="stylesheet" href="css/applyFor.css">
+</head>
+
+<body>
+  <ul class="register">
+    <div class="regBanner">
+      <p class="bigTitle applyForTitle">品牌推广者</p>
+    </div>
+    <div class="auditTitle">审批流程</div>
+    <ul class="audit">
+      <li>
+        <div class="left">
+          <div class="icon-bg">
+              <img src="./img/icon-1.png" alt="">
+          </div>
+          <span>申请</span>
+        </div>
+        <div class="right">
+          <img src="./img/icon-right.png" alt="">
+        </div>
+      </li>
+      <li>
+        <div class="left">
+          <div class="icon-bg">
+              <img src="./img/icon-2.png" alt="">
+          </div>
+          <span>申请</span>
+        </div>
+        <div class="right">
+          <img src="./img/icon-right.png" alt="">
+        </div>
+      </li>
+      <li>
+        <div class="left">
+          <div class="icon-bg">
+              <img src="./img/icon-3.png" alt="">
+          </div>
+          <span>申请</span>
+        </div>
+        <div class="right">
+          <img src="./img/icon-right.png" alt="">
+        </div>
+      </li>
+      <li>
+        <div class="left">
+          <div class="icon-bg">
+              <img src="./img/icon-4.png" alt="">
+          </div>
+          <span>申请</span>
+        </div>
+        <div class="right">
+          <img src="./img/icon-right.png" alt="">
+        </div>
+      </li>
+      <li>
+        <div class="left">
+          <div class="icon-bg">
+              <img src="./img/icon-5.png" alt="">
+          </div>
+          <span>申请</span>
+        </div>
+      </li>
+    </ul>
+    <h5>请选择填写信息</h5>
+    <div class="applyForm">
+      <form action="#" id="applyForm">
+        <p class="formList clearfix">
+          <span class="listLabe">省&#X3000;&#X3000;份:</span>
+          <select name="province" id="province">
+            <option value="请选择">请选择</option>
+          </select>
+        </p>
+        <p class="formList clearfix">
+          <span class="listLabe">城&#X3000;&#X3000;市:</span>
+          <select name="city" id="city">
+            <option value="请选择">请选择</option>
+          </select>
+        </p>
+        <p class="formList clearfix">
+          <span class="listLabe">区&#X3000;&#X3000;域:</span>
+          <select name="town" id="town">
+            <option value="请选择">请选择</option>
+          </select>
+        </p>
+        <p class="formList clearfix">
+          <span class="listLabe">店&#X3000;&#X3000;铺:</span>
+          <input class="getCode"  name="shop" id="shop" type="tel" placeholder="选择店铺">
+          <div class="Anotice">注：每位会员只可绑定一家店铺作为会员，推荐人未指派店铺可直接选总店</div>
+        </p>
+        <p class="formList clearfix">
+          <span class="listLabe" style="margin-right: .48rem;">推&nbsp;&nbsp;荐&nbsp;&nbsp;人:</span>
+          <input class="getCode" name="name"  id="name" type="tel" placeholder="张三">
+        </p>
+        <input style="display: none;" id="applyFormSubmit" type="submit" value="Submit">
+      </form>
+    </div>
+    <div class="equityWrap">
+      <div class="border1"></div>
+      <div class="border2"></div>
+      <div class="equity-content-wrap">
+        <div class="equity-title">会员权益：</div>
+        <div>1、会员权益123455412039410232133规范师傅</div>
+        <div>1、会员权益123455412039410232133规范师傅</div>
+        <div>1、会员权益123455412039410232133规范师傅</div>
+      </div>
+    </div>
+    <div  id="submit">提交申请</div>
+  </div>
+
+  <!-- 成功信息弹窗 -->
+  <div class="showMsgSuc">
+      恭喜您申请成功！
+  </div>
+  <!-- 错误信息提示弹窗 -->
+  <div class="showMsg">
+    请完善申请信息
+  </div>
+
+</body>
+
+</html>
+
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/area.js"></script>
+<script src="js/select.js"></script>
+<script>
+  //点击提交按钮
+  $('#submit').click(function() {
+    if($('#province').val() !="请选择" &&  $('#city').val() !="请选择" &&  $('#town').val()!="请选择"&&  $('#shop').val() &&  $('#name').val()) {
+      $('#applyFormSubmit').click()
+       $('.showMsgSuc').fadeIn('fast');
+       setTimeout(function() {
+          $('.showMsgSuc').fadeOut();
+        }, 2000)
+    }else {
+      $('.showMsg').fadeIn();
+        setTimeout(function() {
+          $('.showMsg').fadeOut();
+        }, 2000)
+    }
+  })
+
+</script>

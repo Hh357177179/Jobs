@@ -1,0 +1,18 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class="container">
+  <view class="contentView">
+    <label class="title">标题：</label>
+    <input class="content" name="title" type="text" placeholder="请输入标题" />
+  </view>
+  <view class="contentView">
+    <label class='title titCont'>内容：</label>
+    <textarea class="content textCont" name="content" placeholder="请输入内容" ></textarea>
+  </view>
+  <view class="import">
+    <image bindtap="importIamge" src="{{ imgList }}"/>
+  </view>
+  <view class="submitView">
+    <button form-type="submit" class="submitContent" type="primary">提交</button>
+  </view>
+</view>
+</form>

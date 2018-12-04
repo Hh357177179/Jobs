@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/new/new",
+    "pages/first/first",
+    "pages/second/second",
+    "pages/third/third",
+    "pages/fourth/fourth",
+    "pages/other/other",
+    "pages/authentication/authentication",
+    "pages/login/login",
+    "pages/firstD/firstD",
+    "pages/secondD/secondD",
+    "pages/thirdD/thirdD",
+    "pages/fourthD/fourthD"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 0
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#DD5F1B",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的画布",
+        "iconPath": "images/pic.png",
+        "selectedIconPath": "images/cpic.png"
+      },
+      {
+        "pagePath": "pages/new/new",
+        "text": "新建画布",
+        "iconPath": "images/add.png",
+        "selectedIconPath": "images/cadd.png"
+      },
+      {
+        "pagePath": "pages/other/other",
+        "text": "他人画布",
+        "iconPath": "images/send.png",
+        "selectedIconPath": "images/csend.png"
+      }
+    ]
+  }
+}

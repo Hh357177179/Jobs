@@ -1,0 +1,29 @@
+<!--pages/secondD/secondD.wxml-->
+<view class='firstD'>
+  <view class='whoTitle'>
+    <text class='usertitle'>画布名称：</text>
+    <view class='uNamesClass'>{{uNames}}</view>
+    <view class='clear'></view>
+  </view>
+  <view class='title'>用户是谁</view>
+  <view class='cardMain'>{{detailObj.whouser}}</view>
+  <view class='title'>用户的刚需是什么</view>
+  <view class='cardMain'>
+    种子用户在<text class='textcolor'>{{detailObj.condition}}</text>
+    情况（<text class='textG'>时隙、场景</text>）下，要解决<text class='textcolor'>{{detailObj.issue}}</text>
+    的问题（<text class='textG'>即：刚需</text>），如果不做这样的事情，会产生<text class='textcolor'>{{detailObj.result}}</text>严重后果，但是遇到<text class='textcolor'>{{detailObj.cause}}</text>
+    原因而解决不好（<text class='textG'>解决不好这个“必须”的具体原因</text>），因此该刚需得不到解决，所以痛苦。
+  </view>
+  <view class='cardMain'>{{detailObj.territory}}</view>
+  <view class='title'>当前替代品</view>
+  <view class='cardMain'>
+    <view>替代品1：<text class='textcolor'>{{detailObj.freplace}}</text>因为<text class='textcolor'>{{detailObj.freason}}</text>
+    原因不能很好解决种子用户的“刚需”</view>
+    <view>替代品2：<text class='textcolor'>{{detailObj.sreplace}}</text>因为<text class='textcolor'>{{detailObj.sreason}}</text>
+    原因不能很好解决种子用户的“刚需”</view>
+    <view>替代品n：<text class='textcolor'>{{detailObj.treplace}}</text>因为<text class='textcolor'>{{detailObj.treason}}</text>
+    原因不能很好解决种子用户的“刚需”</view>
+  </view>
+  <view class='title'>用户故事</view>
+  <view class='cardMain'>{{detailObj.story}}</view>
+</view>

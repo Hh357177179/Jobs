@@ -1,0 +1,27 @@
+<!--pages/deposits/deposits.wxml-->
+<view class='annotation'>
+  <view class='annotationList'>*提现注释：</view>
+  <view class='annotationList'>1. 提现金额不能超过现有账户余额。</view>
+  <view class='annotationList'>2. 提现的余额不能与正在进行的活动有交集（活动结束后可提现）。</view>
+  <view class='annotationList'>3. 最低提现金额为￥2。</view>
+  <view class='depositsMoney'>
+    <view style='text-align: center;'>金额</view>
+    <view class='moneyList'>
+      <view class='labelText'>余额：</view>
+      <view>￥ {{allBalance}}</view>
+    </view>
+    <view class='moneyList'>
+      <view class='labelText'>可提现余额：</view>
+      <view>￥ {{userbalance}}</view>
+    </view>
+    <view class='moneyList'>
+      <view class='labelText'>提现余额：</view>
+      <view>
+        <text style='float:left;'>￥</text>
+        <input class='moneyInput' type='number' placeholder='请输入提现金额' placeholder-style='font-size:28rpx;' bindblur="checkVal"></input>
+        <view class='clear'></view>
+      </view>
+    </view>
+  </view>
+  <button class='withdrawBtn' type='primary' bindtap='trueWithdraw'>确认提现</button>
+</view>

@@ -1,0 +1,18 @@
+<!--pages/upload/upload.wxml-->
+<view class="add">
+	<view class="add_one">
+		<image src="../../images/pic_one.png"></image>
+		<view class="btn">删除</view>	
+	</view>	
+	<view class="add_tow">
+		<image src="../../images/pic_tow.png"></image>
+		<view class="btn">删除</view>	
+	</view>
+	<view class="add_list">
+		<image src="../../images/bak.png" class="bak"></image>
+		<image src="../../images/bak_add.png" class="bak_add"></image>
+	</view>	
+</view>
+<view class="en_btn">
+	<button>确定提交</button>
+</view>

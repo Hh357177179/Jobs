@@ -1,0 +1,48 @@
+<!--pages/mine/mine.wxml-->
+<view class='mine'>
+  <view class='top_text' wx:if="{{showAudit}}">推拿学是中医学的重要学科，与中药、针灸并列为中医的三大形式。在明朝即已形成完整理论体系的小儿推拿更是中医留给后人的宝贵遗产。在中医学理论中，推拿最完整的理论就是小儿推拿。由于小儿各项机能发育都很不完善，免疫功能也很差，所以比较容易患病。小儿推拿疗法适应症广泛，大部分儿科病症都可应用，尤其是小儿常见病，如感冒、发烧、咳嗽、腹泻、便秘、复感、厌食、遗尿等，小儿推拿是首选的治疗方法。从古至今，小儿推拿对儿童的健康成长都起到了很好的防病、治病的作用。</view>
+  <view wx:if="{{showMain}}">
+    <view class='mineTop'></view>
+    <view class='mineUser'>
+      <view class='userAvatar'>
+        <image src='{{avatar}}'></image>
+      </view>
+      <text class='useridentity' wx:if="{{status == 1}}">未认证</text>
+      <block wx:if="{{status == 2}}">
+        <text class='useridentity' wx:if="{{identity == 1}}">游客</text>
+        <text class='useridentity' wx:if="{{identity == 2}}">医师</text>
+        <text class='useridentity' wx:if="{{identity == 3}}">讲师</text>
+        <text class='useridentity' wx:if="{{identity == 4}}">店主</text>
+      </block>
+      <block wx:if="{{status == 3}}">
+        <text class='useridentity'>认证店主</text>
+      </block>
+      <view class='userInfo'>
+        <text class='userName'>{{nickname}}</text>
+        <text class='serial' wx:if="{{status != 1}}">会员编号：{{uid}}</text>
+      </view>
+    </view>
+    <block>
+      <view class='line'></view>
+      <view class='userlist' bindtap='rMedata'>
+        <image class='listIcon' src='../../images/datum.png'></image>
+        <text>我的资料</text>
+      </view>
+      <view class='line'></view>
+    </block>
+    <block wx:if="{{status != 1}}">
+      <view class='userlist' bindtap='rStoreEnter'>
+        <image class='listIcon' src='../../images/enter.png'></image>
+        <text>申请店铺入驻</text>
+      </view>
+      <view class='line'></view>
+    </block>
+    <block wx:if="{{status == 3}}">
+      <view class='userlist' bindtap='storeSpecial'>
+        <image class='listIcon' src='../../images/feature.png'></image>
+        <text>店铺特色</text>
+      </view>
+      <view class='line'></view>
+    </block>
+  </view>
+</view>

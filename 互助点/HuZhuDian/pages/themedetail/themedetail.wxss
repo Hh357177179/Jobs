@@ -1,0 +1,89 @@
+/*themedetail.wxss  */
+
+.Outer_layer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items:center;垂直居中 *//* justify-content: center;水平居中 */
+  background-color: #cce5e9;
+}
+.centre {
+  margin: 30rpx;
+  padding: 20rpx;
+  background-color: #fff;
+}
+.delete{
+  float: right;
+  width: 14px;
+  height: 14px;
+}
+.title{
+  line-height: 40px;
+  text-align: center;
+}
+.info{
+  font-size: 12px;
+  margin: 5px 0;
+  color: #cce5e9;
+}
+.author{
+  margin-right: 5px;
+}
+.content{
+  font-size: 14px;
+  text-indent: 14px;
+  line-height: 28px;
+  width: 100%;
+  min-height: 200px;
+}
+.comment{
+  overflow: hidden;
+}
+.comment-input{
+  margin: 15px 0;
+  border: .1px solid #cce5e9;
+  width: 95%;
+  font-size: 14px;
+  line-height: 30px;
+  float: right;
+}
+.commit{
+  width: 60px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 40px;
+  float: right;
+}
+.list{
+  font-size: 14px;
+  margin: 15px 0;
+  padding-bottom: 10px;
+  border-bottom: .1px solid #cce5e9;
+}
+
+.commentInfo{
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.commentContent{
+  line-height: 28px;
+}
+.commentTime{
+  float: right;
+  color: #ccc;
+  margin-right: 10px;
+}
+.themePicture{
+  width: 50px;
+}
+.themePicture{
+  margin: 20px 0;
+  text-align: center;
+  width: 100%;
+}
+.themePicture image{
+  width: 150px;
+  margin: 0 auto;
+  display: block;
+}

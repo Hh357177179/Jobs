@@ -1,0 +1,10 @@
+<!--components/income/income.wxml-->
+<view class='incomeList'>
+  <view class='lists' wx:for="{{incomeData}}" wx:key="{{item.id}}">
+    <view class='picBorder'>
+      <image class='userPic' src='{{item.pay_avatar}}'></image>
+    </view>
+    <view class='userText'>{{item.pay_name}} 报名活动“{{item.title}}” 报名成功 费用 ¥{{item.money}}</view>
+    <view class='clear'></view>
+  </view>
+</view>

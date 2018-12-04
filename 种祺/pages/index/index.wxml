@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class='home'>
+  <view class='top_text' wx:if="{{showAudit}}">
+    推拿(Tuina)，中医指用手在人体上按经络、穴位。用推、拿、提、捏、揉等手法进行治疗。推拿又有“按跷”、“跷引”、“案杌”诸称号。推拿，为一种非药物的自然疗法、物理疗法。通常是指医者运用自己的双手作用于病患的体表、受伤的部位、不适的所在、特定的腧穴、疼痛的地方，具体运用推、拿、按、摩、揉、捏、点、拍等形式多样的手法和力道，以期达到疏通经络、推行气血、扶伤止痛、祛邪扶正、调和阴阳、延长寿命的疗效。
+  </view>
+  <view wx:if="{{showMain}}">
+    <view class='homeTop'>
+      <view class='homeLocal' bindtap='openLocal'>
+        <text wx:if="{{nowCity == ''}}" style='float: left;'>选择城市</text>
+        <text wx:else style='float: left;'>{{nowCity}}</text>
+        <image class='downIcon' src='../../images/down.png'></image>
+      </view>
+      <view class='searchInput'>
+        <input class='storeInput' value='{{searchVal}}' bindinput='advSearch' placeholder='请输入店名' placeholder-style='color:#999;font-size:30rpx;'></input>
+      </view>
+      <image class='searchBtn' bindtap='searchBtn' src='../../images/search.png'></image>
+      <view class='clear'></view>
+    </view>
+    <block wx:if="{{homeArr.length != 0}}">
+      <view class='homeMain'>
+        <block wx:for="{{homeArr}}" wx:key="index">
+          <view class='homeList' bindtap='lookdetails' data-shopId='{{item.id}}'>
+            <view class='listTitle'>{{item.title}}</view>
+            <view class='listMain'>
+              <view class='listPic'>
+                <image src='{{item.shop_url}}'></image>
+              </view>
+              <view class='listinfo'>
+                <view class='specialTit'>该店特色</view>
+                <view class='specialList' wx:for="{{item.shop_special}}" wx:for-item="it" wx:key="it">{{it}}</view>
+                <view class='clear'></view>
+              </view>
+              <view class='clear'></view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='noData'>暂无门店数据!</view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+<!--pages/calenderMore/calenderMore.wxml-->
+<view class='calenderMore'>
+  <block wx:for="{{imgArr}}" wx:key="index">
+    <view class='calend_more' bindtap='routerImg' data-id='{{item.id}}'>
+      <image src='{{item.image}}'></image>
+    </view>
+  </block>
+  <view class='clear'></view>
+</view>

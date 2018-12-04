@@ -1,0 +1,47 @@
+/* pages/study/study.wxss */
+.clear{
+  clear: both;
+}
+.study{
+  padding: 0 30rpx;
+}
+.study_list{
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.study_pic{
+  width: 180rpx;
+  height: 180rpx;
+  background: #ccc;
+  float: left;
+}
+.study_pic image{
+  width: 100%;
+  height: 100%;
+}
+.study_right{
+  float: left;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+  width: 480rpx;
+}
+.sr_title{
+  color: #333;
+}
+.pic_title{
+  font-size: 30rpx;
+  color: #666;
+  margin-top: 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height: 84rpx;
+}
+.sr_time{
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 10rpx;
+  text-align: right;
+}

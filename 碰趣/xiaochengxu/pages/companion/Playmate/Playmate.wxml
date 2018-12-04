@@ -1,0 +1,58 @@
+<!-- pages/companion/Playmate/Playmate.wxml -->
+<view class='content'>
+  <view class='head'>
+    <navigator url="../sign/sign?title=sign">
+      <button>去共享时光</button>
+    </navigator>
+  </view>
+  <view class='Part'>
+    <view class='Territory'>
+      <text>共享记录</text>
+      <view class='block' wx:for="{{signList}}" wx:key="index">
+        <view class='place'>
+          <image class='head-image' src='/images/place.png'></image>
+          <text class='place_text'>{{item.address}}</text>
+        </view>
+        <view class='place'>
+          <text class='soul'>有趣的灵魂：</text>
+          <view class='block-image'>
+            <block wx:for="{{item.users}}" wx:for-item="user" wx:key="index">
+              <image class='place-image' mode="aspectFit"></image>
+              <image class='place-image' src="{{user.avatar}}" mode="aspectFit"></image>
+            </block>
+          </view>
+          <text class='soul_One'>{{item.users.length}}人</text>
+        </view>
+        <view class='Touch'    >
+            <button data-latitude='{{item.latitude}}' data-longitude='{{item.longitude}}' bindtap="goPlaymeteList">去碰</button>
+          <button data-id="{{item.id}}" bindtap="cancelSignin">取消签到</button>
+        </view>
+      </view>
+    </view>
+    <text class='part_border'></text>
+    <view class='Popular'>
+      <text style='margin-top: 30rpx; display: block;'>热门地点</text>
+      <view class='block' wx:for="{{hotList}}" wx:key="index">
+        <view class='place'>
+          <image class='head-image' src='/images/place.png'></image>
+          <text class='place_text'>{{item.province_name}}</text>
+        </view>
+        <view class='place'>
+          <text class='soul'>已签到的人：</text>
+          <view class='block-image'>
+            <block wx:for="{{item.users}}" wx:for-item="user" wx:key="index">
+              <image class='place-image' mode="aspectFit"></image>
+              <image class='place-image' src="{{user.avatar}}" mode="aspectFit"></image>
+            </block>
+          </view>
+          <text class='soul_One'>{{item.users.length}}人</text>
+        </view>
+        <view class='Popular_Touch'>
+          <navigator url="../sign/sign">
+            <button>签到去共享时光</button>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

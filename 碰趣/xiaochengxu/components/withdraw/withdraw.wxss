@@ -1,0 +1,29 @@
+/* components/withdraw/withdraw.wxss */
+.clear{
+  clear: both;
+}
+.drawList{
+  border-bottom: 1rpx solid #bdbdbd;
+  padding: 28rpx 30rpx 28rpx 30rpx;
+}
+.listPic{
+  width: 100rpx;
+  height: 100rpx;
+  float: left;
+}
+.listPic image{
+  width: 100%;
+  height: 100%;
+}
+.listText{
+  color: #333;
+  font-size: 28rpx;
+  margin-top: 30rpx;
+}
+.textRight{
+  float: right;
+}
+.textLeft{
+  float: left;
+  margin-left: 30rpx;
+}

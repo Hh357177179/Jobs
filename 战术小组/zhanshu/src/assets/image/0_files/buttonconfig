@@ -1,0 +1,16 @@
+window.KF5_SUPPORTBOX_BUTTON = {
+	version: 2,
+	show: 1,
+	is_mobile: 0,
+	btn_name: "帮助",
+	facade: "2",
+	icon: "4",
+	color: "#33D6FF",
+	text_color: "#FFFFFF",
+	position: "right",
+	vertical: 0,
+	has_aside: false,
+    lang: "zh_CN",
+    is_overdue:0,
+    autoLoadIframe:true
+};

@@ -1,0 +1,25 @@
+{
+  "color": "#333",
+  "selectedColor": "#fa5757",
+  "borderStyle": "white",
+  "list": [
+    {
+      "selectedIconPath": "../../images/day.png",
+      "iconPath": "../../images/day.png",
+      "pagePath": "pages/cards/cards",
+      "text": "当天碰"
+    },
+    {
+      "selectedIconPath": "../../images/find.png",
+      "iconPath": "../../images/day.png",
+      "pagePath": "pages/cards/cards",
+      "text": "发现"
+    },
+    {
+      "selectedIconPath": "../../images/my.png",
+      "iconPath": "../../images/day.png",
+      "pagePath": "pages/cards/cards",
+      "text": "我的"
+    }
+  ]
+}

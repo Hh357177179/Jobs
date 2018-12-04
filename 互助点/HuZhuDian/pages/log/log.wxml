@@ -1,0 +1,27 @@
+<view class="page-log">
+  <scroll-view scroll-y class="log-scroll-view" lower-threshold="50" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <block wx:for="{{list}}">
+    <view class="log-item">
+      <view class="log-item-left">
+        <view class="date">{{item.date}}</view>
+        <view>{{item.month}}月</view>
+      </view>
+      <view class="log-item-right">
+        <block wx:for="{{item.children}}">
+          <view class="operate-log">
+            <view class="operate-time">{{item.hour}}:{{item.minute}}</view>
+            <view class="operate-content">
+              <text>{{item.from_name}}</text>
+              转给
+              <text>{{item.to_name}}</text>
+              {{item.money}} 互助点
+            </view> 
+            <view class="operate-remark" wx:if="{{item.remark}}">{{item.remark}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+  <view class="no-more">没有更多了...</view>
+  </scroll-view>
+</view>

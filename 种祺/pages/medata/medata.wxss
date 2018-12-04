@@ -1,0 +1,62 @@
+/* pages/medata/medata.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0;
+}
+.medata{
+  border: 1px solid rgba(0,0,0,0);
+}
+.clear{
+  clear: both;
+}
+.meMain{
+  margin-top: 40rpx;
+}
+.medatalist{
+  padding:0 40rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #fff;
+  margin-top: 10rpx;
+}
+.melabel{
+  font-size: 32rpx;
+  float: left;
+}
+.valMe{
+  float: left;
+  height: 100%;
+  font-size: 32rpx;
+  margin-left: 20rpx;
+}
+.pickInput{
+  height: 100%;
+}
+.picker{
+  float: left;
+  height: 100%;
+  margin-left: 20rpx;
+  font-size: 32rpx;
+  width: 500rpx;
+}
+.active{
+  color: #999;
+}
+.choosePerson{
+  margin-top: 10rpx;
+  background: #fff;
+  padding:0 40rpx;
+}
+.perActive{
+  color: #999;
+}
+.saveBtn{
+  width: 90%;
+  line-height: 90rpx;
+  background: #5bb45a;
+  color: #fff;
+  text-align: center;
+  border-radius: 20rpx;
+  margin: 400rpx auto 0;
+}

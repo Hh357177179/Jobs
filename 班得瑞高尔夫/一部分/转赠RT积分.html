@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>转赠RT积分</title>
+  <script>
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          if (clientWidth >= 750) {
+            docEl.style.fontSize = '100px';
+          } else {
+            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+          }
+        };
+
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/given.css">
+</head>
+
+<body>
+  <div class="given">
+    <div class="givenTop"></div>
+    <div class="topCard">
+      <p class="topCardNum">8888.88</p>
+      <p class="topCardText">RT积分</p>
+    </div>
+    <div class="givenMain">
+      <p class="givenMainTit">转赠RT积分</p>
+      <div class="givenForm clearfix">
+        <span>用&#X3000;&#X3000;户:</span>
+        <input type="text" placeholder="请输入对方手机号" value="">
+      </div>
+      <div class="givenForm clearfix">
+        <span>数&#X3000;&#X3000;量:</span>
+        <input type="tel" placeholder="填写转赠RT积分数量" value="">
+      </div>
+      <div class="giveRemake clearfix">
+        <span class="remakeLabe">转赠备注:</span>
+        <div class="remakeText">
+          <p>
+            <span class="chooseText"></span>
+            <img class="downIcon" src="img/down.png" alt="">
+          </p>
+          <ul class="remakList">
+            <li>祝你天天开心</li>
+            <li>感谢您的帮助</li>
+            <li>祝你生活愉快</li>
+          </ul>
+        </div>
+      </div>
+      <div class="givenBtn">转 赠</div>
+      <div class="annotation">注：转赠单笔手续费1个RT积分。</div>
+    </div>
+    <!-- 转增记录 -->
+    <div class="givenRecord">
+      <p class="recordTit">转赠记录</p>
+      <p class="botBorder"></p>
+      <div class="tableTit clearfix">
+        <p class="giveName">转赠人</p>
+        <p class="giveNum">数量</p>
+        <p class="giveText">转赠语</p>
+      </div>
+      <div class="tabeList">
+        <ul class="tabeListUl">
+          <li class="clearfix">
+            <span class="giveName addColor">15********8</span>
+            <span class="giveNum addColor">+50</span>
+            <span class="giveText">感谢您的帮助</span>
+          </li>
+          <li class="clearfix">
+            <span class="giveName addColor">15********8</span>
+            <span class="giveNum addColor">+50</span>
+            <span class="giveText">感谢您的帮助</span>
+          </li>
+          <li class="clearfix">
+            <span class="giveName reduce">15********8</span>
+            <span class="giveNum reduce">-50</span>
+            <span class="giveText">感谢您的帮助</span>
+          </li>
+          <li class="clearfix">
+            <span class="giveName addColor">15********8</span>
+            <span class="giveNum addColor">+50</span>
+            <span class="giveText">感谢您的帮助</span>
+          </li>
+          <li class="clearfix">
+            <span class="giveName reduce">15********8</span>
+            <span class="giveNum reduce">-10</span>
+            <span class="giveText">感谢您的帮助</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script src="js/jquery-1.10.2.js"></script>
+<script>
+  // 选择转赠备注
+  // .chooseText 里面是备注内容 
+  $('.remakeText').click(function () {
+    $('.remakList').slideToggle('fast'); //下拉展开选项
+    $('.remakList li').click(function () { // 点击选择备注
+      $('.chooseText').text($(this).text()) // 备注赋值
+    })
+  })
+</script>

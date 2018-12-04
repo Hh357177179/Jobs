@@ -1,0 +1,46 @@
+/* pages/perfectinfo/perfectinfo.wxss */
+.home{
+  border: 1px solid rgba(0,0,0,0);
+}
+.clear{
+  clear: both;
+}
+.home_title{
+  margin-top: 100rpx;
+  font-size: 34rpx;
+  text-align: center;
+  color: #101010;
+}
+.home_input{
+  margin-top: 80rpx;
+  padding: 0 60rpx;
+}
+.list_input{
+  margin-bottom: 60rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.labe_text{
+  float: left;
+  font-size: 32rpx;
+  height: 100%;
+}
+.val_input{
+  float: left;
+  margin-left: 40rpx;
+  border-bottom: 1px solid #d9d9d9;
+  height: 100%;
+  font-size: 32rpx;
+  text-align: center;
+}
+.submit_info{
+  font-size: 34rpx;
+  width: 400rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #fff;
+  background: #68F2ED;
+  border-radius: 10rpx;
+  margin: 160rpx auto 0;
+}

@@ -1,0 +1,127 @@
+<!--pages/active/active.wxml-->
+<view class="found event active">
+  <view class="e-swiper">
+    <view class="banner">
+      <swiper indicator-dots="true" indicator-color="rgba(255,255,255,.3)" indicator-active-color="#fff" class="bgbanner">
+        <block wx:for="{{vdata.activity.image_path}}" wx:for-item="img" wx:key="{{img.index}}">
+          <swiper-item>
+            <image src="{{img}}" class="banner-image"></image>
+            <!-- <image src="../../images/banner1.png" class="banner-image"></image>   -->
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="head_head">
+        <navigator url="/pages/companion/Information/Information?user_id={{vdata.activity.user.id}}">
+        <image src="{{vdata.activity.user.avatar}}" class="head-image"></image>
+        </navigator>
+        <view class="swiper-font">
+          <text style='color: #000000;' class="swiper-title">领队：{{vdata.activity.user.nick_name}} </text>
+          <text style='color: #000000;' class="swiper-text">{{vdata.activity.type}}</text>
+          <!-- <text style='color: #000000;' class="swiper-text">{{vdata.activity.title}}</text> -->
+        </view>
+      </view>
+      <!-- total_num = parseInt(adult_num) + parseInt(child_num) -->
+    </view>
+    <view class="detail">
+      <view class="detail">
+        <view class="d-more">
+          <view class="d-list">
+            <text class="d-num" style='color: #000000;'>主题名称：{{vdata.activity.title}}</text>
+          </view>
+          <view class="d-list">
+            <text class="d-name">开始时间：{{vdata.activity.start_time}}</text>
+
+          </view>
+          <view class="d-list">
+            <text class="d-name">活动地点：{{vdata.activity.address}}</text>
+          </view>
+          <view class="d-list">
+            <text class="d-name">活动费用：{{vdata.activity.adult_price}}元/人</text>
+          </view>
+
+          <view class="d-list last">
+            <text class="d-name">活动人数：{{vdata.activity.participate_num}}/{{vdata.activity.total_num}}人</text>
+          </view>
+        </view>
+      </view>
+      <text class="d-title">活动详细：</text>
+      <view class="d-main">
+        <view class="d-list">
+          <text class="d-num">{{vdata.activity.content}}</text>
+        </view>
+      </view>
+      <view class="d-dress" bindtap='goAmap'>
+        <text>{{vdata.activity.address}}</text>
+        <image src="../../images/to.png"></image>
+      </view>
+
+    </view>
+  </view>
+  <view class="e-join">
+    <view class="join">已报名如下</view>
+    <view class="people">
+      <block wx:for="{{vdata.participaters}}" wx:for-item="vp" for:key="{{vp.id}}">
+        <image src="{{vp.avatar}}"></image>
+      </block>
+    </view>
+  </view>
+  <view class="e-chat">
+    <view class="e-icon">
+      <!-- <view class="love">
+        <image src="../../images/love.png"></image>
+        <text>23</text>
+      </view> -->
+      <view class="chat" bindtap='commentInputTarget'>
+        <image src="../../images/chat.png"></image>
+        <text>点击评论</text>
+      </view>
+    </view>
+
+    <view class="e-pop">
+      <view class="man">
+        <image src="../../images/logo_1.png"></image>
+        <view class="slim">
+          <text class="name">碰趣</text>
+          <text class="time">{{vdata.activity.start_time}}</text>
+          <view class="help">欢迎入驻碰趣平台，您的趣值终于有地方展示了。点赞首个主题作品。</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="e-pop">
+      <view class="man" wx:for="{{commentlist}}" wx:for-item="comment" wx:for:key="comment.id">
+        <image src="{{comment.avatarUrl}}"></image>
+        <view class="slim">
+          <text class="name">{{comment.nickName}}</text>
+          <!-- <text class="core">(4.9)</text> -->
+          <text class="time">{{comment.comment_date}}</text>
+          <view class="help">{{comment.content}}</view>
+          <view class="reply" bindtap='commentReplyTarget' data-nickname='{{comment.nickName}}'>
+        <text>回复</text>
+      </view>
+        </view>
+      </view>
+    </view>
+    <view class='chat-theme'></view>
+  </view>
+
+  <view class="ft">
+    <view class='comment' wx:if="{{showinput}}">
+      <input placeholder='输入您的留言^_^' focus="true" value='' confirm-type="send" bindconfirm="sendComment" bindinput='bindKeyInput'></input>
+    </view>
+    <view class='comment' wx:if="{{showreply}}">
+      <input placeholder='回复{{replynickname}}：' focus="true" value='' confirm-type="send" bindconfirm="sendReply" bindinput='bindKeyInput'></input>
+    </view>
+    <navigator url="../name/name?title=name&aid={{vdata.activity.id}}">
+      <view class="add" wx:if="{{vdata.activity.viewer=='未报名'&& vdata.activity.state==0}}">报名去碰趣</view>
+     
+      <view class="add" wx:if="{{vdata.activity.viewer=='已报名'&&vdata.activity.state==0}}">已报名,可重复报名</view>
+    </navigator>
+     <view class="add" wx:if="{{vdata.activity.viewer=='已报名'&&vdata.activity.state==1}}">已经结束</view>
+      <view class="add" wx:if="{{vdata.activity.viewer=='未报名'&& vdata.activity.state==1}}">已经结束</view>
+    <!-- <navigator bindtap='pay' ><view class="add">报名</view> -->
+    <!-- <navigator url="../create/create?title=create"><view class="volun">申请成为服务者</view>
+    </navigator> -->
+  </view>
+</view>
+<tab></tab>

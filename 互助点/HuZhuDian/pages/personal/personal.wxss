@@ -1,0 +1,125 @@
+.Outer_layer {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items:center;垂直居中 *//* justify-content: center;水平居中 */
+  background-color: #cce5e9;
+  overflow: scroll;
+}
+.btn-area{
+    display: flex;
+  flex-flow: row;
+}
+.centre {
+  margin: 30rpx;
+  margin-top: 40rpx;
+  padding: 30rpx;
+  background-color: #fff;
+}
+.hand{
+ display: flex;
+ justify-content: flex-end
+}
+.handson{
+  margin-left: 30rpx;
+  font-size: 34rpx;
+  color: #f9713e
+}
+/* 获取头像开始 */
+
+.box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50rpx;
+  margin-bottom: 100rpx;
+  flex-flow: row;
+  position: relative;
+}
+
+.boxSon {
+  display: flex;
+  margin-left: 10rpx;
+  color: #cce5e9;
+  margin-top: 8rpx;
+  font-size: 20rpx;
+}
+
+.box .headPortrait {
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 5%;
+}
+
+.box .name {
+  /* border: 1rpx solid #98e2dc; */
+  width: 200rpx;
+  font-size: 30rpx;
+}
+
+/* 获取头像结束 */
+
+.content {
+  width: 250rpx;
+   /* border: 1px solid red;  */
+  display: flex;
+  flex-direction: row;
+  margin-left: 60rpx;
+  margin-top: 10rpx;
+}
+
+.content-img {
+  /* border: 1px solid red;  */
+  display: flex;
+}
+
+.content-img image {
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.content-text {
+  width: 200rpx;
+  display: flex;
+  flex-direction: row;
+  margin-left: 10rpx;
+  font-size: 30rpx;
+  color: #cce5e9;
+}
+
+.imagew {
+  margin: 20rpx;
+  /* border: 1rpx solid #cce5e9 */
+}
+
+.image {
+  width: 100%;
+}
+
+.text_one {
+  /* border: 1rpx solid #cce5e9; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  color: #b7b7b7;
+}
+.login{
+  margin-top: 30rpx;
+  width:200rpx;
+  height: 70rpx;
+   font-size: 30rpx;
+  text-align:center;
+  color: #f1faf9;
+  background-color: #98e2dc
+}
+
+.fxPyq{
+  position: absolute;
+  font-size: 30rpx;
+  color: #cce5e9;
+  top: 80rpx;
+}

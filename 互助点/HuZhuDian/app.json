@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/personal/personal",
+    "pages/rankinglist/rankinglist",
+    "pages/transfer/transfer",
+    "pages/log/log",
+    "pages/theme/theme",
+    "pages/register/register",
+    "pages/themelist/themelist",
+    "pages/themedetail/themedetail",
+    "pages/sharefriend/sharefriend"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "pages/images/clickChoose.png",
+        "iconPath": "pages/images/click.png",
+        "pagePath": "pages/personal/personal",
+        "text": "互助点"
+      },
+      {
+        "selectedIconPath": "pages/images/talkClick.png",
+        "iconPath": "pages/images/talk.png",
+        "pagePath": "pages/themelist/themelist",
+        "text": "大厅"
+      }
+    ]
+  }
+}

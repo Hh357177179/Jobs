@@ -1,0 +1,164 @@
+<!--pages/storeenter/storeenter.wxml-->
+<view class='storeEnter'>
+  <view class='enterTop'>
+    <view class="oneStep {{textStatus == 0 ? 'addClass' : ''}}">
+      <text class="stepNum {{textStatus == 0 ? 'addClass' : ''}}">1</text>
+      <text>提交资料</text>
+    </view>
+    <text style='line-height: 30rpx;' class="{{textStatus == 0 ? 'addClass' : ''}}">-------</text>
+    <view class="oneStep {{textStatus == 1 ? 'addClass' : ''}}">
+      <text class="stepNum {{textStatus == 1 ? 'addClass' : ''}}">2</text>
+      <text>审核中</text>
+    </view>
+    <text style='line-height: 30rpx;' class="{{textStatus == 1 ? 'addClass' : ''}}">-------</text>
+    <view class="oneStep {{textStatus == 2 ? 'addClass' : ''}}" style='float:right;'>
+      <text class="stepNum {{textStatus == 2 ? 'addClass' : ''}}">3</text>
+      <text>审核结果</text>
+    </view>
+  </view>
+  <view class='enterInfo'>
+    <view class='enterInfoList'>
+      <view class='einfoName'>店铺名称</view>
+      <view class='einfoInput'>
+        <input value='{{storeName}}' bindinput='advSname' placeholder='请输入店铺名称' placeholder-style='font-size: 30rpx;color:#999;'></input>
+      </view>
+    </view>
+    <view class='enterInfoList'>
+      <view class='einfoName'>店铺地址</view>
+      <view class='einfoInput' bindtap='chooseLocal'>
+        <input disabled='true' value='{{localText}}' placeholder='请输入店铺地址' placeholder-style='font-size: 30rpx;color:#999;'></input>
+      </view>
+    </view>
+    <view class='enterInfoList'>
+      <view class='einfoName'>营业时间</view>
+      <picker class='picks' mode="time" value="{{ctime}}" bindchange="bindTimeChange">
+        <view class="picker {{pnum == 1 ? 'pactive' : ''}}">{{cTimeF}}</view>
+      </picker>
+      <picker style='float:right' class='picks' mode="time" value="{{stime}}" bindchange="sTimeChange">
+        <view class="picker {{pnums == 1 ? 'pactive' : ''}}">{{cTimeS}}</view>
+      </picker>
+      <view class='clear'></view>
+    </view>
+    <view class='enterInfoList'>
+      <view class='einfoName'>店铺特色</view>
+      <view class='einfotextarea'>
+        <textarea value='{{areaVal}}' bindinput='advAreaVal' placeholder='请输入店铺特色简介' maxlength="-1" placeholder-style='font-size: 30rpx;color:#999;'></textarea>
+      </view>
+    </view>
+    <view class='enterInfoList'>
+      <view class='einfoName'>联系人</view>
+      <view class='einfoInput'>
+        <input value='{{userVal}}' bindinput='advUserVal' placeholder='请输入联系人姓名' placeholder-style='font-size: 30rpx;color:#999;'></input>
+      </view>
+    </view>
+    <view class='enterInfoList'>
+      <view class='einfoName'>联系电话</view>
+      <view class='einfoInput'>
+        <input value='{{telVal}}' bindinput='advTelVal' type='number' placeholder='请输入手机号码' placeholder-style='font-size: 30rpx;color:#999;'></input>
+      </view>
+    </view>
+    <view class='enterInfoList'>
+      <view class='einfoName'>店铺图片资料</view>
+      <view class='license'>
+        <image class='infoPic' src='{{licenseArr[0]}}'></image>
+        <view class='addPic' bindtap='uplicense'>
+          <view class='addPicBtn'>
+            <image src='../../images/upPic.png'></image>
+          </view>
+          <view class='upText'>上传营业执照</view>
+        </view>
+      </view>
+    </view>
+    <view class='enterInfoList'>
+      <view class='license'>
+        <image class='infoPic' src='{{qualificationArr[0]}}'></image>
+        <view class='addPic' bindtap='upqualification'>
+          <view class='addPicBtn'>
+            <image src='../../images/upPic.png'></image>
+          </view>
+          <view class='upText'>上传从业资格证</view>
+        </view>
+      </view>
+    </view>
+    <view class='enterInfoList'>
+      <view class='license'>
+        <image class='infoPic' src='{{staffArr[0]}}'></image>
+        <view class='addPic' bindtap='upstaff'>
+          <view class='addPicBtn'>
+            <image src='../../images/upPic.png'></image>
+          </view>
+          <view class='upText'>上传员工合照</view>
+        </view>
+      </view>
+    </view>
+    <view class='enterInfoList'>
+      <view class='license'>
+        <image class='infoPic' src='{{shopOne}}'></image>
+        <view class='addPic' bindtap='upshopO'>
+          <view class='addPicBtn'>
+            <image src='../../images/upPic.png'></image>
+          </view>
+          <view class='upText'>上传门店照片</view>
+          <view class='brText'>(最少一张)</view>
+        </view>
+      </view>
+    </view>
+    <block wx:if="{{shopOne.length != 0}}">
+      <view class='enterInfoList'>
+        <view class='license'>
+          <image class='infoPic' src='{{shopTwo}}'></image>
+          <view class='addPic' bindtap='upshopT'>
+            <view class='addPicBtn'>
+              <image src='../../images/upPic.png'></image>
+            </view>
+            <view class='upText'>上传门店照片</view>
+            <view class='brText'>(还可以上传4张)</view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{shopTwo.length != 0}}">
+      <view class='enterInfoList'>
+        <view class='license'>
+          <image class='infoPic' src='{{shopThree}}'></image>
+          <view class='addPic' bindtap='upshopTh'>
+            <view class='addPicBtn'>
+              <image src='../../images/upPic.png'></image>
+            </view>
+            <view class='upText'>上传门店照片</view>
+            <view class='brText'>(还可以上传3张)</view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{shopThree.length != 0}}">
+      <view class='enterInfoList'>
+        <view class='license'>
+          <image class='infoPic' src='{{shopFour}}'></image>
+          <view class='addPic' bindtap='upshopF'>
+            <view class='addPicBtn'>
+              <image src='../../images/upPic.png'></image>
+            </view>
+            <view class='upText'>上传门店照片</view>
+            <view class='brText'>(还可以上传2张)</view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{shopFour.length != 0}}">
+      <view class='enterInfoList'>
+        <view class='license'>
+          <image class='infoPic' src='{{shopFive}}'></image>
+          <view class='addPic' bindtap='upshopFi'>
+            <view class='addPicBtn'>
+              <image src='../../images/upPic.png'></image>
+            </view>
+            <view class='upText'>上传门店照片</view>
+            <view class='brText'>(还可以上传1张)</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='submitStore' bindtap='submitStore'>提交</view>
+</view>

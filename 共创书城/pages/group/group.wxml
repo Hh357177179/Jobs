@@ -1,0 +1,16 @@
+<!--pages/group/group.wxml-->
+<view class='group'>
+  <block wx:for="{{groupArr}}" wx:key="index">
+    <view class='group_list' data-gid='{{item.id}}' bindtap='groupDetail'>
+      <view class='group_pic'>
+        <image src='{{item.logo}}'></image>
+      </view>
+      <view class='group_r'>
+        <view class='group_title'>{{item.title}}</view>
+        <view class='group_content'>{{item.content}}</view>
+        <view class='group_hot'>小组热度：{{item.like_num}}</view>
+      </view>
+      <view class='clear'></view>
+    </view>
+  </block>
+</view>

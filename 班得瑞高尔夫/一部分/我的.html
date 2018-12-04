@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>个人中心</title>
+  <script>
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          if (clientWidth >= 750) {
+            docEl.style.fontSize = '100px';
+          } else {
+            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+          }
+        };
+
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/me.css">
+</head>
+
+<body>
+  <!-- 顶部背景 -->
+  <div class="headTop">
+    <img src="img/timg1.jpg" alt="">
+  </div>
+
+
+  <!-- 个人信息 -->
+  <div class="userMain clearfix">
+    <div class="userInfo clearfix">
+      <div class="userList username">
+        <div class="userHead">
+          <img src="img/ring.png" alt="">
+        </div>
+        <p style="font-family: 微软雅黑;">Darren</p>
+      </div>
+      <div class="userList userquantity">
+        <p style="font-family: 微软雅黑;">8888.88</p>
+        <p style="font-size:0.25rem;color: #000;">我的美誉度</p>
+      </div>
+      <div class="userList listCode">
+        <div class="userCode">
+          <img src="img/ecode.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="botTag">
+      <p class="iconTag clearfix">
+        <i class="listIcon">
+          <img src="img/storeIcon.png" alt="">
+        </i>
+        <span style="float:left;">店铺投资人</span>
+      </p>
+    </div>
+    <div class="botTag">
+      <p class="teacherTag clearfix">
+        <i class="listIcon">
+          <img src="img/teacherIcon.png" alt="">
+        </i>
+        <span style="float:left;">讲师</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- 个人中心列表 -->
+  <div class="mineList">
+    <ul>
+      <li class="clearfix">
+        <span class="listIcons">
+          <img src="img/friends.png" alt="">
+        </span>
+        <span class="listText">我的球友</span>
+        <span class="rightIcon">
+          <img src="img/right.png" alt="">
+        </span>
+      </li>
+      <li class="clearfix">
+        <a href="RT积分分配明细.html" class="listA clearfix">
+          <span class="listIcons">
+            <img src="img/allocation.png" alt="">
+          </span>
+          <span class="listText">我的分配</span>
+          <span class="rightIcon">
+            <img src="img/right.png" alt="">
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="otherList">
+    <ul>
+      <li class="clearfix">
+        <span class="listIcons">
+          <img src="img/discounts.png" alt="">
+        </span>
+        <span class="listText">我的卡卷</span>
+        <span class="rightIcon">
+          <img src="img/right.png" alt="">
+        </span>
+      </li>
+      <li class="clearfix">
+        <span class="listIcons">
+          <img src="img/course.png" alt="">
+        </span>
+        <span class="listText">我的课程</span>
+        <span class="rightIcon">
+          <img src="img/right.png" alt="">
+        </span>
+      </li>
+      <li class="clearfix">
+        <a href="办理会员.html" class="listA clearfix">
+          <span class="listIcons">
+            <img src="img/privilege.png" alt="">
+          </span>
+          <span class="listText">会员等级与特权</span>
+          <span class="rightIcon">
+            <img src="img/right.png" alt="">
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 底部导航 -->
+  <div class="foot">
+    <ul class="clearfix footUl">
+      <li>
+        <a href="首页.html">
+          <p class="footIcon">
+            <img src="img/home.png" alt="">
+          </p>
+          <p>首页</p>
+        </a>
+      </li>
+      <li>
+        <p class="footIcon">
+          <img src="img/ring.png" alt="">
+        </p>
+        <p>动态</p>
+      </li>
+      <li>
+        <p class="footIcon">
+          <img src="img/use.png" alt="">
+        </p>
+        <p>应用</p>
+      </li>
+      <li>
+        <p class="footIcon">
+          <img src="img/cme.png" alt="">
+        </p>
+        <p class="footActive">我的</p>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

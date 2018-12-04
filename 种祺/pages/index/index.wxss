@@ -1,0 +1,105 @@
+/**index.wxss**/
+.clear{
+  clear: both;
+}
+.homeTop{
+  border-bottom: 1px solid #d9d9d9;
+  padding: 0 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #fff;
+}
+.homeLocal{
+  float: left;
+  font-size: 30rpx;
+}
+.downIcon{
+  width: 20rpx;
+  height: 20rpx;
+  float: left;
+  margin-top: 25rpx;
+  margin-left: 10rpx;
+}
+.searchInput{
+  float: left;
+  border-radius: 20rpx;
+  border: 1px solid #d9d9d9;
+  text-align: center;
+  height: 60rpx;
+  margin-left: 30rpx;
+  margin-top: 10rpx;
+  width: 450rpx;
+}
+.storeInput{
+  height: 100%;
+  font-size: 30rpx;
+  width: 400rpx;
+  float: left;
+}
+.searchBtn{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  margin-top: 15rpx;
+  padding: 0 20rpx;
+}
+.homeMain{
+  padding: 0 30rpx;
+  margin-top: 80rpx;
+}
+.homeList{
+  border-bottom: 1px solid #d9d9d9;
+  padding: 10rpx 0 20rpx;
+}
+.listTitle{
+  font-size: 32rpx;
+}
+.listMain{
+  margin-top: 10rpx;
+}
+.listPic{
+  width: 300rpx;
+  height: 200rpx;
+  background: #ccc;
+  float: left;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.listPic image {
+  width: 100%;
+  height: 100%;
+}
+.listinfo{
+  float: left;
+  margin-left: 30rpx;
+  margin-top: 10rpx;
+  width: 360rpx;
+}
+.specialTit{
+  font-size: 28rpx;
+}
+.specialList{
+  font-size: 26rpx;
+  float: left;
+  margin-top: 20rpx;
+  padding:5rpx 20rpx;
+  border: 1px solid #5bb45a;
+  color: #5bb45a;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+}
+.noData{
+  margin-top: 500rpx;
+  font-size: 32rpx;
+  text-align: center;
+}
+.top_text{
+  margin-top: 100rpx;
+  font-size: 32rpx;
+  padding: 0 40rpx;
+  line-height: 60rpx;
+}

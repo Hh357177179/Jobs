@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>班得瑞高尔夫应用</title>
+  <script>
+      (function (doc, win) {
+        var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            if (clientWidth >= 750) {
+              docEl.style.fontSize = '100px';
+            } else {
+              docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+            }
+          };
+  
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+      })(document, window);
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/glofuse.css">
+</head>
+<body>
+  <div class="glofuse">
+    <div class="glofuseTop clearfix">
+      <p style="float:left;"><a href="javascript:void(0);">开通课程</a></p>
+      <p style="float:right;"><a href="javascript:void(0);">报名信息</a></p>
+    </div>
+    <div class="glofList">
+      <ul class="glofUl">
+        <li class="clearfix">
+          <div class="glofPic">
+            <img src="img/time2.jpg" alt="">
+          </div>
+          <div class="glofText">
+            <p class="gtitle">10月30日线下宣讲课—室内日线下宣讲课—室内</p>
+            <p class="gtime">宣讲时间：2018年10月30日</p>
+            <p class="guser">宣讲人：张三</p>
+            <span class="applyBtn">立即报名</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div></div>
+  </div>
+</body>
+</html>

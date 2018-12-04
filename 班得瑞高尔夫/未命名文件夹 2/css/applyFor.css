@@ -1,0 +1,165 @@
+.applyForTitle {
+  margin: 0 auto;
+  font-size: .69rem;
+}
+.regBanner{
+  height: 1.32rem;
+  line-height: 1.32rem;
+}
+.auditTitle {
+  font-size: .32rem;
+  margin: .36rem auto 0;
+  text-align: center;
+}
+.audit {
+  display: flex;
+  padding: .33rem .58rem;
+}
+.audit li{
+  display: flex;
+  justify-content: flex-start;
+  width: 24%;
+}
+.audit li:nth-child(5) {
+  width: 15%;
+}
+
+/* .audit>li::after{
+  content: " ";
+  width: .31rem;
+  height: .31rem;
+  background: url('../img/icon-right.png')no-repeat;
+  background-size: .31rem .31rem;
+} */
+.audit li .left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.audit li .left .icon-bg{
+  border-radius: 50%;
+  width: .71rem;
+  height: .71rem;
+  /* padding: .15rem; */
+}
+
+.audit li .right img{
+  width: .61rem;
+  height: .61rem;
+  padding: .1rem;
+}
+.audit>li>.left>span {
+  margin-top: .15rem;
+  font-size: .2rem;
+  white-space:nowrap;
+}
+.audit>li>.right {
+  margin-top: -.38rem;
+  transform: scale(.8);
+}
+.audit li:nth-child(1)>.left>.icon-bg img{
+  width: 70%;
+  height: 70%;
+  float: left;
+  margin: .1rem;
+}
+.audit li>.left>.icon-bg img{
+  width: 60%;
+  height: 60%;
+  float: left;
+  margin: .136rem;
+}
+
+.audit li:nth-child(1)>.left>.icon-bg {
+  background-color: #53E0C0;
+}
+.audit li:nth-child(2)>.left>.icon-bg {
+  background-color: #FF7374;
+
+}
+.audit li:nth-child(3)>.left>.icon-bg {
+  background-color: #FFC445;
+
+}
+.audit li:nth-child(4)>.left>.icon-bg {
+  background-color: #72B5FE;
+
+}
+.audit li:nth-child(5)>.left>.icon-bg {
+  background-color: #8EC63F;
+
+}
+
+.formList select{
+  font-size: .32rem;
+  margin-top: 0.24rem;
+  width: 4rem;
+  outline: none;
+}
+.Anotice{
+  color: red;
+  font-size: .2rem;
+}
+.equityWrap{
+  width: 6.43rem;
+  min-height: 2.1rem;
+  background: #F9D64C;
+  padding: .35rem .17rem .17rem .36rem;
+  margin: 0 auto;
+  font-size: .26rem;
+  position: relative;
+  overflow: hidden;
+}
+.border1{
+  width: 6.43rem;
+  height: 7.6rem;
+  position: absolute;
+  top:.16rem;
+  left: .12rem;
+  border: 1px solid #fff;
+  z-index: 2;
+}
+.equity-title{
+  color: #414141;
+  font-size: .3rem;
+  margin-bottom: .1rem;
+}
+
+
+
+
+
+
+select::-ms-expand{display:none;}
+select{
+  appearance:none;
+ -moz-appearance:none;
+ -webkit-appearance:none;
+  border: none;
+  background: #fff;
+}
+
+#submit{
+  width: 6.5rem;
+  height: 0.98rem;
+  background: #8EC63F;
+  color: #fff;
+  border-radius: 4px;
+  line-height: 1.1rem;
+  font-size: 0.4rem;
+  letter-spacing: 0.1rem;
+  margin: 0.4rem auto 0;
+  text-align: center;
+  margin-bottom: .8rem;
+}
+.applyForm {
+  width: 6.5rem;
+  margin: 0.3rem auto;
+  font-size: 0.32rem;
+}
+h5{
+  color: #333;
+  font-size: .4rem;
+  text-align: center;
+  font-weight: normal;
+}

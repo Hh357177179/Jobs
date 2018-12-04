@@ -1,0 +1,122 @@
+/* pages/companion/PlaymateList/PlaymateList.wxss */
+
+.Content {
+  width: 100%;
+  height: auto;
+  padding-bottom: 50rpx;
+}
+
+/* .Head{
+  width: 100%;
+  height: 100rpx;
+  background: #DD5F1B;
+  text-align: center;
+  line-height: 100rpx;
+  color: #FFFFFF;
+} */
+
+.head {
+  width: 100%;
+  height: 250rpx;
+  background: #DD5F1B;
+  padding: 20rpx 0;
+}
+.shou{
+  position: absolute;
+  width: 100%;
+  height: 110rpx;
+  top: 170rpx;
+}
+.shou_tu{
+  width: 110rpx;
+  height: 110rpx;
+  display: block;
+  margin: auto;
+}
+.head button {
+  margin: auto;
+  width: 250rpx;
+  height: 250rpx;
+  background: #FFFFFF;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 250rpx;
+  font-size: 36rpx;
+  color: #DD5F1B;
+  font-weight: bold;
+}
+
+.Block {
+  width: 95%;
+  height: auto;
+  margin: auto;
+}
+
+.Block_Sign {
+  width: 100%;
+  height: 400rpx;
+  background: #f2f2f2;
+  margin-top: 40rpx;
+}
+
+.Sign_One {
+  width: 90%;
+  margin: auto;
+  height: 140rpx;
+  padding: 25rpx 0 20rpx 0;
+}
+
+.head-image {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  float: left;
+}
+
+.Sign_One text {
+  font-size: 30rpx;
+  display: block;
+  width: 480rpx;
+  float: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-left: 20rpx;
+}
+
+.group_text {
+  width: 90%;
+  margin: auto;
+  padding-top: 10rpx;
+}
+
+.group_text text {
+  font-size: 32rpx;
+}
+
+.item-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.item-flex .name {
+  flex: 1;
+}
+.item-flex .juli{
+  flex:1;
+  text-align: right;
+}
+
+.display {
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  font-size: 30rpx;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-indent: 2em;
+  margin-top: 15rpx;
+}
+

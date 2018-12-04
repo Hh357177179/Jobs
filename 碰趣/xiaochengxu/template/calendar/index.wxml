@@ -1,0 +1,54 @@
+<template name="calendar">
+  <!-- <scroll-view scroll-x class='srollbox'> -->
+
+<swiper current="{{monthIndex}}"   class='srollbox' bindchange = "handleCalendar"      >
+  <swiper-item wx:for="{{termArr}}" wx:key="{{monthkey}}" wx:for-item="monthkey" class='calendarview '>
+    <view class="flex box box-tb box-align-center">
+      <view class="calendar pink-color box box-tb">
+        <view class="top-handle fs28 box box-lr box-align-center box-pack-center">
+          <!-- <view class="prev box box-rl" bindtap="handleCalendar" data-handle="prev">
+                <view class="prev-handle box box-lr box-align-center box-pack-center">
+                  <image src="../../images/left.png"></image>
+                </view>
+              </view> -->
+          <view bindtap="chooseYearAndMonth" class="date-area box box-lr box-align-center box-pack-center fs28 gray-color">{{monthkey.year || "--"}} 年 {{monthkey.month || "--"}} 月</view>
+          <!-- <view class="next box box-lr" bindtap="handleCalendar" data-handle="next">
+                <view class="next-handle box box-lr box-align-center box-pack-center">
+                  <image src="../../images/right.png"></image>
+                </view>
+              </view> -->
+        </view>
+        <view class="weeks box box-pack-center box-align-center">
+          <view class="flex week fs28" wx:for="{{weeksCh}}" wx:key="{{index}}" data-idx="{{index}}">{{item}}</view>
+        </view>
+        <view class="days box box-lr box-wrap">
+          <view wx:if="{{hasEmptyGrid}}" class="grid white-color box box-align-center box-pack-center" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
+          </view>
+          <view class="grid white-color box box-lr box-align-center box-pack-center" wx:for="{{monthkey.days}}" wx:key="{{index}}" data-idx="{{index}}" data-year="{{monthkey.year}}" data-day="{{item.day}}" data-arrindex="{{monthkey.arrIndex}}" bindtap="tapDayItem">
+
+
+            <!-- 标记是否是我创建的 -->
+            <view wx-if="{{item.flag==true}}" class="day  {{item.choosed? 'border-square dark-bg ' : 'border-square green-bg ' }} box box-align-center box-pack-center green-color fs28 box-tb ">
+              {{item.day}}
+              <view wx-if="{{item.num!=0||item.num!=null}}" class="small dark-color fs18 {{item.choosed ? ' darkfont-bg ' : 'greenfont-bg '}}">{{item.num}}</view>
+            </view>
+
+            <!-- 原先的显示 -->
+            <!--   -->
+            <view wx-if="{{item.flag==false}}" class="day {{item.choosed? 'border-square dark-bg ' : ' ' }}  box box-align-center box-pack-center gray-color fs28 box-tb ">
+              {{item.day}}
+              <view class="small dark-color fs18 {{item.choosed ? ' darkfont-bg ' : ' '}}">{{item.num}}</view>
+            </view>
+
+
+          </view>
+        </view>
+      </view>
+    </view>
+  </swiper-item>
+
+  <!-- </scroll-view> -->
+
+</swiper>
+
+</template>

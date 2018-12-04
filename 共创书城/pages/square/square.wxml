@@ -1,0 +1,16 @@
+<!--pages/square/square.wxml-->
+<view class='square'>
+  <block wx:for="{{spuareArr}}" wx:key="index">
+    <view class='square_list' data-sid='{{item.id}}' bindtap='sgDetail'>
+      <view class='square_pic'>
+        <image src='{{item.logo}}'></image>
+      </view>
+      <view class='square_r'>
+        <view class='sqr_title'>{{item.title}}</view>
+        <view class='sqr_content'>{{item.abstract}}</view>
+        <view class='sqr_hot'>项目热度：{{item.like_num}}</view>
+      </view>
+      <view class='clear'></view>
+    </view>
+  </block>
+</view>

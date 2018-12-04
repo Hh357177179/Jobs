@@ -1,0 +1,44 @@
+<!--pages/first/first.wxml-->
+<view class='first'>
+  <block wx:for="{{formerlyArr}}" wx:key="index">
+    <view class='userNames' bindtap='echoContent' data-name='{{item.name}}'>{{item.name}}</view>
+  </block>
+  <view class='clear'></view>
+  <view class='whoUser'>
+    <view class='whoTitle'>
+      <text class='userLabel'>画布名称：</text>
+      <view class='userInputs'>
+        <input bindinput='advUseridentity' value='{{useridentity}}' placeholder='请输入画布名称' placeholder-style='font-size:28rpx;'></input>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='whoTitle'>用户是谁</view>
+    <view>
+      <textarea class='whoText bigText' maxlength="-1" value='{{whouser}}' bindinput='advWhouser' placeholder='【描述方式】1.请举出一个具体的人，并作情况介绍' placeholder-style='font-size:28rpx;'></textarea>
+    </view>
+  </view>
+  <view class='whoTitle'>用户的需求是什么</view>
+  <view class='userNeed'>
+    <text class='textFill'>种子用户在</text>
+    <input class='fillInput' value='{{condition}}' bindinput='advCondition'></input>
+    <text class='textFill'>情况（<text class='colortext'>时隙</text></text>
+    <text class='textFill'><text class='colortext'>、场景</text>）下，要解决</text>
+    <input class='fillInput' value='{{issue}}' bindinput='advIssue'></input>
+    <text class='textFill'>的</text>
+    <text class='textFill'>问题<text class='colortext'>(即：需求)</text>,但遇到</text>
+    <input class='fillInput' value='{{cause}}' bindinput='advCause'></input>
+    <text class='textFill'>原因而解决不好(<text class='colortext'>解决不好这个“必须”的具体原</text></text>
+    <text class='textFill'><text class='colortext'>因</text>)，因此该需求得不到解决，所以痛苦。</text>
+    <view class='clear'></view>
+  </view>
+  <view class='whoUser'>
+    <textarea class='whoText' maxlength="-1" value='{{territory}}' bindinput='advTerritory' placeholder='【一个特征】1.近2-3年新增的领域' placeholder-style='font-size:28rpx;'></textarea>
+  </view>
+  <view class='whoUser'>
+    <view class='whoTitle'>用户故事</view>
+    <view>
+      <textarea class='whoText bigText' maxlength="-1" value='{{story}}' bindinput='advStory' placeholder='【三个部分】1.必须是真人真事；2.介绍你和故事当事人的关系；3.请在故事中清晰表达主人公的需求；' placeholder-style='font-size:28rpx;'></textarea>
+    </view>
+  </view>
+  <view class='submitBtn' bindtap='submitBtn'>提交</view>
+</view>

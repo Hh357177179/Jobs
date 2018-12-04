@@ -1,0 +1,35 @@
+<!--pages/confirm/confirm.wxml-->
+<view class="manage">
+	<view class="user">
+		<view class="us">
+			<image src="../../images/user.png"></image>
+		</view>	
+		<view class="use">用户管理</view>
+	</view>	
+	<view class="finance">
+		<view class="fin">
+			<image src="../../images/finance.png"></image>
+		</view>
+		<view class="ance">财务管理</view>
+	</view>
+	<view class="notice">
+		<view class="not">
+			<image src="../../images/notice.png"></image>
+		</view>
+		<view class="no">公告管理</view>	
+	</view>		
+</view>
+<view class="list">
+	<view class="examine">
+		<image src="../../images/examine.png"></image>
+		<txet>身份审核</txet>
+	</view>
+	<view class="blacklist">
+		<image src="../../images/blacklist.png"></image>
+		<txet>黑名单</txet>
+	</view>
+	<view class="order">
+		<image src="../../images/order.png"></image>
+		<txet>主题订单</txet>
+	</view>
+</view>		

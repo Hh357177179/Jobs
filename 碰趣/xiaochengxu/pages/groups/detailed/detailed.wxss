@@ -1,0 +1,303 @@
+/* pages/detailed/detailed.wxss */
+.warp {
+   margin: 0 auto;
+}
+.remove_List {
+  width: 95%;
+  margin: auto;
+}
+.clear{
+  clear: both;
+  height: 10rpx;
+  margin: 140rpx auto;
+}
+.background{
+  background: #f2f2f2;
+  padding: 0 0 20rpx 0;
+}
+
+.bgbanner{
+  width: 96%;
+  height: 450rpx;
+  margin: auto;
+  padding: 20rpx 0 10rpx 0;
+}
+.remove_Title {
+  display: block;
+  font-size: 36rpx;
+  color: #e5c51b;
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.banner-image{
+  width: 100%;
+  height: 450rpx;
+}
+.remove_Title text {
+  padding: 10rpx 20rpx;
+  border: #666 solid 1rpx;
+  margin-left: 20rpx;
+  background: #f2f2f2;
+  color: #000;
+}
+.warp .red, .warp .default {
+  float: none;
+}
+.List_same {
+  width: 100%;
+  height: 350rpx;
+}
+.List_left {
+  float: left;
+  width: 80rpx;
+  height: 350rpx;
+}
+.left-image {
+  width: 30rpx;
+  height: 350rpx;
+  display: block;
+  margin: auto;
+}
+.List_right {
+  float: left;
+  width: 600rpx;
+  height: 300rpx;
+}
+.List_time {
+  margin-top: 5rpx;
+}
+.List_time1 {
+  margin-top: 15rpx;
+}
+.List_content {
+  margin-top: 5rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /*行数*/
+  -webkit-box-orient: vertical;
+  font-size: 28rpx;
+  height: 40rpx;
+  width: 140rpx;
+  text-align: center;
+}
+.vote {
+  width: 90%;
+  background: #fa5757;
+  color: #fff;
+  border-radius: 30rpx;
+  height: 70rpx;
+  font-size: 30rpx;
+  line-height: 70rpx;
+  text-align: center;
+  margin: 0 auto;
+}
+.hidden {
+  display: none;
+}
+
+.mbp {
+  line-height: 100rpx;
+  text-align: center;
+  flex: 1;
+  border-right: 1px solid gainsboro;
+  color: #000;
+  font-weight: bold;
+  font-size: 36rpx;
+}
+
+.red {
+  line-height: 100rpx;
+  text-align: center;
+  color: #fff;
+  flex: 1;
+  border-right: 1px solid gainsboro;
+  font-weight: bold;
+  font-size: 36rpx;
+  background: #95bcf2;
+}
+
+.detail{
+  width: 95%;
+  height: auto;
+  margin: auto;
+}
+.d-title{
+  padding: 10rpx 0 10rpx 0;
+  font-size: 33rpx;
+  border-bottom: solid 1rpx #fa5757;
+  display: block;
+}
+.d-main{
+  display: flex;
+  flex-direction: column;
+  font-size: 28rpx;
+}
+.fr_r{
+  display: block;
+  width: 100%;
+}
+.fl_text{
+  float: left;
+  width: 30%;
+}
+.fr_text{
+  float: left;
+  width: 50%;
+}
+.d-main text{
+  margin-top: 15rpx;
+}
+.inside {
+  width: 95%;
+  height: auto;
+  margin: auto;
+  padding-top: 40rpx;
+}
+
+.inside_group {
+  width: auto;
+  height: auto;
+  padding: 30rpx 20rpx;
+  margin-top: 20rpx;
+}
+
+.member {
+  margin: 10rpx 0;
+}
+.member text{
+  font-size: 36rpx;
+}
+.flex-row {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.head-image {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.flex-view-item {
+  width: 100rpx;
+  height: 150rpx;
+  margin:20rpx 0 0 20rpx;
+}
+.flex-view-item image {
+  display: block;
+  width: 100rpx;
+  height: 100rpx;
+}
+.flex-view-item text {
+  display: block;
+  text-align: center;
+  font-size: 24rpx;
+  margin-top: 15rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.statement {
+  width: 100%;
+  margin: 20rpx 0rpx;
+}
+.statement text {
+  display: block;
+  font-size: 30rpx;
+}
+.show {
+  width: 100%;
+  margin: auto;
+}
+.show_more {
+  display: block;
+  width: 99%;
+  text-align: center;
+  height: 120rpx;
+  line-height: 120rpx;
+  border-top: 1px dashed #000;
+}
+.show_List {
+  display: block;
+  width: 100%;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.list_info {
+  width: 428rpx;
+}
+.add_List {
+  width: 100%;
+  background: #f2f2f2;
+  margin-top: 40rpx;
+}
+.add_single {
+  width: 100%;
+  min-height: 200rpx;
+  margin-top: 20rpx;
+  padding: 10rpx 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+.add-image {
+  width: 200rpx;
+  height: 216rpx;
+  margin-left: 20rpx;
+  float: left;
+}
+.Title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+  padding-left: 10rpx;
+}
+.Title_1 {
+  font-size: 30rpx;
+}
+.Title_2 {
+  font-size: 30rpx;
+  margin-left: 30rpx;
+}
+.Title_3 {
+  font-size: 30rpx;
+  margin-left: 30rpx;
+  text-decoration: underline;
+}
+.add_List button {
+  background: none;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.bottom{
+  width: 100%;
+  position:fixed;
+  bottom: 100rpx;
+  margin: 0 auto 0 auto;
+}
+button {
+  background: #fa5757;
+  width: 95%;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color: #fff;
+  font-size: 45rpx;
+}
+.bottom .footer {
+  background: #fa5757;
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #fff;
+  font-size: 30rpx;
+  margin: 0 auto 0 auto;
+}

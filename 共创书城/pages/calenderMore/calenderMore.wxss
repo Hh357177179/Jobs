@@ -1,0 +1,16 @@
+/* pages/calenderMore/calenderMore.wxss */
+.calenderMore{
+  padding: 20rpx 0;
+}
+.clear{
+  clear: both;
+}
+.calend_more{
+  width: 50%;
+  float: left;
+  height: 500rpx;
+}
+.calend_more image{
+  width: 100%;
+  height: 100%;
+}

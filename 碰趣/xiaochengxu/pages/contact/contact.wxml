@@ -1,0 +1,14 @@
+<!--pages/contact/contact.wxml-->
+<view class='body'>
+  <view class='head'>
+    报名信息名单
+  </view>
+  <view wx:for="{{pagedata}}" wx:for-item="pd" wx:key="{{pd.title}}">
+    <view class='content'>
+      <text class='text'>昵称：{{pd.nickName.nick_name}}</text>
+      <text class='text'>儿童：{{pd.count_child}}</text>
+      <text class='text'>成人：{{pd.count_adult}}</text>
+      <text class='text'>手机号：{{pd.mobile}}</text>
+    </view>
+  </view>
+</view>

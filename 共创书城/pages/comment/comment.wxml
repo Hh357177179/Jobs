@@ -1,0 +1,28 @@
+<!--pages/comment/comment.wxml-->
+<wxs module="dateFr" src="../../utils/dateFr.wxs"></wxs>
+<view class='comment'>
+  <block wx:for="{{listArr}}" wx:key="index">
+    <view class='comment_list'>
+      <view class='comment_pic'>
+        <block>
+          <image wx:if="{{item.type == 1}}" src='{{item.project.image}}'></image>
+          <image wx:if="{{item.type == 2}}" src='{{item.project.logo}}'></image>
+          <image wx:if="{{item.type == 3}}" src='{{item.project.logo}}'></image>
+          <image wx:if="{{item.type == 4}}" src='{{item.project.logo}}'></image>
+        </block>
+      </view>
+      <view class='comment_right'>
+        <block>
+          <view wx:if="{{item.type == 1}}" class='comment_title'>图解</view>
+          <view wx:if="{{item.type == 2}}" class='comment_title'>资料库</view>
+          <view wx:if="{{item.type == 3}}" class='comment_title'>项目广场</view>
+          <view wx:if="{{item.type == 4}}" class='comment_title'>战术小组</view>
+        </block>
+        <view class='csm_title'>{{item.project.title}}</view>
+        <view class='csm_content'>{{item.content}}</view>
+        <view class='comment_time'>{{dateFr.getDate(item.create_time * 1000,'-')}}</view>
+      </view>
+      <view class='clear'></view>
+    </view>
+  </block>
+</view>

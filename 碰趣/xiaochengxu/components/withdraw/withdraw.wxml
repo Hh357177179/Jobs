@@ -1,0 +1,12 @@
+<!--components/withdraw/withdraw.wxml-->
+<wxs module="dateFr" src="../../filter/dateFr.wxs"></wxs>
+<view class='widthdraw'>
+  <view class='drawList' wx:for="{{withdrawList}}" wx:key="{{item.id}}">
+    <view class='listPic'>
+      <image src='{{userPhoto}}' style='border-radius: 50%;'></image>
+    </view>
+    <view class='listText textLeft'>提现￥{{item.money}}</view>
+    <view class='listText textRight'>{{dateFr.getDate((item.create_time * 1000),'年' ,'月', '日')}}</view>
+    <view class='clear'></view>
+  </view>
+</view>

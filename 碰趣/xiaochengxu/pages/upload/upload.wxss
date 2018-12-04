@@ -1,0 +1,58 @@
+/* pages/upload/upload.wxss */
+.add{
+	height:auto;
+	width:100%;
+	margin-top:55rpx;
+	padding-left:42rpx;
+}
+.add_one,.add_tow,.add_list{
+	height:200rpx;
+	width:200rpx;
+	margin:10rpx;
+	float:left;
+	position:relative;
+}
+.add_one .btn,.add_tow .btn{
+	height:80rpx;
+	width:100%;
+	background:black;
+	font-size:35rpx;
+	color:#fff;
+	text-align:center;
+	line-height:80rpx;
+	opacity:0.8;
+	filter:alpha(opacity=80);
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+.add_one image,.add_tow image,.add_list image{
+	height:100%;
+	width:100%;
+}
+.add_list .bak_add{
+	height:94rpx;
+	width:96rpx;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-48rpx;
+	margin-top:-47rpx;
+}
+.en_btn{
+	height:88rpx;
+	width:100%;
+	text-align:center;
+	position:fixed;
+	bottom:53rpx;
+	left:0;
+}
+.en_btn button{
+	height:100%;
+	width:526rpx;
+	background:#fa5757;
+	font-size:32rpx;
+	color:#fff;
+	line-height:88rpx;
+	border-radius:40rpx;
+}

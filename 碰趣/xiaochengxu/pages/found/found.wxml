@@ -1,0 +1,117 @@
+<!--pages/found/found.wxml-->
+<view class="found">
+   <view class="tab">
+    <view class="{{theme?'red':'default'}}" bindtap="theme">今日主题</view>
+    <view class="{{back?'red':'default'}}" bindtap="back">精彩回放</view>
+  </view> 
+  <view class="body">
+    <view>
+      <view class="{{theme?'show':'hidden'}}">
+        <view wx:for="{{pagedata}}" wx:for-item="pd" wx:key="{{pd.title}}">
+          <view class="banner">
+            <swiper indicator-dots="true" indicator-color="rgba(255,255,255,.3)" indicator-active-color="#fff" class="bgbanner">
+              <block wx:for="{{pd.image_path}}" wx:for-item="img" wx:key="{{img.index}}"> 
+              <swiper-item>
+                <image src="https://ssl.zhaodaka.net/pengqu/uploads/images/{{img}}" class="banner-image"></image>
+                  <!-- <image src="../../images/banner1.png" class="banner-image"></image>   -->
+              </swiper-item>
+             </block>
+            </swiper>
+            <navigator url="../active/active?title=active&id={{pd.id}}">
+              <view class="head">
+                <image src="{{pd.avatarUrl}}" class="head-image"></image>
+                <view class="swiper-font">
+                  <text class="swiper-title">领队：{{pd.nickName}}</text>
+                  <text class="swiper-text">{{pd.title}}</text>
+                </view>
+              </view>
+            </navigator>
+          </view>
+          <view class="detail">
+            <view class="d-more">
+              <view class="d-list"> 
+                <text class="d-num">{{pd.type}}|{{pd.title}} </text>
+              </view> 
+              <view class="d-list">
+                <text class="d-name">开始时间：{{pd.start_time}}</text>
+              </view>
+              <view class="d-list">
+                <text class="d-name">活动地点：{{pd.address}}</text>
+              </view>
+              <view class="d-list">
+                <text class="d-name">活动费用：{{pd.adult_price}}元/成人 {{pd.child_price}}元/儿童</text>
+              </view>
+              
+              <view class="d-list last">
+                <text class="d-name">人数:{{pd.participate_num}}/{{pd.total_num}}人</text>
+              </view>
+            </view>
+          </view>
+          <view class="btn-go">
+            
+            <button id='{{pd.id}}' bindtap='like'>收藏</button>
+           
+            <navigator url="../active/active?title=active&id={{pd.id}}" wx:if="{{pd.viewer_state=='未报名'}}">
+                <button>去碰趣</button>
+            </navigator>
+            <navigator url="#" wx:if="{{pd.viewer_state=='已报名'}}">
+                <button>已报名</button>
+            </navigator>
+            <navigator>
+                <button id='{{pd.id}}' value='{{pd.title}}' open-type="share" >转发</button>
+            </navigator>
+          </view>
+        </view>
+        
+      </view>
+      <view class="{{back?'show':'hidden'}}">
+         <view wx:for="{{finisheddata}}" wx:for-item="fd" wx:key="{{fd.title}}">
+          <view class="banner">
+            <swiper indicator-dots="true" indicator-color="rgba(255,255,255,.3)" indicator-active-color="#fff" class="bgbanner">
+               <swiper-item wx:for="{{fd.image_path}}" wx:for-item="img" wx:key="img">
+                <image src="https://ssl.zhaodaka.net/pengqu/uploads/images/{{img}}" class="banner-image"></image>
+              </swiper-item>
+            
+            </swiper>
+            <view class="head">
+              <image src="{{fd.avatarUrl}}" class="head-image"></image>
+              <view class="swiper-font">
+                <text class="swiper-title">领队：{{fd.nickName}} 已认证</text>
+                <text class="swiper-text">{{fd.title}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="detail">
+            <view class="d-more">
+              <view class="d-list"> 
+                <text class="d-num">{{fd.keyword}} |{{fd.title}}</text>
+              </view> 
+              <view class="d-list">
+                <text class="d-name">开始时间：{{fd.start_time}}</text>
+                <!-- <text class="d-num">2018-4-20 12:00 ～ 2018-4-20 14:30 </text>  -->
+              </view>
+              <view class="d-list">
+                <text class="d-name">活动地点：{{fd.address}}</text>
+                <!-- <text class="d-num">上海市桂林路桂林公园桃花源</text> -->
+              </view>
+              <view class="d-list">
+                <text class="d-name">活动费用：{{fd.adult_price}}元/人</text>
+                <!-- <text class="d-num">￥20元/人</text> -->
+              </view>
+              
+              <view class="d-list last">
+                <text class="d-name">人数:{{fd.participate_num}}/{{fd.total_num}}人</text>
+                <!-- <text class="d-num">35/50人</text> -->
+              </view>
+            </view>
+          </view>
+          <view class="btn-go">
+            <navigator>
+                <button style='margin-left: 38%;'>已结束</button>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+
+var dateFormatFP =  function(sdate) {
+  var date = getDate(sdate*1000)
+  var year = date.getFullYear()
+  var month = date.getMonth() + 1
+  var day = date.getDate()
+  var hour = date.getHours()
+  var minute = date.getMinutes()
+  var second = date.getSeconds()
+  month = month < 10 ? "0" + month : month
+  day = day < 10 ? "0" + day : day
+  hour = hour < 10 ? "0" + hour : hour
+  minute = minute < 10 ? "0" + minute : minute
+  second = second < 10 ? "0" + second : second
+ 
+  return year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second
+ 
+  //+ " " + hour + ":" + minute + ":" + second
+}
+
+var getTime = function(time){
+  var strTime = ""
+  if(time){
+    strTime = time.substring(10,16)
+    
+  }
+  return strTime
+}
+ 
+ 
+
+module.exports = {
+  dateFormatFP: dateFormatFP,
+  getTime:getTime,
+ 
+}

@@ -1,0 +1,88 @@
+/* pages/board/board.wxss */
+.clear{
+  clear: both;
+}
+.board {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 120rpx;
+}
+.boardDetail{
+  width: 80%;
+  margin: 40rpx auto 0;
+  font-size: 30rpx;
+  border-radius: 20rpx;
+  border:1px solid #dbdbdb;
+  padding: 40rpx 20rpx 0;
+}
+.detaiList{
+  margin-bottom: 40rpx;
+  width: 100%;
+  float: left;
+}
+.projectLabel {
+  float: left;
+  height: 60rpx;
+}
+.projectDetail{
+  float: left;
+  width: 75%;
+}
+.orderBtn{
+  width: 30%;
+  font-size: 30rpx;
+  float: right;
+}
+.orderListBtn{
+  font-size: 30rpx;
+  width: 80%;
+  height: 80rpx;
+  margin-top: 40rpx;
+  margin-bottom: 60rpx;
+}
+.inputName{
+  height: 80rpx;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  border-radius: 10rpx;
+}
+.inputName input{
+  height: 100%;
+}
+
+.bodyMask{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 11;
+}
+.maskCard{
+  width: 80%;
+  padding: 3% 5%;
+  background: #fff;
+  z-index: 12;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+}
+.bottomBtn{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-top: 1px solid #dbdbdb;
+}

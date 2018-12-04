@@ -1,0 +1,26 @@
+/* pages/meset/meset.wxss */
+.clear{
+  clear: both
+}
+.meset{
+  padding:0 40rpx;
+}
+.meset_list{
+  font-size: 32rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+.meset_lable{
+  float: left;
+}
+.meset_right{
+  float: right;
+}
+.rightIcon{
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 30rpx;
+}
+.numText{
+  color: #666;
+}

@@ -1,0 +1,89 @@
+/* pages/groupname/groupname.wxss */
+.groupname{
+  width: 95%;
+  margin: auto;
+  height: auto;
+}
+.add_List{
+  width: 100%;
+  background: #f2f2f2;
+}
+.add_single{
+  width: 100%;
+  height: 200rpx;
+  margin-top: 20rpx;
+  padding: 10rpx 0;
+}
+.banner-image{
+  width: 200rpx;
+  height: 100%;
+  margin-left: 20rpx;
+  float: left;
+}
+.Title{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+  padding-left: 10rpx;
+}
+.Title_1{
+  font-size: 30rpx;
+}
+.Title_2{
+  font-size: 30rpx;
+  margin-left: 30rpx;
+}
+.Price{
+  width: 100%;
+  margin-top: 50rpx;
+}
+.Price_column{
+  margin-top: 60rpx;
+}
+.Price_olumn{
+  font-size: 38rpx;
+  margin-top: 60rpx;
+}
+.Price_column text{
+  float: left;
+  font-size: 38rpx;
+  line-height: 80rpx;
+}
+.Price_column input{
+  border: #999999 solid 1rpx;
+  border-radius: 10rpx;
+  height: 80rpx;
+  padding-left: 15rpx;
+  font-size: 30rpx;
+}
+.Total{
+  background: #f2f2f2;
+  height: 100rpx;
+  width: 98%;
+  border-radius: 10rpx;
+  margin-top: 80rpx;
+  line-height: 100rpx;
+  padding-left: 20rpx;
+}
+.Total text{
+  margin-left: 20rpx;
+  color: #fa5757;
+}
+.Submit{
+  width: 100%;
+  height: 120rpx;
+  margin-top: 90rpx;
+}
+.Submit text{
+  display: block;
+  width: 180rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background: #fa5757;
+  margin: auto;
+  color: #FFF;
+  border-radius: 20rpx;
+}

@@ -1,0 +1,186 @@
+.swiper-container{
+  width: 100%;
+  height: 3.15rem;
+}
+.swiper-slide img{
+  width: 100%;
+  height: 100%;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+  left: 2.5rem;
+  bottom: 0;
+}
+.swiper-pagination-bullet{
+  background: #fff;
+  opacity: 1;
+  width: 5px;
+  height: 5px;
+}
+.swiper-pagination-bullet-active {
+  background: #db1317;
+}
+.bannerBot{
+  font-size: 0.27rem;
+}
+.notice{
+  width: 5.4rem;
+  border-right: 1px solid #C9C9C9;
+  float: left;
+}
+.noticeText{
+  color: #C0131B;
+  font-weight: 700;
+  float: left;
+}
+.noticeIcon{
+  width: 0.6rem;
+  height: 0.6rem;
+  float: left;
+  margin-right: 0.1rem;
+  margin-top: 0.1rem;
+}
+.addPerson{
+  width: 100%;
+  line-height: 0.8rem;
+}
+.textIcon{
+  width: 1.35rem;
+  padding-left: 0.15rem;
+  float: left;
+  margin-right: 0.1rem;
+  margin-top: 0.21rem;
+}
+.textleft{
+  font-size: 0.24rem;
+  border-left: 1px solid #C9C9C9;
+  padding-left: 0.1rem;
+  color: #474747;
+  font-family: "微软雅黑";
+}
+.integral{
+  width: 2.1rem;
+  float: right;
+  text-align: center;
+  margin-top: 0.3rem;
+}
+.integralTit{
+  font-size: 0.32rem;
+  margin-bottom: 0.2rem;
+  font-family: "微软雅黑";
+}
+.userCard{
+  width: 6.79rem;
+  height: 2rem;
+  border-radius: 0.3rem;
+  background: #fff;
+  box-shadow: 2px 2px 1px 0px rgba(0,0,0,.56);
+  margin: 0.2rem auto;
+}
+.userPic{
+  width: 1.17rem;
+  height: 1.17rem;
+  border-radius: 50%;
+  background: #ccc;
+  margin: 0.14rem 0.11rem 0.15rem 0.33rem;
+  overflow: hidden;
+  float: left;
+}
+.userPic img {
+  width: 100%;
+  height: 100%;
+}
+.cardName{
+  font-size: 0.33rem;
+  float: left;
+  margin-top: 0.3rem;
+  border-right: 2px solid #ddd;
+  padding-right: 0.6rem;
+}
+.userphone{
+  font-size: 0.21rem;
+  font-family: "微软雅黑";
+}
+.userIntegral{
+  float: left;
+  font-size: 0.42rem;
+  margin-left: 0.6rem;
+  text-align: right;
+  margin-top: 0.3rem;
+}
+.userIntext{
+  font-size: 0.21rem;
+}
+.cardIcon{
+  margin-left: 0.36rem;
+}
+.cardIcon p{
+  float: left;
+  font-size: 0.23rem;
+  padding:0 0.15rem;
+  background: #10C55B;
+  color: #fff;
+  border-radius: 17px;
+  margin-right: 0.27rem;
+  line-height: 0.5rem;
+}
+.listIcon{
+  float: left;
+  width: 0.4rem;
+  height: 0.4rem;
+}
+.listIcon img{
+  width: 100%;
+  height: 100%;
+}
+.picList{
+  margin-top: 0.2rem;
+  width: 100%;
+  padding-bottom: 1.5rem;
+}
+.picUl li{
+  width: 33.33%;
+  float: left;
+  text-align: center;
+  font-size: 0.25rem;
+  font-weight: bold;
+}
+.picUl li img{
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+
+/* 底部tab */
+.foot{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1rem;
+  font-size: 0.25rem;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+.footUl li{
+  float: left;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  color: #323232;
+}
+.footIcon{
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: 0.05rem auto ;
+}
+.footIcon img{
+  width: 100%;
+  height: 100%;
+}
+.footUl .footActive {
+  color: #F98731;
+}
+.tabIcon{
+  font-size: 0.45rem;
+  margin-top: 5px;
+}

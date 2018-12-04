@@ -1,0 +1,40 @@
+/* pages/thirdD/thirdD.wxss */
+.firstD{
+  padding: 20rpx 40rpx;
+}
+.title{
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+  margin-top: 20rpx;
+}
+.cardMain{
+  /* width: 100%; */
+  border-radius: 10rpx;
+  border: 1px solid #d9d9d9;
+  min-height: 200rpx;
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  padding: 0 20rpx;
+}
+.textcolor{
+  color: #DD5F1B; 
+}
+.textG{
+  color: #a6a6a6;
+}
+.usertitle{
+  float: left;
+  font-size:32rpx;
+  margin-bottom:10rpx;
+  margin-top:20rpx;
+}
+.uNamesClass{
+  float: left;
+  font-size: 30rpx;
+  margin-left: 10rpx;
+  margin-top:21rpx;
+}
+.clear{
+  clear: both;
+}

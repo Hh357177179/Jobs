@@ -1,0 +1,9 @@
+<!--pages/listDetail/listDetail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='listDetail'>
+  <view class='detail_title'>{{detailObj.title}}</view>
+  <view class='detail_time'>{{detailObj.create_time}}</view>
+  <view class='detail_main'>
+    <view><template is="wxParse" data="{{wxParseData:article.nodes}}" /></view> 
+  </view>
+</view>

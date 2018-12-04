@@ -1,0 +1,65 @@
+<!-- pages/addtrip/addtrip.wxml -->
+<view class="warp">
+  <view class="nav">
+    <view class="{{candidate?'red':'default'}}" bindtap="tabChange" data-target="candidate">
+      候选列表
+    </view>
+    <view class="{{selected?'red':'default'}}" bindtap="tabChange" data-target="selected">
+      已选主题
+    </view>
+  </view>
+  <view class="{{candidate?'show':'hidden'}}">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" class="weui-search-bar__input" placeholder="搜索" confirm-type="search" bindconfirm="searchAction" />
+      <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+        <icon type="clear" size="14"></icon>
+      </view>
+    </view>
+    <view class="add_List" wx:for="{{activelist}}" for:key="{{index}}">
+      <view class="add_single">
+        <image class="banner-image" src="{{item.image_path[0]}}"></image>
+        <view class="Title Title_1">{{item.title}}</view>
+        <view class="Title">
+          <text class="Title_1">活动时间：</text>
+          {{item.start_time}}
+        </view>
+        <view class="Title">
+          <text class="Title_1">活动地点：</text>
+          {{item.address}}
+        </view>
+        <view class="Title">
+          <text class="Title_1">单价：</text>
+          ￥{{item.adult_price}}元
+          <text class="Title_2">人数</text>
+          {{item.participate_num}}/{{item.total_num}}
+        </view>
+      </view>
+      <button data-id="{{item.id}}" bindtap="addItinerary">添加</button>
+    </view>
+    <!-- <view class='fouter'>确定</view> -->
+  </view>
+  <view class="{{selected?'show':'hidden'}}">
+    <view class="remove_List">
+      <text class="remove_Title">团队主行程：</text>
+      <view class="List_same" wx:for="{{selected_active}}" wx:key="{{item.id}}">
+        <view class="List_left">
+          <image class="left-image" src="/images/List.png"></image>
+        </view>
+        <view class="List_right">
+          <view class="List_time">{{item.activity.start_time}}</view>
+          <view class="List_content">小时游：{{item.activity.type}}</view>
+            <navigator url="../appoint/appoint?pid={{item.id}}&group_id={{item.group_id}}">
+              <view class="List_content">{{item.activity.title}}</view>
+              <view class="List_content">{{item.activity.content}}</view>
+            </navigator>
+          <view class="List_content">执行团长：{{item.leader.nick_name?item.leader.nick_name:'无'}}</view>
+          <view class="remove" data-id="{{item.activity.id}}" bindtap="deltinerary">移除</view>
+        </view>
+      </view>
+    </view>
+      <navigator url="../detailed/detailed?group_id={{group_id}}">
+    <view class="fouter">确定</view>
+    </navigator>
+  </view>
+</view>

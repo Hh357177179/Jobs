@@ -1,0 +1,29 @@
+<!-- pages/grouplist/grouplist.wxml -->
+<block wx:for="{{myGrouplist}}" wx:key="{{item.id}}">
+  <view>
+    <view class="banner">
+      <swiper indicator-dots="true" indicator-color="rgba(255,255,255,.3)" indicator-active-color="#fff" class="bgbanner">
+        <swiper-item wx:for="{{item.format_img_url}}">
+          <image src="{{item}}" class="banner-image"></image>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class="detail">
+      <text class="d-title">{{item.title}}</text>
+      <text class="d-title">时间：{{item.start_time}}~{{item.end_time}}</text>
+      <text class="d-title"></text>
+      <navigator url="../addgroup/addgroup?gp_id={{item.id}}">
+        <button class="btn-up" data-index="">修改</button>
+      </navigator>
+      <navigator url="../detailed/detailed?group_id={{item.id}}">
+        <button class="btn-up" data-index="">查看</button>
+      </navigator>
+        <navigator url="../addtrip/addtrip?group_id={{item.id}}">
+        <button class="btn-up" data-index="">修改行程</button>
+      </navigator>
+      <!-- <navigator url="">
+    <button class="btn-up" data-index="" bindtap='goModify'>删除</button>
+  </navigator> -->
+    </view>
+  </view>
+</block>

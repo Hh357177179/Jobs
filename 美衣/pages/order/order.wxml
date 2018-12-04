@@ -1,0 +1,23 @@
+<!--pages/order/order.wxml-->
+<view class='order'>
+  <view class='order_label'>
+    <text class='labels'>简述：</text>
+    <textarea class='orderInfo' value='{{orderInfo}}' bindinput='advorder' auto-height="true" maxlength='200'></textarea>
+    <view class='clear'></view>
+  </view>
+  <view class='order_type'>
+    <text class='type_label'>服务类型：</text>
+  </view>
+  <view class='type_input'>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{typeArr}}">
+      <view class="picker">{{typedefault}}</view>
+    </picker>
+  </view>
+  <view class='clear'></view>
+  <view class='submit_order' bindtap='submit_order'>提交</view>
+  <view class='order_des'>*美衣修修服务平台客服人员会在您咨询后工作时间内60分钟内回拨您的电话，进行回访，请您静候。</view>
+  <view class='order_desB'>
+    <view>工作时间：周一至周日 9:00-18：00</view>
+    <view>节假日不休息</view>
+  </view>
+</view>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>班得瑞高尔夫-新用户注册</title>
+  <script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            if (clientWidth >= 750) {
+              docEl.style.fontSize = '100px';
+            } else {
+              docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+            }
+          };
+  
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+      })(document, window);
+    </script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+  <div class="register">
+    <div class="regBanner">
+      <p class="bigTitle">班得瑞高尔夫</p>
+      <p class="smallTitle">一生两世，再出发；做回自己，不忘初心</p>
+    </div>
+    <div class="registerForm">
+      <form action="#">
+        <p class="formList clearfix">
+          <span class="listLabe">姓&#X3000;&#X3000;名:</span>
+          <input type="text" placeholder="填写真实姓名">
+        </p>
+        <p class="formList clearfix">
+          <span class="listLabe">电&#X3000;&#X3000;话:</span>
+          <input type="tel" placeholder="填写手机号码">
+        </p>
+        <p class="formList clearfix">
+          <span class="listLabe">身份证号:</span>
+          <input type="tel" placeholder="填写身份证号">
+        </p>
+        <p class="formList clearfix">
+          <span class="listLabe">验&nbsp;&nbsp;证&nbsp;&nbsp;码:</span>
+          <input class="getCode" type="tel" placeholder="短信验证码">
+          <i class="codeBtn">获取验证码</i>
+        </p>
+        <p class="checkText clearfix">
+          <span class="trueIcon">
+            <img src="img/trueIcon.png" alt="">
+          </span>
+          <span style="float:left;">
+            我已阅读并接受<i style="color:#FF2832;">《班得瑞高尔夫用户注册协议》</i>
+          </span>
+        </p>
+      </form>
+    </div>
+    <div class="registerBtn">立即注册</div>
+    <div class="errorMsg">错误信息展示框</div>
+  </div>
+  
+
+  <!-- 注册成功弹窗 -->
+  <div class="regModal">
+    <div class="successIcon">
+      <img src="img/scuIcon.png" alt="">
+    </div>
+    <p class="sucText">恭喜您注册成功！</p>
+    <p class="engText">Congratulations on your registration successful!</p>
+    <div class="modalBtn">
+      <p class="upgrade">
+        <a href="办理会员.html">升级会员</a>
+      </p>
+      <p class="backHome">
+        <a href="首页.html">返回首页</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- 错误信息提示弹窗 -->
+  <div class="showMsg">
+    错误信息提示
+  </div>
+
+</body>
+
+</html>
+
+<script src="js/jquery-1.10.2.js"></script>
+<script>
+
+  // 点击出现注册成功弹窗
+  $('.registerBtn').click(function() {
+    $('.regModal').fadeIn('fast');   // 如果需要隐藏 fadeIn 换成 fadeOut方法就可以
+  })
+
+  // 点击出现错误信息提示框
+  $('.errorMsg').click(function () {
+    $('.showMsg').fadeIn();
+    setTimeout(function() {
+      $('.showMsg').fadeOut();
+    }, 2000)
+  })
+
+</script>

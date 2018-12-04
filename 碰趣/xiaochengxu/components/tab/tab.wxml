@@ -1,0 +1,38 @@
+<!--components/ta'b.wxml-->
+<view class="state">
+   
+     <view class="my">
+        <navigator url="/pages/trip/trip" open-type='switchTab'>
+            <image src="/images/touchDay.png"></image>
+            <view>碰主题</view>
+        </navigator>
+    </view>
+
+     <view class="my">
+        <navigator url="/pages/groups/future/future" open-type='switchTab'>
+            <image src="/images/find.png"  mode='aspectFit'></image>
+            <view>碰趣团</view>
+        </navigator>
+    </view>
+
+    <view class="my">
+        <navigator url="/pages/createsPage/createsPage" open-type='switchTab'>
+            <image src="/images/activity.png"  mode='aspectFit'></image>
+            <view>创建</view>
+        </navigator>
+    </view>
+
+    <view class="my">
+        <navigator url="/pages/companion/PlaymateList/PlaymateList" open-type='switchTab'>
+            <image src="/images/Playmate.png"  mode='aspectFit'></image>
+            <view>碰游伴</view>
+        </navigator>
+    </view>
+   
+    <view class="my">
+        <navigator url="/pages/my/my" open-type='switchTab'>
+            <image src="/images/my.png"  mode='aspectFit'></image>
+            <view>我的</view>
+        </navigator>
+    </view>
+  </view>

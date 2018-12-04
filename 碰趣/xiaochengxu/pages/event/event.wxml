@@ -1,0 +1,124 @@
+<!--pages/event/event.wxml-->
+<view class="found event">
+  <view class="e-swiper">
+    <view class="banner">
+      <swiper indicator-dots="true" indicator-color="rgba(255,255,255,.3)" indicator-active-color="#fff" class="bgbanner">
+        <swiper-item>
+          <image src="../../images/banner1.png" class="banner-image"></image>
+        </swiper-item>
+        <swiper-item>
+          <image src="../../images/banner1.png" class="banner-image"></image>
+        </swiper-item>
+        <swiper-item>
+          <image src="../../images/banner1.png" class="banner-image"></image>
+        </swiper-item>
+        <swiper-item>
+          <image src="../../images/banner1.png" class="banner-image"></image>
+        </swiper-item>
+        <swiper-item>
+          <image src="../../images/banner1.png" class="banner-image"></image>
+        </swiper-item>
+      </swiper>
+      <view class="head">
+        <image src="../../images/yhead.png" class="head-image"></image>
+        <view class="swiper-font">
+          <text class="swiper-title">三月桃林芳菲</text>
+          <text class="swiper-text">3/30-4/5</text>
+        </view>
+      </view>
+    </view>
+    <view class="detail">
+      <text class="d-title">活动详情</text>
+      <view class="d-main">
+        <text>为什么在这个季节去这里？</text>
+        <text>只为遇见像桃花一般的你</text>
+        <text>三四月份的西藏林芝，桃花满山盛开</text>
+        <text class="last">就差你在这春色里</text>
+        <view class="d-get">
+          <view class="d-down">查看全部</view>
+          <image src="../../images/moredown.png"></image> 
+        </view>
+      </view>
+      <view class="d-more">
+        <view class="d-list">
+          <text class="d-name">创建人</text>
+          <text class="d-num d-num3">杨颖</text>
+          <text class="cert">已认证</text>
+        </view>
+        <view class="d-list">
+          <text class="d-name">活动费用</text>
+          <text class="d-num">￥20元/人</text>
+        </view>
+        <view class="d-list">
+          <text class="d-name">活动时间</text>
+          <text class="d-num">2018年3月8<text class="d-space">中午12:00</text></text>
+        </view>
+        <view class="d-list last">
+          <text class="d-name">成团人数</text>
+          <text class="d-num">35人成团</text>
+        </view>
+      </view>
+      <view class="d-dress">
+        <text>南京市秦淮区弓箭坊40号</text>
+        <image src="../../images/to.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="e-join">
+    <view class="join">已报名</view>
+    <view class="people">
+      <image src="../../images/man.png"></image>
+      <image src="../../images/woman.png"></image>
+      <image src="../../images/man.png"></image>
+      <image src="../../images/woman.png"></image>
+      <image src="../../images/man.png"></image>
+      <image src="../../images/woman.png"></image>
+      <image src="../../images/man.png"></image>
+      <image src="../../images/woman.png"></image>
+      <image src="../../images/man.png"></image>
+      <image src="../../images/woman.png"></image>
+    </view>
+  </view>
+  <view class="e-chat">
+    <view class="e-icon">
+      <view class="love">
+        <image src="../../images/love.png" ></image>
+        <text>23</text>
+      </view>
+      <view class="chat">
+        <image src="../../images/chat.png" ></image>
+        <text>203</text>
+      </view>
+      <view class="e-theme">更多主题</view>
+    </view>
+    <view class="e-pop">
+      <view class="man">
+        <image src="../../images/men.png"></image>
+        <view class="slim">
+          <text class="name">小强</text>
+          <text class="core">(4.9)</text>
+          <text class="time">2014/4/4</text>
+          <view class="help">这个富贵帮我减肥到了50kg,超厉害的</view>
+        </view>
+      </view>
+      <view class="man man1">
+        <image src="../../images/men.png"></image>
+        <view class="slim">
+          <text class="name">小强</text>
+          <text class="core">(4.9)</text>
+          <text class="time">2014/4/4</text>
+          <view class="help">这个富贵帮我减肥到了50kg,超厉害的</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="e-show">
+    <view class="show">我的精彩瞬间</view>
+    <view class="photo">
+      <image src="../../images/active1.png"></image>
+      <image src="../../images/active2.png"></image>
+      <image src="../../images/active3.png"></image>
+    </view>
+  </view>
+  <view class="ft">活动已结束</view> 
+</view>

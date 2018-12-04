@@ -1,0 +1,6 @@
+<!--pages/wallet/wallet.wxml-->
+<view class='wallet'>
+  <view class='topInfo'>
+    
+  </view>
+</view>

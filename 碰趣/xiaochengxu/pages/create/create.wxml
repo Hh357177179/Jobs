@@ -1,0 +1,133 @@
+<!--pages/create/create.wxml-->
+<form bindsubmit="submit">
+  <!-- <view class="create">
+    <button>活动主题创建</button>
+  </view> -->
+  <view class="title">
+    <text decode="{{true}}">标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题：</text>
+    <input class='reply_text' placeholder="精彩的标题会吸引更多的人参与哦" focus="{{true}}" value='{{name}}' bindblur='bindNameInput' />
+  </view>
+  <view class="title">
+    <text>联系方式：</text>
+    <input class='reply_text' type='number' placeholder="手机号码" value='{{phone}}' bindblur='bindPhoneInput' />
+  </view>
+  <view class="time">
+    <text decode="{{true}}">主题时长：</text>
+    <view class="new">
+      <picker bindchange="bindPickerChange_type" range="{{arrayType}}">
+        <view class="weui-input">{{type}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class="title dress">
+    <text decode="{{true}}">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点：</text>
+    <input class='detail_input' placeholder="" value='{{localaddress}}' bindblur='bindDetailInput' />
+    <view class='ca' bindtap='chooseAddressAction'>选择地点</view>
+  </view>
+  <view class="title">
+    <text decode="{{true}}">人&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数： </text>
+    <input class='reply_text' type='number' placeholder="人数" value='{{total_num}}' bindblur='bindTotalNumInput' />
+  </view>
+  <view class="title">
+    <text>开始日期：</text>
+    <view class="section">
+      <picker mode="date" value="{{begin_date}}" start="2018-01-01" bindchange="bindDateChange">
+        <view class="reply_text">
+          {{begin_date}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="title">
+    <text>开始时间：</text>
+    <view class="section">
+      <picker mode="time" value="{{begin_time}}" start="00:00" end="24:00" bindchange="bindTimeChange">
+        <view class="reply_text">
+        {{begin_time}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="title">
+    <text>成人单价：</text>
+    <input class='reply_text' type='number' placeholder="元/人" value='{{adult_price}}' bindblur='bindAdultPriceInput' />
+  </view>
+  <view class="title">
+    <text>儿童单价：</text>
+    <input class='reply_text' type='number' placeholder="元/人" value='0' bindblur='bindChildPriceInput' />
+  </view>
+  
+  <!-- <view class="word">
+    <text class="key">主题靓点关键词: </text>
+    <text class="limit">(限制15字)</text>    
+  </view> 
+   <view class="section">
+    <textarea class="area" maxlength="50" placeholder="关键词" focus="{{true}}" value='{{name}}' bindblur='bindKeywordInput'/> 
+  </view>  -->
+  <view class="word">
+    <text class="key">主题详细内容:</text>
+  </view>
+  <view class="section">
+    <textarea class="area" placeholder="详细内容" focus="{{true}}" value='{{name}}' bindblur='bindContentInput' maxlength='-1' />
+  </view>
+  <view class="word">
+    <text class="key">主题图片上传:</text>
+  </view>
+  <view class='uploadImg_img'>
+    <view class="flex-row">
+      <view class='flex-view-item' wx:for="{{image}}" wx:key='feedbackImg'>
+        <image class='upload_img' src='https://ssl.zhaodaka.net/pengqu/uploads/images/{{image[index]}}'></image>
+        <button bindtap='delectImg' data-num='{{index}}'>删除</button>
+      </view>
+      <view class='flex-view-item'>
+        <image class='uploadImg' src='../../images/woman.png' bindtap='uploadImg' class='addimg' style='display:{{img_button}}'></image>
+      </view>
+    </view>
+  </view>
+  <view class="active">
+    <text>活动进行中是否能报名</text>
+    <switch bindchange="switch2Change" color="#363637" />
+  </view>
+  <view class="no">
+    <text>是否重复</text>
+    <switch bindchange="switch1Change" color="#fa5757" />
+  </view>
+  <view wx:if='{{is_repeat==true}}'>
+    <view class="title">
+      <text>开始日期：</text>
+      <view class="section">
+        <picker mode="date" value="{{repeat_start_date}}" start="2018-01-01" bindchange="bindRepeatStartDate">
+          <view class="reply_text">
+            {{repeat_start_date}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="title">
+      <text>结束日期：</text>
+      <view class="section">
+        <picker mode="date" value="{{repeat_end_date}}" start="2018-01-01" bindchange="bindRepeatEndDate">
+          <view class="reply_text">
+            {{repeat_end_date}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="list">
+      <view class="list1">
+        <text>重复</text>
+        <view class="down">
+          <image src="../../images/down.png"></image>
+        </view>
+      </view>
+      <checkbox-group class='free-radios' bindchange="checkChange">
+        <label class="{{is_repeat?'display_show':'display_none'}}" wx:for="{{items}}" wx:key="{{items}}">
+          <checkbox value="{{item.label}}" checked="{{item.checked}}" disabled="{{item.disabled}}">{{item.value}}</checkbox>
+        </label>
+      </checkbox-group>
+    </view>
+  </view>
+  <view class="ok">
+    <button bindtap='submit'>确定提交</button>
+  </view>
+</form>

@@ -1,0 +1,56 @@
+/* pages/search/search.wxss */
+.placCss{
+  font-size: 30rpx;
+  color: #dbdbdb;
+}
+.searchTop{
+  width: 75%;
+  margin:30rpx 20rpx;
+  float: left;
+  position: relative;
+  border: 1px solid #dbdbdb;
+  border-radius: 20rpx;
+}
+.searInp{
+  width: 85%;
+  height: 80rpx;
+  padding-left: 20rpx;
+}
+.clearInput{
+  position: absolute;
+  top: 20rpx;
+  right: 30rpx;
+}
+.iconSearch{
+  float: left;
+  margin-left: 20rpx;
+  margin-top: 40rpx;
+}
+.clear{
+  clear: both;
+}
+.detailMain{
+  width: 100%;
+  margin-top: 144rpx;
+}
+.detailList{
+  width: 50%;
+  float: left;
+  height: 500rpx;
+  
+}
+.detailList image{
+  width: 100%;
+  height: 100%;
+}
+.detailTit{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.cardPic{
+  width: 50%;
+  height: 500rpx;
+  float: left;
+}

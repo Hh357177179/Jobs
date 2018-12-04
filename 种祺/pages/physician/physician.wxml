@@ -1,0 +1,23 @@
+<!--pages/physician/physician.wxml-->
+<view class='physician'>
+  <view class='top_text' wx:if="{{showAudit}}">推拿手法技术的基本要求是持久、有力、均匀、柔和。“持久”是指手法能够持续运用一定时间，保持动作和力量的连贯性。“有力”是指手法必须具备一定的力量，并根据治疗对象、体质、病证虚实、施治部位和手法性质而变化。“均匀”是指手法动作的节奏、频率、压力大小要一定。“柔和”是指手法动作的轻柔灵活及力量的缓和，不能用滞劲蛮力或突发暴力，要“轻而不浮，重而不滞”。以上要求是密切相关、相辅相成的。持久能使手法逐渐深透有力，均匀协调的动作可使手法更趋柔和，而力量与技巧相结合则使手法既有力又柔和，即所谓“刚柔相兼”。在手法的掌握中，力量是基础，手法技巧是关键，两者必须兼有。</view>
+  <view wx:if="{{showMain}}">
+    <block wx:for="{{specialist}}" wx:key="index">
+      <view class='physicianList'>
+        <view class='physicianPic'>
+          <image src='{{item.photo}}'></image>
+        </view>
+        <view class='physicianinfo'>
+          <view class='infoTitle'>专家讲师：{{item.name}}</view>
+          <block wx:for="{{item.record}}" wx:for-item="ritem" wx:key="ritem">
+            <view class='infoMain'>
+              <text style='font-weight: bold;'>·</text>
+              <text>{{ritem}}</text>
+            </view>
+          </block>
+        </view>
+        <view class='clear'></view>
+      </view>
+    </block>
+  </view>
+</view>

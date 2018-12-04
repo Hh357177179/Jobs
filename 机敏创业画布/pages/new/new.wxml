@@ -1,0 +1,9 @@
+<!--pages/new/new.wxml-->
+<view class='new'>
+  <view class='chooseTemp'>
+    <view class='cList' bindtap='firstRoute'>机敏创业画布--中修一阶</view>
+    <view class='cList' bindtap='secondRoute'>机敏创业画布--中修二阶</view>
+    <view class='cList' bindtap='thirdRoute'>机敏创业画布--中修三阶</view>
+    <view class='cList' bindtap='fourthRoute'>机敏创业画布--高修</view>
+  </view>
+</view>

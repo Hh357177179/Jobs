@@ -1,0 +1,58 @@
+.golfers{
+  width: 100%;
+  min-height: 100%;
+  background: #eff0f1;
+  padding-bottom: 2rem;
+}
+.golferList{
+  padding: 0.2rem 0.4rem;
+  background: #fff;
+  margin-bottom: 0.2rem;
+}
+.topList{
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 0.2rem;
+}
+.listPic{
+  width: 1.2rem;
+  height: 1.2rem;
+  float: left;
+}
+.listPic img{
+  width: 100%;
+  height: 100%;
+}
+.listText{
+  float: left;
+  margin-left: 0.4rem;
+}
+.userName{
+  color: #333;
+  font-size: 0.35rem;
+  margin-top: 0.1rem;
+}
+.createTime{
+  font-size: 0.26rem;
+  color: #333;
+  margin-top: 0.15rem;
+  font-family: "微软雅黑";
+}
+.popularize{
+  float: right;
+  font-size: 0.25rem;
+}
+.listBot{
+  font-size: 0.26rem;
+  color: #666;
+  margin-top: 0.1rem;
+}
+.moreClick{
+  font-size: 0.28rem;
+  text-align: center;
+  border: 1px solid #FFB400;
+  color: #FFB400;
+  width: 2.5rem;
+  border-radius: 0.1rem;
+  padding: 0.1rem 0;
+  margin: 0 auto;
+}

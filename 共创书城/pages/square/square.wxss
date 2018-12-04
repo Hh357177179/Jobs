@@ -1,0 +1,50 @@
+/* pages/square/square.wxss */
+.clear{
+  clear: both;
+}
+.square{
+  padding: 0 20rpx;
+}
+.square_list{
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.square_pic{
+  width: 210rpx;
+  height: 210rpx;
+  /* background: #ccc; */
+  float: left;
+}
+.square_r{
+  width: 460rpx;
+  /* background: #ccc; */
+  float: left;
+  margin-left: 30rpx;
+}
+.sqr_title{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 600;
+}
+.sqr_content{
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 6rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  height: 126rpx;
+}
+.sqr_hot{
+  font-size: 26rpx;
+  color: #333;
+}
+.square_pic image{
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,103 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.0",
+	"appid": "wx81f6e9b279dff1f7",
+	"projectname": "%E5%85%B1%E5%88%9B%E4%B9%A6%E5%9F%8E",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 9,
+			"list": [
+				{
+					"id": 0,
+					"name": "分享测试",
+					"pathName": "pages/picHome/picHome",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "设置",
+					"pathName": "pages/setting/setting",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/meset/meset",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的共创力",
+					"pathName": "pages/creation/creation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "习学",
+					"pathName": "pages/study/study",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "项目广场",
+					"pathName": "pages/square/square",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "图解",
+					"pathName": "pages/picHome/picHome",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "收藏",
+					"pathName": "pages/collect/collect",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "战术小组",
+					"pathName": "pages/group/group",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "demo",
+					"pathName": "pages/demo/demo"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/perfectinfo/perfectinfo",
+    "pages/order/order",
+    "pages/listDetail/listDetail",
+    "pages/login/login",
+    "pages/pay/pay"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#68F2ED",
+    "navigationBarTitleText": "美衣修修预约平台",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#b8f5f3",
+    "selectedColor": "#68F2ED",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/listIcon.png",
+        "selectedIconPath": "images/listIconC.png",
+        "text": "文章"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "iconPath": "images/order.png",
+        "selectedIconPath": "images/orderC.png",
+        "text": "预约"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

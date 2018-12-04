@@ -1,0 +1,132 @@
+/* pages/companion/Playmate/Playmate.wxss */
+
+.content{
+  width: 100%;
+  height: 100%;
+  padding-bottom: 80rpx;
+}
+.head{
+  width: 100%;
+  height: 250rpx;
+  background: #DD5F1B;
+  padding: 20rpx 0;
+}
+.head button{
+  margin: auto;
+  width: 250rpx;
+  height: 250rpx;
+  background: #FFFFFF;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 250rpx;
+  font-size: 36rpx;
+  color: #DD5F1B;
+  font-weight: bold;
+}
+.Part{
+  width: 100%;
+  height: auto;
+  margin-top: 60rpx;
+}
+.Territory{
+  width: 95%;
+  height: auto;
+  margin: auto;
+}
+.block{
+  width: 100%;
+  height: 300rpx;
+  background: #f2f2f2;
+  padding: 20rpx 0;
+  margin-top: 30rpx;
+}
+.place{
+  width: 90%;
+  margin: auto;
+  height: 80rpx;
+}
+.head-image{
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  float: left;
+}
+.place_text{
+  display: block;
+  line-height: 80rpx;
+  font-size: 34rpx;
+  width: 550rpx;
+  overflow: hidden;
+}
+.block-image{
+  float: left;
+  margin-top: 15rpx;
+  width: 260rpx;
+  height: 60rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.place-image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  float: left;
+  margin-left: -30rpx;
+}
+.soul{
+  float: left;
+  line-height: 80rpx;
+  font-size: 34rpx;
+}
+.soul_One{
+  float: left;
+  line-height: 80rpx;
+  font-size: 34rpx;
+}
+.Touch{
+  width: 80%;
+  height: 70rpx;
+  margin: auto;
+}
+.Touch button{
+  float: left;
+  width: 40%;
+  height: 70rpx;
+  text-align:center;
+  line-height: 70rpx;
+  margin-left: 5%;
+  margin-top: 40rpx;
+  background: #FFFFFF;
+  border: #000000 solid 1rpx;
+  font-size: 35rpx;
+}
+.part_border{
+  display: block;
+  width: 100%;
+  height: 5rpx;
+  background: #DD5F1B;
+  margin-top: 80rpx;
+}
+.Popular{
+  width: 95%;
+  height: auto;
+  margin: auto;
+}
+.Popular_Touch{
+  width: 80%;
+  height: 80rpx;
+  margin: auto;
+}
+.Popular_Touch button{
+  float: left;
+  width: 80%;
+  height: 80rpx;
+  text-align:center;
+  line-height: 80rpx;
+  margin-left: 10%;
+  margin-top: 40rpx;
+  background: #FFFFFF;
+  border: #000000 solid 1rpx;
+}

@@ -1,0 +1,5 @@
+/* pages/searchMap/searchMap.wxss */
+.searchMap{
+  width: 100%;
+  height: 100vh;
+}

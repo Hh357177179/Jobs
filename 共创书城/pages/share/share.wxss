@@ -1,0 +1,46 @@
+/* pages/share/share.wxss */
+.clear{
+  clear: both;
+}
+.share{
+  padding: 0 30rpx;
+}
+.share_list{
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.share_pic{
+  width: 180rpx;
+  height: 180rpx;
+  background: #ccc;
+  float: left;
+}
+.share_pic image{
+  width: 100%;
+  height: 100%;
+}
+.share_right{
+  float: left;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+  width: 480rpx;
+}
+.share_title{
+  font-size: 30rpx;
+  color: #333;
+  margin-top: 5rpx;
+}
+.csm_title{
+  font-size: 30rpx;
+  margin-top: 5rpx;
+}
+.share_time{
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 5rpx;
+  float: right;
+}
+.share_btn{
+  float: right;
+  font-size: 28rpx;
+}

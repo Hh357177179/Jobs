@@ -1,0 +1,18 @@
+/* pages/new/new.wxss */
+.new{
+  width: 100%;
+  height: 100%;
+}
+.chooseTemp{
+  margin-top: 200rpx;
+}
+.cList{
+  width: 400rpx;
+  font-size: 30rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  border: 1px solid #DD5F1B;
+  padding: 30rpx 0;
+  margin: 80rpx auto 0;
+  color: #DD5F1B;
+}

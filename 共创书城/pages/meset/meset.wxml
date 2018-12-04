@@ -1,0 +1,53 @@
+<!--pages/meset/meset.wxml-->
+<view class='meset'>
+  <block>
+    <view class='meset_list' bindtap='cTogether'>
+      <view class='meset_lable'>共创力</view>
+      <view class='meset_right'>
+        <!-- <text>0</text> -->
+        <image class='rightIcon' src='../../images/rights.png'></image>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='meset_list' bindtap='cStudy'>
+      <view class='meset_lable'>习学</view>
+      <view class='meset_right'>
+        <text class='numText'>{{browse}}</text>
+        <image class='rightIcon' src='../../images/rights.png'></image>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='meset_list' bindtap='cCollect'>
+      <view class='meset_lable'>收藏</view>
+      <view class='meset_right'>
+        <text class='numText'>{{collection}}</text>
+        <image class='rightIcon' src='../../images/rights.png'></image>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='meset_list' bindtap='cPraise'>
+      <view class='meset_lable'>点赞</view>
+      <view class='meset_right'>
+        <text class='numText'>{{like}}</text>
+        <image class='rightIcon' src='../../images/rights.png'></image>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='meset_list' bindtap='cShare'>
+      <view class='meset_lable'>分享</view>
+      <view class='meset_right'>
+        <text class='numText'>{{share}}</text>
+        <image class='rightIcon' src='../../images/rights.png'></image>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='meset_list' bindtap='cComment'>
+      <view class='meset_lable'>评论</view>
+      <view class='meset_right'>
+        <text class='numText'>{{comment}}</text>
+        <image class='rightIcon' src='../../images/rights.png'></image>
+      </view>
+      <view class='clear'></view>
+    </view>
+  </block>
+</view>

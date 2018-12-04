@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>我的球友</title>
+  <script>
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          if (clientWidth >= 750) {
+            docEl.style.fontSize = '100px';
+          } else {
+            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+          }
+        };
+
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/golfers.css">
+</head>
+<body>
+  <div class="golfers">
+    <div class="golferList">
+      <div class="topList clearfix">
+        <div class="listPic">
+          <img src="image/codeImg.jpg" alt="">
+        </div>
+        <div class="listText">
+          <p class="userName">张三</p>
+          <p class="createTime">注册时间：2018-10-08</p>
+        </div>
+        <div class="popularize">推广0人</div>
+      </div>
+      <div class="listBot">角色：店铺投资人</div>
+    </div>
+    <div class="moreClick">点击加载更多</div>
+  </div>
+</body>
+</html>

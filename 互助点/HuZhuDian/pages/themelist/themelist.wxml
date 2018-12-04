@@ -1,0 +1,36 @@
+<view class='Outer_layer'>
+  <view class='centre' wx:if="{{ isProduction }}">
+  <view class="goTheme">
+  <navigator url="../theme/theme">
+    +发布
+  </navigator>
+  </view>
+  <scroll-view scroll-y class="log-scroll-view" lower-threshold="50" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" style="height:{{scrollHeight}}px;">
+    <view wx:for="{{list}}" wx:key="*this">
+      <navigator url="../themedetail/themedetail?id={{ item.id }}" class='classification' bindtap='onclick'>
+        <view class='box'>
+          <view class='box-1'>
+            <view class='boxSon'>
+              <text class='name'>{{ item.title }}</text>
+            </view>
+            <view class="middle">
+              <text class="author">作者:{{ item.author }}</text>
+              <text class="time">发布时间:{{ item.create_time }}</text>
+              <text class="comment">评论({{ item.comments_count }})</text>
+            </view>
+            <view class='end'>
+              <view class='money'>
+                <text class='ongoing-state'>{{ item.content }}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  <view class="no-more">没有更多了...</view>
+  </scroll-view>
+  </view>
+<view style="width:100%;line-height:300px;text-align:center" wx:else>
+  骏璋（上海）企业管理咨询有限公司
+</view>
+</view>

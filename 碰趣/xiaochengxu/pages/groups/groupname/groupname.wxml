@@ -1,0 +1,32 @@
+<!--pages/groupname/groupname.wxml-->
+<view class='groupname'>
+  <view class='add_List'>
+    <view class='add_single'>
+      <image class="banner-image" src="{{group_details.format_img_url[0]}}"></image>
+      <view class='Title Title_1'>{{group_details.title}}</view>
+      <view class='Title'>{{group_details.start_time}} ~ {{group_details.end_time}}</view>
+      <view class='Title'>{{group_details.address}}</view>
+      <view class='Title'><text class='Title_1'>成人人数 0/{{group_details.adult_amount}}</text>   <text class='Title_1'>儿童人数 0/{{group_details.child_amount}}</text></view>
+    </view>
+  </view>
+  <view class='Price'>
+    <view class='Price_olumn'><text>成人价格：</text>{{group_details.adult_price}}￥/人</view>
+    <view class='Price_column'>
+      <text>成人人数：</text>
+      <input placeholder="0" bindinput='adultAmountInput' />
+    </view>
+
+    <view class='Price_olumn' wx:if="{{group_details.child_amount > 0}}" ><text>儿童价格：</text>{{group_details.child_price}}￥/人</view>
+    <view class='Price_column' wx:if="{{group_details.child_amount > 0}}">
+      <text>儿童人数：</text>
+      <input placeholder="0" bindinput='childAmountInput' />
+    </view>
+    
+    <view class='Price_column'>
+      <text>联系手机：</text>
+      <input placeholder="请输入联系手机" bindinput='mobileInput' />
+    </view>
+    <view class='Total'>总计：<text>{{total_num}}人</text><text>{{total_price}}¥</text></view>
+  </view>
+  <view class='Submit' bindtap='submit'><text>确定</text></view>
+</view>

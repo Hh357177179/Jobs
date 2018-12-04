@@ -1,0 +1,49 @@
+/* pages/realname/realname.wxss */
+.clear{
+  clear: both;
+}
+.realBefore{
+  width: 100%;
+  height: 80rpx;
+  border-bottom: 1px solid #dbdbdb;
+  font-size: 30rpx;
+  margin-top: 40rpx;
+}
+.realBefore input{
+  width: 65%;
+  height: 100%;
+  float: left;
+  margin-left: 20rpx;
+}
+.clickCode{
+  border: 1px solid #dbdbdb;
+  border-radius: 10rpx;
+  float: right;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+  font-size: 26rpx;
+}
+.code{
+  margin-top: 20rpx;
+  height: 80rpx;
+  border-bottom: 1px solid #dbdbdb;
+  font-size: 30rpx;
+}
+.code input{
+  height: 100%;
+}
+.approveBtn{
+  width: 60%;
+  height: 80rpx;
+  line-height: 81rpx;
+  border-radius: 10rpx;
+  background: #DD5F1B;
+  text-align: center;
+  font-size: 35rpx;
+  margin: 40rpx auto;
+  color: #fff;
+}
+.successReal{
+  margin-top: 40rpx;
+  text-align: center;
+}

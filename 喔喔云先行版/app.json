@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/card/card",
+    "pages/me/me",
+    "pages/detail/detail",
+    "pages/payment/payment",
+    "pages/infocard/infocard",
+    "pages/delivery/delivery"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "喔喔云",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#9c9fa2",
+    "selectedColor": "#F68B0E",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "喔喔云商城",
+        "iconPath": "images/shopIcon.png",
+        "selectedIconPath": "images/shopIconc.png"
+      },
+      {
+        "pagePath": "pages/card/card",
+        "text": "年卡",
+        "iconPath": "images/cardIcon.png",
+        "selectedIconPath": "images/cardIconc.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "个人中心",
+        "iconPath": "images/meIcon.png",
+        "selectedIconPath": "images/meIconc.png"
+      }
+    ]
+  }
+}

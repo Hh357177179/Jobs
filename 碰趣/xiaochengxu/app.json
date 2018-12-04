@@ -1,0 +1,96 @@
+{
+  "pages": [
+    "pages/trip/trip",
+    "pages/login/login",
+    "pages/map/map",
+    "pages/cards/cards",
+    "pages/message/message",
+    "pages/found/found",
+    "pages/event/event",
+    "pages/active/active",
+    "pages/name/name",
+    "pages/apply/apply",
+    "pages/application/application",
+    "pages/confirm/confirm",
+    "pages/my/my",
+    "pages/share/share",
+    "pages/join/join",
+    "pages/create/create",
+    "pages/release/release",
+    "pages/upload/upload",
+    "pages/proposal/proposal",
+    "pages/update/update",
+    "pages/contact/contact",
+    "pages/groups/addgroup/addgroup",
+    "pages/groups/modify/modify",
+    "pages/groups/addtrip/addtrip",
+    "pages/groups/appoint/appoint",
+    "pages/groups/inside/inside",
+    "pages/groups/detailed/detailed",
+    "pages/groups/grouplist/grouplist",
+    "pages/groups/future/future",
+    "pages/groups/groupname/groupname",
+    "pages/groups/assistant/assistant",
+    "pages/createsPage/createsPage",
+    "pages/groups/mysingup/mysingup",
+    "pages/companion/describe/describe",
+    "pages/companion/Playmate/Playmate",
+    "pages/companion/sign/sign",
+    "pages/companion/PlaymateList/PlaymateList",
+    "pages/companion/Information/Information",
+    "pages/companion/Contacts/Contacts",
+    "pages/companion/interest/interest",
+    "pages/mynews/mynews",
+    "pages/bills/bills",
+    "pages/deposits/deposits",
+    "pages/realname/realname",
+    "pages/wallet/wallet"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "碰趣，小时游",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 0
+  },
+  "tabBar": {
+    "background": "#090909",
+    "selectedColor": "#DD5F1B",
+    "list": [
+      {
+        "pagePath": "pages/trip/trip",
+        "text": "碰主题",
+        "iconPath": "images/touchDay.png",
+        "selectedIconPath": "images/touchDay1.png"
+      },
+      {
+        "pagePath": "pages/groups/future/future",
+        "text": "碰趣团",
+        "iconPath": "images/find.png",
+        "selectedIconPath": "images/find1.png"
+      },
+      {
+        "pagePath": "pages/createsPage/createsPage",
+        "text": "创建",
+        "iconPath": "images/activity.png",
+        "selectedIconPath": "images/activity1.png"
+      },
+      {
+        "pagePath": "pages/companion/PlaymateList/PlaymateList",
+        "text": "碰游伴",
+        "iconPath": "images/Playmate.png",
+        "selectedIconPath": "images/Playmate1.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my1.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

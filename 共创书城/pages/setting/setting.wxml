@@ -1,0 +1,51 @@
+<!--pages/setting/setting.wxml-->
+<view class='setting'>
+  <view class='set_top'>
+    <view class='set_pic'>
+      <image src='{{avatar}}'></image>
+    </view>
+    <view class='choose_btn' bindtap='uploadPic'>点击更换头像</view>
+  </view>
+  <view class='set_main'>
+    <view class='set_list'>
+      <view class='set_labe'>昵称：</view>
+      <input class='set_input' value='{{name}}' bindinput='advName' placeholder='请输入昵称' placeholder-style='color:#666;'></input>
+      <view class='clear'></view>
+    </view>
+    <view class='set_list'>
+      <view class='set_labe'>生日：</view>
+      <picker mode="date" class='set_input' value="{{time}}" bindchange="bindTimeChange">
+        <view class="picker">{{time}}</view>
+      </picker>
+      <view class='clear'></view>
+    </view>
+    <view class='set_list'>
+      <view class='set_labe'>性别：</view>
+      <picker class='set_input' bindchange="cSex" value="{{index}}" range="{{sexArr}}">
+        <view class="picker">{{sexStr}}</view>
+      </picker>
+      <view class='clear'></view>
+    </view>
+    <view class='set_list'>
+      <view class='set_labe'>所在地：</view>
+      <input class='set_input' value='{{local}}' bindinput='advLocal' placeholder='请输入所在地' placeholder-style='color:#666;'></input>
+      <view class='clear'></view>
+    </view>
+    <view class='set_list'>
+      <view class='set_labe'>所属校区：</view>
+      <picker class='set_input' bindchange="cCampus" value="{{index}}" range="{{campusArr}}">
+        <view class="picker">{{campusStr}}</view>
+      </picker>
+      <view class='clear'></view>
+    </view>
+    <view class='set_list'>
+      <view class='set_labe'>角色：</view>
+      <picker class='set_input' bindchange="cRole" value="{{index}}" range="{{roleArr}}">
+        <view class="picker">{{roleStr}}</view>
+      </picker>
+      <view class='clear'></view>
+    </view>
+  </view>
+  <view class='clear'></view>
+  <view class='submit_save' bindtap='subSave'>保存</view>
+</view>

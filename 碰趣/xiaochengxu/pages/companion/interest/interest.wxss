@@ -1,0 +1,158 @@
+/* pages/companion/interest/interest.wxss */
+
+.name{
+  height:362rpx;
+  width:100%;
+  background:#DD5F1B;
+  text-align:center;
+  font-size:35rpx;
+  color:#fff;
+}
+.name image{
+  height:200rpx;
+  width:200rpx;
+  margin-top:30rpx;
+  border-radius: 50%;
+}
+
+.Information{
+  width: 95%;
+  margin: auto;
+  height: auto;
+  padding-bottom: 120rpx;
+}
+.Introduction{
+  margin-top: 50rpx;
+  height: 250rpx;
+}
+.detailed{
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  font-size: 32rpx;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:4;
+  text-indent:2em;
+  margin-top: 15rpx;
+}
+.banner text{
+  display: block;
+  height: 80rpx;
+}
+
+.remove_List {
+  width: 95%;
+  height: auto;
+  margin: auto;
+}
+.remove_Title {
+  display: block;
+  font-size: 40rpx;
+  color: #e5c51b;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-top: 50rpx;
+}
+.List_same {
+  width: 100%;
+  height: 400rpx;
+}
+.List_left {
+  float: left;
+  width: 80rpx;
+  height: 400rpx;
+  overflow: hidden
+}
+.left-image {
+  width: 30rpx;
+  height: 450rpx;
+  display: block;
+  margin: auto;
+}
+.List_right {
+  float: left;
+  width: 590rpx;
+  height: 400rpx;
+}
+.List_time{
+  font-size: 36rpx;
+}
+.List_content {
+  margin-top: 10rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /*行数*/
+  -webkit-box-orient: vertical;
+  font-size: 30rpx;
+}
+
+.Stay{
+  margin-top: 20rpx;
+}
+.man{
+  overflow: hidden;
+  padding:37rpx 0 31rpx 0;
+  box-sizing: border-box;
+  border-bottom:2rpx solid #ddd;
+}
+.man image{
+  float: left;
+  height: 85rpx;
+  width:85rpx;
+  border-radius: 50%;
+}
+.slim{
+  float: right;
+  width:calc(100% - 119rpx); 
+}
+.man .name1{
+  font-size:34rpx;
+  color:#444;
+  margin:0 33rpx 0 0;
+}
+.man .time{
+  float: right;
+  font-size:27rpx;
+  color:#959595;
+  margin:0 8rpx 0 0;
+}
+.man .help{
+  font-size:28rpx;
+  color:#999;
+  margin:16rpx 0 0;
+}
+.geng{
+  width: 200rpx;
+  height: 60rpx;
+  background: #DD5F1B;
+  color: #ffffff;
+  font-size:33rpx;
+  text-align: center;
+  line-height: 60rpx;
+  margin: auto;
+}
+.bottom .footer {
+  position:fixed;
+  bottom: 0rpx;
+  background: #fa5757;
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #fff;
+  font-size: 30rpx;
+  margin: 0 auto 0 auto;
+}
+.banner-image{
+  width: 95%;
+  height: 400rpx;
+  display: block;
+  margin: auto;
+  padding: 20rpx 0 0 0;
+}
+.banner swiper{
+  height: 400rpx;
+}

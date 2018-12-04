@@ -1,0 +1,20 @@
+<!--pages/search/search.wxml-->
+<view class='searchDetail'>
+  <view style='background:#fff;' class='detailTit'>
+    <view class='searchTop'>
+      <input type='text' focus="true" placeholder='请输入标题、导师' placeholder-class="placCss" bindblur="searchVal" bindinput="variableInput" value='{{value}}' class='searInp'></input>
+      <icon type='clear' size='20' class='clearInput' wx:if="{{clearBtn}}" bindtap='clearInput'></icon>
+    </view>
+    <icon type='search' size='30' class='iconSearch' bindtap='searchBtnD'></icon>
+    <view class='clear'></view>
+  </view>
+  <view class='detailMain' wx:for="{{imgArr}}" wx:key="{{item.id}}">
+    <!-- <navigator url='../picHome/picHome?createTime={{item.create_time}}'> -->
+      <!-- <view class='detailList'> -->
+        <block wx:for="{{item.img}}" wx:for-item="twoItem" wx:key="index">
+          <image class='cardPic' src='{{twoItem}}' bindtap='backhome' data-id='{{item.id}}'></image>
+        </block>
+      <!-- </view> -->
+    <!-- </navigator> -->
+  </view>
+</view>

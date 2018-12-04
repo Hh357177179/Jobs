@@ -1,0 +1,61 @@
+<!--pages/application/application.wxml-->
+<view class="apply">
+  <view class="picture">
+    <navigator url="../apply/apply?title=apply">
+        <image src="../../images/phone.png" class="phone"></image>
+    </navigator>
+    <navigator url="../application/application?title=application">
+        <image src="../../images/identity.png" class="identity"></image> 
+    </navigator>
+  </view>
+  <view wx:if="{{is_auth==0}}">
+    <view class="count">
+		<image src="../../images/person.png" class="people"></image>
+    <view class="line"></view>
+		<input type="text" placeholder="请输入您的真实姓名" bindblur="bindName"/>
+	</view>
+	<view class="password">
+		<image src="../../images/person.png" class="people"></image>
+    <view class="line"></view>
+		<input type="text" placeholder="请输入您的身份证号" bindblur="bindIDNo"/>
+	</view>
+  <view class="bottom">
+        <navigator url="../trip/trip?title=trip">
+		    <button bindtap="authID" >确认认证</button>
+        </navigator>
+	</view>
+	<!-- <view class="bottom">
+        <navigator url="../confirm/confirm?title=confirm">
+		    <button bindtap="authID" >确认认证</button>
+        </navigator>
+	</view> -->
+</view>
+<view wx:elif="{{is_auth==-1}}">
+    认证失败，请联系管理员
+  <view class='bottom_bg_red'>身份证实名失败</view>
+  <view class="bg_red">
+    您的身份证认证失败、全部认证成功后可以享受更多的......
+    点击联系管理员。
+  </view>
+  <navigator url="../proposal/proposal?title=proposal">
+    <view class='bottom_bg'>
+      <button>联系管理员</button>
+    </view>
+  </navigator>
+</view>
+<view wx:elif="{{is_auth==1}}">
+  <view class='bottom_bg_red'>身份证实名已认证</view>
+  <view class="bg_red">
+    您的身份证已认证成功、全部认证成功后可以享受更多的......
+    点击马上创建主题可以去创建属于自己的主题活动。
+  </view>
+  <navigator url="../createsPage/createsPage?title=createsPage">
+    <view class='bottom_bg'>
+      <button>马上创建主题</button>
+    </view>
+  </navigator>
+</view>
+
+
+	
+</view>

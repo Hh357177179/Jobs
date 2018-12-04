@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>在线开课录入</title>
+  <script>
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          if (clientWidth >= 750) {
+            docEl.style.fontSize = '100px';
+          } else {
+            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+          }
+        };
+
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/opencourse.css">
+</head>
+<body>
+  <div class="opentop">开通课程</div>
+  <div class="openInfo">
+    <div class="openInfoTit">请填写课程信息</div>
+    <div class="openInfoMain">
+      <p class="openInfoList clearfix">
+        <span class="openInfoLabe">课程名称</span>
+        <input class="openInfoInput" type="text" placeholder="请输入课程主题">
+      </p>
+      <p class="openInfoList clearfix">
+        <span class="openInfoLabe">宣讲时间</span>
+        <input class="openInfoInput" type="text" placeholder="请输入开课时间">
+      </p>
+      <p class="openInfoList clearfix">
+        <span class="openInfoLabe">宣&nbsp;讲&nbsp;人</span>
+        <input class="openInfoInput" type="text" placeholder="请输入宣讲人姓名">
+      </p>
+      <p class="openInfoList clearfix">
+        <span class="openInfoLabe">宣讲地点</span>
+        <input class="openInfoInput" type="text" placeholder="请输入宣讲地点">
+      </p>
+      <p class="openUpPic">
+        <span class="openInfoLabe">封面图片</span>
+        <span class="upIcon">
+          <input class="upPicInput" type="file" name="" id="">
+          <img class="upPicAdd" src="image/addPic.png" alt="">
+        </span>
+
+        <!-- 这里是上传展示的图片 -->
+        <div class="showPic">
+          <img src="image/addPic.png" alt="">
+        </div>
+      </p>
+    </div>
+    <div class="openSubmit">确 认 提 交</div>
+  </div>
+</body>
+</html>

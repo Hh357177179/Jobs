@@ -1,0 +1,9 @@
+<!-- pages/createsPage/createPage.wxml -->
+<view class="container">
+    <navigator url="/pages/create/create">
+        <button>创建特色主题</button>
+    </navigator>
+    <navigator url="/pages/groups/addgroup/addgroup">
+        <button>创建团队行程</button>
+    </navigator>
+</view>

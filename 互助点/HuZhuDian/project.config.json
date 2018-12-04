@@ -1,0 +1,91 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.91",
+	"appid": "wx84bb116354f66e47",
+	"projectname": "ys",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "personal",
+					"pathName": "pages/personal/personal",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "rankinglist",
+					"pathName": "pages/rankinglist/rankinglist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "transfer",
+					"pathName": "pages/transfer/transfer",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "log",
+					"pathName": "pages/log/log",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "register",
+					"pathName": "pages/register/register",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "theme",
+					"pathName": "pages/theme/theme",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "themelist",
+					"pathName": "pages/themelist/themelist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "themedetail",
+					"pathName": "pages/themedetail/themedetail",
+					"query": ""
+				}
+			]
+		}
+	}
+}

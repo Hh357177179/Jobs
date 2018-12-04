@@ -1,0 +1,56 @@
+<!--pages/inside/inside.wxml-->
+<view class='inside'>
+  <view class='add_List'>
+    <view class='add_single'>
+    <navigator url="/pages/active/active?id={{activityDetail.activity_id}}">
+      <image class="banner-image" src="{{activityDetail.activity.img_path[0]}}"></image>
+      <view class='Title Title_1'>{{activityDetail.activity.title}}</view>
+      <view class='Title'>
+        <text class='Title_1'>活动时间：</text>{{activityDetail.activity.start_time}}
+      </view>
+      <view class='Title'>
+        <text class='Title_1'>活动地点：</text>{{activityDetail.activity.address}}
+      </view>
+      <view class='Title'>
+        <text class='Title_1'>价格：￥{{activityDetail.activity.adult_price}}元</text>
+        <text class='Title_2'>人数：</text>{{activityDetail.activity.participate_num}}/{{activityDetail.activity.total_num}}
+      </view>
+      <view class='Title'>
+        <text class='Title_1'>活动简介：</text>
+      </view>
+      <view class='Title_jian'>{{activityDetail.activity.content}}</view>
+    </navigator> 
+    </view>
+  </view>
+  <text class='Remind'>本页面显示本团成员对本次活动的预报名情况，请大家不要进入活动报名页面去付费报名。活动开始钱由执行团长带领团员集体参与，并集体进行结算。</text>
+  <view class='head'>
+    <text>当前达人团长</text>
+    
+    <image class="head-image" src='{{activityDetail.leader.avatar}}'></image>
+    <!-- <text>{{activityDetail.leader.nick_name}}</text> -->
+  </view>
+
+
+ <navigator wx:if="{{uid==activityDetail.leader.id}}" url="../appoint/appoint?pid={{activityDetail.id}}&group_id={{activityDetail.group_id}}">
+      <text>重置达人副团长</text>
+</navigator>
+
+  <view class='member'>
+    <text>当前已报名</text>
+    <view class="flex-row">
+    <!-- 循环 -->
+      <view class="flex-view-item" wx:for="{{activityDetail.singup_users}}">
+      <image class="head-image" src='{{item.user.avatar}}' data-uid="{{item.user.id}}" bindtap="gotoAssistant"></image>
+      <text>{{item.user.nick_name}}</text></view>
+    </view>
+    
+  </view>
+  <view class='statement'>
+     <!-- <text>执行团长权责声明：</text> -->
+  </view>
+  <view class='statement'>
+    <!-- <text>团员权责声明：</text> -->
+  </view>
+  <button class='submit-btn' data-b="1" bindtap="vote" wx:if="{{activityDetail.is_singup==0}}">偏好投票</button>
+   <button class='submit-btn' data-b="2" bindtap="vote_cancel" wx:if="{{activityDetail.is_singup!=0}}">取消偏好投票</button>
+</view>

@@ -1,0 +1,66 @@
+page {
+  height: 100%;
+}
+.page-log {
+  height: 100%;
+  background-color: #cce5e9;
+  overflow: hidden;
+}
+.log-scroll-view {
+  margin: 0 30rpx;
+  margin-top: 40rpx;
+  height: calc(100% - 40rpx);
+  width: calc(100% - 60rpx);
+  background: #fff;
+  padding: 0 30rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.log-item {
+  margin-top: 40rpx;
+  display: flex;
+  align-items: center;
+}
+.log-item-left {
+  padding: 30rpx;
+  text-align: center;
+}
+.log-item-left .date {
+  font-size: 80rpx;
+  line-height: 80rpx;
+  font-weight: bold;
+  color: #d6e9c1;
+}
+.log-item-right {
+  border-left: 1px solid #eee;
+  padding-left: 30rpx;
+  padding-bottom: 20rpx;
+}
+.operate-log {
+  margin-top: 20rpx;
+  font-size: 30rpx;
+}
+.operate-time {
+  color: #ccc;
+}
+.operate-content{
+  margin-top: 10rpx;
+  color: #333;
+}
+.operate-content text {
+  color: #d6e9c1;
+}
+.operate-remark {
+  padding: 15rpx 10rpx;
+  background: #f0f0f0;
+  color: #999;
+  border-radius: 20rpx;
+  margin-top: 15rpx;
+}
+.no-more {
+  font-size: 30rpx;
+  text-align: center;
+  color: #ccc;
+  line-height: 40rpx;
+  margin: 15rpx 0;
+}

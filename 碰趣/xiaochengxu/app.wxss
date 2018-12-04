@@ -1,0 +1,337 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+ 
+  box-sizing: border-box;
+} 
+/* 发现 */
+/* tab标签 */
+.found .tab{
+  height:66rpx;
+  width:366rpx;
+  margin:0 auto 26rpx;
+}
+.found .red,.found .default{
+  float: left;
+  height:100%;
+  width:50%;
+  line-height: 66rpx;
+  text-align: center;
+  font-size:29rpx;
+  border:2rpx solid #e5c51b;
+  box-sizing: border-box; 
+}
+.found .red{
+  background: #e5c51b;
+  color: white;
+}
+.found .default{
+  background: white;
+  color: #090909;
+}
+
+/* 轮播 */
+.found .banner{
+  position: relative;
+}
+.found .bgbanner{
+  height: 420rpx;
+  width:100%;
+}
+.found .banner-image{
+  height: 420rpx;
+  width:100%;
+}
+/* 轮播上的信息 */
+.found .head{
+  position:absolute;
+  bottom:48rpx;
+  left: 42rpx;
+}
+.found .head-image{
+  float: left;
+  height: 118rpx;
+  width:118rpx;
+  border-radius: 50%;
+}
+.found .swiper-font{
+  float:left;
+  margin-left:28rpx;
+}
+.found .swiper-title{
+  display: block;
+  font-size:34rpx;
+  color:white;
+  margin-top:26rpx;
+  line-height: 1;
+}
+.found .swiper-text{
+  font-size:27rpx;
+  color:white;
+  margin-top:17rpx;
+  line-height: 1;
+}
+/* 活动的所有内容 */
+.found .detail{
+  width: 95%;
+  margin: auto;
+  box-sizing: border-box;
+  background: white;
+}
+/* 活动详情 */
+.found .d-title{
+  display: block;
+  font-size:35rpx;
+  color:#fa5757;
+  margin:20rpx 0 23rpx 15rpx;
+  line-height: 1;
+}
+.found .d-main{
+  border-bottom: 2rpx solid #ddd;
+  box-sizing:border-box;
+  overflow: hidden; 
+}
+.found .d-main text{
+  display: block;
+  margin:0 0 17rpx 10rpx;
+  font-size: 32rpx;
+  color:#333;
+}
+.found .d-main .last{
+  margin-bottom:0;
+}
+/* 发布的详细信息 */
+.found .d-more{
+  padding:34rpx 10rpx 47rpx 10rpx;
+  box-sizing: border-box;  
+  overflow: hidden;
+}
+.found .d-list{
+  font-size: 32rpx;
+  margin:0 0 20rpx;
+}
+.found .d-list2 text{
+  margin-left:33rpx;
+}
+.found .d-name{
+  color: #333;
+}
+.found .d-num{
+  color: #666666;
+}
+.found .d-num3{
+  margin-left:84rpx;
+}
+.found .d-more .last{
+  margin:0;
+}
+.found .d-space{
+  margin-left:35rpx;
+}
+
+/* 已认证 */
+.found .cert{
+  float: right;
+  height: 30rpx;
+  width:106rpx;
+  border:1rpx solid #fa5757;
+  color: #fa5757;
+  font-size:25rpx;
+  text-align: center;
+  line-height: 30rpx;
+}
+/* 去碰趣按钮 */
+.found .btn-go{
+  clear:both;
+  margin-bottom:50rpx;
+  overflow: hidden;
+}
+.found button{
+  height: 66rpx;
+  width:190rpx;
+  border-radius: 10rpx;
+  font-size: 32rpx;
+  color:white;
+  background: #090909;
+  line-height: 66rpx;
+  text-align: center;
+  float: left;
+  margin-left: 6%;
+}
+button::after{
+border: none;
+}
+.found .btn-over,.found .btn-up{
+  height: auto;
+  width:auto;
+  padding:19rpx 36rpx;
+  float: left;
+  line-height: 1;
+}
+.found .btn-over{
+  margin-left:138rpx;
+  background: #d1d1d1;
+}
+.found .btn-up{
+  margin-left:40rpx;
+}
+/* 往期主题详情页面 */
+.event{
+  background: #f5f5f5;
+}
+ .event .e-swiper{
+  margin-bottom:40rpx;
+} 
+.event .detail{
+  padding-bottom:0;
+}
+.event .d-main .last{
+  margin-bottom:30rpx;
+}
+.event .d-get .d-down{
+  float: left;
+  margin-left:10rpx;
+  font-size: 28rpx;
+  color:#fa5757;
+  line-height:1;
+}
+.event .d-get image{
+  float: left;
+  height:11rpx;
+  width:20rpx;
+  line-height: 28rpx;
+  margin:8rpx 0 0 17rpx;
+}
+.event .d-more{
+  border-bottom: 2rpx solid #ddd;
+  padding-bottom:40rpx;
+  box-sizing:border-box;
+}
+.event .d-dress{
+  padding:33rpx 30rpx 45rpx 10rpx;
+  box-sizing: border-box;
+  line-height: 1;
+}
+.event .d-dress text{
+  font-size:34rpx;
+  color:#333;
+  line-height: 1;
+}
+.event .d-dress image{
+  height: 32rpx;
+  width:18rpx;
+  line-height: 34rpx;
+  float: right;
+}
+/* 报名人员 */
+.event .e-join{
+  background:white;
+  padding:33rpx 0 0 27rpx;
+  margin:0 0 40rpx 0;
+  box-sizing:border-box;
+}
+.event .join{
+  height: 56rpx;
+  font-size:35rpx;
+  color:#333;
+  margin:0 0 0 10rpx;
+  border-bottom: 2rpx solid #ddd;
+}
+.event .people{
+  padding:24rpx 0 17rpx 21rpx;
+  box-sizing: border-box;
+}
+.event .people image{
+  height: 90rpx;
+  width:90rpx;
+  margin:0 51rpx 21rpx 0;
+  border-radius: 50%;
+}
+/* 聊天框 */
+.event .e-chat{
+  padding:0 22rpx 11rpx 27rpx;
+  box-sizing:border-box;
+  margin:0 0 40rpx;
+  background:white;
+}
+.event .e-icon{
+ padding: 24rpx 22rpx 24rpx 0;
+ box-sizing:border-box;
+ overflow: hidden;
+ border-bottom:2rpx solid #ddd;
+}
+.event .love,.event .chat{
+  float: left;
+  margin:0 114rpx 0 0;
+}
+.event .love{
+  margin:0 114rpx 0 15rpx;
+}
+.event .e-theme{
+  float: right;
+  font-size:31rpx;
+  color:#fa5757;
+  line-height: 66rpx;
+}
+/* 图标 */
+.event .love image,.event .chat image{
+  height: 42rpx;
+  width:40rpx;
+  margin:0 19rpx 0 0 ;
+  vertical-align: middle;
+}
+.event .chat image{
+  height: 40rpx;
+}
+/* 文字 */
+.event .love text,.event .chat text{
+  font-size:27rpx;
+  color:#999;
+}
+.event .man{
+  overflow: hidden;
+  padding:37rpx 0 31rpx 0;
+  box-sizing: border-box;
+  border-bottom:2rpx solid #ddd;
+}
+.event .man1{
+  border:0;
+}
+.event .man image{
+  float: left;
+  height: 85rpx;
+  width:85rpx;
+  border-radius: 50%;
+}
+.event .slim{
+  float: right;
+  width:calc(100% - 119rpx); 
+}
+.event .man .name{
+  font-size:34rpx;
+  color:#444;
+  margin:0 33rpx 0 0;
+}
+.event .man .core{
+  font-size:28rpx;
+  color:#fa5757;
+}
+.event .man .time{
+  float: right;
+  font-size:27rpx;
+  color:#959595;
+  margin:0 8rpx 0 0;
+}
+.event .man .help{
+  font-size:28rpx;
+  color:#999;
+  margin:16rpx 0 0;
+}
+
+.body{
+margin-bottom:200rpx;
+}

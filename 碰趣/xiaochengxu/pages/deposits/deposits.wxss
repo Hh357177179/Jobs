@@ -1,0 +1,40 @@
+/* pages/deposits/deposits.wxss */
+.clear{
+  clear: both;
+}
+.annotation{
+  color: #333;
+  font-size: 30rpx;
+  padding: 20rpx;
+}
+.annotationList{
+  margin-top: 30rpx;
+}
+.depositsMoney{
+  border: 1px solid #bdbdbd;
+  margin-top: 50rpx;
+  padding:30rpx 20rpx 40rpx 40rpx;
+}
+.labelText{
+  width: 250rpx;
+  float: left;
+}
+.moneyInput{
+  float: left;
+  border: 1px solid #bdbdbd;
+  padding-left: 10rpx;
+  margin-top: 20rpx;
+  width: 300rpx;
+  height: 50rpx;
+  margin-left: 10rpx;
+}
+.moneyList{
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.withdrawBtn{
+  margin-top: 100rpx;
+  font-size: 30rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}

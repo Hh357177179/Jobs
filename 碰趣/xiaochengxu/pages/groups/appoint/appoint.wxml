@@ -1,0 +1,40 @@
+<!-- pages/appoint/appoint.wxml -->
+<view class="appoint">
+  <view class="add_List">
+    <view class="add_single">
+      <image class="banner-image" src="{{activityDetailed.activity.image_path[0]}}"></image>
+      <view class="Title Title_1">{{activityDetailed.activity.title}}</view>
+      <view class="Title">
+        <text class="Title_1">活动时间：</text>
+        {{activityDetailed.activity.start_time}}
+      </view>
+      <view class="Title">
+        <text class="Title_1">活动地点：</text>
+        {{activityDetailed.activity.address}}
+      </view>
+      <view class="Title">
+        <text class="Title_1">单价：</text>
+        ￥{{activityDetailed.activity.adult_price}}元
+        <text class="Title_2">人数：</text>
+        {{activityDetailed.activity.participate_num}}/{{activityDetailed.activity.total_num}}
+      </view>
+    </view>
+  </view>
+  <view class="head">
+    <text>当前达人团长</text>
+    <image class="head-image" src="{{leader.avatar}}"></image>
+    <text>{{leader.nick_name}}</text>
+  </view>
+  <view class="member">
+    <text>当前已报名</text>
+    <view class="flex-row">
+      <view class="flex-view-item" wx:for="{{activityDetailed.singup_users}}" >
+        <image class="head-image" src="{{item.user.avatar}}" data-id="{{item.user_id}}" data-uname="{{item.user.nick_name}}" data-avatar="{{item.user.avatar}}" bindtap="setLeader"></image>
+        <text>{{item.user.nick_name}}</text>
+      </view>
+    </view>
+  </view>
+  <navigator url="detailed/detailed?group_id={{item.id}}">
+    <button  bindtap="submitChange">确定/更换</button>
+  </navigator>
+</view>

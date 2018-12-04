@@ -1,0 +1,30 @@
+/* pages/sharefriend/sharefriend.wxss */
+.sharefriend{
+  width: 100%;
+  height: 100%;
+}
+.eChartPic{
+  width: 480rpx;
+  height: 480rpx;
+  margin: 40rpx auto;
+}
+.eChartPic image{
+  width: 100%;
+  height: 100%; 
+}
+.saveLogin{
+  width: 480rpx;
+  background: #cce5e9;
+  color: #fff;
+  padding: 15rpx 0;
+  font-size: 40rpx;
+  border-radius: 10rpx;
+  margin: 60rpx auto 0;
+  text-align: center;
+}
+.explain{
+  font-size: 28rpx;
+  color: #666;
+  padding: 0 30rpx;
+  line-height: 60rpx;
+}

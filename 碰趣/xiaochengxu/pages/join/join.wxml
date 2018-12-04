@@ -1,0 +1,41 @@
+<!--pages/join/join.wxml-->
+<view wx:for="{{pagedata}}" wx:for-item="pd" wx:key="{{pd.title}}">
+  <view class="join">
+      <!-- <view class="line">{{pd.type}}</view> -->
+      <view class="line_kung"></view>
+      <view class="line">{{pd.title}}</view>
+      <view class="peach">
+        <image src="https://ssl.zhaodaka.net/pengqu/uploads/images/{{pd.image_path[0]}}"></image>
+      </view>
+    <view class="detail">
+      <!-- <view class="d-list">
+        <text class="d-name">活动标题：{{pd.title}}</text>
+      </view> -->
+      <view class="d-more">
+        <view class="d-list">
+          <view>
+            <view class="sub">创建人:{{pd.nickName}}</view>
+            <view class="cert">已认证</view>
+          </view>
+          <view class="sub">活动费用:{{pd.adult_price}}</view>
+          <view class="sub">活动时间:{{pd.start_time}}</view>
+          <view class="sub">活动时长:{{pd.type}}</view>
+          <view class="sub space">主题人数:{{pd.participate_num}}/{{pd.total_num}}人</view>
+        </view>
+      </view>
+      <view class="goTouch">
+           <!-- <navigator url="../create/create?title=create">
+              <button>去创建新的主题活动</button>
+          </navigator>  -->
+      </view>
+    </view>
+  </view>
+  <view class='bottom'>
+    <navigator url="../create/create?title=create">
+        <button class="footer">去创建新的主题活动</button>
+    </navigator> 
+  </view>
+</view>
+<tab>
+</tab>
+<view class='goTouch_cj'></view>

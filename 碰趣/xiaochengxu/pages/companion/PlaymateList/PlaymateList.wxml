@@ -1,0 +1,44 @@
+<!--pages/companion/PlaymateList/PlaymateList.wxml-->
+<wxs module="util" src="../../../utils/util.wxs"></wxs>
+
+  <view class='Content'>
+    <!-- <view class='Head'>玩伴列表</view> -->
+    <view class='head'>
+      <navigator url="../sign/sign?title=sign">
+        <button>去分享时光</button>
+      </navigator>
+    </view>
+    <view class='shou'>
+      <navigator url="../sign/sign?title=sign">
+        <image class='shou_tu' src='/images/dianji.png'></image>
+      </navigator>
+    </view>
+    <view wx:if="{{openSetting==true}}">
+    <button open-type="openSetting">打开授权设置页</button>
+    </view>
+    <block wx:for="{{PlaymateList}}" wx:key="index">
+      <view class='Block'>
+
+        <navigator url="../Information/Information?user_id={{item.user_id}}">
+          <view class='Block_Sign'>
+            <view class='Sign_One'>
+              <image class='head-image' src='{{item.avatar}}'></image>
+              <view class="item-flex"><text class="name">昵称：{{item.nick_name}}</text><text class="juli">距离{{item.juli}}M</text></view>
+              <text>地址：{{item.address}}</text>
+              <!-- <text>时间：{{util.dateFormatFP(item.create_time)}}</text> -->
+              <text>开始时间：{{item.start_time}}</text>
+              <text>结束时间：{{item.end_time}}</text>
+            </view>
+            
+            <view class="group_text">
+              <text>给自己一个碰出惊喜的机会</text>
+              <view class='display'>
+                {{item.reason}}
+              </view>
+            </view>
+          </view>
+        </navigator>
+
+      </view>
+    </block>
+  </view>

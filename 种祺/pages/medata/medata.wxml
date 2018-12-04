@@ -1,0 +1,28 @@
+<!--pages/medata/medata.wxml-->
+<view class='medata'>
+  <view class='meMain'>
+    <view class='medatalist'>
+      <text class='melabel'>姓名：</text>
+      <input class='valMe' disabled='{{infoStatus}}' value='{{nameVal}}' bindinput='advNameVal' type='text' placeholder='请填写您的姓名' placeholder-style='font-size:32rpx;color: #999;'></input>
+      <view class='clear'></view>
+    </view>
+    <view class='medatalist'>
+      <text class='melabel'>电话：</text>
+      <input class='valMe' disabled='{{infoStatus}}' maxlength="11" value='{{telVal}}' bindinput='advTelVal' type='number' placeholder='请填写您的手机号码' placeholder-style='font-size:32rpx;color: #999;'></input>
+      <view class='clear'></view>
+    </view>
+    <view class='medatalist'>
+      <text class='melabel'>性别：</text>
+      <picker class='pickInput' disabled='{{infoStatus}}' mode="selector" bindchange="bindPickerChange" value="{{index}}" range="{{sexArr}}" range-key="sex">
+        <view class="picker {{cnum == 0 ? 'active' : ''}}">{{sexVal}}</view>
+      </picker>
+    </view>
+    <view class='medatalist'>
+      <text class='melabel'>身份：</text>
+      <picker class='pickInput' disabled='{{infoStatus}}' mode="selector" bindchange="pickerIden" value="{{index}}" range="{{idenArr}}" range-key="iden">
+        <view class="picker {{perNum == 0 ? 'perActive' : ''}}">{{perVal}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class='saveBtn' bindtap='saveBtn' wx:if='{{status == 1}}'>保存</view>
+</view>

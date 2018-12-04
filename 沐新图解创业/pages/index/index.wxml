@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class='indexPage'>
+  <view class='search'>
+    <view class='searchInput' bindtap='searchInputBtn'>
+      <input type='text' disabled="true" placeholder='请输入标题、导师' placeholder-class="placCss" bindblur="searchVal" bindinput="variableInput" value='{{value}}'></input>
+    </view>
+    <icon type='search' size='30' class='iconSearch' bindtap='searchBtn'></icon>
+    <image class='calendarPic' bindtap='showCalendar' src='../../images/calendar.png'></image>
+  </view>
+  <view class="card" bindtouchstart="touchStart" bindtouchend="touchEnd">
+    <swiper  duration="{{duration}}" style='width:100%; height:100%;' indicator-dots="{{indicatorDots}}" indicator-active-color="rgba(0,0,0,.5)" current="{{currents}}">
+      <block wx:for='{{imgArr}}' wx:key='index'>
+        <swiper-item>
+          <image src='{{item.image}}' style='width: 90%; height: 95%;margin-left: 5%;'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='maskCal' wx:if="{{calendarShow}}">
+    <image class='closeBtn' bindtap='clickClose' src='../../images/close.png'></image>
+    <view class="calendarCom">
+      <view class="demo4">
+        <calendar 
+        weeks-type="cn" 
+        cell-size="30"
+        days-color="{{demo5_days_style}}"
+        bindnextMonth="next"
+        bindprevMonth="prev"
+        binddateChange="dateChange"
+        binddayClick="dayClick"
+        />
+    </view>
+    </view>
+  </view>
+</view>

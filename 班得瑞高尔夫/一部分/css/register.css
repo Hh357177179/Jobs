@@ -1,0 +1,161 @@
+.regBanner{
+  width: 100%;
+  height: 3.6rem;
+  background: #8EC63F;
+  color: #fff;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0);
+}
+.bigTitle{
+  font-size: 0.8rem;
+  margin: 0.8rem auto 0.5rem;
+}
+.smallTitle{
+  font-size: 0.27rem;
+}
+.registerForm{
+  width: 6.5rem;
+  margin: 0.3rem auto;
+  font-size: 0.32rem;
+}
+.formList{
+  width: 100%;
+  border-bottom: 1px solid #CCCCCC;
+  height: 1rem;
+}
+.formList input{
+  float: left;
+  height: 100%;
+  background: none;
+  font-size: 0.32rem;
+  width: 4rem;
+}
+.listLabe{
+  float: left;
+  margin-right: 0.58rem;
+  padding-left: 0.2rem;
+  margin-top: 0.28rem;
+}
+.formList .getCode{
+  width: 2.2rem;
+}
+.codeBtn{
+  float: right;
+  font-size: 0.25rem;
+  color: #fff;
+  padding: 0.1rem 0.15rem;
+  border-radius: 4px;
+  background: #8EC63F;
+  margin: 0.2rem 0.2rem 0 0;
+}
+.checkText{
+  font-size: 0.25rem;
+  margin-top: 0.54rem;
+}
+.trueIcon{
+  float: left;
+  width: 0.35rem;
+  height: 0.35rem;
+  border: 1px solid #b3b3b3;
+  border-radius: 3px;
+  margin-right: 0.1rem;
+}
+.trueIcon img{
+  width: 0.25rem;
+  height: 0.25rem;
+  margin-left: 0.03rem;
+  margin-top: 0.02rem;
+}
+.registerBtn{
+  width: 6.5rem;
+  height: 0.98rem;
+  background: #8EC63F;
+  color: #fff;
+  border-radius: 4px;
+  line-height: 1.1rem;
+  font-size: 0.4rem;
+  letter-spacing: 0.1rem;
+  margin: 0.4rem auto 0;
+  text-align: center;
+}
+.regModal{
+  width: 6.5rem;
+  height: 4.5rem;
+  background: #fff;
+  box-shadow:2px 0px 5px rgba(2,54,104,0.42);
+  position: fixed;
+  top: 3rem;
+  left: calc(50% - 3.25rem);
+  display: none;
+}
+.successIcon{
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 3px solid #74C900;
+  margin: 0.4rem auto 0.24rem;
+}
+.successIcon img{
+  width: 0.5rem;
+  height: 0.5rem;
+  float: left;
+  margin: 0.2rem;
+}
+.sucText{
+  font-size: 0.35rem;
+  color: #64819E;
+  text-align: center;
+}
+.engText {
+  color: #A7B5C4;
+  font-size: 0.2rem;
+  text-align: center;
+  margin-top: 0.1rem;
+  margin-bottom: 0.44rem;
+}
+.modalBtn{
+  width: 3.54rem;
+  margin: 0 auto;
+}
+.modalBtn p{
+  width: 1.66rem;
+  float: left;
+  text-align: center;
+  font-size: 0.28rem;
+  border-radius: 3px;
+  padding: 0.1rem 0;
+}
+.upgrade{
+  margin-right: 0.22rem;
+  box-shadow:1px 0px 3px rgba(16,90,167,0.54);
+  background: -webkit-linear-gradient(#69C6EC, #105AA7); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#69C6EC, #105AA7); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#69C6EC, #105AA7); /* Firefox 3.6 - 15 */
+  background: linear-gradient(#69C6EC, #105AA7); /* 标准的语法 */
+}
+.upgrade a{
+  color: #fff;
+}
+.backHome{
+  box-shadow:1px 0px 3px rgba(94,121,152,0.54);
+  background: #dbe4ee;
+}
+.backHome a{
+  color: #5B7695;
+}
+.showMsg{
+  width: 3rem;
+  font-size: 0.3rem;
+  padding: 0.2rem;
+  position: fixed;
+  border-radius: 5px;
+  background: rgba(0,0,0,.8);
+  color: #fff;
+  top: 20%;
+  left: calc(50% - 1.5rem);
+  text-align: center;
+  display: none;
+}
+.errorMsg{
+  font-size: 0.35rem;
+}

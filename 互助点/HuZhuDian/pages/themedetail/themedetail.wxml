@@ -1,0 +1,34 @@
+<view class="Outer_layer">
+  <view class="centre">
+    <view class="title">
+      <text>{{ title }}</text>
+    </view>
+    <view class="info">
+      <text class="author">作者:{{ author }}</text>
+      <text class="time">时间: {{ create_time }}</text>
+      <image class="delete" src="../images/delete.png" bindtap="deleteTheme" wx:if="{{ myself }}"></image>
+    </view>
+    <view class="content">{{ content }}</view>
+    <view wx:if="picture" class="themePicture">
+      <image src="{{ picture }}" bindtap="download" />
+    </view>
+    <view class="comment" wx:if="{{ !myself }}">
+      <form bindsubmit="formSubmit" bindreset="formReset">
+        <textarea name="comments" class="comment-input" placeholder="请输入您的评论"></textarea>
+        <button class="commit" formType="submit" type="primary">发表</button>
+      </form>
+    </view>
+    <view class="commentsList">
+      <view class="list" wx:for="{{ commentsList }}" wx:key="*this">
+      <view class="commentInfo">
+        <text class="commentAuthor">{{ item.author }}</text>
+        <image class="delete" src="../images/delete.png" bindtap="deleteComment" wx:if="{{ item.myself }}"></image>
+        <text class="commentTime">{{ item.create_time }}</text>
+      </view>
+      <view class="commentContent">
+        <text>{{ item.comment }}</text>
+      </view>
+      </view>
+    </view>
+  </view>
+</view>

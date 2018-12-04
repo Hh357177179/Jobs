@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>班得瑞高尔夫-注册讲师</title>
+  <script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            if (clientWidth >= 750) {
+              docEl.style.fontSize = '100px';
+            } else {
+              docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+            }
+          };
+  
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+      })(document, window);
+    </script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/regteacher.css">
+</head>
+<body>
+  <div class="regteacher">
+    <div class="topBanner">
+      <p class="bannertTit">班得瑞高尔夫</p>
+      <p>共识共创，传递梦想，一份事业，共同完成</p>
+      <p>班得瑞高尔夫讲师团队期待你的加入</p>
+    </div>
+
+    <div class="registerForm">
+      <form action="#">
+        <p class="formList clearfix">
+          <span class="listLabe">姓&#X3000;&#X3000;名:</span>
+          <input type="text" placeholder="填写真实姓名">
+        </p>
+        <p class="formList clearfix">
+          <span class="listLabe">电&#X3000;&#X3000;话:</span>
+          <input type="tel" placeholder="填写手机号码">
+        </p>
+        <p class="formList clearfix">
+          <span class="listLabe">验&nbsp;&nbsp;证&nbsp;&nbsp;码:</span>
+          <input class="getCode" type="tel" placeholder="短信验证码">
+          <i class="codeBtn">获取验证码</i>
+        </p>
+        <p class="checkText clearfix">
+            <span class="trueIcon">
+              <img src="img/trueIcon.png" alt="">
+            </span>
+            <span style="float:left;">
+              我已阅读并接受<i style="color:#FF2832;">《班得瑞高尔夫用户注册协议》</i>
+            </span>
+          </p>
+      </form>
+    </div>
+    <div class="registerBtn">立即注册</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+/* pages/storeenter/storeenter.wxss */
+.clear{
+  clear: both;
+}
+.enterTop{
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: #ccc;
+  display: flex;
+  justify-content: space-between;
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 111; */
+}
+.oneStep{
+  line-height: 30rpx;
+}
+.stepNum{
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+  text-align: center;
+}
+.addClass{
+  color: #5bb45a;
+  border-color: #5bb45a;
+}
+.enterInfo{
+  margin-top: 10rpx;
+  padding: 0 20rpx;
+  font-size: 30rpx;
+}
+.einfoName{
+  color: #666;
+  margin-bottom: 10rpx;
+}
+.einfoInput{
+  background: #ebebeb;
+  padding-left: 40rpx;
+  height: 70rpx;
+}
+.einfoInput input{
+  height: 100%;
+}
+.enterInfoList{
+  margin-bottom: 30rpx;
+}
+.picker{
+  width: 100%;
+  height: 70rpx;
+  background: #ebebeb;
+  font-size: 30rpx;
+  color: #999;
+  text-align: center;
+  line-height: 70rpx;
+}
+.picks{
+  width: 46%;
+  float: left;
+}
+.pactive{
+  color: #000;
+}
+.einfotextarea{
+  width: 100%;
+  background: #ebebeb;
+}
+.einfotextarea textarea{
+  width: 670rpx;
+  padding: 20rpx;
+  line-height: 40rpx;
+}
+.license{
+  width: 100%;
+  height: 400rpx;
+  background: #ebebeb;
+  position: relative;
+}
+.infoPic{
+  width: 100%;
+  height: 100%;
+}
+.addPic{
+  width: 300rpx;
+  position: absolute;
+  left: calc(50% - 150rpx);
+  top: calc(50% - 80rpx);
+  /* background: #ccc; */
+  text-align: center;
+}
+.addPicBtn{
+  margin: 0 auto;
+  width: 100rpx;
+  height: 100rpx;
+}
+.addPicBtn image {
+  width: 100%;
+  height: 100%;
+}
+.upText{
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  color: #5bb45a;
+}
+.submitStore{
+  width: 90%;
+  text-align: center;
+  margin: 40rpx auto;
+  line-height: 100rpx;
+  border-radius: 10rpx;
+  background: #5bb45a;
+  color: #fff;
+}
+.brText{
+  color: #5bb45a;
+  font-size: 28rpx;
+}

@@ -1,0 +1,10 @@
+<!--pages/delivery/delivery.wxml-->
+<view class='delivery'>
+  <view class='top_pic'>
+    <image src='../../images/deliveryPic.png'></image>
+    <view class='clear'></view>
+  </view>
+  <view class='d_address'>
+    132
+  </view>
+</view>

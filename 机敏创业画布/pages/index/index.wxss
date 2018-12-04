@@ -1,0 +1,23 @@
+/**index.wxss**/
+.list{
+  padding: 20rpx 40rpx;
+  border-bottom: 1px solid #d9d9d9;
+}
+.listTitle{
+  font-size: 36rpx;
+}
+.version{
+  margin-left: 20rpx;
+  font-size: 24rpx;
+  line-height: 48rpx;
+  color: #999;
+}
+.userName{
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+.pic{
+  float: right;
+  line-height: 48rpx;
+  font-size: 30rpx;
+}

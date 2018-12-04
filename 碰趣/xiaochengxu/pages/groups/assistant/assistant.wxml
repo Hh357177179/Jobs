@@ -1,0 +1,31 @@
+<!--pages/assistant/assistant.wxml-->
+<view class="assistant">
+  <view class='assistant_head'>
+    <view class='assistant_time'>
+      <image class="lassistant-image" src="{{trip.user.avatar}}"></image>
+      <view class='assistant_List'>{{trip.user.nick_name}}</view>
+      <!-- <view class='assistant_List'>职位：副团长</view> -->
+      <view class='assistant_List'>联系方式：{{trip.user.phone}}</view>
+    </view>
+
+  </view>
+  <view class='remove_List'>
+    <text>{{trip.user.nick_name}}的行程</text>
+    <block wx:for="{{trip.group.activities}}" wx:for-item="activity" wx:key="{{activity.index}}">
+      <view class='List_same'>
+        <view class='List_left'>
+          <image class="left-image" src="../../../images/List.png"></image>
+        </view>
+        <view class='List_right'>
+          <view class='List_time'>{{activity.activity.start_time}}</view>
+          <view class='list_title'> {{activity.activity.type}}|{{activity.activity.title}}</view>
+          <view class='List_content'>{{activity.activity.content}}</view>
+          <view class='List_time'>已投票人数：{{activity.singup_users.length}}</view>
+          <view class='List_time'>达人团长：{{activity.leader.nick_name}}</view>
+          <view class='remove' wx:if="{{activity.is_singup == 0}}" id="{{activity.id}}" bindtap='vote'>我也投票</view>
+          <view class='remove' wx:if="{{activity.is_singup == 1}}" id="{{activity.id}}" bindtap='vote_cancel'>取消投票</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

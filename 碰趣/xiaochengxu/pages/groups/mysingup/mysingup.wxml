@@ -1,0 +1,20 @@
+<!-- pages/mysingup/mysingup.wxml -->
+<wxs module="util" src="../../../utils/util.wxs"></wxs>
+<block wx:for="{{SingupGroups}}" wx:key="{{item.id}}">
+  <navigator url="../detailed/detailed?group_id={{item.id}}">
+    <view>
+      <view class="banner">
+        <swiper indicator-dots="true" indicator-color="rgba(255,255,255,.3)" indicator-active-color="#fff" class="bgbanner">
+          <swiper-item wx:for="{{item.format_img_url}}" wx:key="{{index}}">
+            <image src="{{item}}" class="banner-image"></image>
+          </swiper-item>
+        </swiper>
+      </view>
+      <view class="detail">
+        <text class="d-title">{{item.title}}</text>
+        <text class="d-title">活动时间：{{item.start_time}}~{{item.end_time}}</text>
+        <text class="d-title">报名时间：{{util.dateFormatFP(item.create_time)}}</text>
+      </view>
+    </view>
+  </navigator>
+</block>

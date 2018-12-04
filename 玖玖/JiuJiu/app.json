@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/board/board",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/detailist/detailist"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "玖玖工作室",
+    "navigationBarTextStyle": "black"
+  }
+}

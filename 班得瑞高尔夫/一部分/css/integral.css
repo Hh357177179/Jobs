@@ -1,0 +1,91 @@
+.integralTitle{
+  width: 100%;
+  height: 0.8rem;
+  line-height: 0.85rem;
+  background: #F6F6F6;
+  color: #828282;
+  font-weight: bold;
+  font-size: 0.32rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.integralTitle span{
+  float: left;
+  height: 100%;
+  text-align: center;
+}
+.interName, .interEvent{
+  width: 25%;
+}
+.iEvent{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left !important;
+  padding-left: 0.2rem;
+}
+.interNum {
+  width: 15%;
+  font-family: "微软雅黑";
+}
+.interTime{
+  width: 35%;
+  font-family: "微软雅黑";
+}
+.integraList{
+  width: 100%;
+  color: #828282;
+  padding-top: 0.8rem;
+}
+.integraList li{
+  width: 100%;
+  font-size: 0.3rem;
+  line-height: 0.85rem;
+}
+.integraList li span{
+  float: left;
+  text-align: center;
+}
+
+
+/* 普通姓名 */
+.common{
+  color: #A99DE5;
+}
+/* 新增会员 */
+.newly{
+  color: #FF428E;
+}
+
+
+/* 底部tab */
+.foot{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1rem;
+  font-size: 0.25rem;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+.footUl li{
+  float: left;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  color: #323232;
+}
+.footIcon{
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: 0.05rem auto ;
+}
+.footIcon img{
+  width: 100%;
+  height: 100%;
+}
+.footActive {
+  color: #F98731;
+}

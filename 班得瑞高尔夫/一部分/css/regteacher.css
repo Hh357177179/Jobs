@@ -1,0 +1,78 @@
+.topBanner{
+  width: 100%;
+  height: 3.6rem;
+  background: #8EC63F;
+  color: #fff;
+  text-align: center;
+  font-size: 0.27rem;
+  border: 1px solid rgba(0,0,0,0);
+}
+.bannertTit{
+  font-size: 0.8rem;
+  margin: 0.8rem 0 0.3rem 0;
+}
+.registerForm{
+  width: 6.5rem;
+  margin: 0.3rem auto;
+  font-size: 0.32rem;
+}
+.formList{
+  width: 100%;
+  border-bottom: 1px solid #CCCCCC;
+  height: 1rem;
+}
+.formList input{
+  float: left;
+  height: 100%;
+  background: none;
+  font-size: 0.32rem;
+  width: 4rem;
+}
+.listLabe{
+  float: left;
+  margin-right: 0.58rem;
+  padding-left: 0.2rem;
+  margin-top: 0.28rem;
+}
+.formList .getCode{
+  width: 2.2rem;
+}
+.codeBtn{
+  float: right;
+  font-size: 0.25rem;
+  color: #fff;
+  padding: 0.1rem 0.15rem;
+  border-radius: 4px;
+  background: #8EC63F;
+  margin: 0.2rem 0.2rem 0 0;
+}
+.checkText{
+  font-size: 0.25rem;
+  margin-top: 0.54rem;
+}
+.trueIcon{
+  float: left;
+  width: 0.35rem;
+  height: 0.35rem;
+  border: 1px solid #b3b3b3;
+  border-radius: 3px;
+  margin-right: 0.1rem;
+}
+.trueIcon img{
+  width: 0.25rem;
+  height: 0.25rem;
+  margin-left: 0.03rem;
+  margin-top: 0.02rem;
+}
+.registerBtn{
+  width: 6.5rem;
+  height: 0.98rem;
+  background: #8EC63F;
+  color: #fff;
+  border-radius: 4px;
+  line-height: 1.1rem;
+  font-size: 0.4rem;
+  letter-spacing: 0.1rem;
+  margin: 0.4rem auto 0;
+  text-align: center;
+}

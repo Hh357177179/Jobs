@@ -1,0 +1,85 @@
+/* pages/second/second.wxss */
+.first{
+  padding: 20rpx 40rpx;
+}
+.clear{
+  clear: both;
+}
+.whoUser{
+  margin-bottom: 40rpx;
+}
+.whoTitle{
+  font-size: 32rpx;
+  margin-top: 20rpx;
+}
+.whoText{
+  width: 646rpx;
+  margin-top: 10rpx;
+  border:1px solid #d9d9d9;
+  border-radius: 10rpx;
+  padding:0 10rpx;
+  font-size: 30rpx;
+}
+.userNeed{
+  font-size: 30rpx;
+  border: 1px solid #d9d9d9;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  margin-top: 10rpx;
+}
+.textFill{
+  float: left;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.fillInput{
+  box-sizing: border-box;
+  width: 300rpx;
+  height: 60rpx;
+  float: left;
+  border-bottom: 1px solid #d9d9d9;
+  margin: 0 10rpx;
+  padding: 0 10rpx;
+  color: #DD5F1B;
+  text-align: center;
+}
+/* .bigText{
+  height: 400rpx;
+} */
+.submitBtn{
+  width: 200rpx;
+  text-align: center;
+  color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #DD5F1B;
+  margin: 20rpx auto;
+  border-radius: 10rpx;
+  font-size: 32rpx;
+  z-index: 11111;
+  position: relative;
+  bottom: 20rpx;
+}
+.colortext{
+  color: #a6a6a6;
+}
+.userLabel{
+  float: left;
+}
+.userInputs{
+  float: left;
+  margin-left: 20rpx;
+  border-bottom: 1px solid #d9d9d9;
+  text-align: center;
+}
+.userNames{
+  font-size: 28rpx;
+  color: #666;
+  min-width: 40rpx;
+  float: left;
+  margin-right: 30rpx;
+  /* text-align: center; */
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20rpx;
+  padding: 10rpx 20rpx;
+}

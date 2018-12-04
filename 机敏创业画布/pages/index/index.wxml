@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class='home'>
+  <block wx:for="{{homeList}}" wx:key="{{index}}">
+    <view class='list' bindtap='searchDetail' data-id='{{item.id}}' data-proId='{{item.template}}'>
+      <view class='listTitle'>
+        <text>{{item.project_title}}</text>
+        <text class='version'>v{{item.version}}</text>
+        <block>
+          <text class='pic' wx:if="{{item.template == 1}}">中修_一阶</text>
+          <text class='pic' wx:if="{{item.template == 2}}">中修_二阶</text>
+          <text class='pic' wx:if="{{item.template == 3}}">中修_三阶</text>
+          <text class='pic' wx:if="{{item.template == 4}}">高修</text>
+        </block>
+      </view>
+      <view class='userName'>
+        <text wx:if="{{item.realname == ''}}">创始人：{{item.nickname}}</text>
+        <text wx:else>创始人：{{item.realname}}</text>
+      </view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,44 @@
+<!--pages/apply/apply.wxml-->
+<view class="apply">
+  <view class="picture">
+    <navigator url="../apply/apply?title=apply">
+        <image src="../../images/phone.png" class="phone"></image>
+    </navigator>
+    <navigator url="../application/application?title=application">
+        <image src="../../images/identity.png" class="identity"></image>
+    </navigator> 
+  </view>
+
+  <view wx:if="{{is_auth==0}}">
+    <view class="count">
+      <image src="../../images/person.png" class="people"></image>
+      <view class="line"></view>
+      <input type="text" placeholder="请输入您的手机号" value='{{name}}' bindblur='bindMobileInput' maxlength="11"/>
+    </view>
+    <view class="password">
+      <image src="../../images/code.png" class="code"></image>
+      <view class="line"></view>
+      <input type="text" placeholder="请输入验证码" value='{{name}}' bindblur='bindCodeInput'/>
+      <button bindtap="sendCode">获取验证码</button>
+    </view>
+    <view class="bottom">
+      <navigator >
+      <button bindtap="authMobile">确定手机认证</button>
+      </navigator>
+    </view>
+  </view>
+
+  <view class='bott' wx:elif="{{is_auth==1}}">
+    <view class='bottom_bg_red'>手机号实名已认证</view>
+    <view class="bg_red">
+      您的手机号已认证成功、全部认证成功后可以享受更多的......
+      点击下一步开始身份认证。
+    </view>
+    <navigator url="../application/application?title=application">
+      <view class='bottom_bg'>
+        <button>确定</button>
+      </view>
+    </navigator>
+  </view>
+
+</view>

@@ -1,0 +1,119 @@
+<!--pages/my/my.wxml-->
+<view class="name">
+<image src="{{userInfo.avatarUrl}}"></image>
+ <view class='userInfos'>
+    <view style='float:left'>{{userInfo.nickName}}</view>
+    <!-- <view style='margin-top:10rpx;'>金额:¥{{balanceMoney}}</view> -->
+    <view style='float:right'>Id: \r{{user_id}}</view>
+    <!-- <view>
+    <navigator url="../bills/bills?uid={{user_id}}">
+      <button class='billBtn'>账单</button>
+    </navigator>
+    <navigator url='../deposits/deposits?uid={{user_id}}'>
+      <button class='depositBtn'>提现</button>
+    </navigator>
+    </view> -->
+  </view>
+  <view class='myMoney'>
+      <navigator url='/pages/wallet/wallet'>
+        <button>我的钱包</button>
+      </navigator>
+    </view>
+</view>
+<view class='realName' bindtap='goRealName' wx:if='{{showRealName}}'>
+  <text>您还未实名认证，快去认证获得趣值吧！</text>
+  <icon type='cancel' size='20' style='float:right;' catchtap='closeRealName'></icon>
+</view>
+<view class="list">
+  <navigator url="../mynews/mynews?title=mynews">
+    <view class="proposal">
+      <image src="../../images/proposal.png"></image>
+      <text>消息</text>
+      <image src="../../images/to.png" class="to"></image>
+    </view>
+  </navigator>
+  <navigator url="../companion/Playmate/Playmate">
+    <view class="message">
+      <image src="../../images/message.png"></image>
+      <text>我的游伴</text>
+      <image src="../../images/to.png" class="to"></image>
+    </view>
+  </navigator>
+  <navigator url="../companion/interest/interest?user_id={{user_id}}" hover-class="navigator-hover">
+    <view class="join">
+      <image src="../../images/describe.png"></image>
+      <text>热情与标签</text>
+      <image src="../../images/to.png" class="to"></image>
+    </view>
+  </navigator>
+  <navigator url="../release/release?title=release" hover-class="navigator-hover">
+    <view class="release">
+      <image src="../../images/release.png"></image>
+      <text>我创建的主题</text>
+      <image src="../../images/to.png" class="to"></image>
+    </view>
+  </navigator>
+  <navigator url="../groups/grouplist/grouplist" hover-class="navigator-hover">
+    <view class="release">
+      <image src="../../images/releaseAll.png" style='width:50rpx;height:50rpx;margin-top:28rpx;'></image>
+      <text style='padding-left:26rpx;'>我创建的团</text>
+      <image src="../../images/to.png" class="to"></image>
+    </view>
+  </navigator>
+  <navigator url="../join/join?title=join" hover-class="navigator-hover">
+    <view class="join">
+      <image src="../../images/join.png"></image>
+      <text>我参与的主题</text>
+      <image src="../../images/to.png" class="to"></image>
+    </view>
+  </navigator>
+  <navigator url="../groups/mysingup/mysingup">
+    <view class="join">
+      <image src="../../images/joinAll.png" style='width:50rpx;height:50rpx;margin-top:28rpx;'></image>
+      <text style='padding-left:28rpx;'>我参与的团</text>
+      <image src="../../images/to.png" class="to"></image>
+    </view>
+  </navigator>
+  <navigator>
+     <view class="join">
+      <image src="../../images/ranking.png" style='width:50rpx;height:50rpx;margin-top:28rpx;'></image>
+      <text style='padding-left:28rpx;'>排行榜</text>
+      <image src="../../images/to.png" class="to"></image>
+    </view>
+  </navigator>
+  <navigator>
+     <view class="join">
+      <image src="../../images/complaint.png"></image>
+      <text>投诉行程</text>
+      <image src="../../images/to.png" class="to"></image>
+    </view>
+  </navigator>
+   <!-- <navigator url="../groups/addgroup/addgroup?title=release" hover-class="navigator-hover">
+    <view class="establish">
+      <image src="../../images/establish.png"></image>
+      <text>马上创建团</text>
+      <image src="../../images/to.png" class="to"></image>
+    </view>
+  </navigator> -->
+  <!-- <view class="authentication">
+        <navigator url="../cards/cards?title=cards">
+            <image src="../../images/authentication.png"></image>
+            <text>身份认证</text>
+            <image src="../../images/to.png" class="to"></image>
+        </navigator>
+	</view> -->
+  <!-- <navigator url="../proposal/proposal?title=proposal">
+    <view class="proposal">
+      <image src="../../images/proposal.png"></image>
+      <text>反馈建议</text>
+      <image src="../../images/to.png" class="to"></image>
+    </view>
+  </navigator> -->
+  <!-- <navigator url="../message/message?title=message">
+    <view class="message">
+      <image src="../../images/message.png"></image>
+      <text>我的留言区</text>
+      <image src="../../images/to.png" class="to"></image>
+    </view>
+  </navigator> -->
+</view>

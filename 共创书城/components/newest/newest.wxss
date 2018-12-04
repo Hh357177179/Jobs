@@ -1,0 +1,32 @@
+/* components/newest/newest.wxss */
+.clear{
+  clear: both;
+}
+.hotPic{
+  width: 120rpx;
+  height: 120rpx;
+  background: #ccc;
+  float: left;
+  margin-right: 40rpx;
+}
+.hotPic image{
+  width: 100%;
+  height: 100%;
+}
+.hotText{
+  font-size: 28rpx;
+  float: left;
+  width: 550rpx;
+}
+.hotTitle{
+  font-size: 32rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+.dText{
+  color: #666;
+}
+.hotList{
+  border-bottom: 1px solid #d9d9d9;
+  padding: 20rpx;
+}

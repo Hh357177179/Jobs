@@ -1,0 +1,11 @@
+<!--pages/cards/cards.wxml-->
+<view class="cards">
+  <block wx:for-items="{{images}}" wx:key="{{item.id}}">
+    <view class="choose">
+      <!-- <image src="{{item.src}}" bindtap="bindChoose"></image> -->
+       <image class='uploadImg' src='../../images/woman.png' bindtap='bindChoose' class='addimg' style='display:{{img_button}}'></image>
+    </view>
+    <view class="text">{{item.text}}</view>
+  </block>
+  <button bindtap='uploadimg'>确定上传</button>
+</view>

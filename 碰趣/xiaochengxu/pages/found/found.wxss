@@ -1,0 +1,8 @@
+/* pages/found/found.wxss */
+.nav{width:100%;display:flex;}
+.show{display:block;}
+.hidden{display:none;}
+.found{
+  padding:12rpx 0 0;
+  font-family: "PingFangSC";
+}

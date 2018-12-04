@@ -1,0 +1,22 @@
+<!--pages/perfectinfo/perfectinfo.wxml-->
+<view class="home">
+  <view class='home_title'>请完善个人信息</view>
+  <view class='home_input'>
+    <view class='list_input'>
+      <text class='labe_text'>您的姓名：</text>
+      <input type='text' value='{{infoname}}' bindinput='advinfoname' class='val_input' placeholder='请输入您的姓名' placeholder-style='font-size: 28rpx;'></input>
+      <view class='clear'></view>
+    </view>
+    <view class='list_input'>
+      <text class='labe_text'>联系电话：</text>
+      <input type='number' value='{{infotel}}' maxlength="11" bindinput='advinfotel' class='val_input' placeholder='请输入您的联系电话' placeholder-style='font-size: 28rpx;'></input>
+      <view class='clear'></view>
+    </view>
+    <view class='list_input'>
+      <text class='labe_text'>您的地址：</text>
+      <input type='text' value='{{infolocal}}' bindinput='advinfolocal' class='val_input' placeholder='请输入您的地址' placeholder-style='font-size: 28rpx;'></input>
+      <view class='clear'></view>
+    </view>
+  </view>
+  <view class='submit_info' bindtap='submit_info'>提交</view>
+</view>

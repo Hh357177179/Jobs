@@ -1,0 +1,33 @@
+<!--pages/auditresult/auditresult.wxml-->
+<view class='auditresult'>
+  <view class='enterTop'>
+    <view class="oneStep {{textStatus == 0 ? 'addClass' : ''}}">
+      <text class="stepNum {{textStatus == 0 ? 'addClass' : ''}}">1</text>
+      <text>提交资料</text>
+    </view>
+    <text style='line-height: 30rpx;' class="{{textStatus == 0 ? 'addClass' : ''}}">-------</text>
+    <view class="oneStep {{textStatus == 1 ? 'addClass' : ''}}">
+      <text class="stepNum {{textStatus == 1 ? 'addClass' : ''}}">2</text>
+      <text>审核中</text>
+    </view>
+    <text style='line-height: 30rpx;' class="{{textStatus == 1 ? 'addClass' : ''}}">-------</text>
+    <view class="oneStep {{textStatus == 2 ? 'addClass' : ''}}" style='float:right;'>
+      <text class="stepNum {{textStatus == 2 ? 'addClass' : ''}}">3</text>
+      <text>审核结果</text>
+    </view>
+  </view>
+  <view class='inReview' wx:if="{{state == 0}}">
+    <view>
+      审核中...请耐心等待！
+    </view>
+  </view>
+  <view class='inReview' wx:if="{{state == 1}}">
+    <view>审核不通过</view>
+    <view>原因：{{reason}}</view>
+    <view class='backMine' bindtap='fillAgain'>去重新填写店铺资料</view>
+  </view>
+  <view class='inReview' wx:if="{{state == 2}}">
+    <view>恭喜您通过审核！</view>
+    <view class='backMine' bindtap='backMine'>返回个人中心</view>
+  </view>
+</view>

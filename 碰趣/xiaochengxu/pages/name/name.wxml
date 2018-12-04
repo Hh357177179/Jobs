@@ -1,0 +1,31 @@
+<!--pages/name/name.wxml-->
+<form bindsubmit="name">
+  <view class="name">
+  <text class='name_hoter' decode="{{true}}">{{vdata.title}}</text>
+  <view class="title">
+      <text decode="{{true}}">手&nbsp;&nbsp;机&nbsp;&nbsp;号：</text>
+      <input maxlength='11'value="" type='mobile' bindinput ="mobileInput" class='reply_text' placeholder="请输入手机号"  value='{{phone}}' bindblur='bindPhoneInput'/>
+    </view>
+    <view class="title">
+      <text decode="{{true}}">成人人数：</text>
+      <input class='reply_text' type='number' bindinput ="bindAdultNumInput" placeholder="请输入成人人数" value='{{adult_num}}' />
+    </view>
+    <view class="title">
+      <text decode="{{true}}">成人价格：</text>
+      <view>{{vdata.adult_price}}¥/人</view>
+    </view>
+    <view class="title">
+      <text decode="{{true}}">儿童人数：</text>
+      <input class='reply_text' type='submi' bindinput ="bindChildNumInput" placeholder="请输入儿童人数"  value='{{child_num}}'/>
+    </view>
+    <view class="title">
+      <text decode="{{true}}">儿童价格：</text>
+      <view>{{vdata.child_price}}¥/人</view>
+    </view>
+    <text class='text_name' decode="{{true}}">总计: {{total_num}}人;&nbsp;&nbsp;&nbsp;&nbsp; {{total_price}}¥;</text>
+  </view>
+  <view class="ok">
+     <button bindtap='submit'>确定提交</button> 
+  </view>
+</form>
+

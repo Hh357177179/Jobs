@@ -1,0 +1,64 @@
+<!-- pages/companion/Information/Information.wxml -->
+<view class="name">
+  <image src="{{personal.avatar}}"></image>
+  <view style='margin-top:10rpx;'>{{personal.nick_name}}</view>
+  <view style='margin-top:10rpx;'>id:{{personal.id}}</view>
+</view>
+<view class='Information'>
+  <view class='Introduction'>
+    <text>热情和趣值展示</text>
+    <view class='detailed'>{{personal.introduction}}</view>
+  </view>
+  <view class="banner">
+    <text>照片风采展示</text>
+    <swiper indicator-dots="true" indicator-color="rgba(255,255,255,.3)" indicator-active-color="#fff" class="bgbanner">
+      <swiper-item wx:for="{{picture_path}}">
+        <image src="https://ssl.zhaodaka.net/pengqu/uploads/images/{{item}}" class="banner-image"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="remove_List">
+    <text class="remove_Title">{{personal.nick_name}}的活动：</text>
+    <view class="List_same" wx:for="{{createactivity}}" wx:key="index">
+      <view class="List_left">
+        <image class="left-image" src="/images/List.png"></image>
+      </view>
+      <view class="List_right">
+        <view class="List_time">{{item.start_time}}</view>
+        <view class="List_content">{{item.title}}</view>
+        <!-- <navigator url="../appoint/appoint?pid={{item.id}}&group_id={{item.group_id}}">
+          <view class="List_content">{{item.activity.content}}</view>
+        </navigator> -->
+        <view class="List_content">活动地点：{{item.address}}</view>
+        <view class="List_content">活动费用：{{item.adult_price}}元/人</view>
+        <view class="List_content">人数:{{item.participate_num}}/{{item.total_num}}人</view>
+      </view>
+    </view>
+    <navigator url="">
+      <view class='geng'>更多活动</view>
+    </navigator>
+  </view>
+  <text class="remove_Title">留言区</text>
+  <view class='Stay'>
+    <block wx:for="{{msglist}}" wx:key="{{index}}">
+      <view class="e-pop">
+        <view class="man">
+          <image src="{{item.avatarUrl}}"></image>
+          <view class="slim">
+            <text class="name1">{{item.nickName}}</text>
+            <text class="time">{{item.comment_date}}</text>
+            <view class="help">{{item.content}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <navigator url="../../message/message?user_id={{personal.id}}">
+      <view class='geng'>更多留言</view>
+    </navigator>
+  </view>
+</view>
+<view class='bottom'>
+  <navigator url="../Contacts/Contacts?sender_id={{personal.id}}&receiver_id={{myuser_id}}">
+    <view class="footer" wx:if="1" bindtap="apply">联 系 TA</view>
+  </navigator>
+</view>

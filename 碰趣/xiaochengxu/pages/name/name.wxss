@@ -1,0 +1,91 @@
+/* pages/name/name.wxss */
+
+.name{
+  width: auto;
+  height: auto;
+  margin: auto;
+}
+.name_hoter{
+  display: block;
+  width: 100%;
+  height:80rpx;
+  line-height: 80rpx;
+  background: #f2f2f2;
+  font-size: 35rpx;
+  text-align: center;
+  word-break:keep-all;/* 不换行 */
+  white-space:nowrap;/* 不换行 */
+  overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+}
+.text_name{
+  display: block;
+  width: 100%;
+  padding-left: 20rpx;
+  font-size: 32rpx;
+  background: #f2f2f2;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 30rpx;
+}
+.title,.time{
+	height:100rpx;
+	width:100%;
+	font-size:26rpx;
+	padding-left:20rpx;
+	line-height:100rpx;
+  margin-top: 30rpx;
+}
+.title text,.time text{
+	float:left;
+  font-size: 32rpx;
+}
+.title .reply_text{
+	width:500rpx;
+	height:78rpx;
+	border:1rpx solid #dbdbdb;
+	margin-left:27rpx;
+	margin-top:10rpx;
+	padding-left:24rpx;
+  box-sizing:border-box;
+  float:left;
+}
+.time input{
+	width:400rpx;
+	height:100%;
+	padding-left:24rpx;
+	border:none;
+	float:left;
+}
+.time .new image{
+	width:24rpx;
+	height:13rpx;
+	float:right;
+	margin-right:20rpx;
+	margin-top:33rpx;
+}
+.picture{
+	height:44rpx;
+	width:100%;
+	margin-top:10rpx;
+	padding-left:20rpx;
+}
+.picture .image{
+	font-size:26rpx;
+	color:#000000;
+}
+.ok{
+	height:85rpx;
+	width:100%;
+	text-align:center;
+  margin-top: 50rpx;
+}
+.ok button{
+	height:85rpx;
+	width:526rpx;
+	margin-bottom:13rpx;
+  line-height:85rpx;
+	color:#fff;
+	background:#fa5757;
+	border-radius:40rpx;
+	font-size:30rpx;
+}

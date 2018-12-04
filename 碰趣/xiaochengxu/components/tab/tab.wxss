@@ -1,0 +1,35 @@
+/* components/ta'b.wxss */
+
+/* 底部状态栏 */
+ .state{
+  height:98rpx;
+  width:100%;
+  background:white;
+  border-top:2rpx solid #dddddd;
+  position:fixed;
+  bottom:0;
+  left:0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.state .my{
+  height:100%;
+  
+  color:#000000;
+  font-weight: 300;
+  text-align: center;
+}
+.state .my view{
+font-size:22rpx;
+font-weight: 500;
+margin-top: 2rpx;
+}
+.state .my image{
+  display: block;
+  width:52rpx;
+  height:52rpx;
+  margin: auto;
+  margin-top: 10rpx;
+} 

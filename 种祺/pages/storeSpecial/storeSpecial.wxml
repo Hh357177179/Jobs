@@ -1,0 +1,142 @@
+<!--pages/storeSpecial/storeSpecial.wxml-->
+<view class='storeSpecial'>
+  <view class='sSpecial'>
+    <view class='sSpecialTit'>店铺特色:</view>
+    <view class='sSpecialList'>
+      <view class='sSpecialCard' wx:for="{{storeSpArr}}" wx:key="index">
+        <text>{{item}}</text>
+        <image bindtap='deleteIcon' data-index='{{index}}' class='deleteIcon' src='../../images/delets.png'></image>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='addSpecial'>
+      <text class='addText'>添加店铺特色:</text>
+      <input value='{{specialCardVal}}' bindinput='advScardVal' placeholder='请输入特色' placeholder-style='font-size: 28rpx;'></input>
+      <text class='addBtn' bindtap='submitAdd'>确认</text>
+      <view class='clear'></view>
+    </view>
+  </view>
+  <view class='line'></view>
+  <view class='jobholder'>
+    <view class='jobholderTit'>
+      <text>从业医师：</text>
+      <view class='addJob' bindtap='addJob'>
+        <view class='addIcon'>
+          <image src='../../images/addIcon.png'></image>
+        </view>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='jobList'>
+      <view class='jobCard' wx:for="{{doctorArr}}" wx:key="index">
+        <view class='jobPic'>
+          <image src='{{item.avatar}}'></image>
+        </view>
+        <view class='jobUserName'>{{item.realname}}</view>
+        <view class='clear'></view>
+      </view>
+      <view class='clear'></view>
+    </view>
+  </view>
+  <view class='line'></view>
+  <!-- 特色服务 -->
+  <view class='jobholder'>
+    <view class='jobholderTit'>
+      <text>特色服务：</text>
+      <view class='addJob' bindtap='addserve'>
+        <view class='addIcon'>
+          <image src='../../images/addIcon.png'></image>
+        </view>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <block wx:for="{{serveObj}}" wx:key="index">
+      <view class='specialserve'>
+        <view class='specialservePic'>
+          <image src='{{item.picurl[0]}}'></image>
+        </view>
+        <view class='specialInfo'>
+          <view class='specilaTitle'>
+            <text style='float: left;'>{{item.title}}</text>
+            <text style='float:right;color: #f00;font-size: 28rpx;'>{{item.price}}元/疗程</text>
+            <view class='clear'></view>
+          </view>
+          <view class='specialintroduce'>简介：{{item.desc}}</view>
+        </view>
+        <view class='clear'></view>
+      </view>
+    </block>
+  </view>
+
+
+  <!-- 添加医师 -->
+  <view class='addJobMask' wx:if="{{jobMaskShow}}">
+    <view class='JobMaskMain'>
+      <view class='mJobTit'>
+        <text>添加医师：</text>
+        <image bindtap='closeMask' class='closeMask' src='../../images/close.png'></image>
+      </view>
+      <view class='memberId'>
+        <text class='memberNum'>会员编号：</text>
+        <input value='{{menberVal}}' bindinput='advmenVal' type='number' placeholder-style='font-size: 28rpx;' placeholder='请输入会员编号'></input>
+        <view class='clear'></view>
+      </view>
+      <view class='clear'></view>
+      <view class='specialCard'>
+        <view class='specialCardTit'>特色：</view>
+        <view class='specialCardList'>
+          <input value='{{sone}}' bindinput='advSone' placeholder='请输入医师特色' placeholder-style='font-size: 28rpx;'></input>
+          <input value='{{stwo}}' bindinput='advStwo' placeholder='请输入医师特色' placeholder-style='font-size: 28rpx;'></input>
+          <input value='{{sthree}}' bindinput='advSthree' placeholder='请输入医师特色' placeholder-style='font-size: 28rpx;'></input>
+        </view>
+        <view class='onlyPrice'>
+          <text class='priceText'>服务价格：</text>
+          <input type='number' value='{{price}}' bindinput='advPrice' placeholder='请输入服务价格' placeholder-style='font-size: 28rpx;'></input>
+          <text style='color:#f00;margin-left:10rpx;'>元/次</text>
+          <view class='clear'></view>
+        </view>
+      </view>
+      <view class='subJobBtn' bindtap='subJobBtn'>提交</view>
+    </view>
+  </view>
+
+  <!-- 添加特色服务 -->
+  <view class='addJobMask' wx:if="{{addserveShow}}">
+    <view class='JobMaskMain'>
+      <view class='mJobTit'>
+        <text>添加特色服务：</text>
+        <image bindtap='closeserver' class='closeMask' src='../../images/close.png'></image>
+      </view>
+      <view class='memberId'>
+        <text class='memberNum'>名称：</text>
+        <input value='{{serverVal}}' bindinput='advServerVal' placeholder-style='font-size: 28rpx;' placeholder='请填写服务名称'></input>
+        <view class='clear'></view>
+      </view>
+      <view class='clear'></view>
+      <view class='onlyPrice'>
+        <text class='priceText'>价格：</text>
+        <input type='number' value='{{sprice}}' bindinput='advSprice' placeholder='请填写服务价格' placeholder-style='font-size: 28rpx;'></input>
+        <text style='color:#f00;margin-left:10rpx;'>元/疗程</text>
+        <view class='clear'></view>
+      </view>
+      <view class='clear'></view>
+      <view class='specialCard'>
+        <view class='specialCardTit'>简介：</view>
+        <view class='serverArea'>
+          <textarea maxlength='-1' class='servearea' value='{{serveintro}}' bindinput='advIntro' placeholder='请填写服务简介'></textarea>
+        </view>
+      </view>
+      <view>
+        <view class='specialCardTit upPics'>
+          <text class='upPicText'>上传图片:</text>
+          <view class='showPic'>
+            <image class='choosePic' src='{{servePic[0]}}'></image>
+            <image bindtap='upIconPic' class='upIcon' src='../../images/upPic.png'></image>
+          </view>
+          <view class='clear'></view>
+        </view>
+      </view>
+      <view class='subJobBtn' bindtap='subserver'>提交</view>
+    </view>
+  </view>
+</view>

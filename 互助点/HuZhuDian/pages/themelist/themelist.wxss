@@ -1,0 +1,125 @@
+.log-scroll-view {
+  margin: 0 30rpx;
+  margin-top: 40rpx;
+  height: calc(100% - 40rpx);
+  width: calc(100% - 60rpx);
+  background: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.img {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+}
+.goTheme{
+  width: 100px;
+  height: 36px;
+  font-size: 18px;
+  line-height: 32px;
+  text-align: center;
+  background: #1aad19;
+  color: #fff;
+  float: right;
+  margin: 10px;
+  border-radius: 8%;
+}
+.classification {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx;
+  border-bottom: 3rpx solid #f4f4f4;
+}
+
+.ongoing-name {
+  font-size: 32rpx;
+}
+
+.money {
+  margin-top: 5rpx;
+  color: #ccc;
+}
+
+.ongoing-state {
+  margin-left: 12rpx;
+  font-size: 30rpx;
+  /* color: #cce5e9; */
+}
+
+.box-1 {
+  margin-left: 8rpx;
+}
+.middle{
+  font-size: 12px;
+  color: #cce5e9;
+}
+.time{
+  margin: 5px;
+}
+
+.end {
+  display: flex;
+  flex-direction: row;
+  text-indent: 14px;
+}
+
+.boxSon {
+  display: flex;
+}
+
+.box .headPortrait {
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 5%;
+}
+
+.box .name {
+  font-size: 36rpx;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  flex-flow: row;
+}
+
+.Outer_layer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items:center;垂直居中 *//* justify-content: center;水平居中 */
+  background-color: #cce5e9;
+}
+
+.centre {
+  margin: 30rpx;
+  padding-left: 20rpx;
+  background-color: #fff;
+}
+/* 分页按钮 */
+.paging{
+  display: flex;
+flex-grow: 0;
+flex-direction: row;
+/* justify-content: flex-start */
+margin-bottom: 20rpx;
+margin-top: 40rpx;
+}
+/*页数 外盒子  */
+.textdisplay{
+     display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+ justify-content:center;
+ border: 1rpx solid #cce5e9;
+ align-content: center
+}
+
+.no-more {
+  font-size: 30rpx;
+  text-align: center;
+  color: #ccc;
+  line-height: 40rpx;
+  margin: 15rpx 0;
+}

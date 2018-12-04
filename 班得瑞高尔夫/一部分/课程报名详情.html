@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>课程报名详情</title>
+  <script>
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          if (clientWidth >= 750) {
+            docEl.style.fontSize = '100px';
+          } else {
+            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+          }
+        };
+
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/course.css">
+</head>
+
+<body>
+  <div class="course">
+    <div class="courseTitle">
+      <span class="courseName">课程名称</span>
+      <span class="cName">姓名</span>
+      <span class="cTel">联系方式</span>
+    </div>
+    <div class="courseList">
+      <ul>
+        <li class="clearfix">
+          <span class="courseName clistName">10月30日宣讲课</span>
+          <span class="cName">张三</span>
+          <span class="cTel">13123232323</span>
+        </li>
+        <li class="clearfix">
+          <span class="courseName clistName">10月30日宣讲课10月30日宣讲课</span>
+          <span class="cName">李四</span>
+          <span class="cTel">13123233434</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>

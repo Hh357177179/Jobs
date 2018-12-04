@@ -1,0 +1,81 @@
+.glofuse{
+  width: 100%;
+  height: 100%;
+  background: #F2F2F2;
+}
+.glofuseTop{
+  width: 100%;
+  padding: 0.33rem 0.72rem;
+  background: #8EC63F;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.glofuseTop p{
+  width: 2.4rem;
+  height: 0.65rem;
+  line-height: 0.7rem;
+  font-size: 0.35rem;
+  background: #fff;
+  text-align: center;
+}
+.glofuseTop p a{
+  color: #666666;
+}
+.glofList{
+  padding-top: 1.61rem;
+  padding-bottom: 1.5rem;
+}
+.glofUl{
+  background: #fff;
+}
+.glofUl li{
+  padding: 0.3rem;
+  border-bottom: 1px solid #DDDDDD;
+  position: relative;
+}
+.glofPic{
+  width: 2rem;
+  height: 1.5rem;
+  float: left;
+  background: #f00;
+  margin-right: 0.3rem;
+}
+.glofPic img{
+  width: 100%;
+  height: 100%;
+}
+.glofText{
+  float: left;
+}
+.glofText p{
+  font-family: "微软雅黑";
+}
+.gtitle{
+  font-size: 0.3rem;
+  color: #333;
+  width: 4.5rem;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap
+}
+.gtime, .guser{
+  color: #666666;
+  font-size: 0.28rem;
+}
+.gtime{
+  margin-top: 0.05rem;
+}
+.guser{
+  margin-top: 0.25rem;
+}
+.applyBtn{
+  color: #fff;
+  font-size: 0.25rem;
+  background: #FFB400;
+  border-radius: 3px;
+  padding: 0.1rem 0.15rem;
+  position: absolute;
+  right: 0.3rem;
+  bottom: 0.2rem;
+}

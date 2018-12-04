@@ -1,0 +1,50 @@
+/* pages/group/group.wxss */
+.clear{
+  clear: both;
+}
+.group{
+  padding: 0 20rpx;
+}
+.group_list{
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.group_pic{
+  width: 210rpx;
+  height: 210rpx;
+  /* background: #ccc; */
+  float: left;
+}
+.group_pic image {
+  width: 100%;
+  height: 100%;
+}
+.group_r{
+  width: 460rpx;
+  /* background: #ccc; */
+  float: left;
+  margin-left: 30rpx;
+}
+.group_title{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 600;
+}
+.group_content{
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 6rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  height: 126rpx;
+}
+.group_hot{
+  font-size: 26rpx;
+  color: #333;
+}

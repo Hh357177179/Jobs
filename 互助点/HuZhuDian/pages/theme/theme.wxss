@@ -1,0 +1,50 @@
+/*theme.wxss  */
+.contentView{
+  margin: 20px 0;
+}
+
+.content{
+  border: .1px solid #cce5e9;
+  width: 250px;
+  float: right;
+  font-size: 14px;
+  line-height: 30px;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+  text-indent: 5px;
+}
+.content:focus{
+  border: 1px;
+}
+.title{
+  font-size: 14px;
+  color: #333;
+
+}
+.submitView{
+  width: 308px;
+  margin-top: 20px;
+}
+.submitContent{
+  width: 90%;
+  text-align: center;
+  font-size: 14px;
+  line-height: 40px;
+  background-color: #f2f2f2; 
+  margin: 0 auto;
+}
+.textCont{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px 0;
+  height: 80px;
+}
+
+.import{
+  margin: 10px 0;
+}
+.import image{
+  width: 80px;
+  height: 80px;
+}
+

@@ -1,0 +1,23 @@
+<!-- pages/trip/trip.wxml -->
+<import src="../../template/calendar/index.wxml" />
+<wxs module="util" src="../../utils/util.wxs"></wxs>
+<view class="trip">
+  <view class="calendar-box">
+    <template is="calendar" data="{{...calendar}}" />
+  </view>
+  <view class="route">
+    <scroll-view scroll-y class='routescroll'>
+      <view class="tree" wx:for="{{pagedata}}" wx:for-item="pd" wx:key="pd.id">
+        <navigator url="../active/active?id={{pd.id}}">
+          <image src="https://ssl.zhaodaka.net/pengqu/uploads/images/{{pd.image_path[0]}}"></image>
+          <view class="text_con">
+            <text>{{pd.title}}</text>
+            <text>时间:{{util.getTime(pd.start_time)}}</text>
+            <text>地址:{{pd.address}}</text>
+             <text>人数上限:{{pd.total_num}}</text>
+          </view>
+        </navigator>
+      </view>
+    </scroll-view>
+  </view>
+</view>

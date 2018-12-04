@@ -1,0 +1,16 @@
+<!--pages/bills/bills.wxml-->
+<view class='allBills'>
+  <view class='billsTab' style='position:{{_pos}}'>
+    <view class='clickBill {{_clicknum == 1 ? "cur" : ""}}' data-clicknum='1' bindtap='clickNumNow'>收入</view>
+    <view class='clickBill {{_clicknum == 2 ? "cur" : ""}}' data-clicknum='2' bindtap='clickNumNow'>提现</view>
+  </view>
+  <view class='billList'>
+    <block wx:if="{{showHide}}">
+      <income incomeData="{{incomeList}}"></income>
+    </block>
+    <block wx:else>
+      <withdraw withdrawList="{{withdrawList}}" userPhoto="{{userPic}}"></withdraw>
+    </block>
+  </view>
+<view class='bottomText' wx:if="{{textShow}}">正在加载……</view>
+</view>

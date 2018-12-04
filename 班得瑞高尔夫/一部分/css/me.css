@@ -1,0 +1,177 @@
+body{
+  background: #f0f0f0;
+}
+.headTop{
+  width: 100%;
+  height: 2rem;
+}
+.headTop img{
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+  filter: blur(3px);
+}
+.userMain{
+  background: #fff;
+  padding-bottom: 0.22rem;
+}
+.botTag{
+  float: left;
+  margin-left: 0.5rem;
+  margin-top: 0.2rem;
+}
+.userHead{
+  width: 1.58rem;
+  height: 1.58rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f00;
+  position: absolute;
+  left: 0.45rem;
+  top: 1.26rem;
+  color: #292929;
+}
+.userHead img{
+  width: 100%;
+  height: 100%;
+}
+.listCode{
+  position: absolute;
+  right: 0;
+}
+.userList{
+  width: 33.33%;
+  float: left;
+  text-align: center;
+}
+.username{
+  font-size: 0.34rem;
+  font-family: "微软雅黑";
+  margin-top: 0.9rem;
+}
+.userquantity{
+  color: #C0131B;
+  font-size: 0.5rem;
+  margin-top: 0.2rem;
+}
+.userCode{
+  width: 1.38rem;
+  height: 1.38rem;
+  margin: 0.28rem auto 0;
+}
+.userCode img{
+  width: 100%;
+  height: 100%;
+}
+.listIcon{
+  float: left;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-left: 5px;
+}
+.listIcon img{
+  width: 100%;
+  height: 100%;
+}
+.iconTag{
+  font-size: 0.23rem;
+  background: #10C55B;
+  color: #fff;
+  width: 2.1rem;
+  border-radius: 19px;
+  padding:0 0.1rem;
+  line-height: 0.5rem;
+  margin: 0 auto;
+}
+.teacherTag{
+  font-size: 0.23rem;
+  background: #10C55B;
+  color: #fff;
+  width: 1.2rem;
+  line-height: 0.5rem;
+  border-radius: 19px;
+}
+.mineList{
+  margin-top: 0.2rem;
+  background: #fff;
+}
+.mineList li {
+  width: 100%;
+  line-height: 1.1rem;
+  color: #666666;
+  font-size: 0.3rem;
+  padding: 0 0.3rem 0 0.26rem;
+  border-bottom: 1px solid #E6E6E6;
+}
+.listA{
+  color: #666;
+}
+.listIcons{
+  float: left;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.43rem;
+  margin-top: 0.15rem;
+}
+.listIcons img{
+  width: 100%;
+  height: 100%;
+}
+.listText{
+  float: left;
+}
+.rightIcon{
+  float: right;
+  width: 0.2rem;
+  height: 0.2rem;
+}
+.rightIcon img{
+  width: 100%;
+  height: 100%;
+}
+.otherList{
+  margin-top: 0.2rem;
+  background: #fff;
+}
+.otherList li{
+  line-height: 1.1rem;
+  color: #666666;
+  font-size: 0.3rem;
+  padding: 0 0.3rem 0 0.26rem;
+  border-bottom: 1px solid #E6E6E6;
+}
+
+
+/* 底部tab */
+.foot{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1rem;
+  font-size: 0.25rem;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+.footUl li{
+  float: left;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  color: #323232;
+}
+.footIcon{
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: 0.05rem auto ;
+}
+.footIcon img{
+  width: 100%;
+  height: 100%;
+}
+.footActive {
+  color: #F98731;
+}

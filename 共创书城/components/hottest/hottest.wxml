@@ -1,0 +1,18 @@
+<!--components/hottest/hottest.wxml-->
+<wxs module="dateFr" src="../../utils/dateFr.wxs"></wxs>
+<view class='cHottest'>
+  <block wx:for="{{hotArr}}" wx:key="index">
+    <view class='hotList' bindtap='rDetail' data-id='{{item.id}}'>
+      <view class='hotPic'>
+        <image src='{{item.logo}}'></image>
+      </view>
+      <view class='hotText'>
+        <view class='hotTitle'>{{item.title}}</view>
+        <view class='dText'>
+          <text>{{item.author}}</text>/<text>{{item.hits}}</text>/<text>{{dateFr.getDate(item.create_time * 1000,'-')}}</text>
+        </view>
+      </view>
+      <view class='clear'></view>
+    </view>
+  </block>
+</view>

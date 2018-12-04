@@ -1,0 +1,46 @@
+<!--pages/share/share.wxml-->
+<view class="found event">
+    <view class="banner">
+      <swiper indicator-dots="true" indicator-color="rgba(255,255,255,.3)" indicator-active-color="#fff" class="bgbanner">
+        <block wx:for="{{vdata.activity.image_path}}" wx:for-item="img" wx:key="{{img.index}}"> 
+          <swiper-item>
+            <image src="https://ssl.zhaodaka.net/pengqu/uploads/images/{{img}}" class="banner-image"></image>
+            <!-- <image src="../../images/banner1.png" class="banner-image"></image>   -->
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="head">
+        <image src="{{vdata.activity.avatarUrl}}" class="head-image"></image>
+        <view class="swiper-font">
+          <text class="swiper-title">{{vdata.activity.title}}</text>
+          <!-- <text class="swiper-text">3/30-4/5</text> -->
+        </view>
+      </view>
+    </view>
+</view>
+ <view class="activity">
+	<!-- <view class="June">
+    <image src="{{vdata.activity.avatarUrl}}"></image>
+    <view class="theme">
+      <view class="hurry">报名主题</view>
+      <view class="data">{{vdata.activity.title}}</view>
+    </view>
+  </view> -->
+  <view class="success">活动情况:</view>
+  <view class="details">
+  	<text>恭喜你的{{vdata.activity.title}}！报名成功。</text>
+  </view>
+  <view class="share">
+  	<text>快去分享来提高碰趣率。分享三次以上可以提高碰趣率50%。</text>
+  </view>
+</view> 
+<view class="mode">
+<text>发布人信息：</text>
+  <view class='mode_man'>
+    <text>昵称：{{vdata.activity.nickName}}</text>
+    <text>手机号：{{vdata.activity.phone}}</text>
+  </view>
+</view>
+<navigator>
+    <button class="publisher" id='{{id}}' value='{{title}}' open-type="share" >转发</button>
+</navigator>

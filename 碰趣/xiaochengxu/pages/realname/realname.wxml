@@ -1,0 +1,17 @@
+<!--pages/realname/realname.wxml-->
+<view wx:if="{{showInput}}">
+  <view class='realBefore'>
+    <input type='number' placeholder='请输入手机号' placeholder-style='font-size: 26rpx;' value='{{telVal}}' maxlength="11" bindinput="telBind"></input>
+    <button class='clickCode' disabled='{{disStatus}}' bindtap='getCode'>{{getCodeNum}}</button>
+    <view class='clear'></view>
+  </view>
+  <view class='code'>
+      <input type='number' style='margin-left: 20rpx;' placeholder='请输入验证码' placeholder-style='font-size: 26rpx;' maxlength="6" value='{{codeVal}}' bindinput='codeBind'></input>
+    </view>
+  <view class='approveBtn' bindtap='clickReal'>完成认证</view>
+</view>
+
+<view class='successReal' wx:if='{{showStart}}'>
+  <text>恭喜您，实名认证成功！</text>
+  <view class='approveBtn' style='margin-top:100rpx;' bindtap='openPQ'>开启碰趣</view>
+</view>

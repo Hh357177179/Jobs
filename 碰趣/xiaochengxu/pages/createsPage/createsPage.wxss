@@ -1,0 +1,13 @@
+/* pages/createsPage/createPage.wxss */
+
+button{
+    /* 265  135 */
+    width: 530rpx;
+    height: 270rpx;
+    color:#fff;
+    background:#fa5757;
+    text-align: center;
+    line-height: 270rpx;
+    font-size: 40rpx;
+    margin:100rpx auto;
+}

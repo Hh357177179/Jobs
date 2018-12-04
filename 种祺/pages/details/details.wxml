@@ -1,0 +1,84 @@
+<!--pages/details/details.wxml-->
+<view class='details'>
+  <view class='detailBanner'>
+    <swiper style='width:100%;height:400rpx;' indicator-active-color="#7bc27b" indicator-color="rgb(255,255,255)" indicator-dots="true" duration="500">
+      <block wx:for="{{shopDetail.shop_url}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="100%" height="150" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='botTitle'>{{shopDetail.title}}</view>
+  <view class='detailLocal' bindtap='searchMap' data-latitude='{{shopDetail.latitude}}' data-longitude='{{shopDetail.longitude}}'>
+    <image class='detailIcon' src='../../images/local.png'></image>
+    <text class='detailinfo'>地址：{{shopDetail.address}}</text>
+    <view class='clear'></view>
+  </view>
+  <view class='detailLocal'>
+    <image class='detailIcon' src='../../images/clock.png'></image>
+    <text class='detailinfo'>营业时间：{{shopDetail.open_time}}~{{shopDetail.close_time}}</text>
+    <view class='clear'></view>
+  </view>
+  <view class='detailLocal' bindtap='callTel'>
+    <image class='detailIcon' src='../../images/tel.png'></image>
+    <text class='detailinfo'>联系电话：{{shopDetail.phone}}</text>
+    <view class='clear'></view>
+  </view>
+  <view class='introduce'>
+    <view class='introduceTit'>门店特色：</view>
+    <view>{{shopDetail.about}}</view>
+  </view>
+  <view class='line'></view>
+  <view class='detailTab'>
+    <view class='tabTitle'>
+      <view class='tabName' bindtap='clickTab' data-tabNum='0'>
+        <text class='tabText {{tabNum == 0 ? "activeText" : ""}}'>店铺医师</text>
+      </view>
+      <view class='tabName' bindtap='clickTab' data-tabNum='1'>
+        <text class='tabText {{tabNum == 1 ? "activeText" : ""}}'>特色服务</text>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='tabMain' wx:if="{{tabNum == 0}}">
+      <block wx:for="{{detailTeacher}}" wx:key="index">
+        <view class='phyList'>
+          <view class='phyListPic'>
+            <image src='{{item.avatar}}'></image>
+          </view>
+          <view class='phyListText'>
+            <view class='phyTitle'>
+              <text style='float: left;'>{{item.realname}}</text>
+              <text style='float:right;color: #f00;font-size: 28rpx;'>{{item.price}}元/次</text>
+              <view class='clear'></view>
+            </view>
+            <view class='phyCard'>
+              <block wx:for="{{item.special}}" wx:for-item="sitem" wx:key="sitem">
+                <text class='plistCard' wx:if="{{sitem != ''}}">{{sitem}}</text>
+              </block>
+            </view>
+          </view>
+          <view class='clear'></view>
+        </view>
+      </block>
+    </view>
+    <view class='tabMain' wx:if="{{tabNum == 1}}">
+      <block wx:for="{{detailSpecial}}" wx:key="index">
+        <view class='specialserve'>
+          <view class='specialservePic'>
+            <image src='{{item.picurl[0]}}'></image>
+          </view>
+          <view class='specialInfo'>
+            <view class='specilaTitle'>
+              <text style='float: left;'>{{item.title}}</text>
+              <text style='float:right;color: #f00;font-size: 28rpx;'>{{item.price}}元/疗程</text>
+              <view class='clear'></view>
+            </view>
+            <view class='specialintroduce'>简介：{{item.desc}}</view>
+          </view>
+          <view class='clear'></view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

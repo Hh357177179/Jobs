@@ -1,0 +1,101 @@
+/* pages/message/message.wxss */
+
+.message {
+  padding: 9rpx 20rpx 0;
+  border-top: 1rpx solid #dbdbdb;
+  box-sizing: border-box;
+}
+
+.message button {
+  height: 88rpx;
+  line-height: 88rpx;
+  width: 100%;
+  margin: 0 0 22rpx;
+  border-radius: 40rpx;
+  background: #dd5f1b;
+  font-size: 31rpx;
+  color: white;
+}
+
+.message button::after {
+  border: none;
+}
+
+.message .box {
+  height: auto;
+  width: 100%;
+}
+
+.message .chatbox {
+  clear: both;
+  height: 114rpx;
+  width: 100%;
+  margin: 20rpx 0 0;
+}
+
+.message .head-image {
+  float: left;
+  height: 100rpx;
+  width: 100rpx;
+  margin: 0 27rpx 0 2rpx;
+  border-radius:50%;
+}
+
+.message .chat {
+  float: left;
+  height: 100%;
+  width: calc(100% - 129rpx);
+  padding: 0 0 0 8rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #dbdbdb;
+}
+
+.message text {
+  line-height: 1;
+}
+
+.message .title {
+  float: left;
+  font-size: 30rpx;
+  color: black;
+  margin: 15rpx 0 0;
+}
+
+.message .time {
+  float: right;
+  font-size: 22rpx;
+  color: #999;
+  margin: 20rpx 0 0;
+}
+
+.message .content {
+  clear: both;
+  font-size: 25rpx;
+  color: #999;
+  float: left;
+  margin: 15rpx 0 0;
+}
+
+.message .get {
+  clear: both;
+  text-align: center;
+  margin: 19rpx 0 26rpx;
+}
+
+.message .more {
+  color: #999;
+  font-size: 25rpx;
+  line-height: 1;
+  margin: 0 14rpx 0 14rpx;
+}
+
+.message .down {
+  height: 13rpx;
+  width: 24rpx;
+  vertical-align: middle;
+}
+
+.nonedata {
+  text-align: center;
+  width: 100%
+}

@@ -1,0 +1,47 @@
+.courseTitle{
+  width: 100%;
+  height: 0.8rem;
+  line-height: 0.85rem;
+  color: #828282;
+  font-size: 0.35rem;
+  background: #F6F6F6;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.courseTitle span{
+  float: left;
+  text-align: center;
+}
+.courseName{
+  width: 45%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+.clistName{
+  text-align: left;
+  padding-left: 0.4rem;
+  font-family: '微软雅黑';
+}
+.cName{
+  width: 20%;
+}
+.cTel{
+  width: 35%;
+  font-family: '微软雅黑';
+}
+.courseList {
+  padding-top: 0.8rem;
+  color: #666666;
+  font-size: 0.32rem;
+  text-align: center;
+}
+.courseList span{
+  float: left;
+}
+.courseList ul li{
+  line-height: 0.88rem;
+  border-bottom: 1px solid #F1F1F1;
+}

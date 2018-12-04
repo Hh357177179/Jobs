@@ -1,0 +1,64 @@
+<!--pages/release/release.wxml-->
+<view class="found">
+  <view class="active_item">
+    <view wx:for="{{pagedata}}" wx:for-item="pd" wx:key="{{pd.title}}" >
+      <view class="banner">
+        <swiper indicator-dots="true" indicator-color="rgba(255,255,255,.3)" indicator-active-color="#fff" class="bgbanner">
+          <block>
+            <swiper-item wx:for="{{pd.image_path}}" wx:for-item="img" wx:key="img">
+              <image src="https://ssl.zhaodaka.net/pengqu/uploads/images/{{img}}" class="banner-image"></image>
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class="head">
+          <image src="{{pd.avatarUrl}}" class="head-image"></image>
+          <view class="swiper-font">
+            <text class="swiper-title">领队：{{pd.nickName}} </text>
+            <text class="swiper-text">{{pd.title}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="detail">
+        <view class="d-more">
+          <view class="d-list">
+            <text class="d-num">{{pd.type}} |{{pd.title}}</text>
+          </view>
+          <view class="d-list">
+            <text class="d-name">开始时间：{{pd.start_time}}</text>
+          </view>
+          <view class="d-list">
+            <text class="d-name">活动地点：{{pd.address}}</text>
+          </view>
+          <view class="d-list">
+            <text class="d-name">活动费用：{{pd.adult_price}}元/人</text>
+          </view>
+          <view class="d-list last">
+            <text class="d-name">人数:{{pd.participate_num}}/{{pd.total_num}}人</text>
+          </view>
+        </view>
+      </view>
+      <view class="btn-go">
+        <form bindsubmit='deleteActivity'>
+          <view style='display:none'>
+            <input name='aid' value='{{pd.id}}' />
+          </view>
+           <navigator url="../release/release?title=release">
+            <button class="btn-up" form-type='submit'>删除</button>
+          </navigator> 
+          <navigator url="../update/update?aid={{pd.id}}">
+            <button class="btn-up" data-index="{{pd.id}}" bindtap='goModify'>修改</button>
+          </navigator>
+          <navigator>
+            <button class="btn-up" id='{{pd.id}}' value='{{pd.title}}' open-type="share">转发</button>
+          </navigator>
+          <navigator url='../contact/contact?aid={{pd.id}}'>
+            <button class="btn-up">查看</button>
+          </navigator>
+        </form>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='tab_k'></view>
+<tab>
+</tab>

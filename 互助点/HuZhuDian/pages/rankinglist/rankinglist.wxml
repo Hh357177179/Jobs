@@ -1,0 +1,24 @@
+<view class='Outer_layer'>
+  <view class='centre'>
+    <view wx:for="{{startdata}}" wx:key="*this">
+      <view class='classification' data-pro='{{index}}' bindtap='onclick'>
+        <view class='box'>
+          <view class='boxSon'>
+            <image class='headPortrait' mode='aspectFit' src='../images/touxiang.png'></image>
+          </view>
+          <view class='box-1'>
+            <view class='boxSon'>
+              <text class='name'>{{item.Nickname}}</text>
+            </view>
+            <view class='end'>
+              <view class='money'>
+                <image class='img' src='../images/timg.jpg'></image>
+                <text class='ongoing-state'>{{item.Money}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

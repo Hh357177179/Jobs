@@ -1,0 +1,25 @@
+<!--pages/praise/praise.wxml-->
+<wxs module="dateFr" src="../../utils/dateFr.wxs"></wxs>
+<view class='praise'>
+  <block wx:for="{{praiseArr}}" wx:key="index">
+    <view class='praise_list'>
+      <view class='praise_pic'>
+        <image wx:if="{{item.type == 1}}" src='{{item.project.image}}'></image>
+        <image wx:if="{{item.type == 2}}" src='{{item.project.logo}}'></image>
+        <image wx:if="{{item.type == 3}}" src='{{item.project.logo}}'></image>
+        <image wx:if="{{item.type == 4}}" src='{{item.project.logo}}'></image>
+      </view>
+      <view class='praise_right'>
+        <block>
+          <view class='sr_title' wx:if="{{item.type == 1}}">图解</view>
+          <view class='sr_title' wx:if="{{item.type == 2}}">资料库</view>
+          <view class='sr_title' wx:if="{{item.type == 3}}">项目广场</view>
+          <view class='sr_title' wx:if="{{item.type == 4}}">战术小组</view>
+        </block>
+        <view class='csm_title'>{{item.project.title}}</view>
+        <view class='praise_time'>{{dateFr.getDate(item.create_time * 1000, '-')}}</view>
+      </view>
+      <view class='clear'></view>
+    </view>
+  </block>
+</view>

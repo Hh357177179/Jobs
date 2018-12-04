@@ -1,0 +1,30 @@
+/* components/income/income.wxss */
+.clear{
+  clear: both;
+}
+.incomeList{
+  width: 100%;
+  height: 100%;
+}
+.lists{
+  border-bottom: 1rpx solid #bdbdbd;
+  padding: 28rpx 0 28rpx 30rpx;
+}
+.picBorder{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  float: left;
+}
+.userPic{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.userText{
+  width: 80%;
+  color: #333;
+  font-size: 28rpx;
+  float: left;
+  margin: 10rpx 0 0 30rpx;
+}

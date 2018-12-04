@@ -1,0 +1,69 @@
+<!--pages/bookTab/bookTab.wxml-->
+<wxs module="dateFr" src="../../utils/dateFr.wxs"></wxs>
+<view class='allBook'>
+  <view wx:if="{{num == 1}}">
+    <hottest hotArr="{{hotArr}}"></hottest>
+  </view>
+  <view wx:if="{{num == 2}}">
+    <newest newArr="{{newArr}}"></newest>
+  </view>
+  <view wx:if="{{num == 3}}">
+    <view class='posiTop'>
+      <view class='changePick'>
+        <view class='cFirst'>
+          <picker mode="selector" bindchange="firstChange" value='{{Index}}' range="{{firstArr}}" range-key="title">
+            <view class='changeInput'>
+              <view>{{firstVal}}</view>
+              <!-- <input placeholder='请选择一级分类' disabled value='{{firstArr[Index].title}}'></input> -->
+            </view>
+          </picker>
+        </view>
+        <view class='cFirst'>
+          <picker mode="selector" bindchange="secondChange" value='{{index}}' range="{{secondArr}}" range-key="title">
+            <view class='changeInput'>
+              <view>{{secondVal}}</view>
+              <!-- <input placeholder='请选择二级分类' disabled value='{{secondArr[index].title}}'></input> -->
+            </view>
+          </picker>
+        </view>
+        <view class='cFirst'>
+          <picker mode="selector" bindchange="threeChange" value='{{tindex}}' range="{{threeArr}}" range-key="title">
+            <view class='changeInput'>
+              <view>{{threeVal}}</view>
+              <!-- <input placeholder='请输三级分类' disabled value='{{threeArr[tindex].title}}'></input> -->
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <block wx:if="{{allArr.length != 0}}">
+      <view style='margin-top:84rpx;'>
+        <block wx:for="{{allArr}}" wx:key="index">
+          <view class='hotList' bindtap='rDetail' data-id='{{item.id}}'>
+            <view class='hotPic'>
+              <image src='{{item.logo}}'></image>
+            </view>
+            <view class='hotText'>
+              <view class='hotTitle'>{{item.title}}</view>
+              <view class='dText'>
+                <text>{{item.author}}</text>/<text>{{item.hits}}</text>/<text>{{dateFr.getDate(item.create_time * 1000,'-')}}</text>
+              </view>
+            </view>
+            <view class='clear'></view>
+          </view>
+        </block>
+      </view>
+    </block>
+    <block wx:if="{{allArr.length == 0}}">
+      <view class='noData'>
+        <image src='../../images/noData.jpg'></image>
+        <view class='noDtaaText'>该分类下暂无资料</view>
+      </view>
+    </block>
+  </view>
+  <view class='botTab'>
+    <view class='botList {{num==1?"changeTab":""}}' data-num='1' bindtap='changeOli'>最热</view>
+    <view class='botList {{num==2?"changeTab":""}}' data-num='2' bindtap='changeOli'>最新</view>
+    <view class='botList {{num==3?"changeTab":""}}' data-num='3' bindtap='changeOli'>分类</view>
+  </view>
+</view>

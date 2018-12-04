@@ -1,0 +1,8 @@
+<!--pages/proposal/proposal.wxml-->
+<view class='proposal'>
+  <view class='proposal_head'>反馈建议</view>
+  <view class='proposal_content'>
+    <image src="../../images/erweima.jpg"></image>
+    <text class='text'>请加客服二维码</text>
+  </view>
+</view>

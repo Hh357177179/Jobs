@@ -1,0 +1,6 @@
+<!--pages/creation/creation.wxml-->
+<view class='creation'>
+  <view class='creation_num'>0</view>
+  <view class='creation_text'>当前共创力数量</view>
+  <view class='cs_small'>共创力(GCL)是共创城的通行证(token)</view>
+</view>

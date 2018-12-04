@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "图解",
+  "disableScroll": true,
+  "usingComponents": {
+    "calendar": "plugin://calendar/calendar"
+  }
+}

@@ -1,0 +1,43 @@
+<!-- pages/companion/sign/sign.wxml -->
+<form bindsubmit="submit">
+  <view class='content'>
+    <view class='head'>
+    <text>真诚热情，一起碰游共享时光</text>
+      <!-- <button>哪里碰</button> -->
+    </view>
+    <view wx:if="{{openSetting==true}}">
+      <button open-type="openSetting" class='openSetting'>打开授权设置页</button>
+    </view>
+    <view class='content_add'>
+      <view class="group_text">
+        <text decode="{{true}}">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点：</text>
+        <input class="ca" name="address" placeholder="点击选择地点" value='{{localaddress}}' bindtap='chooseAddressAction' />
+      </view>
+      <view class="group_text">
+        <text decode="{{true}}">开始时间：</text>
+        <picker mode="date" value="{{beginDate}}" start="{{startDate}}" bindchange="bindBeginDateChange">
+          <view>{{beginDate==''?'请选择日期':beginDate}}</view>
+        </picker>
+        <picker mode="time" value="{{beginTime}}"  bindchange="bindBeginTimeChange">
+          <view>{{beginTime==''?'请选择时间':beginTime}}</view>
+        </picker>
+      </view>
+      <view class="group_text">
+        <text decode="{{true}}">结束时间：</text>
+        <picker mode="date" value="{{endDate}}" start="{{startDate}}"  bindchange="bindEndDateChange">
+          <view>{{endDate==''?'请选择日期':endDate}}</view>
+        </picker>
+        <picker mode="time" value="{{endTime}}"  bindchange="bindEndTimeChange">
+          <view>{{endTime==''?'请选择时间':endTime}}</view>
+        </picker>
+      </view>
+      <view class="group_text1">
+        <text>为什么碰呢？</text>
+        <textarea name="reason" placeholder="你的热情和心境 . . .或无需理由关键碰谁" focus="{{true}}" value='{{name}}' maxlength='-1'></textarea>
+      </view>
+    </view>
+    <view class='bottom'>
+      <button class="footer" form-type="submit">签到去共享</button>
+    </view>
+  </view>
+</form>

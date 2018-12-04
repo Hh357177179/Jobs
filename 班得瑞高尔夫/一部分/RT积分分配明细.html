@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>RT积分分配明细</title>
+  <script>
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          if (clientWidth >= 750) {
+            docEl.style.fontSize = '100px';
+          } else {
+            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+          }
+        };
+
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/integral.css">
+</head>
+
+<body>
+  <div class="integral">
+    <div class="integralTitle">
+      <span class="interName">名称</span>
+      <span class="interEvent">事件</span>
+      <span class="interNum">数量</span>
+      <span class="interTime">事件时间</span>
+    </div>
+    <div class="integraList">
+      <ul>
+        <li>
+          <!-- 普通姓名颜色样式 （蓝色）  common-->
+          <!-- 新增会员颜色样式  （粉色）newly-->
+          <span class="interName common">张三四</span>
+          <span class="interEvent iEvent">品牌推广人</span>
+          <span class="interNum newly">3000</span>
+          <span class="interTime">2018-10-15 13:49</span>
+        </li>
+        <li>
+          <span class="interName newly">张三</span>
+          <span class="interEvent iEvent">品牌品牌推广人</span>
+          <span class="interNum newly">30</span>
+          <span class="interTime">2018-10-05 13:49</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 底部导航 -->
+  <div class="foot">
+    <ul class="clearfix footUl">
+      <li>
+        <a href="首页.html">
+          <p class="footIcon">
+            <img src="img/home.png" alt="">
+          </p>
+          <p>首页</p>
+        </a>
+      </li>
+      <li>
+        <p class="footIcon">
+          <img src="img/ring.png" alt="">
+        </p>
+        <p>动态</p>
+      </li>
+      <li>
+        <p class="footIcon">
+          <img src="img/use.png" alt="">
+        </p>
+        <p>应用</p>
+      </li>
+      <li>
+        <a href="我的.html">
+          <p class="footIcon">
+            <img src="img/cme.png" alt="">
+          </p>
+          <p class="footActive">我的</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

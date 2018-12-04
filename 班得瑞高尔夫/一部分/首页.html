@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>班得瑞高尔夫</title>
+  <script>
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          if (clientWidth >= 750) {
+            docEl.style.fontSize = '100px';
+          } else {
+            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+          }
+        };
+
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+  <link rel="stylesheet" href="font/iconfont.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+  <script src="js/swiper.min.js"></script>
+  <!-- 轮播图 -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="img/timg.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="img/timg1.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="img/time2.jpg" alt="">
+      </div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- 顶部公告 -->
+  <div class="bannerBot clearfix">
+    <div class="notice">
+      <p class="clearfix" style="width: 100%;border-bottom: 1px solid #ccc;line-height: 0.8rem;padding-left: 0.15rem;">
+        <img class="noticeIcon" src="img/noticeIcon.png" alt="">
+        <span style="float:left;">公告！</span>
+        <span class="noticeText">办理会员分润说明点击查看</span>
+      </p>
+      <p class="addPerson">
+        <img class="textIcon" src="img/textIcon.png" alt="">
+        <span class="textleft">恭喜182****3399成为品牌推广人</span>
+      </p>
+    </div>
+    <div class="integral">
+      <p class="integralTit">世界RT积分</p>
+      <p style="color:#C0131B;font-size: 0.3rem;font-family: 微软雅黑;">98765672.21</p>
+    </div>
+  </div>
+
+  <!-- 个人卡片 -->
+  <div class="userCard">
+    <div class="clearfix">
+      <div class="userPic">
+        <img src="img/timg.jpg" alt="">
+      </div>
+      <div class="cardName">
+        <p>张三丰</p>
+        <p class="userphone">152****2324</p>
+      </div>
+      <div class="userIntegral">
+        <p style="color:#C0131B;font-family: 微软雅黑">1000.00</p>
+        <p class="userIntext">我的RT积分</p>
+      </div>
+    </div>
+    <div class="cardIcon clearfix">
+      <p>
+        <i class="listIcon">
+          <img src="img/storeIcon.png" alt="">
+        </i>
+        <span>店铺投资人</span></p>
+      <p>
+        <i class="listIcon">
+          <img src="img/teacherIcon.png" alt="">
+        </i>
+        <span>讲师</span>
+      </p>
+      <p>
+        <i class="listIcon">
+          <img src="img/personIcon.png" alt="">
+        </i>
+        <span>品牌推广人</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- 功能列表 -->
+  <div class="picList">
+    <ul class="clearfix picUl">
+      <li>
+        <img src="img/pic1.png" alt="">
+        <p>企业介绍</p>
+      </li>
+      <li>
+        <img src="img/pic2.png" alt="">
+        <p>兑换商城</p>
+      </li>
+      <li>
+        <img src="img/pic3.png" alt="">
+        <p>招募二维码</p>
+      </li>
+      <li>
+        <img src="img/pic4.png" alt="">
+        <p>转赠</p>
+      </li>
+      <li>
+        <img src="img/pic5.png" alt="">
+        <p>社区活动</p>
+      </li>
+      <li>
+        <img src="img/pic6.png" alt="">
+        <p>球馆导航</p>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 底部导航 -->
+
+  <!-- footActive  是选中样式颜色 -->
+  <!-- 选中图片 就是在图片名称前面加c （没选中：home，选中：chome） -->
+  <div class="foot">
+    <ul class="clearfix footUl">
+      <li class="footActive"> 
+        <p class="iconfont icon-home tabIcon"></p>
+        <p>首页</p>
+      </li>
+      <li>
+        <p class="iconfont icon-lingdang tabIcon"></p>
+        <p>动态</p>
+      </li>
+      <li>
+        <p class="iconfont icon-yingyong tabIcon"></p>
+        <p>应用</p>
+      </li>
+      <li>
+        <p class="iconfont icon-me tabIcon"></p>
+        <p>我的</p>
+      </li>
+    </ul>
+  </div>
+
+</body>
+
+</html>
+<script src="js/jquery-1.10.2.js"></script>
+<script>
+  $(document).ready(function () {
+    // 轮播图控制
+    var mySwiper = new Swiper('.swiper-container', {
+      autoplay: {
+        delay: 2000,
+      }, // 自动
+      loop: true, // 循环模式选项
+      pagination: { // 分页器
+        el: '.swiper-pagination',
+      },
+    })
+  })
+</script>

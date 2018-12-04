@@ -1,0 +1,4 @@
+<!--pages/searchMap/searchMap.wxml-->
+<view class='searchMap'>
+  <map wx:if="{{map.hasMarkers}}" id="map" longitude="{{map.lng}}" latitude="{{map.lat}}" scale="14" markers='{{map.markers}}' style="width: 100%; height: 100%;"></map>
+</view>

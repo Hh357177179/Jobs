@@ -1,0 +1,146 @@
+<!-- pages/detailed/detailed.wxml -->
+<view class="warp">
+  <view class='background'>
+    <view class="banner">
+      <swiper indicator-dots="true" indicator-color="rgba(255,255,255,.3)" indicator-active-color="#fff" class="bgbanner">
+        <block wx:for="{{group_details.format_img_url}}" wx:for-item="img" wx:key="{{img.index}}">
+          <swiper-item>
+            <image src="{{img}}" class="banner-image"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="detail">
+      <text class="d-title">{{group_details.title}}</text>
+      <view class="d-main">
+        <text>时间：{{group_details.start_time}} ~ {{group_details.end_time}}</text>
+        <text>地点：{{group_details.address}}</text>
+
+        <text class='fr_r'>
+          <text class='fl_text'>成人：{{group_details.adult_amount}}人</text>
+          <text class='fr_text'>价格：{{group_details.adult_price}}¥/人</text>
+        </text>
+        
+        <text class='fr_r'>
+          <text class='fl_text'>儿童：{{group_details.child_amount}}人</text>
+          <text class='fr_text'>价格：{{group_details.child_price}}¥/人</text>
+        </text>
+        
+        <text class='d-title'>活动详细：</text>
+        <text>{{group_details.note}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="inside">
+    <block wx:if="{{group_details.is_singup == 0}}">
+    <text>当前团长</text>
+    <view class="inside_group">
+      <image class="head-image" src="{{group_details.leader.avatar}}"></image>
+      <view class="List_content group_content">{{group_details.leader.nick_name}}</view>
+      <view class="List_content group_content">{{group_details.leader.introduction}}</view>
+    </view>
+    </block>
+    <navigator wx:if="{{group_details.is_singup == 1}}" url="../assistant/assistant?group_id={{group_id}}&user_id={{group_details.leader.id}}">
+      <text>当前团长</text>
+      <view class="inside_group">
+        <image class="head-image" src="{{group_details.leader.avatar}}"></image>
+        <view class="List_content group_content">{{group_details.leader.nick_name}}</view>
+        <view class="List_content group_content">{{group_details.leader.introduction}}</view>
+      </view>
+    </navigator>
+    <view class="member">
+      <text>达人团长</text>
+      <view class="flex-row">
+        <block wx:for="{{group_details.activities}}" wx:for-item="activity" wx:key="{{activity.index}}">
+          <view class="flex-view-item" wx:if="{{activity.leader!=null}}">
+            <navigator wx:if="{{group_details.is_singup == 1}}" url="../assistant/assistant?group_id={{group_id}}&user_id={{activity.leader.id}}">
+              <image class="head-image" src="{{activity.leader.avatar}}"></image>
+              <!-- <view class="List_content group_content">{{activity.leader.nick_name}}</view> -->
+            </navigator>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="member">
+      <text>当前已报名</text>
+      <view class="flex-row">
+        <block wx:for="{{group_users}}" wx:for-item="singup_user" wx:key="{{singup_users.index}}">
+          <view class="flex-view-item" wx:if="{{group_details.is_singup ==0}}">
+            <image class="head-image" src="{{singup_user.avatar}}"></image>
+            <text>{{singup_user.nick_name}}</text>
+          </view>
+          <navigator wx:if="{{group_details.is_singup == 1}}" url="../assistant/assistant?group_id={{group_id}}&user_id={{singup_user.id}}">
+            <view class="flex-view-item">
+              <image class="head-image" src="{{singup_user.avatar}}"></image>
+              <text>{{singup_user.nick_name}}</text>
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </view>
+    <view class="statement">
+      <text>团员须知：</text>
+      <text>1.可选择报名参与某个自由行团跟随团长一起去游玩；
+          2.可选择某个主题跟着趣导去游玩；</text>
+    </view>
+  </view>
+  <view class="remove_List">
+    <view class="remove_Title">
+      团队主行程：
+      <!-- <text class="{{selected?'red':'default'}}" bindtap="selected">显示行程</text>
+        <text class="{{selected1?'red':'default'}}" bindtap="selected1">显示地图</text> -->
+    </view>
+    <view class="{{selected?'show':'hidden'}}">
+      <block wx:for="{{group_details.activities}}" wx:for-item="activity" wx:key="{{activity.index}}">
+        <view class="add_List">
+          <view class="add_single">
+            <image class="add-image" id="{{activity.id}}" bindtap="click_img" src="{{activity.activity.image_path[0]}}"></image>
+            <view class="list_info">
+              <navigator url="../inside/inside?group_activity_id={{activity.id}}">
+                <view class="Title Title_1">
+                  {{activity.activity.type}} | {{activity.activity.title}}
+                </view>
+                <view class="Title">{{activity.activity.start_time}}</view>
+              </navigator>
+              <view class="Title" wx:if="{{activity.leader != null}}">
+                <text class="Title_1">达人团长</text>
+                <text class="Title_2">{{activity.leader.nick_name}}</text>
+              </view>
+              <view class="Title" wx:if="{{activity.leader == null}}">
+                <text class="Title_1">达人团长</text>
+                <text class="Title_3" id="{{activity.id}}" data-singup="{{activity.is_singup}}" bindtap="apply_activity_leader">
+                  申请成为达人团长
+                </text>
+              </view>
+              <view class="Title">
+                <text class="Title_1">已投票人数</text>
+                <text class="Title_2">{{activity.singup_users.length}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{group_details.is_singup!=0}}">
+          <view class="vote" wx:if="{{activity.is_singup == 0}}" id="{{activity.id}}" bindtap="vote">
+            投票
+          </view>
+          <view class="vote" wx:if="{{activity.is_singup == 1}}" id="{{activity.id}}" bindtap="vote_cancel">
+            取消投票
+          </view>
+        </view>
+      </block>
+    </view>
+    <!-- <view class="{{selected1?'show':'hidden'}}">
+        <view class="page-section page-section-gap">
+          <map id="myMap" style="width: 100%; height: 600px;" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" polyline="{{polyline}}" show-location></map>
+        </view>
+      </view> -->
+  </view>
+  <view class='clear'></view>
+</view>
+<view class='bottom'>
+  <navigator url="../groupname/groupname?title=name&group_id={{group_details.id}}">
+    <view class="footer" wx:if="{{group_details.is_singup == 0}}" bindtap="apply">申请加入</view>
+  </navigator>
+  <button class="footer" wx:if="{{group_details.is_singup == 1}}" open-type="share">分享</button>
+</view>
+<tab></tab>

@@ -1,0 +1,38 @@
+<!--pages/personal/personal.wxml-->
+<!-- 头像获取开始 -->
+<view class='Outer_layer'>
+  <view class='centre'>
+  <view class='hand'><text class='handson' bindtap='zhuxiao'>注销账户</text></view>
+    <view class='box'>
+      <view class='boxSon'>
+      <open-data class='headPortrait' mode='aspectFit' type="userAvatarUrl"></open-data>
+        <!-- <image class='headPortrait' mode='aspectFit' src='{{userInfoAvatar}}'></image> -->
+      </view>
+      <view class='boxSon'>
+        <text class='name'>{{startdata.Nickname}}</text>
+      </view>
+      <view class='content'>
+        <view class='content-img'>
+          <image src='../images/timg.jpg'></image>
+        </view>
+        <view class='content-text'>
+          <text>余额：</text>
+          <text>{{startdata.Money}}</text>
+        </view>
+        <view class='fxPyq' bindtap='clickFriend'>邀请更多好友</view>
+      </view>
+    </view>
+    <!-- 头像获取结束 -->
+    <view class='imagew'>
+      <image class='image' src='{{head_portrait_path}}'></image>
+      <view class='text_one'>
+        <text class='text'>我的二维码</text>
+      </view>
+    </view>
+    <view class="btn-area">
+      <button class='login' bindtap='looktop'>查看排行</button>
+      <button class='login' bindtap='looklogs'>互助日志</button>
+      <button class='login' bindtap="transfer">转让互助</button>
+    </view>
+  </view>
+</view>

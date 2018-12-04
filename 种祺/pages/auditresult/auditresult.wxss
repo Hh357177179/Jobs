@@ -1,0 +1,44 @@
+/* pages/auditresult/auditresult.wxss */
+.enterTop{
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: #ccc;
+  display: flex;
+  justify-content: space-between;
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 111; */
+}
+.oneStep{
+  line-height: 30rpx;
+}
+.stepNum{
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+  text-align: center;
+}
+.addClass{
+  color: #5bb45a;
+  border-color: #5bb45a;
+}
+.inReview{
+  margin-top: 300rpx;
+  font-size: 32rpx;
+  text-align: center;
+  /* color: #5bb45a; */
+}
+.backMine{
+  width: 80%;
+  text-align: center;
+  margin: 200rpx auto;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  background: #5bb45a;
+  color: #fff;
+}

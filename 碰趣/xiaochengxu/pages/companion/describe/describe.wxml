@@ -1,0 +1,31 @@
+<!--pages/companion/describe/describe.wxml趣伴-->
+<view class="name">
+  <image src="{{userInfo.avatarUrl}}"></image>
+  <view style='margin-top:10rpx;'>{{userInfo.nickName}}</view>
+  <view style='margin-top:10rpx;'>id:{{user_id}}</view>
+</view>
+<form bindsubmit="submitAction">
+  <view class="group_text1">
+    <text>趣值展示：</text>
+    <textarea name="introduction" placeholder="请输入个人趣值" focus="{{true}}" value='{{editformdata.introduction}}'   maxlength='-1'></textarea>
+  </view>
+  <view class="group_text1">
+    <text>上传精彩图片：</text>
+    <view class="uploadImg_img">
+      <view class="flex-row">
+        <view class="flex-view-item" wx:for="{{picture_path}}" wx:key="feedbackImg">
+            <image class="upload_img" src="https://ssl.zhaodaka.net/pengqu/uploads/images/{{picture_path[index]}}"></image>
+              <!-- 接口需要改动 -->
+          <button bindtap="delectImg" data-num="{{index}}">删除</button>
+        </view>
+        <view class="flex-view-item" wx:if="{{picture_path.length<9}}">
+          <image class="uploadImg" src="/images/woman.png" bindtap="uploadImg" class="addimg img_button"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style='height:110rpx'></view>
+  <view class='bottom'>
+    <button class="footer" form-type="submit">确定修改</button>
+  </view>
+</form>

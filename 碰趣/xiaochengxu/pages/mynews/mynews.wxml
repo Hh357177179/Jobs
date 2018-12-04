@@ -1,0 +1,17 @@
+<!-- pages/mynews/mynews.wxml -->
+<wxs module="util" src="../../utils/util.wxs"></wxs>
+<view class='Stay'>
+  <view class='Head'>伴友列表</view>
+  <block wx:for="{{talklist}}" wx:key="index">
+    <navigator url="../companion/Contacts/Contacts?sender_id={{item.sender_id}}&receiver_id={{item.receiver_id}}" hover-class="navigator-hover">
+      <view class="man">
+        <image src="{{item.avatar}}"></image>
+        <view class="slim">
+          <text class="name1">{{item.nick_name}}</text>
+          <text class="time">{{util.dateFormatFP(item.create_time)}}</text>
+          <view class="help">{{item.message}}</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+</view>

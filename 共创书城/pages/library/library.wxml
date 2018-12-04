@@ -1,0 +1,76 @@
+<!--pages/library/library.wxml-->
+<wxs module="dateFr" src="../../utils/dateFr.wxs"></wxs>
+<view class='library'>
+  <view class='libraryLogo'>
+    <image src='../../images/logo.png'></image>
+  </view>
+  <view class='libSearch'>
+    <view class='searchInput'>
+      <input placeholder='想找点什么？' value='{{searchVal}}' bindinput='advSearch' placeholder-style='font-size:28rpx;'></input>
+      <view class='clearBtn' wx:if="{{cIcon}}" bindtap='clearInput'>
+        <icon type="clear" class='clearIcon' size="20" />
+      </view>
+    </view>
+    <view class='searchBtn' bindtap='searchBtn'>搜索</view>
+    <view class='clear'></view>
+  </view>
+  <block wx:if="{{searchMain}}">
+    <view style='margin-bottom:100rpx;'>
+      <view class='newest'>
+        <view class='newestTitle'>最新</view>
+        <block wx:for="{{newList}}" wx:key="index">
+          <view class='newList' bindtap='Rdetail' data-bookId='{{item.id}}'>
+            <view class='listPic'>
+              <image src='{{item.logo}}'></image>
+            </view>
+            <view class='listText'>
+              <view>{{item.title}}</view>
+              <view class='bookInfo'>
+                <text>{{item.author}}</text>/<text>{{item.hits}}</text>/<text>{{dateFr.getDate(item.create_time * 1000,'-')}}</text>
+              </view>
+            </view>
+            <view class='clear'></view>
+          </view>
+        </block>
+      </view>
+      <view class='hottest'>
+        <view class='newestTitle'>最热</view>
+        <block wx:for="{{hostList}}" wx:key="{{item.id}}">
+          <view class='newList' bindtap='Rdetail' data-bookId='{{item.id}}'>
+            <view class='listPic'>
+              <image src='{{item.logo}}'></image>
+            </view>
+            <view class='listText'>
+              <view>{{item.title}}</view>
+              <view class='bookInfo'>
+                <text>{{item.author}}</text>/<text>{{item.hits}}</text>/<text>{{dateFr.getDate(item.create_time * 1000,'-')}}</text>
+              </view>
+            </view>
+            <view class='clear'></view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{allStatus}}">
+    <scroll-view class='scrollMain' scroll-y bindscrolltolower="scrollBot" lower-threshold="0">
+      <block wx:for="{{allList}}" wx:key="index">
+        <view class='newList' bindtap='Rdetail' data-bookId='{{item.id}}'>
+          <view class='listPic'>
+            <image src='{{item.logo}}'></image>
+          </view>
+          <view class='listText'>
+            <view>{{item.title}}</view>
+            <view class='bookInfo'>
+              <text>{{item.author}}</text>/
+              <text>{{item.hits}}</text>/
+              <text>{{dateFr.getDate(item.create_time * 1000,'-')}}</text>
+            </view>
+          </view>
+          <view class='clear'></view>
+        </view>
+      </block>
+    </scroll-view>
+  </block>
+  <view class='botBtn' bindtap='detailRouter'>浏览全部</view>
+</view>

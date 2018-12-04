@@ -1,0 +1,100 @@
+/* pages/assistant/assistant.wxss */
+.warp{margin-bottom: 200rpx}
+.assistant{
+  width: 95%;
+  height: auto;
+  margin: auto;
+}
+.assistant_head{
+  width: 100%;
+  height: 200rpx;
+  background: #f2f2f2;
+}
+.lassistant-image{
+  width: 180rpx;
+  height: 180rpx;
+  float: left;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+}
+.assistant_List{
+  width: 500rpx;
+  display: block;
+  float: left;
+  padding: 33rpx 0 0 20rpx;
+  font-size: 33rpx;
+}
+.assistant_xia{
+  margin-top: 50rpx;
+  width: 100%;
+}
+.remove_List{
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.remove_List text{
+  display: block;
+  font-size: 36rpx;
+  padding: 30rpx 0;
+}
+.remove_Title{
+  display: block;
+  font-size: 30rpx;
+  color: #e5c51b;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.List_same{
+  width: 100%;
+  height: 410rpx;
+  font-size: 35rpx;
+}
+.List_left{
+  float: left;
+  width: 80rpx;
+  height: auto;
+}
+.left-image{
+  width: 30rpx;
+  height: 410rpx;
+  display: block;
+  margin: auto;
+}
+.List_right{
+  float: left;
+  width: 600rpx;
+  min-height: 400rpx;
+  overflow: hidden;
+  font-size: 30rpx;
+}
+.List_time{
+  margin-top: 6rpx;
+}
+.list_title{
+  width: 600rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+.List_content{
+  margin-top: 6rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /*行数*/
+  -webkit-box-orient: vertical;
+}
+.remove{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  /* border:1rpx solid #666666; */
+  text-align: center;
+  margin-top: 20rpx;
+  font-size: 33rpx;
+  background: #fa5757;
+  border-radius: 10rpx;
+  color: #FFFFFF;
+}

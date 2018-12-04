@@ -1,0 +1,13 @@
+<!--pages/sharefriend/sharefriend.wxml-->
+<view class='sharefriend'>
+  <view class='explain'>
+    说明:
+    <view>
+      1.保存二维码时，请允许访问访问手机相册。
+    </view>
+  </view>
+  <view class='eChartPic'>
+    <image src='{{loginPic}}'></image>
+  </view>
+  <view bindtap='saveLogin' class='saveLogin'>保存二维码到手机相册</view>
+</view>
