@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class='home'>
+  <view class='home_leading'>
+    <image class='leading_pic' src='../../images/banner3.jpeg'></image>
+  </view>
+  <view class='h_recommend'>
+    <view class='hr_title'>喔喔云推荐</view>
+  </view>
+  <view class='hl_card'>
+    <block>
+      <view class='hl_list' bindtap='skipDetail'>
+        <view class='hl_pic'>
+          <image src='../../images/1d.jpeg'></image>
+        </view>
+        <view class='hf_title'>我是一个商品标题</view>
+        <view class='hfs_tit'>
+          <text class='hf_price'>￥699.00</text>
+          <text class='hf_keep'>库存 20</text>
+          <view class='clear'></view>
+        </view>
+      </view>
+    </block>
+    <view class='clear'></view>
+  </view>
+  <view class='noData'>已经到底了哦</view>
+</view>

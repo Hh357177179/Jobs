@@ -1,0 +1,58 @@
+.phoneVerify {
+    width: 100%;
+    height: 100%;
+}
+
+.clear {
+    clear: both;
+}
+
+.topTitle {
+    text-align: center;
+    color: #E51C23;
+    font-size: 28rpx;
+    margin-top: 100rpx;
+}
+
+.phoneMain {
+    width: 606rpx;
+    margin: 100rpx auto;
+}
+
+.phoneList {
+    width: 100%;
+    height: 70rpx;
+    border-bottom: 1px solid #bbb;
+    margin-bottom: 100rpx;
+}
+
+.phoneList input {
+    height: 100%;
+    margin-left: 70rpx;
+}
+
+.phoneCode {
+    width: 392rpx;
+    float: left;
+}
+
+.codeBtn {
+    width: 184rpx;
+    height: 60rpx;
+    text-align: center;
+    line-height: 64rpx;
+    font-size: 28rpx;
+    border-radius: 8rpx;
+    float: right;
+}
+
+.trueBtn {
+    width: 436rpx;
+    height: 80rpx;
+    line-height: 84rpx;
+    color: #fff;
+    border-radius: 8rpx;
+    background: #DD5F1B;
+    margin: 0 auto;
+    text-align: center;
+}

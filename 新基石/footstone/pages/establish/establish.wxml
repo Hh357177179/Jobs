@@ -1,0 +1,27 @@
+<view class="establish">
+    <view bindtap="backChat" class="topBack">回到留言</view>
+    <view class="parents" wx:if="{{noperson}}">
+        <view class="parentImg">
+            <image src="{{partner_avatar}}"></image>
+        </view>
+        <view class="parentText">
+        您好!如果我未及时回复,请留下您的联系方式以便后续展开合作！
+      </view>
+        <view class="clear"></view>
+    </view>
+    <view class="chartMain">
+        <view class="mechart" wx:for="{{content}}" wx:key="index">
+            <view class="meImg">
+                <image src="{{mePic}}"></image>
+            </view>
+            <view class="meText">
+          {{item}}
+        </view>
+            <view class="clear"></view>
+        </view>
+    </view>
+    <view class="botText">
+        <input bindinput="advSendVal" placeholder="请输入留言..." placeholderStyle="font-size: 28rpx;color: #d9d9d9;" value="{{sendVal}}"></input>
+        <view bindtap="sendBtn" class="sendBtn">发送</view>
+    </view>
+</view>

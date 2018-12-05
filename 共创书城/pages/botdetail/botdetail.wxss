@@ -8,7 +8,7 @@
 }
 .detail_title{
   text-align: center;
-  font-size: 32r
+  font-size: 32rpx;
   color: #333;
 }
 .detail_auther{
@@ -226,6 +226,7 @@
   color: #333;
   width: 530rpx;
   margin-top: 5rpx;
+  word-break:break-all;
 }
 .cc_content{
   height: 60vh;

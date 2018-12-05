@@ -1,0 +1,55 @@
+<!--pages/yetpay/yetpay.wxml-->
+<view class='finish'>
+  <view class='finish_top'>
+    <view class='top_icon'>
+      <image src='../../images/yetpay.png'></image>
+    </view>
+    <view class='top_text'>
+      <view class='top_tit'>已经付款</view>
+      <view class='top_des'>不可单独配送</view>
+    </view>
+    <view class='clear'></view>
+  </view>
+  <view class='user_address'>
+    <view class='address_top'>
+      <text class='ad_name'>收货人：哈哈哈</text>
+      <text class='ad_tel'>13123243434</text>
+      <view class='clear'></view>
+    </view>
+    <view class='ad_bot'>
+      <view class='ad_icon'>
+        <image src='../../images/localIcon.png'></image>
+      </view>
+      <view class='adb_text'>收货地址：陕西省西安市雁塔区曲江新区物流街道华夏大厦36楼612</view>
+      <view class='clear'></view>
+    </view>
+  </view>
+  <!-- 订单商品列表 -->
+  <view class='commodity_list'>
+    <view class='commodity_left'>
+      <image src='../../images/2d.jpeg'></image>
+    </view>
+    <view class='commodity_right'>
+      <view class='comityr_des'>家居生活装饰画 已装裱艺术品家居生活装饰画艺术品家居生活装饰画</view>
+      <view class='comityr_info'>
+        <text class='comityr_price'>￥699</text>
+        <text class='comityr_num'>x1</text>
+      </view>
+    </view>
+    <view class='clear'></view>
+  </view>
+
+  <view class='yet_bot'>
+    <view class='yet_left'>
+      <view class='yet_info'>
+        <view class='yeti_top'>
+          <text class='yet_atit'>合计：</text>
+          <text class='yet_num'>￥699</text>
+        </view>
+        <view class='yet_text'>含配送费</view>
+      </view>
+    </view>
+    <view class='yet_right'>下单年卡产品</view>
+    <view class='clear'></view>
+  </view>
+</view>

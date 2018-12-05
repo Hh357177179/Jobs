@@ -2,11 +2,11 @@
 <view class='home'>
   <view class='userCard'>
     <view class='userPic'>
-      <open-data type="userAvatarUrl"></open-data>
+      <image src='{{avatar}}'></image>
     </view>
     <text class='userTitle'>欢迎来到共创城！</text>
     <view class='clear'></view>
-    <view class='userName'><open-data type="userNickName"></open-data></view>
+    <view class='userName'>{{nickName}}</view>
     <view class='set_btn'>
       <view class='home_set' bindtap='homeSet'>设置</view>
       <view class='set_me' bindtap='setMe'>我的</view>

@@ -1,0 +1,106 @@
+<!--pages/delivery/delivery.wxml-->
+<view class='delivery'>
+  <view class='top_pic'>
+    <image src='../../images/deliveryPic.png'></image>
+    <view class='clear'></view>
+  </view>
+  <view class='d_address'>
+    <block wx:if="{{noAddress}}">
+      <!-- 新增收货地址 -->
+      <view class='add_address'>
+        <image class='add_icon' src='../../images/add.png'></image>
+        <text class='add_text'>新增收货地址</text>
+        <view class='clear'></view>
+      </view>
+      <view class='d_right_icon'>
+        <image src='../../images/right.png'></image>
+      </view>
+    </block>
+    <block wx:if="{{choAddress}}">
+      <!-- 选择默认地址 -->
+      <view class='d_left'>
+        <view class='d_title'>
+          <text class='user_name'>李磊磊</text>
+          <text class='user_tel'>13123232323</text>
+          <view class='clear'></view>
+        </view>
+        <view class='d_local_text'>
+          <view class='d_default'>
+            <view class='d_default_text'>默认</view>
+          </view>
+          <view class='d_detailed'>陕西省西安市雁塔区曲江新区物流街道华夏大厦36楼612</view>
+          <view class='clear'></view>
+        </view>
+      </view>
+      <view class='d_right'>
+        <image src='../../images/right.png'></image>
+      </view>
+    </block>
+    <view class='clear'></view>
+  </view>
+  <!-- 添加为配送商品 -->
+  <view class='commodity_add'>
+    <view class='addr_icon'>
+      <image src='../../images/zengjia.png'></image>
+    </view>
+    <view class='commodity_text'>添加已下单未配送商品</view>
+    <view class='clear'></view>
+  </view>
+  <!-- 配送商品列表 -->
+  <view class='commodity_list'>
+    <view class='commodity_left'>
+      <image src='../../images/2d.jpeg'></image>
+    </view>
+    <view class='commodity_right'>
+      <view class='comityr_des'>家居生活装饰画 已装裱艺术品家居生活装饰画艺术品家居生活装饰画</view>
+      <view class='comityr_info'>
+        <text class='comityr_price'>￥699</text>
+        <text class='comityr_num'>x1</text>
+      </view>
+    </view>
+    <view class='clear'></view>
+  </view>
+
+  <!-- 选择配送时间 -->
+  <view class='chose_time'>
+    <view class='time_left'>配送时间</view>
+    <view class='time_btn'>选择</view>
+    <view class='clear'></view>
+  </view>
+
+  <!-- 选择年卡 -->
+  <view class='choyear_card'>
+    <view class='year_list'>
+      <radio-group class='cy_l'>
+        <radio color='#F68B0E' class="radio">
+          <text class='radio_text'>喔喔云土鸡蛋</text>
+        </radio>
+        <radio color='#F68B0E' class="radio">
+          <text class='radio_text'>喔喔云乌鸡蛋</text>
+        </radio>
+      </radio-group>
+    </view>
+    <view class='cho_egg'>下单优先扣除期限最近</view>
+    <view class='cho_entries'>
+      <view class='entries_left'>
+        <view class='entries_text'>选择个数：</view>
+        <view class='entries_des'>每份15个起送，每份15个</view>
+      </view>
+      <view class='entries_right'>123</view>
+      <view class='clear'></view>
+    </view>
+  </view>
+
+  <!-- 底部 -->
+  <view class='bot_bar'>
+    <view class='all_info'>
+      <view class='aprice'>
+        <text class='first_price'>合计：</text>
+        <text class='price_num'>¥699</text>
+        <view class='clear'></view>
+      </view>
+      <view class='allb_text'>含配送费</view>
+    </view>
+    <view class='bot_sub'>提交订单</view>
+  </view>
+</view>

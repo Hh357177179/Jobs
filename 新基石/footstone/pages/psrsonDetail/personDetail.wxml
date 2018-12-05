@@ -1,0 +1,25 @@
+<view class="personDetail">
+    <view class="userInfo">
+        <view class="userPic">
+            <image src="{{originatorPer.avatar}}"></image>
+        </view>
+        <view class="userText">
+      {{originatorPer.name}}
+    </view>
+        <view class="clear"></view>
+    </view>
+    <view class="userMain">
+        <view class="infoText">年龄：{{originatorPer.age}}</view>
+        <view class="infoText">籍贯：{{originatorPer.native_place}}</view>
+        <view class="clear"></view>
+    </view>
+    <view class="userSc">毕业院校：{{originatorPer.school}}</view>
+    <view class="userSc">
+        <view>从事行业经历：</view>
+        <view class="experience">{{originatorPer.experience}}</view>
+    </view>
+    <view class="userSc">
+        <view>历史成功案例：</view>
+        <view class="case">{{originatorPer.case}}</view>
+    </view>
+</view>

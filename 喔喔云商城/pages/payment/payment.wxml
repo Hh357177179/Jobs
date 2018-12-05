@@ -1,0 +1,8 @@
+<!--pages/payment/payment.wxml-->
+<view class='payment'>
+  <view class='payment_pic'>
+    <image src='../../images/payment.png'></image>
+  </view>
+  <view class='payment_text'>支付成功</view>
+  <view class='payment_btn' bindtap='backShop'>返回商城</view>
+</view>

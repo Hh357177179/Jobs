@@ -1,0 +1,11 @@
+<view class="unauthorized">
+    <view class="unCard">
+        <view class="unHeadIcon"></view>
+        <view bindtap="requestClick" class="unTitle">
+            <view>登录/注册</view>
+            <view style="margin-top:10rpx;">登录后即可体验更多服务</view>
+        </view>
+        <view class="clear"></view>
+        <view class="botCard"></view>
+    </view>
+</view>

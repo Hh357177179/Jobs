@@ -1,0 +1,45 @@
+/* pages/selectaddress/selectaddress.wxss */
+page{
+  background: #f6f6f6;
+}
+.clear{
+  clear: both;
+}
+.top_line{
+  width: 100%;
+  height: 10rpx;
+}
+.top_line image{
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+
+.add_bar{
+  width: 100%;
+  height: 98rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.add_local{
+  width: 240rpx;
+  margin: 26rpx auto;
+}
+.add_icon{
+  width: 32rpx;
+  height: 32rpx;
+  float: left;
+}
+.add_icon image{
+  width: 100%;
+  height: 100%;
+}
+.add_text{
+  float: left;
+  color: #F68B0E;
+  line-height:45rpx;
+  font-size: 32rpx;
+  margin-left: 16rpx;
+}

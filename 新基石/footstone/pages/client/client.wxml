@@ -1,0 +1,14 @@
+<view class="client">
+    <view class="clientCard" wx:for="{{clientList}}" wx:key="{{index}}">
+        <view class="clientList">
+            <view class="clientPic">
+                <image src="{{item.avatar}}"></image>
+            </view>
+            <view class="clientText">
+                <view style="margin-top:20rpx;" wx:if="{{item.realname==''}}">{{item.nickname}}</view>
+                <view style="margin-top:20rpx;" wx:else>{{item.realname}}</view>
+            </view>
+            <view class="clear"></view>
+        </view>
+    </view>
+</view>

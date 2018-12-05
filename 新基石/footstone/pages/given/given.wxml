@@ -1,0 +1,15 @@
+<view class="given">
+    <view class="givenNumber">我的天使点: {{integral}}</view>
+    <view class="givenInput">
+        <view class="givenList">
+            <input bindinput="phoneVal" class="inputList" maxlength="11" placeholder="请输入转赠账户手机号" placeholderStyle="font-size:28rpx;" type="number" value="{{phone}}"></input>
+        </view>
+        <view class="givenList">
+            <input bindinput="quantityVal" class="inputList" placeholder="请输入转赠天使点数量" placeholderStyle="font-size:28rpx;" type="number" value="{{quantity}}"></input>
+        </view>
+        <view class="givenList">
+            <input bindinput="remarkVal" class="inputList" placeholder="请输入转赠备注" placeholderStyle="font-size:28rpx;" type="text" value="{{remark}}"></input>
+        </view>
+        <view bindtap="givenBtn" class="givenBtn">确定</view>
+    </view>
+</view>

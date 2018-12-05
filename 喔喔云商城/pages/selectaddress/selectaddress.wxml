@@ -1,0 +1,19 @@
+<!--pages/selectaddress/selectaddress.wxml-->
+<view class='selectaddress'>
+  <view class='top_line'>
+    <image src='../../images/deliveryPic.png'></image>
+  </view>
+  <view class='local_radio'>
+    <view class=''></view>
+  </view>
+  <!-- 新增收货地址 -->
+  <view class='add_bar'>
+    <view class='add_local'>
+      <view class='add_icon'>
+        <image src='../../images/add.png'></image>
+      </view>
+      <text class='add_text'>新增收货地址</text>
+      <view class='clear'></view>
+    </view>
+  </view>
+</view>

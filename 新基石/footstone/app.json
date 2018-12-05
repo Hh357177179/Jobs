@@ -1,0 +1,64 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/login/login",
+        "pages/unauthorized/unauthorized",
+        "pages/project/project",
+        "pages/chat/chat",
+        "pages/me/me",
+        "pages/given/given",
+        "pages/phoneVerify/phoneVerify",
+        "pages/originator/originator",
+        "pages/prodetail/prodetail",
+        "pages/issue/issue",
+        "pages/partnership/partnership",
+        "pages/client/client",
+        "pages/onlyDetail/onlyDetail",
+        "pages/psrsonDetail/personDetail",
+        "pages/establish/establish",
+        "pages/collect/collect",
+        "pages/attention/attention",
+        "pages/otherchat/otherchat"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "新基石",
+        "navigationBarTextStyle": "black",
+        "onReachBottomDistance": 20
+    },
+    "tabBar": {
+        "color": "#8e8e8e",
+        "selectedColor": "#DD5F1B",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "活动",
+                "iconPath": "images/dynamic.png",
+                "selectedIconPath": "images/cdynamic.png"
+            },
+            {
+                "pagePath": "pages/project/project",
+                "text": "项目",
+                "iconPath": "images/project.png",
+                "selectedIconPath": "images/cproject.png"
+            },
+            {
+                "pagePath": "pages/chat/chat",
+                "text": "留言",
+                "iconPath": "images/chart.png",
+                "selectedIconPath": "images/cchart.png"
+            },
+            {
+                "pagePath": "pages/me/me",
+                "text": "个人中心",
+                "iconPath": "images/me.png",
+                "selectedIconPath": "images/cme.png"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "downloadFile": 10000
+    }
+}

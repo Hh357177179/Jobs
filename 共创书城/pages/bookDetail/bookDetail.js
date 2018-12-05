@@ -267,10 +267,10 @@ Page({
       if (that.data.isAll == '1') {
         let dmArr = new Array()
         for (var i = 0, len = res.length; i < len; i++) {
-          console.log(res[i])
+          // console.log(res[i])
           dmArr.push({
             text: res[i],
-            time: i + 1,
+            time: i + 2,
             color: getRandomColor()
           })
         }

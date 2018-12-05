@@ -42,7 +42,7 @@ App({
                           }
                         })
                       } else {
-                        // console.log(resLogin)
+                        console.log(resLogin)
                         this.globalData.openid = resLogin.data.data.openid,
                         this.globalData.avatar = resLogin.data.data.avatar,
                         this.globalData.nickname = resLogin.data.data.nickname

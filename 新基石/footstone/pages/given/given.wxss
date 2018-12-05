@@ -1,0 +1,41 @@
+.given {
+    width: 100%;
+    height: 100%;
+}
+
+.givenNumber {
+    font-size: 32rpx;
+    margin-left: 112rpx;
+    margin-top: 108rpx;
+}
+
+.givenInput {
+    width: 588rpx;
+    margin: 100rpx auto;
+}
+
+.givenList {
+    width: 100%;
+    height: 80rpx;
+    border-bottom: 1px solid rgba(187,187,187,1);
+    margin-bottom: 100rpx;
+}
+
+.inputList {
+    width: 400rpx;
+    height: 100%;
+    margin: 0 auto;
+    font-size: 32rpx;
+    text-align: center;
+}
+
+.givenBtn {
+    width: 326rpx;
+    height: 80rpx;
+    background: #DD5F1B;
+    color: #fff;
+    line-height: 85rpx;
+    text-align: center;
+    border-radius: 10rpx;
+    margin: 0 auto;
+}

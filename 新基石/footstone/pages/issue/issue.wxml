@@ -1,0 +1,19 @@
+<view class="issue">
+    <view bindtap="publishBtn" class="publishBtn">提交</view>
+    <view class="clear"></view>
+    <view class="issueExplain">
+        <textarea bindinput="advissyeVal" maxlength="-1" placeholder="项目活动说明..." placeholderStyle="font-size: 30rpx;" value="{{issyeVal}}"></textarea>
+    </view>
+    <view class="uploadPic">
+        <view class="picture" wx:for="{{localImg}}" wx:key="index">
+            <image src="{{item}}"></image>
+        </view>
+        <view bindtap="chooseImg" class="addPic" wx:if="{{showUpload}}">
+            <view class="addIcon">
+                <image src="../../images/add.png"></image>
+            </view>
+            <view style="font-size:24rpx;margin-top:10rpx;color:#666;">（最大可上传9张）</view>
+        </view>
+        <view class="clear"></view>
+    </view>
+</view>

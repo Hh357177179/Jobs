@@ -1,0 +1,15 @@
+<!--pages/infocard/infocard.wxml-->
+<view class='infocard'>
+  <block>
+    <view class='ic_list'>
+      <view class='ic_list_name'>土鸡蛋年卡</view>
+      <view class='ic_state'>未激活</view>
+      <!-- <view class='ic_all_state'>已激活</view> -->
+      <block>
+        <view class='btn_activate' bindtap='btnActivate'>激活</view>
+        <view class='btn_given' bindtap='btnGiven'>转赠</view>
+      </block>
+      <view class='clear'></view>
+    </view>
+  </block>
+</view>

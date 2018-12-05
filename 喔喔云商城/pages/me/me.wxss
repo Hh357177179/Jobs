@@ -1,0 +1,173 @@
+/* pages/me/me.wxss */
+page{
+  background: #f6f6f6;
+}
+.clear{
+  clear: both;
+}
+.me_info{
+  padding: 50rpx 60rpx;
+  background: #fff;
+}
+.me_avatar{
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+}
+.me_avatar image{
+  width: 100%;
+  height: 100%;
+}
+.me_name{
+  float: left;
+}
+.me_right{
+  float: right;
+}
+.me_name{
+  line-height: 144rpx;
+  margin-left: 40rpx;
+  font-size: 40rpx;
+  font-weight: 600;
+  color:rgba(25,31,37,0.72);
+}
+.m_price{
+  font-size: 36rpx;
+  font-weight: 600;
+  color:rgba(25,31,37,0.72);
+  line-height:50rpx
+}
+.m_text{
+  font-weight: 400;
+  font-size: 24rpx;
+  color: rgba(25,31,37,0.28);
+  line-height: 33rpx;
+  text-align: center;
+}
+.m_hint{
+  margin-top: 20rpx;
+  color: #F68B0E;
+  line-height: 33rpx;
+  font-size: 24rpx;
+  text-align: center;
+  padding: 7rpx 44rpx;
+  border-radius: 8rpx;
+  border: 1px solid #F68B0E;
+}
+.me_order{
+  margin-top: 18rpx;
+  background: #fff;
+  padding: 20rpx 30rpx;
+  font-size: 24rpx;
+  border-bottom: 1px solid rgba(25,31,37,0.12);
+}
+.m_morder{
+  float: left;
+  color:rgba(25,31,37,0.72);
+  line-height:33rpx;
+  font-weight: 400;
+}
+.m_all_order{
+  float: right;
+  color: rgba(25,31,37,0.4);
+  line-height: 33rpx;
+}
+.m_all_order image{
+  width: 24rpx;
+  height: 24rpx;
+  margin-top: 4rpx;
+  float: right;
+}
+.mo_state{
+  padding: 47rpx 0 42rpx;
+  background: #fff;
+}
+.mo_card{
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+.mo_stayPic{
+  width: 48rpx;
+  height: 44rpx;
+  margin: 0 auto;
+}
+.mo_stayPic image{
+  width: 100%;
+  height: 100%;
+}
+.mos_text{
+  color: rgba(25,31,37,0.72);
+  line-height: 33rpx;
+  font-weight: 400;
+  font-size: 24rpx;
+  margin-top: 15rpx;
+}
+.year_card{
+  margin-top: 20rpx;
+  background: #fff;
+  height: 88rpx;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  font-weight:400;
+  color: rgba(25,31,37,0.72);
+  line-height: 88rpx;
+}
+.right_icon{
+  float: right;
+  width: 23rpx;
+  height: 23rpx;
+}
+.right_icon image{
+  width: 100%;
+  height: 100%;
+}
+
+
+/* 没认证 */
+.no_user{
+  padding: 50rpx 60rpx;
+  background: #fff;
+}
+.no_user_pic{
+  width: 144rpx;
+  height: 144rpx;
+  background:rgba(25,31,37,0.12);
+  border-radius: 50%;
+  float: left;
+}
+.no_user_name{
+  float: left;
+  line-height: 144rpx;
+  font-size: 32rpx;
+  color: rgba(25,31,37,0.4);
+  font-weight: 400;
+  margin-left: 40rpx;
+}
+.no_user_login{
+  margin-top: 20rpx;
+  padding: 0 30rpx;
+  background: #fff;
+}
+.login_text{
+  font-size: 28rpx;
+  color: rgba(25,31,37,0.72);
+  font-weight: 400;
+  line-height: 40rpx;
+  padding: 24rpx 0;
+  float: left;
+}
+.login_btn{
+  float: right;
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: 400;
+  line-height: 40rpx;
+  padding: 12rpx 52rpx;
+  border-radius: 8rpx;
+  background: #F68B0E;
+  text-align: center;
+  margin-top: 12rpx;
+}

@@ -1,0 +1,30 @@
+<view class="chat">
+    <block wx:if="{{status==3||status==4}}">
+        <block wx:for="{{chatList}}" wx:key="{{item.id}}">
+            <view bindtap="searchChart" class="chatList" data-id="{{item.from_id}}" wx:if="{{item.to_id==uid}}">
+                <view class="chatPic">
+                    <image src="{{item.from_avatar}}"></image>
+                </view>
+                <view class="rightText">
+                    <view>
+                        <text>{{item.from_nickname}}</text>
+                    </view>
+                    <view style="font-size:28rpx;margin-top:20rpx;color:#666;">{{item.content}}</view>
+                </view>
+                <view class="clear"></view>
+            </view>
+            <view bindtap="searchChart" class="chatList" data-id="{{item.to_id}}" wx:else>
+                <view class="chatPic">
+                    <image src="{{item.to_avatar}}"></image>
+                </view>
+                <view class="rightText">
+                    <view>
+                        <text>{{item.to_nickname}}</text>
+                    </view>
+                    <view style="font-size:28rpx;margin-top:20rpx;color:#666;">{{item.content}}</view>
+                </view>
+                <view class="clear"></view>
+            </view>
+        </block>
+    </block>
+</view>

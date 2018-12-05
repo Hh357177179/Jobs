@@ -1,0 +1,65 @@
+.issue {
+    padding: 10rpx 20rpx;
+}
+
+.clear {
+    clear: both;
+}
+
+.publishBtn {
+    font-size: 32rpx;
+    text-align: center;
+    color: #DD5F1B;
+    border: 1px solid #DD5F1B;
+    width: 120rpx;
+    float: right;
+    padding: 10rpx 0;
+    border-radius: 10rpx;
+}
+
+.issueExplain {
+    margin-top: 20rpx;
+    border-radius: 10rpx;
+    border: 1px solid #d9d9d9;
+    height: 300rpx;
+}
+
+.issueExplain textarea {
+    width: 100%;
+    height: 100%;
+    padding: 10rpx 20rpx;
+    font-size: 30rpx;
+}
+
+.uploadPic {
+    width: 100%;
+    margin-top: 20rpx;
+}
+
+.addPic {
+    height: 200rpx;
+    border: 1px solid #d9d9d9;
+    float: left!important;
+}
+
+.addPic .addIcon {
+    width: 80rpx;
+    height: 80rpx;
+    margin: 60rpx auto;
+}
+
+.addIcon image {
+    width: 100%;
+    height: 100%;
+}
+
+.picture {
+    width: 33.33%;
+    height: 200rpx;
+    float: left;
+}
+
+.picture image {
+    width: 100%;
+    height: 100%;
+}

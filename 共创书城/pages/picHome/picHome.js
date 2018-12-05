@@ -69,8 +69,8 @@ Page({
         that.go(str)
         that.autoLoad()
       }
-    }, 1500)
-    console.log(1)
+    }, 3000)
+    // console.log(1)
   },
 
   shareBtn() {

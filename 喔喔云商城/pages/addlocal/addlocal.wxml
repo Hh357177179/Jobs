@@ -1,0 +1,9 @@
+<!--pages/addlocal/addlocal.wxml-->
+<view class='addlocal'>
+  <view class='addlocal_line'></view>
+  <view class='addlocal_from'>
+    <view class='aform_list'>
+      
+    </view>
+  </view>
+</view>

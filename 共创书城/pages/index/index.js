@@ -1,10 +1,12 @@
 //index.js
 //获取应用实例
+const util = require('../../utils/util.js')
 const app = getApp()
 
 Page({
   data: {
-    
+    nickName: '',
+    avatar: ''
   },
 
   // 跳转我的
@@ -83,6 +85,59 @@ Page({
   },
 
   onShow: function () {
+    wx.getUserInfo({
+      success: resUserInfo => {
+        // console.log('获取个人用户信息',resUserInfo)
+        wx.login({
+          success: resCode => {
+            // console.log('获取code',resCode)
+            wx.request({
+              url: `${util.baseUrl}/user/isLogin`,
+              data: {
+                code: resCode.code
+              },
+              method: 'POST',
+              success: resLogin => {
+                console.log('检查是否注册', resLogin)
+                if (resLogin.data.code == 1002) {
+                  // console.log('拿到openid去注册', resLogin.data.data.openid)
+                  // console.log('用户信息', resUserInfo.userInfo.avatarUrl, resUserInfo.userInfo.nickName)
+                  wx.request({
+                    url: `${util.baseUrl}/user/register`,
+                    data: {
+                      openid: resLogin.data.data.openid,
+                      nickname: resUserInfo.userInfo.nickName,
+                      avatar: resUserInfo.userInfo.avatarUrl
+                    },
+                    method: 'POST',
+                    success: res => {
+                      if (res.data.code == 200) {
+                        app.globalData.openid = res.data.data.openid,
+                          app.globalData.avatar = res.data.data.avatar,
+                          app.globalData.nickname = res.data.data.nickname
+                        this.setData({
+                          nickName: res.data.data.nickname,
+                          avatar: res.data.data.avatar
+                        })
+                      }
+                    }
+                  })
+                } else {
+                  // console.log(resLogin)
+                  app.globalData.openid = resLogin.data.data.openid,
+                  app.globalData.avatar = resLogin.data.data.avatar,
+                  app.globalData.nickname = resLogin.data.data.nickname
+                  this.setData({
+                    nickName: resLogin.data.data.nickname,
+                    avatar: resLogin.data.data.avatar
+                  })
+                }
+              }
+            })
+          }
+        })
+      }
+    })
   },
   
 
