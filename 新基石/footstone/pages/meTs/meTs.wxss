@@ -1,0 +1,39 @@
+/* pages/meTs/meTs.wxss */
+.clear{
+  clear: both;
+}
+.me_ts_pic{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+}
+.me_ts_pic image {
+  width: 100%;
+  height: 100%;
+}
+.me_ts_main{
+  margin-top: 80rpx;
+  padding: 0 60rpx;
+}
+.me_ts_num{
+  float: right;
+  line-height: 140rpx;
+  font-size: 30rpx;
+}
+.eCode{
+  width: 600rpx;
+  height: 600rpx;
+  /* background: #ccc; */
+  margin: 80rpx auto 40rpx;
+}
+.eCode image{
+  width: 100%;
+  height: 100%;
+}
+.sao_text{
+  text-align: center;
+  color: #333;
+  font-size: 30rpx;
+}

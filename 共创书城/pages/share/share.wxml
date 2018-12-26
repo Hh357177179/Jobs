@@ -2,7 +2,7 @@
 <wxs module="dateFr" src="../../utils/dateFr.wxs"></wxs>
 <view class='share'>
   <block wx:for="{{shareArr}}" wx:key="index">
-    <view class='share_list'>
+    <view class='share_list' data-type='{{item.type}}' data-sid='{{item.project_id}}' bindtap='detailR'>
       <view class='share_pic'>
         <image wx:if="{{item.type == 1}}" src='{{item.project.image}}'></image>
         <image wx:if="{{item.type == 2}}" src='{{item.project.logo}}'></image>

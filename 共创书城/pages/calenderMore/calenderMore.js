@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgArr: []
+    imgArr: [],
+    noDataShow: false
   },
 
   routerImg (e) {
@@ -31,6 +32,11 @@ Page({
     }
     postRequest('/tujie/searchByDay', params, true).then(res => {
       console.log(res)
+      if (res.length == 0) {
+        that.setData({
+          noDataShow: true
+        })
+      }
       that.setData({
         imgArr: res
       })

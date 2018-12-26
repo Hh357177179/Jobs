@@ -81,11 +81,12 @@ page{
   float: right;
 }
 .mo_state{
-  padding: 47rpx 0 42rpx;
+  /* padding: 0 0 42rpx; */
   background: #fff;
 }
 .mo_card{
-  width: 50%;
+  padding: 47rpx 0 42rpx;
+  width: 33.33%;
   float: left;
   text-align: center;
 }
@@ -170,4 +171,105 @@ page{
   background: #F68B0E;
   text-align: center;
   margin-top: 12rpx;
+}
+
+.drawMask{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0,0,0,.5);
+  left: 0;
+  top: 0;
+}
+.drawinfo{
+  width: 600rpx;
+  padding-bottom: 30rpx;
+  /* height: 400rpx; */
+  background: #fff;
+  border-radius: 10rpx;
+  margin: 100rpx auto 0;
+}
+.draw_title{
+  padding-top: 30rpx;
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+}
+.draw_list{
+  margin-top: 20rpx;
+  color:rgba(25,31,37,0.4);
+  font-size: 28rpx;
+  text-align: center;
+}
+.draw_input{
+  width: 300rpx;
+  margin: 20rpx auto;
+  height: 60rpx;
+  font-size: 30rpx;
+  border: 1px solid #f0f0f0;
+  border-radius: 10rpx;
+  text-align: center;
+}
+.draw_input input{
+  width: 100%;
+  height: 100%;
+}
+.draw_btn{
+  width: 200rpx;
+  line-height: 70rpx;
+  text-align: center;
+  background: #F68B0E;
+  color: #fff;
+  font-size: 30rpx;
+  margin: 40rpx auto 0;
+  border-radius: 10rpx;
+}
+.closes{
+  width: 60rpx;
+  height: 60rpx;
+  float: right;
+}
+.closes image {
+  width: 30rpx;
+  height: 30rpx;
+  margin: 15rpx;
+}
+.me_order{
+  color: rgba(25,31,37,0.72);
+}
+.me_list_tit{
+  font-size: 28rpx;
+  color: #666;
+  padding: 20rpx 30rpx 0;
+}
+.m_lists{
+  background: #fff;
+  font-size: 28rpx;
+  padding: 20rpx 30rpx;
+  color: #666;
+  margin-top: 20rpx;
+}
+.mlist_tit{
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 10rpx;
+}
+.mlist_shop{
+  padding: 20rpx 0;
+}
+.shop_name{
+  float: left;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333;
+}
+.shop_pn{
+  float: right;
+}
+.mlist_bot{
+  text-align: right;
+  margin-top: 10rpx;
+}
+.pn_price{
+  font-size: 30rpx;
+  margin-right: 40rpx;
 }

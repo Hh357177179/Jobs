@@ -33,6 +33,7 @@
           </view>
         </block>
       </view>
+      <view class='lines'></view>
       <view class='hottest'>
         <view class='newestTitle'>最热</view>
         <block wx:for="{{hostList}}" wx:key="{{item.id}}">
@@ -62,9 +63,7 @@
           <view class='listText'>
             <view>{{item.title}}</view>
             <view class='bookInfo'>
-              <text>{{item.author}}</text>/
-              <text>{{item.hits}}</text>/
-              <text>{{dateFr.getDate(item.create_time * 1000,'-')}}</text>
+              <text>{{item.author}}</text>/<text>{{item.hits}}</text>/<text>{{dateFr.getDate(item.create_time * 1000,'-')}}</text>
             </view>
           </view>
           <view class='clear'></view>

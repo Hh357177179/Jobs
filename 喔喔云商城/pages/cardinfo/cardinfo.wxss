@@ -1,0 +1,13 @@
+/* pages/cardinfo/cardinfo.wxss */
+@import "../../wxParse/wxParse.wxss";
+.cardinfo{
+  border: 1px solid rgba(0,0,0,0);
+}
+.info_text{
+  padding: 0 30rpx 30px;
+  font-size: 30rpx;
+  color: #333;
+}
+.info_text image {
+  width: 100%;
+}

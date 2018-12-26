@@ -27,13 +27,65 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 7,
+			"list": [
+				{
+					"id": -1,
+					"name": "修改资料",
+					"pathName": "pages/choosePic/choosePic",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "手机验证",
+					"pathName": "pages/phoneVerify/phoneVerify",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "天使点",
+					"pathName": "pages/angel/angel",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "转让积分",
+					"pathName": "pages/transferSore/transferSore",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的天使账户",
+					"pathName": "pages/meTs/meTs",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "重置支付密码",
+					"pathName": "pages/resetPsw/resetPsw",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "手机认证",
+					"pathName": "pages/phoneVerify/phoneVerify",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "修改创始人资料",
+					"pathName": "pages/corigin/corigin"
+				}
+			]
 		}
 	}
 }

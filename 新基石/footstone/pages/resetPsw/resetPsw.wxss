@@ -1,0 +1,40 @@
+/* pages/resetPsw/resetPsw.wxss */
+.clear{
+  clear: both;
+}
+.resetPsw{
+  padding: 60rpx;
+}
+.reset_list{
+  font-size: 28rpx;
+  width: 100%;
+  height: 80rpx;
+  margin-top: 80rpx;
+}
+.reset_list input{
+  width: 60%;
+  height: 100%;
+  border-bottom: 1px solid #f0f0f0;
+  padding-left: 20rpx;
+  float: left;
+}
+.getCode{
+  float: right;
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 200rpx;
+}
+.tel_num input{
+  width: 100%;
+}
+.subBtn{
+  margin: 80rpx auto 0;
+  font-size: 32rpx;
+  width: 240rpx;
+  padding: 20rpx 0;
+  background: #dd5f1b;
+  color: #fff;
+  text-align: center;
+  border-radius: 10rpx;
+}

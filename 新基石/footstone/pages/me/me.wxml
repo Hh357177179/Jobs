@@ -1,89 +1,123 @@
 <view class="userCenter">
-    <view class="userCard">
-        <view style="width: 100%;height:160rpx;">
-            <view class="userPic">
-                <image src="{{avatar}}"></image>
-            </view>
-            <view class="userInfo">
-                <view style="font-size:32rpx;position:relative;">
-                    <text class="userName" wx:if="{{realname==''}}">{{nickName}}</text>
-                    <text class="userName" wx:else>{{realname}}</text>
-                    <image bindtap="phoneVerify" class="phoneIcon" src="../../images/phoneIcon.png"></image>
-                </view>
-                <view class="identity">{{identity}}</view>
-            </view>
-            <view bindtap="alertCode" class="QRcodeIcon" wx:if="{{status==3}}">
-                <image src="../../images/QRcode.png"></image>
-            </view>
-            <view class="medal" wx:if="{{status==4}}">
-                <image src="../../images/medal.png"></image>
-                <text wx:if="attentionN != ''">{{attentionN}}枚</text>
-            </view>
-            <view class="clear"></view>
+  <view class="userCard">
+    <view style="width: 100%;height:160rpx;">
+      <view class="userPic" bindtap='chooseInfo'>
+        <image src="{{avatar}}"></image>
+      </view>
+      <view class="userInfo">
+        <view style="font-size:32rpx;position:relative;">
+          <text class="userName" wx:if="{{realname==''}}">{{nickName}}</text>
+          <text class="userName" wx:else>{{realname}}</text>
+          <block wx:if="{{phone != ''}}">
+            <image class="phoneIcon" bindtap='changeTel' src="../../images/phonec.png"></image>
+            <text class='aredayText'>（已认证）</text>
+          </block>
+          <block wx:else>
+            <image bindtap="phoneVerify" class="phoneIcon" src="../../images/phoneIcon.png"></image>
+            <text class='aredayText'>（未认证）</text>
+          </block>
         </view>
-        <view bindtap="integral" class="integral" wx:if="{{phone!=''}}">天使点: {{score}}</view>
-        <view class="botCard">
-            <view bindtap="mpClick" class="mpCard" wx:if="{{status==2||status==1}}">
-                <image class="mpIcon" src="../../images/mp.png"></image>
-                <text style="float: right;line-height: 165rpx;margin-right:50rpx;">我的项目</text>
-            </view>
+        <view class='identity_list'>
+          <view wx:if="{{is_chuangshiren == 1}}" class="identity" bindtap='chooseIden'>项目创始人</view>
+          <view wx:if="{{is_hehuoren == 1}}" class="identity">新基石项目合伙人</view>
+          <view class='clear'></view>
         </view>
+      </view>
+      <view bindtap="alertCode" class="QRcodeIcon" wx:if="{{is_hehuoren == 1}}">
+        <image src="../../images/QRcode.png"></image>
+      </view>
+      <!-- <view class="medal" wx:if="{{status != 1}}">
+        <image src="../../images/medal.png"></image>
+        <text wx:if="attentionN != ''">{{attentionN}}枚</text>
+      </view> -->
+      <view class="clear"></view>
     </view>
-    <view class="meList">
-        <view class="partnership" wx:if="{{status==3}}">
-            <view bindtap="partnerBtn" class="partnerList">
-                <image src="../../images/partnership.png"></image>
-                <view class="listRight">
-                    <text>我合作的</text>
-                    <text style="width:50rpx;display:inline-block;text-align:center;">{{parentNum}}</text>
-                </view>
-                <view class="clear"></view>
-            </view>
-            <view bindtap="clientBtn" class="partnerList">
-                <image src="../../images/partner.png"></image>
-                <view class="listRight">
-                    <text>我的客户</text>
-                    <text style="width:50rpx;display:inline-block;text-align:center;"></text>
-                </view>
-                <view class="clear"></view>
-            </view>
-        </view>
-        <view class="investor" wx:if="{{status==4}}">
-            <view bindtap="attentionR" class="partnerList">
-                <image src="../../images/attention.png"></image>
-                <view class="listRight">
-                    <text>我关注的</text>
-                    <text style="width:50rpx;display:inline-block;text-align:center;">{{attentionN}}</text>
-                </view>
-                <view class="clear"></view>
-            </view>
-            <view bindtap="collectR" class="partnerList">
-                <image src="../../images/collectList.png"></image>
-                <view class="listRight">
-                    <text>我收藏的</text>
-                    <text style="width:50rpx;display:inline-block;text-align:center;">{{collectN}}</text>
-                </view>
-                <view class="clear"></view>
-            </view>
-        </view>
+    <view class='me_pic' bindtap='searchXX'>
+      <view class='card_pics'>
+        <image src='../../images/xx.png'></image>
+        <text class='xxNum'>{{medalnum}}</text>
+      </view>
     </view>
+    <!-- <view bindtap="integral" class="integral" wx:if="{{phone!=''}}">天使点: {{score}}</view> -->
+    <view class="botCard" wx:if="{{phone != ''}}">
+      <view bindtap="mpClick" class="mpCard">
+        <image class="mpIcon" src="../../images/mp.png"></image>
+        <text style="float: right;line-height: 165rpx;margin-right:50rpx;">项目资料</text>
+      </view>
+    </view>
+  </view>
+  <view class="meList">
+    <view class="partnership" wx:if="{{is_hehuoren == 1}}">
+      <view bindtap="partnerBtn" class="partnerList">
+        <image src="../../images/partnership.png"></image>
+        <view class="listRight">
+          <text>我服务的项目</text>
+          <text style="width:50rpx;display:inline-block;text-align:center;">{{parentNum}}</text>
+        </view>
+        <view class="clear"></view>
+      </view>
+      <view bindtap="clientBtn" class="partnerList" wx:if="{{is_hehuoren == 1}}">
+        <image src="../../images/partner.png"></image>
+        <view class="listRight">
+          <text>项目天使</text>
+          <text style="width:50rpx;display:inline-block;text-align:center;">{{myCustomernum}}</text>
+        </view>
+        <view class="clear"></view>
+      </view>
+    </view>
+    <view class="investor">
+      <view bindtap="attentionR" class="partnerList" wx:if="{{is_tianshi == 1}}">
+        <image src="../../images/proicon.png"></image>
+        <view class="listRight">
+          <text>我的项目</text>
+          <text style="width:50rpx;display:inline-block;text-align:center;">{{attentionN}}</text>
+        </view>
+        <view class="clear"></view>
+      </view>
+      <view bindtap="collectR" class="partnerList" wx:if="{{phone != '' }}">
+        <image src="../../images/collectList.png"></image>
+        <view class="listRight">
+          <text>我收藏的</text>
+          <text style="width:50rpx;display:inline-block;text-align:center;">{{collectN}}</text>
+        </view>
+        <view class="clear"></view>
+      </view>
+      <view class="partnerList" bindtap='rMessage' wx:if="{{phone != '' }}">
+        <image src="../../images/cchart.png"></image>
+        <view class="listRight">
+          <text>我的留言</text>
+          <text style="width:50rpx;display:inline-block;text-align:center;">{{talkNum}}</text>
+        </view>
+        <view class="clear"></view>
+      </view>
+    </view>
+  </view>
 </view>
 <view class="codeModal" wx:if="{{showCode}}">
-    <view class="codeMain">
-        <view class="codeAva">
-            <open-data type="userAvatarUrl"></open-data>
-        </view>
-        <view class="codeUser">
-            <view>姓名：
-        <text wx:if="{{bothName.realname==''}}">{{bothName.nickname}}</text>
-                <text wx:else>{{bothName.realname}}</text>
-            </view>
-        </view>
-        <image bindtap="closeModal" class="closeIcon" src="../../images/close.png"></image>
-        <view class="clear"></view>
-        <view class="codePic">
-            <image src="{{codeUrl}}"></image>
-        </view>
-        <view style="text-align:center;font-size:26rpx;color:rgba(16,16,16,.6);">扫描上面的二维码</view>
+  <view class="codeMain">
+    <view class="codeAva">
+      <open-data type="userAvatarUrl"></open-data>
     </view>
+    <view class="codeUser">
+      <view>姓名：
+        <text wx:if="{{bothName.realname==''}}">{{bothName.nickname}}</text>
+        <text wx:else>{{bothName.realname}}</text>
+      </view>
+    </view>
+    <image bindtap="closeModal" class="closeIcon" src="../../images/close.png"></image>
+    <view class="clear"></view>
+    <view class="codePic">
+      <image src="{{codeUrl}}"></image>
+    </view>
+    <view style="text-align:center;font-size:26rpx;color:rgba(16,16,16,.6);">扫描上面的二维码</view>
+  </view>
+</view>
+
+<view class='xxmask' bindtap='closeMaskxx' wx:if="{{xxShow}}">
+  <view class='maskMain'>
+    <view class='xxlist' wx:for="{{medalArr}}" wx:key="index">
+      <image src='{{item.picurl}}'></image>
+    </view>
+    <view class='clear'></view>
+  </view>
 </view>

@@ -9,9 +9,15 @@
     "pages/delivery/delivery",
     "pages/meorder/meorder",
     "pages/finish/finish",
-    "pages/yetpay/yetpay",
     "pages/selectaddress/selectaddress",
-    "pages/addlocal/addlocal"
+    "pages/addlocal/addlocal",
+    "pages/cjoint/cjoint",
+    "pages/login/login",
+    "pages/verifytel/verifytel",
+    "pages/cardinfo/cardinfo",
+    "pages/rebate/rebate",
+    "pages/nowdelivery/nowdelivery",
+    "pages/accomplish/accomplish"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -31,7 +37,7 @@
       },
       {
         "pagePath": "pages/card/card",
-        "text": "年卡",
+        "text": "鸡蛋年卡",
         "iconPath": "images/cardIcon.png",
         "selectedIconPath": "images/cardIconc.png"
       },

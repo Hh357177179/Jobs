@@ -1,33 +1,39 @@
 <view class="project">
-    <view class="searchTop">
-        <view class="searchInput">
-            <icon size="20" style="margin-top: 20rpx;margin-left:20rpx;float:left;" type="search"></icon>
-            <input bindblur="searchText" class="sInput" placeholder="搜索你想要查找的项目标题" placeholderStyle="font-size: 28rpx;" type="text"></input>
-        </view>
-        <view bindtap="searchBtn" class="searchBtn">搜索</view>
+  <view class="searchTop">
+    <view class="searchInput">
+      <icon size="20" style="margin-top: 20rpx;margin-left:20rpx;float:left;" type="search"></icon>
+      <input bindblur="searchText" class="sInput" placeholder="搜索你想要查找的项目标题" placeholderStyle="font-size: 28rpx;" type="text"></input>
     </view>
-    <view style="margin-top:104rpx;">
-        <view bindtap="searchDet" class="projectList" data-id="{{item.id}}" wx:for="{{proList}}" wx:key="{{item.id}}">
-            <view class="projectPic">
-                <image src="{{item.picurl[0]}}"></image>
-            </view>
-            <view class="projectTitle">
-                <view>
-                    <text class="pName">{{item.title}}</text>
-                    <text style="color:#E51C23;float: right;">{{item.stage}}</text>
-                </view>
-                <view style="margin-top: 20rpx;position:relative;">
-                    <text>创始人：</text>
-                    <text wx:if="{{item.realname==''}}">{{item.nickname}}</text>
-                    <text wx:else>{{item.realname}}</text>
-                    <view class="collectIcon" wx:if="{{status==4}}">
-                        <image catchtap="collectIcon" data-id="{{item.id}}" data-index="{{index}}" src="../../images/collect.png" wx:if="{{item.is_collection==false}}"></image>
-                        <image catchtap="ccollectIcon" data-id="{{item.id}}" data-index="{{index}}" src="../../images/ccollect.png" wx:if="{{item.is_collection==true}}"></image>
-                    </view>
-                </view>
-                <view class="createTime">成立时间：{{item.time}}</view>
-            </view>
-            <view class="clear"></view>
+    <view bindtap="searchBtn" class="searchBtn">搜索</view>
+  </view>
+  <view style="margin-top:104rpx;">
+    <view bindtap="searchDet" class="projectList" data-id="{{item.id}}" wx:for="{{proList}}" wx:key="{{item.id}}">
+      <view class="projectPic" data-src='{{item.picurl[0]}}' catchtap='sBpic'>
+        <image src="{{item.picurl[0]}}"></image>
+      </view>
+      <view class="projectTitle">
+        <view>
+          <text class="pName">{{item.title}}</text>
+          <text style="color:#E51C23;float: right;">{{item.stage}}</text>
         </view>
+        <view style="margin-top: 20rpx;position:relative;">
+          <text>项目创始人：</text>
+          <text wx:if="{{item.realname==''}}">{{item.nickname}}</text>
+          <text wx:else>{{item.realname}}</text>
+          <view class="collectIcon" wx:if="{{status==5}}">
+            <image catchtap="collectIcon" data-id="{{item.id}}" data-index="{{index}}" src="../../images/collect.png" wx:if="{{item.is_collection==false}}"></image>
+            <image catchtap="ccollectIcon" data-id="{{item.id}}" data-index="{{index}}" src="../../images/ccollect.png" wx:if="{{item.is_collection==true}}"></image>
+          </view>
+        </view>
+        <view class="createTime">成立时间：{{item.time}}</view>
+      </view>
+      <view class="clear"></view>
     </view>
+  </view>
+  <view class='add_project' bindtap='addProject'>
+    <image src='../../images/add.png'></image>
+  </view>
+</view>
+<view class='pic_mask' wx:if="{{showPics}}" bindtap='picMask'>
+  <image style='width: 100%;' src='{{srclocal}}'></image>
 </view>

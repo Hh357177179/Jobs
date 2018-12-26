@@ -1,0 +1,31 @@
+<!--pages/secondPage/secondPage.wxml-->
+<view class='secondPage'>
+  <view class='bp_main'>
+    <view class='bp_title'>项目bp：</view>
+    <view class='bp_img' data-src='{{proDetail.project_bp}}' catchtap='sBpic'>
+      <image src='{{proDetail.project_bp}}'></image>
+    </view>
+  </view>
+  <view class='bp_main'>
+    <view class='bp_title'>项目历程：</view>
+    <view class='pro_history'>{{proDetail.iteration}}</view>
+  </view>
+  <view class='bp_main'>
+    <view class='bp_title'>项目现状：
+      <text style='color:#333;'>{{proDetail.actualities}}</text>
+    </view>
+  </view>
+  <view class='bp_main'>
+    <view class='bp_title'>项目愿景：</view>
+    <view class='pro_history'>{{proDetail.future}}</view>
+  </view>
+  <view class='bp_main'>
+    <view class='pro_pic' wx:for="{{proPiclist}}" wx:key="index" data-src='{{item}}' catchtap='sBpic'>
+      <image src='{{item}}'></image>
+    </view>
+    <view class='clear'></view>
+  </view>
+</view>
+<view class='pic_mask' wx:if="{{showPics}}" bindtap='picMask'>
+  <image style='width: 100%;' src='{{srclocal}}'></image>
+</view>

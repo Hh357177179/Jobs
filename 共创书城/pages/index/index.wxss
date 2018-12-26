@@ -25,7 +25,7 @@
 }
 .userTitle{
   float: left;
-  margin-top: 50rpx;
+  margin-top: 20rpx;
   font-size: 36rpx;
 }
 .userName{

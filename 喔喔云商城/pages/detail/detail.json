@@ -1,3 +1,9 @@
 {
-  "navigationBarTitleText": "商品详情"
+  "navigationBarTitleText": "商品详情",
+  "usingComponents": {
+    "wux-cell-group": "../../dist/cell-group/index",
+    "wux-cell": "../../dist/cell/index",
+    "wux-button": "../../dist/button/index",
+    "wux-popup": "../../dist/popup/index"
+  }
 }

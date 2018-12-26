@@ -2,7 +2,7 @@
 <wxs module="dateFr" src="../../utils/dateFr.wxs"></wxs>
 <view class='collect'>
   <block wx:for="{{collectArr}}" wx:key="index">
-    <view class='collect_list'>
+    <view class='collect_list' data-type='{{item.type}}' data-sid='{{item.project_id}}' bindtap='detailR'>
       <view class='collect_pic'>
         <image wx:if="{{item.type == 1}}" src='{{item.project.image}}'></image>
         <image wx:if="{{item.type == 2}}" src='{{item.project.logo}}'></image>
@@ -18,7 +18,7 @@
         </block>
         <view class='csm_title'>{{item.project.title}}</view>
         <view class='collect_time'>{{dateFr.getDate(item.create_time * 1000, '-')}}</view>
-        <view class='collect_btn' data-index='{{index}}' data-types='{{item.type}}' data-id='{{item.project.id}}' bindtap='cancelC'>取消收藏</view>
+        <view class='collect_btn' data-index='{{index}}' data-types='{{item.type}}' data-id='{{item.project.id}}' catchtap='cancelC'>取消收藏</view>
       </view>
       <view class='clear'></view>
     </view>

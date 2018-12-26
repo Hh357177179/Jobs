@@ -1,4 +1,5 @@
 // pages/botdetail/botdetail.js
+const WxParse = require('../../wxParse/wxParse.js');
 const util = require('../../utils/util.js')
 import { postRequest } from '../../utils/httpRequest.js'
 const app = getApp()
@@ -8,6 +9,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    textShow: false,
+    showMain: false,
+    bindName: 'article',
+    article_content: '',
+    noTextShow: false,
     shareCardShow: false,
     cpicshow: false,
     createPic: '',
@@ -146,15 +152,28 @@ Page({
 
   // 获取详情
   getDetail () {
+    let that = this
     let params = {
-      project_id: this.data.pro_id
+      project_id: that.data.pro_id
     }
     postRequest('/user/projectDetail', params, true).then(res => {
       // console.log(res)
-      this.setData({
+      if (res == null) {
+        that.setData({
+          showMain: false,
+          textShow: true
+        })
+      } else {
+        that.setData({
+          showMain: true,
+          textShow: false
+        })
+      }
+      WxParse.wxParse('article', 'html', res.content, that, 20);
+      that.setData({
         detailObj: res
       })
-      this.addLog()
+      that.addLog()
     })
   },
 
@@ -236,6 +255,21 @@ Page({
         })
         console.log('弹幕', res)
       } else {
+        if (res.list.length == 0) {
+          that.setData({
+            noTextShow: true
+          })
+        }
+        for (var i = 0, len = res.list.length; i < len; i++) {
+          if (res.list[i].is_anonymous == 1) {
+            // console.log(res.list[i])
+            var num = "";
+            for (var x = 0; x < 4; x++) {
+              num += Math.floor(Math.random() * 10)
+            }
+            res.list[i].names = '共创城居民' + num
+          }
+        }
         that.setData({
           commentArr: that.data.commentArr.concat(res.list),
           counts: res.count,
@@ -269,6 +303,7 @@ Page({
   checkCom() {
     let that = this
     that.setData({
+      noTextShow: false,
       commentShow: true,
       maskShow: true,
       isAll: '0',
@@ -423,11 +458,15 @@ Page({
 
   },
     onShareAppMessage: function (options) {
-    // console.log(res)
-    // if (options.from === 'button') {
-    //   // 来自页面内转发按钮
-    //   // console.log(res.target)
-    // }
+    if (options.from === 'button') {
+      // 来自页面内转发按钮
+      this.shareProject()
+      this.getallStatus()
+      this.setData({
+        shareCardShow: false,
+        maskShow: false
+      })
+    }
     return {
       title: '项目详情',
       success: res => {

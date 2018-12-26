@@ -18,22 +18,27 @@ Page({
 
   // 监听搜索框
   searchVal: function (e) {
-    let that = this
-    that.setData({
-      keyword: e.detail.value
-    })
+    console.log(e)
+    // let that = this
+    // that.setData({
+    //   keyword: e.detail.value
+    // })
   },
 
   variableInput: function (e) {
+    let that = this
     if (e.detail.cursor != 0) {
-      this.setData({
+      that.setData({
         clearBtn: true
       })
     } else {
-      this.setData({
+      that.setData({
         clearBtn: false
       })
     }
+    that.setData({
+      keyword: e.detail.value
+    })
   },
   // 点击清除搜索框
   clearInput: function () {
@@ -41,7 +46,8 @@ Page({
     that.setData({
       keyword: '',
       value: '',
-      clearBtn: false
+      clearBtn: false,
+      // imgArr: []
     })
   },
   // 搜索
@@ -64,9 +70,9 @@ Page({
     wx.request({
       url: `${util.baseUrl}/tujie/search`,
       data: {
-        keyword: this.data.keyword,
-        page: this.data.page,
-        pagesize: this.data.pagesize
+        keyword: _that.data.keyword,
+        page: _that.data.page,
+        pagesize: _that.data.pagesize
       },
       success: res => {
         let response = res.data.data.list
@@ -85,7 +91,10 @@ Page({
           _that.setData({
             imgArr: iArr
           })
+          console.log(response)
           // console.log('图片集合',_that.data.imgArr)
+          wx.hideToast()
+        } else {
           wx.hideToast()
         }
       }

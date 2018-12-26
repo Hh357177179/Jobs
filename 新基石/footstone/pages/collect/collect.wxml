@@ -8,7 +8,7 @@
                 <text>{{item.title}}</text>
                 <text style="color:#E51C23;float: right;">{{item.stage}}</text>
             </view>
-            <view style="margin-top: 20rpx;font-size:30rpx;">创始人：
+            <view style="margin-top: 20rpx;font-size:30rpx;">项目创始人：
           <text wx:if="{{item.user_realname==''}}">{{item.user_nickname}}</text>
                 <text wx:else>{{item.user_realname}}</text>
             </view>

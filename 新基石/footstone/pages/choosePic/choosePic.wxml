@@ -1,0 +1,24 @@
+<!--pages/choosePic/choosePic.wxml-->
+<view class='choosePic'>
+  <view class='cho_info'>修改您的资料</view>
+  <view class='cho_pic' bindtap='choPic'>
+    <image src='{{avatar}}'></image>
+  </view>
+  <view class='change_avatar' bindtap='uploadPic'>点击更换头像</view>
+  <view class='ch_username'>
+    <input value='{{realname}}' bindinput='advrealname' type='text' placeholder='请输入用户姓名'></input>
+  </view>
+  <view class='ch_username'>
+    <input value='{{passwords}}' password='true' bindinput='advpasswords' type='number' placeholder='请输入密码'></input>
+  </view>
+  <!-- <view class='cho_tel'>选择变更您的绑定手机</view>
+  <view class='cho_phone'>
+    <input type='number' placeholder='请输入手机号码'></input>
+    <button>发送验证码</button>
+    <view class='clear'></view>
+  </view>
+   <view class='ch_username'>
+    <input type='number' placeholder='请输入验证码'></input>
+  </view> -->
+  <view class='saveBtn' bindtap='saveBtn'>保存</view>
+</view>

@@ -1,0 +1,35 @@
+<!--pages/corigin/corigin.wxml-->
+<view class='corigin'>
+  <view class='corigin_list'>
+    <input value='{{nameVal}}' bindinput='advnameVal' placeholder='请输入项目创始人姓名'></input>
+  </view>
+  <view class='corigin_list'>
+    <input value='{{ageVal}}' bindinput='advageVal' placeholder='请输入您的年龄'></input>
+  </view>
+  <view class='corigin_list'>
+    <input value='{{loaclVal}}' bindinput='advloaclVal' placeholder='请输入您的籍贯'></input>
+  </view>
+  <view class='corigin_list'>
+    <input value='{{schoolVal}}' bindinput='advschoolVal' placeholder='请输入您的毕业院校'></input>
+  </view>
+  <view class='corigin_area'>
+    <textarea auto-height="true" bindinput='advareaVal' value='{{areaVal}}' maxlength='-1' placeholder='从事行业经历（罗列重要成果）'></textarea>
+  </view>
+  <view class='corigin_area'>
+    <textarea auto-height="true" bindinput='advcaseVal' value='{{caseVal}}' maxlength='-1' placeholder='从事行业经历（罗列重要成果）'></textarea>
+  </view>
+  <view class="uploadPic">
+    <view class="picture" wx:for="{{proList}}" wx:key="index">
+      <view class='deletPic' data-index='{{index}}' bindtap='deletPic'>X</view>
+      <image src="{{item}}"></image>
+    </view>
+    <view bindtap="proImage" class="addPic" wx:if="{{proShowPic}}">
+      <view class="addIcon">
+        <image src="../../images/add.png"></image>
+      </view>
+      <view style="font-size:24rpx;margin-top:10rpx;color:#666;">（最大可上传6张）</view>
+    </view>
+    <view class="clear"></view>
+  </view>
+  <view class='chanSub' bindtap='chanSub'>修改</view>
+</view>

@@ -1,39 +1,38 @@
 <!--pages/bookDetail/bookDetail.wxml-->
 <wxs module="dateFr" src="../../utils/dateFr.wxs"></wxs>
-<view class='bookDetail'>
-<block wx:if="{{videoShow}}">
-  <view class='videoDetail'>
-    <video danmu-list="{{danmuList}}" enable-danmu id='myVideo' controls style='width: 100%;hight:100%;' src='{{bookDetail.video}}'></video>
-  </view>
-</block>
-<block wx:if="{{noVideo}}">
-  <view class='videoMain' bindtap='showVideos'>
-    <image src='../../images/videoPic.png'></image>
-    <!-- <view class='play_text'>点击播放视频</view> -->
-  </view>
-</block>
-<block wx:if="{{freShow}}">
-  <view class='frequency'>
-    <view class='logo_pic'>
-      <image src='{{bookDetail.logo}}'></image>
-      <view class='startIcons' bindtap='play' wx:if="{{isplay==false}}">
-        <image src='../../images/start.png'></image>
-      </view>
-      <view class='startIcons' bindtap='stop' wx:if="{{isplay==true}}">
-        <image src='../../images/stopicon.png'></image>
-      </view>
+<view class='bookDetail' wx:if="{{mainShow}}">
+  <block wx:if="{{videoShow}}">
+    <view class='videoDetail'>
+      <video danmu-list="{{danmuList}}" enable-danmu id='myVideo' controls style='width: 100%;hight:100%;' src='{{bookDetail.video}}'></video>
     </view>
-    <view class='user_text'>
-      <view class='user_tit'>{{bookDetail.title}}</view>
-      <view class='user_author'>{{bookDetail.author}}</view>
+  </block>
+  <block wx:if="{{noVideo}}">
+    <view class='videoMain' bindtap='showVideos'>
+      <image src='../../images/videoPic.png'></image>
     </view>
-    <view class='clear'></view>
-  </view>
+  </block>
+  <block wx:if="{{freShow}}">
+    <view class='frequency'>
+      <view class='logo_pic'>
+        <image src='{{bookDetail.logo}}'></image>
+        <view class='startIcons' bindtap='play' wx:if="{{isplay==false}}">
+          <image src='../../images/start.png'></image>
+        </view>
+        <view class='startIcons' bindtap='stop' wx:if="{{isplay==true}}">
+          <image src='../../images/stopicon.png'></image>
+        </view>
+      </view>
+      <view class='user_text'>
+        <view class='user_tit'>{{bookDetail.title}}</view>
+        <!-- <view class='user_author'>{{bookDetail.author}}</view> -->
+      </view>
+      <view class='clear'></view>
+    </view>
   </block>
   <view class='topPic'>
     <swiper style='height:100%;' bindchange="changeCurrent">
       <block wx:for="{{imgArr}}" wx:key="{{index}}">
-        <swiper-item class="imgList">
+        <swiper-item class="imgList" data-pic="{{item}}" bindtap="searchPic">
           <image src="{{item}}" class="slide-image" />
         </swiper-item>
       </block>
@@ -42,12 +41,6 @@
       <text>第{{currentIndex}}页</text> /
       <text>共{{imgLength}}页</text>
     </view>
-    <!-- <view class='left tabBtn' bindtap='leftClick'>
-      <image src='../../images/left.png'></image>
-    </view>
-    <view class='right tabBtn' bindtap='rightClick'>
-      <image src='../../images/right.png'></image>
-    </view> -->
   </view>
   <view class='detailText'>
     <view class='detailName'>{{bookDetail.title}}</view>
@@ -57,23 +50,25 @@
     <view class='bookInfo' wx:if="{{bookDetail.type == 1}}">类型：免费</view>
   </view>
 
-    <!-- 弹幕 -->
-<view class="doommview" wx:if="{{dmshow}}">
+  <!-- 弹幕 -->
+  <view class="doommview" wx:if="{{dmshow}}">
     <block wx:for="{{doommData}}" wx:key="id">
-        <text class="aon" style="animation: first {{item.time}}s linear forwards;top:{{item.top}}%;color:{{item.color}};">
+      <text class="aon" style="animation: first {{item.time}}s linear forwards;top:{{item.top}}%;color:{{item.color}};">
             {{item.text}}
         </text>
     </block>
-</view>
+  </view>
 
- <!-- 分享 -->
+  <!-- 分享 -->
   <view class='shareCard' wx:if="{{shareCardShow}}">
-    <!-- <view class='shareBtn'>
-      <view class='share_p'>
-        <image src='../../images/links.png'></image>
-      </view>
-      分享链接
-    </view> -->
+    <view class='shareBtn'>
+      <button class='sharebtn' open-type='share'>
+        <view class='share_p'>
+          <image src='../../images/links.png'></image>
+        </view>
+        分享链接
+      </button>
+    </view>
     <view class='shareBtn' bindtap='createPic'>
       <view class='share_p'>
         <image src='../../images/pics.png'></image>
@@ -129,7 +124,7 @@
   <!-- 发送评论 -->
   <view class='send_content' wx:if="{{sendShow}}">
     <view class='comment_content'>
-    <input bindconfirm="subSend" cursor-spacing='200rpx' type="text" maxlength='36' bindinput='advtextVal' value='{{textVal}}' focus="{{autoFocus}}" placeholder='分享你想说的...'></input>
+      <input bindconfirm="subSend" cursor-spacing='200rpx' type="text" maxlength='36' bindinput='advtextVal' value='{{textVal}}' focus="{{autoFocus}}" placeholder='分享你想说的...'></input>
     </view>
     <view class='switchs'>
       <view class='sw_label'>匿名</view>
@@ -145,6 +140,7 @@
   <view class='check_comment' wx:if="{{commentShow}}">
     <view class='cc_title'>评论区</view>
     <scroll-view class='cc_content' scroll-y bindscrolltolower="scrollBot" lower-threshold="0">
+      <view class='small_title'>【精彩评论】</view>
       <block wx:for="{{commentArr}}" wx:key="index">
         <view class='c_conList'>
           <view class='conlist_pic'>
@@ -154,7 +150,7 @@
           <view class='conlist_right'>
             <view class='conlist_text'>
               <block>
-                <view class='conlist_name' wx:if="{{item.is_anonymous == 1}}">匿名用户</view>
+                <view class='conlist_name' wx:if="{{item.is_anonymous == 1}}">{{item.names}}</view>
                 <view class='conlist_name' wx:else>{{item.nickname}}</view>
               </block>
               <view class='conlist_content'>{{item.content}}</view>
@@ -168,9 +164,20 @@
           <view class='clear'></view>
         </view>
       </block>
+      <block>
+        <view class='noDataText' wx:if="{{noTextShow}}">暂无评论，赶快说点什么吧！</view>
+      </block>
     </scroll-view>
+  </view>
+
+  <view class='picMask' wx:if='{{picmShow}}'>
+    <view class='picBig'>
+      <image class='maskPic' src='{{picUrl}}'></image>
+      <view class='closeBigPic' bindtap='closeBigPic'>关闭</view>
+    </view>
   </view>
 
   <!-- 遮罩层 -->
   <view class='mask' wx:if='{{maskShow}}' bindtap='clickMask'></view>
 </view>
+<view class='textShow' wx:if="{{textShow}}">该资料已被删除</view>

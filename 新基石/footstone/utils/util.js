@@ -1,18 +1,42 @@
-var t = function(t) {
-    return (t = t.toString())[1] ? t : "0" + t;
+const baseUrl = 'https://ssl.zhaodaka.net/xinjishi/api'
+
+const formatTime = date => {
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+  const hour = date.getHours()
+  const minute = date.getMinutes()
+  const second = date.getSeconds()
+
+  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+}
+
+const formatNumber = n => {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+
+// toast提示封装
+const showMsg = function (msg) {
+  wx.showToast({
+    title: msg,
+    mask: true,
+    icon: "none",
+    duration: 2000
+  });
 };
 
+// loading的封装
+const sLoading = function () {
+  wx.showLoading({
+    title: '加载中...',
+    mask: true
+  })
+}
+
 module.exports = {
-    baseUrl: "https://ssl.zhaodaka.net/xinjishi/api",
-    showMsg: function(t) {
-        wx.showToast({
-            title: t,
-            mask: !0,
-            icon: "none"
-        });
-    },
-    formatTime: function(e) {
-        var n = e.getFullYear(), o = e.getMonth() + 1, s = e.getDate(), i = e.getHours(), a = e.getMinutes(), r = e.getSeconds();
-        return [ n, o, s ].map(t).join("/") + " " + [ i, a, r ].map(t).join(":");
-    }
-};
+  formatTime: formatTime,
+  baseUrl: baseUrl,
+  showMsg: showMsg,
+  sLoading: sLoading
+}

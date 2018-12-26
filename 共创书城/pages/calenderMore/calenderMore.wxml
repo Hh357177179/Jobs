@@ -6,4 +6,5 @@
     </view>
   </block>
   <view class='clear'></view>
+  <view class='noData' wx:if="{{noDataShow}}">当天没有任何图解，请换一天看看</view>
 </view>

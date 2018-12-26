@@ -5,15 +5,15 @@ App({
     // 检查是否授权
     wx.getSetting({
       success: userRes => {
-        // console.log('授权', userRes)
+        console.log('授权', userRes)
         if (userRes.authSetting['scope.userInfo']) {
-          // console.log('已经授权')
+          console.log('已经授权')
           wx.getUserInfo({
             success: resUserInfo => {
-              // console.log('获取个人用户信息',resUserInfo)
+              console.log('获取个人用户信息', resUserInfo)
               wx.login({
                 success: resCode => {
-                  // console.log('获取code',resCode)
+                  console.log('获取code',resCode)
                   wx.request({
                     url: `${util.baseUrl}/user/isLogin`,
                     data: {
@@ -21,10 +21,10 @@ App({
                     },
                     method: 'POST',
                     success: resLogin => {
-                      // console.log('检查是否注册', resLogin)
+                      console.log('检查是否注册', resLogin)
                       if (resLogin.data.code == 1002) {
-                      // console.log('拿到openid去注册', resLogin.data.data.openid)
-                      // console.log('用户信息', resUserInfo.userInfo.avatarUrl, resUserInfo.userInfo.nickName)
+                      console.log('拿到openid去注册', resLogin.data.data.openid)
+                      console.log('用户信息', resUserInfo.userInfo.avatarUrl, resUserInfo.userInfo.nickName)
                         wx.request({
                           url: `${util.baseUrl}/user/register`,
                           data: {
@@ -54,7 +54,7 @@ App({
             }
           })
         } else {
-          // console.log('没授权')
+          console.log('没授权')
           wx.navigateTo({
             url: '/pages/login/login',
           })

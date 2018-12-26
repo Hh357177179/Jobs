@@ -1,0 +1,15 @@
+<!--pages/verifytel/verifytel.wxml-->
+<view class='verifyTel'>
+  <view class='tel_list'>
+    <text class='tel_label'>手机号：</text>
+    <input class='tel_num' value='{{phone}}' bindinput='advPhone' type='number' placeholder='请输入手机号'></input>
+    <view class='clear'></view>
+  </view>
+  <view class='tel_list'>
+    <text class='tel_label'>验证码：</text>
+    <input class='verify_num' value='{{code}}' bindinput='advCode' type='number' placeholder='请输入验证码'></input>
+    <button class='get_code' bindtap='getCode' disabled="{{btnDis}}">{{codeText}}</button>
+    <view class='clear'></view>
+  </view>
+  <view class='verifyBtn' bindtap='verifyBtn'>确认</view>
+</view>

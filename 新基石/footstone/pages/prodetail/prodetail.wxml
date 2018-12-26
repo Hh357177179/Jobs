@@ -1,45 +1,51 @@
 <view class="prodetail">
-    <view bindtap="issueBtn" class="topBtn">
-        <image src="../../images/issue.png"></image>
-        <view style="float:left;">项目说明</view>
-    </view>
-    <view class="proTitle">项目标题：
+  <view bindtap="issueBtn" class="topBtn">
+    <image src="../../images/issue.png"></image>
+    <view style="float:left;">项目说明</view>
+  </view>
+  <view class="proTitle">项目名称：
     <text>{{projectDetail.title}}</text>
+  </view>
+  <view class="prolist">
+    <view>项目简介：</view>
+    <view class="pabout">{{projectDetail.about}}</view>
+  </view>
+  <view style="margin-top: 20rpx;">项目成立时间：{{projectDetail.time}}</view>
+  <view class="botIcon">
+    <view style="margin-top:20rpx;">新基石项目合伙人：</view>
+    <view style="margin-top:20rpx;" wx:if="{{projectDetail.partner_avatar!=null}}">
+      <view class="partnerPic">
+        <image src="{{projectDetail.partner_avatar}}"></image>
+      </view>
+      <view style="float:left;" wx:if="{{projectDetail.partner_realname==''}}">{{projectDetail.partner_nickname}}</view>
+      <view style="float:left;" wx:else>{{projectDetail.partner_realname}}</view>
     </view>
-    <view class="prolist">
-        <view>项目简介：</view>
-        <view class="pabout">{{projectDetail.about}}</view>
+    <view class="clear"></view>
+  </view>
+  <view style="margin-top: 20rpx;">项目阶段：{{projectDetail.stage}}</view>
+  <view class='bp'>
+    <view>项目bp</view>
+    <view class='bpimg' data-src='{{projectDetail.project_bp}}' catchtap='sBpic'>
+      <image wx:if="{{projectDetail.project_bp != '' && projectDetail.project_bp != null}}" src='{{projectDetail.project_bp}}'></image>
     </view>
-    <view style="margin-top: 20rpx;">项目成立时间：{{projectDetail.time}}</view>
-    <view style="margin-top: 20rpx;">项目阶段：{{projectDetail.stage}}</view>
-    <view class="prolist">
-        <view>迭代过程：</view>
-        <view class="pabout">{{projectDetail.iteration}}</view>
+  </view>
+  <view class="prolist">
+    <view>项目历程：</view>
+    <view class="pabout">{{projectDetail.iteration}}</view>
+  </view>
+  <view style="margin-top: 20rpx;">项目现状：{{projectDetail.actualities}}</view>
+  <view class="prolist">
+    <view>项目愿景</view>
+    <view class="pabout">{{projectDetail.future}}</view>
+  </view>
+  <view class="picMain">
+    <view class="proPic" wx:for="{{proPiclist}}" wx:key="index" data-src='{{item}}' catchtap='sBpic'>
+      <image src="{{item}}"></image>
     </view>
-    <view class="prolist">
-        <view>举办活动记录：</view>
-        <view class="pabout">{{projectDetail.activity}}</view>
-    </view>
-    <view style="margin-top: 20rpx;">项目现状：{{projectDetail.actualities}}</view>
-    <view class="prolist">
-        <view>项目未来展现：</view>
-        <view class="pabout">{{projectDetail.future}}</view>
-    </view>
-    <view class="picMain">
-        <view class="proPic" wx:for="{{proPiclist}}" wx:key="index">
-            <image src="{{item}}"></image>
-        </view>
-        <view class="clear"></view>
-    </view>
-    <view class="botIcon">
-        <view style="margin-top:20rpx;">项目合伙人：</view>
-        <view style="margin-top:20rpx;" wx:if="{{projectDetail.partner_avatar!=null}}">
-            <view class="partnerPic">
-                <image src="{{projectDetail.partner_avatar}}"></image>
-            </view>
-            <view style="float:left;" wx:if="{{projectDetail.partner_realname==''}}">{{projectDetail.partner_nickname}}</view>
-            <view style="float:left;" wx:else>{{projectDetail.partner_realname}}</view>
-        </view>
-        <view class="clear"></view>
-    </view>
+    <view class="clear"></view>
+  </view>
+  <view class='amend' bindtap='rAmend' data-obj='{{projectDetail}}'>修改</view>
+</view>
+<view class='pic_mask' wx:if="{{showPics}}" bindtap='picMask'>
+  <image style='width: 100%;' src='{{srclocal}}'></image>
 </view>

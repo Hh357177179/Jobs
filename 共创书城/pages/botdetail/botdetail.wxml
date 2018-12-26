@@ -1,22 +1,25 @@
 <!--pages/botdetail/botdetail.wxml-->
-<view class='detail'>
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='detail' wx:if="{{showMain}}">
   <view class='detail_title'>{{detailObj.title}}</view>
   <view class='detail_auther'>作者：{{detailObj.author}}</view>
-  <view class='detail_pic'>
+  <!-- <view class='detail_pic'>
     <image src='{{detailObj.logo}}'></image>
   </view>
-  <view class='detail_abstract'>摘要：{{detailObj.abstract}}</view>
-  <view class='detail_content'>内容：{{detailObj.content}}</view>
+  <view class='detail_abstract'>摘要：{{detailObj.abstract}}</view> -->
+  <view class='detail_content'><template is="wxParse" data="{{wxParseData:article.nodes}}" /></view>
 
 
   <!-- 分享 -->
   <view class='shareCard' wx:if="{{shareCardShow}}">
-    <!-- <view class='shareBtn'>
-      <view class='share_p'>
-        <image src='../../images/links.png'></image>
-      </view>
-      分享链接
-    </view> -->
+    <view class='shareBtn'>
+      <button class='sharebtn' open-type='share'>
+        <view class='share_p'>
+          <image src='../../images/links.png'></image>
+        </view>
+        分享链接
+      </button>
+    </view>
     <view class='shareBtn' bindtap='createPic'>
       <view class='share_p'>
         <image src='../../images/pics.png'></image>
@@ -89,6 +92,7 @@
   <view class='check_comment' wx:if="{{commentShow}}">
     <view class='cc_title'>评论区</view>
     <scroll-view class='cc_content' scroll-y bindscrolltolower="scrollBot" lower-threshold="0">
+      <view class='small_title'>【精彩评论】</view>
       <block wx:for="{{commentArr}}" wx:key="index">
         <view class='c_conList'>
           <view class='conlist_pic'>
@@ -98,7 +102,7 @@
           <view class='conlist_right'>
             <view class='conlist_text'>
               <block>
-                <view class='conlist_name' wx:if="{{item.is_anonymous == 1}}">匿名用户</view>
+                <view class='conlist_name' wx:if="{{item.is_anonymous == 1}}">{{item.names}}</view>
                 <view class='conlist_name' wx:else>{{item.nickname}}</view>
               </block>
               <view class='conlist_content'>{{item.content}}</view>
@@ -112,9 +116,13 @@
           <view class='clear'></view>
         </view>
       </block>
+      <block>
+        <view class='noDataText' wx:if="{{noTextShow}}">暂无评论，赶快说点什么吧！</view>
+      </block>
     </scroll-view>
   </view>
 
   <!-- 遮罩层 -->
   <view class='mask' wx:if='{{maskShow}}' bindtap='clickMask'></view>
 </view>
+<view class='textShow' wx:if="{{textShow}}">该小组已被删除</view>

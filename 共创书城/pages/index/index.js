@@ -52,7 +52,7 @@ Page({
   },
 
   onLoad: function(options) {
-    console.log(options)
+    console.log(12312312321,options)
     if (JSON.stringify(options) != "{}") {
       console.log('扫码')
       let scene = decodeURIComponent(options.scene)
@@ -85,6 +85,10 @@ Page({
   },
 
   onShow: function () {
+    wx.showLoading({
+      title: '正在加载...',
+      mask: 'true'
+    })
     wx.getUserInfo({
       success: resUserInfo => {
         // console.log('获取个人用户信息',resUserInfo)
@@ -111,7 +115,7 @@ Page({
                     },
                     method: 'POST',
                     success: res => {
-                      if (res.data.code == 200) {
+                      // if (res.data.code == 200) {
                         app.globalData.openid = res.data.data.openid,
                           app.globalData.avatar = res.data.data.avatar,
                           app.globalData.nickname = res.data.data.nickname
@@ -119,11 +123,11 @@ Page({
                           nickName: res.data.data.nickname,
                           avatar: res.data.data.avatar
                         })
-                      }
+                      // }
                     }
                   })
                 } else {
-                  // console.log(resLogin)
+                  console.log(resLogin)
                   app.globalData.openid = resLogin.data.data.openid,
                   app.globalData.avatar = resLogin.data.data.avatar,
                   app.globalData.nickname = resLogin.data.data.nickname
@@ -138,6 +142,7 @@ Page({
         })
       }
     })
+    wx.hideLoading()
   },
   
 

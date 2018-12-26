@@ -13,6 +13,29 @@ Page({
     listArr: [],
     counts: 0
   },
+
+  detailR(e) {
+    console.log(e)
+    let type = e.currentTarget.dataset.type
+    let sid = e.currentTarget.dataset.sid
+    if (type == 1) {
+      wx.navigateTo({
+        url: '/pages/picHome/picHome?pids=' + sid,
+      })
+    } else if (type == 2) {
+      wx.navigateTo({
+        url: '/pages/bookDetail/bookDetail?id=' + sid,
+      })
+    } else if (type == 3) {
+      wx.navigateTo({
+        url: '/pages/botdetail/botdetail?sid=' + sid,
+      })
+    } else if (type == 4) {
+      wx.navigateTo({
+        url: '/pages/groupDetail/groupDetail?gid=' + sid,
+      })
+    }
+  },
   // 获取我的点赞列表
   getCommentList() {
     let that = this
@@ -23,7 +46,17 @@ Page({
       pagesize: that.data.pagesize
     }
     postRequest('/user/myList', params, true).then(res => {
-      console.log(res)
+      // console.log(res)
+      for (var i = 0, len = res.list.length; i < len; i++) {
+        if (res.list[i].is_anonymous == 1) {
+          // console.log(res.list[i])
+          var num = "";
+          for (var x = 0; x < 4; x++) {
+            num += Math.floor(Math.random() * 10)
+          }
+          res.list[i].names = '匿名评论'
+        }
+      }
       that.setData({
         listArr: that.data.listArr.concat(res.list),
         counts: res.count

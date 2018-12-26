@@ -1,0 +1,14 @@
+<!--pages/meTs/meTs.wxml-->
+<view class='me_ts'>
+  <view class='me_ts_main'>
+    <view class='me_ts_pic'>
+      <image src='{{avatar}}'></image>
+    </view>
+    <view class='me_ts_num'>天使点：<text style='color:#f00;'>{{tsNum}}</text> TS</view>
+    <view class='clear'></view>
+  </view>
+  <view class='eCode'>
+    <image src='{{imgUrl}}'></image>
+  </view>
+  <view class='sao_text'>微信扫一扫，即可向我转账</view>
+</view>

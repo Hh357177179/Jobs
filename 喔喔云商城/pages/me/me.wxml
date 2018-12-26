@@ -3,32 +3,38 @@
   <block wx:if="{{meShow}}">
     <view class='me_info'>
       <view class='me_avatar'>
-        <image src='../../images/1d.jpeg'></image>
+        <image src='{{userObj.avatar}}'></image>
       </view>
-      <view class='me_name'>老李</view>
+      <view class='me_name'>{{userObj.nickname}}</view>
       <view class='me_right'>
-        <view class='m_price'>￥108.00</view>
+        <view class='m_price'>￥{{balanceNum}}</view>
         <view class='m_text'>账户余额</view>
-        <view class='m_hint'>提现</view>
+        <view class='m_hint' bindtap='rWithdraw'>提现</view>
       </view>
       <view class='clear'></view>
     </view>
-    <view class='me_order'>
-      <view class='m_morder'>我的订单</view>
+    <view class='me_order' bindtap='rebateLog'>
+      <view class='m_morder'>返利日志</view>
       <view class='m_all_order'>
-        <text>查看全部订单</text>
         <image src='../../images/right.png'></image>
       </view>
       <view class='clear'></view>
     </view>
     <view class='mo_state'>
-      <view class='mo_card'>
+      <view class='me_order' bindtap='searchOrder'>我的订单</view>
+      <view class='mo_card' bindtap='waitGet'>
         <view class='mo_stayPic'>
           <image src='../../images/stayIcon.png'></image>
         </view>
         <view class='mos_text'>待领取</view>
       </view>
-      <view class='mo_card'>
+      <view class='mo_card' bindtap='distribution'>
+        <view class='mo_stayPic'>
+          <image src='../../images/distribution.png'></image>
+        </view>
+        <view class='mos_text'>正在配送</view>
+      </view>
+      <view class='mo_card' bindtap='achieve'>
         <view class='mo_stayPic'>
           <image src='../../images/finishIcon.png'></image>
         </view>
@@ -36,24 +42,61 @@
       </view>
       <view class='clear'></view>
     </view>
-    <view class='year_card'>
-      <view style='float:left;'>喔喔云年卡</view>
-      <view class='right_icon'>
-        <image src='../../images/right.png'></image>
+    <view class='me_list' wx:if="{{listArr.length != 0}}">
+      <view class='me_list_tit'>
+        <text>正在配送的商品</text>
+        <text style='float: right;'>共{{listArr.length}}个订单</text>
       </view>
-      <view class='clear'></view>
+      <block wx:for="{{listArr}}" wx:key="index">
+        <view class='m_lists' data-ordId='{{item.id}}' bindtap='rNowDetail'>
+          <view class='mlist_tit'>
+            <text style='float: left;'>订单编号：OR{{item.create_time}}{{item.id}}</text>
+            <text style='float: right;'>{{item.send_day}}</text>
+            <view class='clear'></view>
+          </view>
+          <view class='mlist_shop' wx:if="{{item.goods_info.length != 0}}">
+            <view style='margin-bottom: 10rpx;' wx:for="{{item.goods_info}}" wx:for-item="items" wx:key="items">
+              <text class='shop_name'>{{items.title}}</text>
+              <text class='shop_pn'>
+                <text class='pn_price'>￥{{items.price}}</text>
+                <text class='pn_num'>x{{items.num}}</text>
+              </text>
+              <view class='clear'></view>
+            </view>
+          </view>
+          <view class='mlist_bot'>
+            <text wx:if="{{item.egg_type == 1}}">配送：土鸡蛋{{item.egg_number}}枚</text>
+            <text wx:if="{{item.egg_type == 2}}">配送：乌鸡蛋{{item.egg_number}}枚</text>
+          </view>
+        </view>
+      </block>
     </view>
   </block>
-  <!-- <block>
+  <block wx:if="{{noAttestation}}">
     <view class='no_user'>
-      <view class='no_user_pic'></view>
-      <view class='no_user_name'>点击显示微信头像</view>
+      <view class='me_avatar'>
+        <image src='{{userObj.avatar}}'></image>
+      </view>
+      <view class='me_name'>{{userObj.nickname}}</view>
       <view class='clear'></view>
     </view>
     <view class='no_user_login'>
       <view class='login_text'>登录手机号，同步全渠道订单</view>
-      <view class='login_btn'>登录</view>
+      <view class='login_btn' bindtap='verifyTel'>登录</view>
       <view class='clear'></view>
     </view>
-  </block> -->
+  </block>
+  <view class='drawMask' wx:if="{{drawShow}}">
+    <view class='drawinfo'>
+      <view class='closes' bindtap='closeMask'>
+        <image src='../../images/deleteIcon.png'></image>
+      </view>
+      <view class='draw_title'>申请提现</view>
+      <view class='draw_list'>提现金额（不得小于0.3元）</view>
+      <view class='draw_input'>
+        <input focus="{{focusBlur}}" placeholder='请输入提现金额' type='digit' value='{{drawNum}}' bindinput='advDrawNum'></input>
+      </view>
+      <view class='draw_btn' bindtap='drawBtn'>确认</view>
+    </view>
+  </view>
 </view>

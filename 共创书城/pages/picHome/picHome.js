@@ -10,6 +10,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    mainShow: true,
+    textShow: false,
+    noTextShow: false,
     doommData: [],
     arr:[],
     shareCardShow: false,
@@ -69,7 +72,7 @@ Page({
         that.go(str)
         that.autoLoad()
       }
-    }, 3000)
+    }, 2000)
     // console.log(1)
   },
 
@@ -261,12 +264,27 @@ Page({
         this.autoLoad();
         console.log('弹幕',res)
       } else {
+        if (res.list.length == 0) {
+          that.setData({
+            noTextShow: true
+          })
+        }
+        for (var i = 0, len = res.list.length; i < len; i++) {
+          if (res.list[i].is_anonymous == 1) {
+            // console.log(res.list[i])
+            var num = "";
+            for (var x = 0; x < 4; x++) {
+              num += Math.floor(Math.random() * 10)
+            }
+            res.list[i].names = '共创城居民' + num
+          }
+        }
         that.setData({
           commentArr: that.data.commentArr.concat(res.list),
           counts: res.count,
           // likeStatus
         })
-        console.log('评论列表',res.list)
+        console.log('1评论列表',res.list)
       }
     })
   },
@@ -312,6 +330,7 @@ Page({
   checkCom () {
     let that = this
     that.setData({
+      noTextShow: false,
       commentShow: true,
       maskShow: true,
       isAll: '0',
@@ -363,11 +382,6 @@ Page({
       arr: []
     })
     doommList = []
-    // console.log(1, that.data.allCommont)
-    // console.log(2, that.data.commentArr)
-    // console.log(3, that.data.arr)
-    // console.log(4, doommList)
-    // console.log(5, that.data.doommData)
     let params = {
       sort: that.data.sortNum,
       action: that.data.actionNum
@@ -547,12 +561,22 @@ Page({
       id: that.data.ids
     }
     postRequest('/tujie/detail', params, true).then(res => {
-      that.setData({
-        sortNum: res.sort,
-        imgObj: res.image,
-        ids: res.id,
-        isAll: '1'
-      })
+      console.log(res)
+      if (res == null) {
+        that.setData({
+          textShow: true,
+          mainShow: false
+        })
+      } else {
+        that.setData({
+          textShow: false,
+          mainShow: true,
+          sortNum: res.sort,
+          imgObj: res.image,
+          ids: res.id,
+          isAll: '1'
+        })
+      }
       that.addLog()
       that.getallStatus()
       that.getCommentList()
@@ -665,7 +689,7 @@ Page({
   },
 
   go: function (str) {
-    doommList.push(new Doomm(str, Math.floor(Math.random() * (60 - 1 + 1) + 1), Math.ceil(20), getRandomColor()));
+    doommList.push(new Doomm(str, Math.floor(Math.random() * (60 - 1 + 1) + 1), Math.ceil(25), getRandomColor()));
     this.setData({
       doommData: doommList
     })
@@ -707,7 +731,18 @@ Page({
   },
 
   // 分享
-  onShareAppMessage: function (res) {
+  onShareAppMessage: function (options) {
+    if (options.from === 'button') {
+      // 来自页面内转发按钮
+      path: 'pages/picHome/picHome?pids=' + this.data.ids,
+      console.log('来自页面内转发按钮')
+      this.shareProject()
+      this.getallStatus()
+      this.setData({
+        shareCardShow: false,
+        maskShow: false
+      })
+    }
     return {
       title: '图解',
       path: 'pages/picHome/picHome?pids=' + this.data.ids,

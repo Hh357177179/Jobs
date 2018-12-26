@@ -15,11 +15,18 @@
         <!-- </p> -->
       <!-- </div> -->
       <div>
-        <div v-for="(item, index) in otherArr" :key="index" class="ctm_card" @click="secondType({id: item.id, title: item.cate_title })">
+        <!-- <div v-for="(item, index) in otherArr" :key="index" class="ctm_card" @click="secondType({id: item.id, title: item.cate_title })">
           <div class="cts_pic">
             <img src="../assets/image/thlevel.png" alt="">
           </div>
           <p class="cts_title">{{item.cate_title}}</p>
+        </div> -->
+        <div class="ct_list clearfix"  v-for="(item, index) in otherArr" :key="index" @click="secondType({id: item.id, title: item.cate_title })">
+          <div class="ct_pic">
+            <img v-if="item.cate_img == ''" src="../assets/image/thlevel.png" alt="">
+            <img v-else :src="item.cate_img" alt="">
+          </div>
+          <div class="ct_list_text">{{item.cate_title}}</div>
         </div>
       </div>
     </div>
@@ -199,8 +206,33 @@ export default {
       height: 30px;
       border-bottom: 0.8px solid #f0f0f0;
     }
+    .ct_list{
+      float: left;
+      margin-bottom: 15px;
+      width: 100%;
+      .ct_pic{
+        width: 60px;
+        height: 60px;
+        float: left;
+        background: #F00;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .ct_list_text{
+        float: left;
+        font-size: 14px;
+        width: 180px;
+        line-height: 60px;
+        margin-left: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        white-space: nowrap;
+      }
+    }
     .ctm_card {
-      width: 49%;
+      width: 30%;
       float: left;
       // background: #ccc;
       box-shadow: 2px 2px 15px #ccc;
@@ -217,8 +249,8 @@ export default {
       }
       .cts_title {
         font-size: 13px;
+        float: left;
         color: #666;
-        width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;

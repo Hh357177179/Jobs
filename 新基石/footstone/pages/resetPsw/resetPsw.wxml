@@ -1,0 +1,13 @@
+<!--pages/resetPsw/resetPsw.wxml-->
+<view class='resetPsw'>
+  <view class='reset_list'>
+    <input value='{{code}}' bindinput='advcode' placeholder='手机验证码' type='number'></input>
+    <button class='getCode' bindtap='getCode' disabled='{{codeBtn}}'>{{codeMsg}}</button>
+    <view class='clear'></view>
+  </view>
+  <view class='reset_list tel_num'>
+    <input value='{{transfer_pass}}' password='true' bindinput='advtransferpass' placeholder='设置支付密码' type='number'></input>
+    <view class='clear'></view>
+  </view>
+  <view class='subBtn' bindtap='subBtn'>确认</view>
+</view>

@@ -1,0 +1,62 @@
+<!--pages/angel/angel.wxml-->
+<view class='angel'>
+  <view class='angel_list'>
+    <view class='angel_icon'>
+      <image src='../../images/accountsIcon.png'></image>
+    </view>
+    <view class='angel_text'>我的天使点</view>
+    <view class='angel_num'>
+      <text style='color:#f00;'>{{mesore}}</text>
+      TS
+    </view>
+    <view class='clear'></view>
+  </view>
+  <view class='angel_list' bindtap='transferR'>
+    <view class='angel_icon'>
+      <image src='../../images/transferIcon.png'></image>
+    </view>
+    <view class='angel_text'>转让天使点</view>
+    <view class='angel_num'>
+      <view class='rightIcon'>
+        <image src='../../images/rightIcon.png'></image>
+      </view>
+    </view>
+    <view class='clear'></view>
+  </view>
+  <view class='angel_list' bindtap='meTransferR'>
+    <view class='angel_icon'>
+      <image src='../../images/assetIcon.png'></image>
+    </view>
+    <view class='angel_text'>我的账户</view>
+    <view class='angel_num'>
+      <view class='rightIcon'>
+        <image src='../../images/rightIcon.png'></image>
+      </view>
+    </view>
+    <view class='clear'></view>
+  </view>
+  <view class='angel_list' bindtap='rResetPsw'>
+    <view class='angel_icon'>
+      <image src='../../images/pswIcon.png'></image>
+    </view>
+    <view class='angel_text'>支付密码</view>
+    <view class='angel_num'>
+      <view class='rightIcon'>
+        <image src='../../images/rightIcon.png'></image>
+      </view>
+    </view>
+    <view class='clear'></view>
+  </view>
+  <view class='angel_list' bindtap='loglist'>
+    <view class='angel_icon'>
+      <image src='../../images/logIcon.png'></image>
+    </view>
+    <view class='angel_text'>我的天使点日志</view>
+    <view class='angel_num'>
+      <view class='rightIcon'>
+        <image src='../../images/rightIcon.png'></image>
+      </view>
+    </view>
+    <view class='clear'></view>
+  </view>
+</view>

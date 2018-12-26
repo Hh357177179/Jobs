@@ -24,6 +24,7 @@
   font-size: 30rpx;
   margin-left: 20rpx;
   width: 480rpx;
+  position: relative;
 }
 .comment_title{
   font-size: 30rpx;
@@ -41,5 +42,12 @@
 }
 .csm_content{
   margin-top: 5rpx;
+  color: #666;
+}
+.anonymity{
+  position: absolute;
+  right: 10px;
+  top: 0;
+  font-size: 28rpx;
   color: #666;
 }

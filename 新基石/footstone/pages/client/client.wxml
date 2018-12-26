@@ -1,14 +1,31 @@
 <view class="client">
-    <view class="clientCard" wx:for="{{clientList}}" wx:key="{{index}}">
-        <view class="clientList">
-            <view class="clientPic">
-                <image src="{{item.avatar}}"></image>
-            </view>
-            <view class="clientText">
-                <view style="margin-top:20rpx;" wx:if="{{item.realname==''}}">{{item.nickname}}</view>
-                <view style="margin-top:20rpx;" wx:else>{{item.realname}}</view>
-            </view>
-            <view class="clear"></view>
-        </view>
+  <view class="clientCard" wx:for="{{clientList}}" wx:key="{{index}}">
+    <view class="clientList">
+      <view class="clientPic">
+        <image src="{{item.avatar}}"></image>
+      </view>
+      <view style='float:left;width: 500rpx;'>
+        <view class="clientText">
+        <view style="margin-top:20rpx;" wx:if="{{item.realname==''}}">{{item.nickname}}</view>
+        <view style="margin-top:20rpx;" wx:else>{{item.realname}}</view>
+      </view>
+      <view class='bz_text' data-id='{{item.id}}' data-name="{{item.realname}}" data-apic='{{item.avatar}}' bindtap='bzText'>备注：{{item.remark}}</view>
+      </view>
+      <view class="clear"></view>
     </view>
+  </view>
+</view>
+<view class='bzmask' wx:if="{{maskShow}}">
+  <view class='bzMain'>
+    <view class='closeMask' bindtap='closeMask'>X</view>
+    <view class='userPic'>
+      <image src='{{userPic}}'></image>
+    </view>
+    <view class='username'>{{names}}</view>
+    <view class='clear'></view>
+    <view class='bzinput'>
+      <input placeholder='请填写备注' value='{{bzVal}}' bindinput='advbzinput'></input>
+    </view>
+    <view class='subSure' bindtap='subSure'>确认</view>
+  </view>
 </view>

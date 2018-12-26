@@ -13,7 +13,7 @@ Page({
   logins () {
     wx.getUserInfo({
       success: resUserInfo => {
-        // console.log('获取到用户信息', resUserInfo)
+        console.log('获取到用户信息', resUserInfo)
         app.globalData.userInfo = resUserInfo.userInfo
         wx.login({
           success: resCode => {
@@ -63,12 +63,9 @@ Page({
     let that = this
     // console.log(e.detail.userInfo)
     if (e.detail.userInfo) {
-      // console.log('授权成功')
+      console.log('授权成功')
       // 进行保存用户信息操作
-      this.logins()
-      // wx.reLaunch({
-      //   url: '/pages/index/index',
-      // })
+      that.logins()
     } else {
       util.showMsg('拒绝授权将无法使用')
     }
@@ -78,7 +75,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // this.logins()
   },
 
   /**

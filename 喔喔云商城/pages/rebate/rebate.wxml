@@ -1,0 +1,11 @@
+<!--pages/rebate/rebate.wxml-->
+<wxs module="dateFr" src="../../utils/dateFr.wxs"></wxs>
+<view class='rebate'>
+  <block wx:for="{{rebateArr}}" wx:key="index">
+    <view class='rebate_list'>
+      <text class='rebate_text'>{{item.note}}</text>
+      <text class='rebate_time'>{{dateFr.getDate(item.create_time * 1000,'-',':')}}</text>
+      <view class='clear'></view>
+    </view>
+  </block>
+</view>

@@ -1,81 +1,102 @@
 <view class="originator">
-    <view class="bigTitle">新基石项目创始人认证页面</view>
-    <view class="smallTitle">请认真、真实地填写以下信息</view>
-    <view class="originName originList">
-        <input bindinput="advnameVal" placeholder="请填写您的姓名" placeholderStyle="font-size: 28rpx;" value="{{nameVal}}"></input>
+  <view class="bigTitle">新基石项目创始人认证页面</view>
+  <view class="smallTitle">请认真、真实地填写以下信息</view>
+  <view class="originName originList">
+    <text style='color:#f00;float:left;line-height: 80rpx;'>*</text>
+    <input bindinput="advnameVal" placeholder="请填写您的姓名" placeholderStyle="font-size: 28rpx;" value="{{nameVal}}"></input>
+    <view class='clear'></view>
+  </view>
+  <view class="originAge">
+    <view class="originAgeInput originList">
+      <input bindinput="advageVal" placeholder="请填写您的年龄" placeholderStyle="font-size: 28rpx;" type="number" value="{{ageVal}}"></input>
     </view>
-    <view class="originAge">
-        <view class="originAgeInput originList">
-            <input bindinput="advageVal" placeholder="请填写您的年龄" placeholderStyle="font-size: 28rpx;" type="number" value="{{ageVal}}"></input>
-        </view>
-        <view class="originAgeInput originList" style="float:right;">
-            <input bindinput="advlocVal" placeholder="请填写您的籍贯" placeholderStyle="font-size: 28rpx;" value="{{locVal}}"></input>
-        </view>
-        <view class="clear"></view>
+    <view class="originAgeInput originList" style="float:right;">
+      <input bindinput="advlocVal" placeholder="请填写您的籍贯" placeholderStyle="font-size: 28rpx;" value="{{locVal}}"></input>
     </view>
-    <view class="originList">
-        <input bindinput="advscVal" placeholder="请填写您的毕业学校" placeholderStyle="font-size: 28rpx;" value="{{scVal}}"></input>
+    <view class="clear"></view>
+  </view>
+  <view class="originList">
+    <input bindinput="advscVal" placeholder="请填写您的毕业学校" placeholderStyle="font-size: 28rpx;" value="{{scVal}}"></input>
+  </view>
+  <view class="experience">
+    <textarea bindinput="advexperVal" maxlength="-1" placeholder="从事行业经历（罗列重要成果）" placeholderStyle="font-size:28rpx;" value="{{experVal}}"></textarea>
+  </view>
+  <view class="case">
+    <textarea bindinput="advcaseVal" maxlength="-1" placeholder="历史成功案例（可举1-3个案例，实现从0-1的过程，或者1-10的过程）" placeholderStyle="font-size:28rpx;" value="{{caseVal}}"></textarea>
+  </view>
+  <view class="uploadPic">
+    <view class="picture" wx:for="{{infoArr}}" wx:key="index">
+      <image src="{{item}}"></image>
     </view>
-    <view class="experience">
-        <textarea bindinput="advexperVal" maxlength="-1" placeholder="从事行业经历（罗列重要成果）" placeholderStyle="font-size:28rpx;" value="{{experVal}}"></textarea>
+    <view bindtap="chooseImg" class="addPic" wx:if="{{showUpload}}">
+      <view class="addIcon">
+        <image src="../../images/add.png"></image>
+      </view>
+      <view style="font-size:24rpx;margin-top:10rpx;color:#666;">（最大可上传6张）</view>
     </view>
-    <view class="case">
-        <textarea bindinput="advcaseVal" maxlength="-1" placeholder="历史成功案例（可举1-3个案例，实现从0-1的过程，或者1-10的过程）" placeholderStyle="font-size:28rpx;" value="{{caseVal}}"></textarea>
+    <view class="clear"></view>
+  </view>
+  <view class="proData">
+    <view class="proDataTit">项目资料</view>
+  </view>
+  <view class="originList">
+    <text style='color:#f00;float:left;line-height: 80rpx;'>*</text>
+    <input bindinput="advproName" placeholder="项目名称" placeholderStyle="font-size: 28rpx;" value="{{proName}}"></input>
+    <view class='clear'></view>
+  </view>
+  <view style='font-size: 28rpx;margin-top:20rpx;color:#666;'>
+    <text style='color:#f00;float:left;margin-right:20rpx;'>*</text>
+    <text>项目简介</text>
+  </view>
+  <view class="case">
+    <textarea bindinput="advintroVal" maxlength="-1" placeholder="项目简介" placeholderStyle="font-size:28rpx;" value="{{introVal}}"></textarea>
+  </view>
+  <view class="originName originList">
+    <text style='color:#f00;float:left;line-height: 80rpx;'>*</text>
+    <view class="section" style='float:left;'>
+      <picker bindchange="bindDateChange" mode="date" value="{{date}}">
+        <view class="picker" style="color:#666;font-size:28rpx;line-height:80rpx;padding-left:20rpx;">{{dateText}}</view>
+      </picker>
     </view>
-    <view class="uploadPic">
-        <view class="picture" wx:for="{{infoArr}}" wx:key="index">
-            <image src="{{item}}"></image>
-        </view>
-        <view bindtap="chooseImg" class="addPic" wx:if="{{showUpload}}">
-            <view class="addIcon">
-                <image src="../../images/add.png"></image>
-            </view>
-            <view style="font-size:24rpx;margin-top:10rpx;color:#666;">（最大可上传6张）</view>
-        </view>
-        <view class="clear"></view>
+    <view class='clear'></view>
+  </view>
+  <view class="originList" style="margin-bottom:40rpx;">
+    <text style='color:#f00;float:left;line-height: 80rpx;'>*</text>
+    <input bindinput="advstageVal" placeholder="项目阶段" placeholderStyle="font-size: 28rpx;" value="{{stageVal}}"></input>
+    <view class='clear'></view>
+  </view>
+  <view class="case">
+    <textarea bindinput="adviterationVal" maxlength="-1" placeholder="项目历程" placeholderStyle="font-size:28rpx;" value="{{iterationVal}}"></textarea>
+  </view>
+  <view class="uploadPic">
+    <view style='font-size: 28rpx;color:#666;margin-bottom:10rpx;'>项目bp</view>
+    <view bindtap="bpImg" style='width: 200rpx;' class="addPic">
+      <view class="addIcon">
+        <image src="{{bpImg}}"></image>
+      </view>
     </view>
-    <view class="proData">
-        <view class="proDataTit">*项目资料</view>
+    <view class="clear"></view>
+  </view>
+  <!-- <view class="case">
+    <textarea bindinput="advholdVal" maxlength="-1" placeholder="举办记录" placeholderStyle="font-size:28rpx;" value="{{holdVal}}"></textarea>
+  </view> -->
+  <view class="originList" style="margin-bottom:40rpx;">
+    <input bindinput="advsituationVal" placeholder="项目现状" placeholderStyle="font-size: 28rpx;" value="{{situationVal}}"></input>
+  </view>
+  <view class="case">
+    <textarea bindinput="advfutureVal" maxlength="-1" placeholder="项目愿景" placeholderStyle="font-size:28rpx;" value="{{futureVal}}"></textarea>
+  </view>
+  <view class="uploadPic">
+    <view class="picture" wx:for="{{proList}}" wx:key="index">
+      <image src="{{item}}"></image>
     </view>
-    <view class="originList">
-        <input bindinput="advproName" placeholder="项目名称" placeholderStyle="font-size: 28rpx;" value="{{proName}}"></input>
+    <view bindtap="proImage" class="addPic" wx:if="{{proShowPic}}">
+      <view class="addIcon">
+        <image src="../../images/add.png"></image>
+      </view>
+      <view style="font-size:24rpx;margin-top:10rpx;color:#666;">（最大可上传6张）</view>
     </view>
-    <view class="case">
-        <textarea bindinput="advintroVal" maxlength="-1" placeholder="项目简介" placeholderStyle="font-size:28rpx;" value="{{introVal}}"></textarea>
-    </view>
-    <view class="originName originList">
-        <view class="section">
-            <picker bindchange="bindDateChange" mode="date" value="{{date}}">
-                <view class="picker" style="color:#666;font-size:28rpx;line-height:80rpx;padding-left:20rpx;">{{dateText}}</view>
-            </picker>
-        </view>
-    </view>
-    <view class="originList" style="margin-bottom:40rpx;">
-        <input bindinput="advstageVal" placeholder="项目阶段" placeholderStyle="font-size: 28rpx;" value="{{stageVal}}"></input>
-    </view>
-    <view class="case">
-        <textarea bindinput="adviterationVal" maxlength="-1" placeholder="迭代过程（备注：1.从项目起1.0版本至现状的迭代事件，2.具体每年轮融资情况及时间）" placeholderStyle="font-size:28rpx;" value="{{iterationVal}}"></textarea>
-    </view>
-    <view class="case">
-        <textarea bindinput="advholdVal" maxlength="-1" placeholder="举办记录" placeholderStyle="font-size:28rpx;" value="{{holdVal}}"></textarea>
-    </view>
-    <view class="originList" style="margin-bottom:40rpx;">
-        <input bindinput="advsituationVal" placeholder="项目现状" placeholderStyle="font-size: 28rpx;" value="{{situationVal}}"></input>
-    </view>
-    <view class="case">
-        <textarea bindinput="advfutureVal" maxlength="-1" placeholder="项目未来展望" placeholderStyle="font-size:28rpx;" value="{{futureVal}}"></textarea>
-    </view>
-    <view class="uploadPic">
-        <view class="picture" wx:for="{{proList}}" wx:key="index">
-            <image src="{{item}}"></image>
-        </view>
-        <view bindtap="proImage" class="addPic" wx:if="{{proShowPic}}">
-            <view class="addIcon">
-                <image src="../../images/add.png"></image>
-            </view>
-            <view style="font-size:24rpx;margin-top:10rpx;color:#666;">（最大可上传6张）</view>
-        </view>
-        <view class="clear"></view>
-    </view>
-    <view bindtap="submitOrigin" class="submitOrigin">提交</view>
+    <view class="clear"></view>
+  </view>
+  <view bindtap="submitOrigin" class="submitOrigin">提交</view>
 </view>

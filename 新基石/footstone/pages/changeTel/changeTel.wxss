@@ -1,0 +1,56 @@
+/* pages/changeTel/changeTel.wxss */
+.clear {
+  clear: both;
+}
+.changeTel{
+  padding: 0 100rpx;
+}
+.tel_top{
+  color: #f00;
+  font-size: 28rpx;
+  margin: 80rpx 0;
+  text-align: center;
+}
+.ctel_list{
+  margin-top: 80rpx;
+  height: 80rpx;
+  width: 100%;
+  border-bottom: 1px solid #f0f0f0;
+}
+.ctel_list input{
+  font-size: 28rpx;
+  width: 100%;
+  height: 100%;
+  padding-left: 20rpx;
+}
+.new_list{
+  width: 100%;
+  margin-top: 80rpx;
+  height: 80rpx;
+  font-size: 28rpx;
+}
+.new_list input{
+  width: 55%;
+  height: 100%;
+  float: left;
+  padding-left: 20rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+.getCode{
+  float: right;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+.subBtn{
+  width: 200rpx;
+  height: 80rpx;
+  border-radius: 10rpx;
+  background: #dd5f1b;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  margin: 60rpx auto 0;
+  color: #fff;
+}

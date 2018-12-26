@@ -1,0 +1,16 @@
+<!--pages/changeTel/changeTel.wxml-->
+<view class='changeTel'>
+  <view class='tel_top'>变更您的绑定手机</view>
+  <view class='ctel_list'>
+    <input value='{{old_phone}}' bindinput='advoldphone' placeholder='请输入旧手机号' type='number'></input>
+  </view>
+  <view class='new_list'>
+    <input value='{{new_phone}}' bindinput='advnewphone' placeholder='请输入新的手机号' type='number'></input>
+    <button class='getCode' disabled='{{codeBtn}}' bindtap='getCode'>{{codeText}}</button>
+    <view class='clear'></view>
+  </view>
+  <view class='ctel_list'>
+    <input value='{{new_phone_code}}' bindinput='advnewcode' placeholder='请输入验证码' type='number'></input>
+  </view>
+  <view class='subBtn' bindtap='subBtn'>确认</view>
+</view>

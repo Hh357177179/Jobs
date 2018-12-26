@@ -1,54 +1,61 @@
+<view bindtap="proActive" class="topBtn" data-aid='{{proDetail.id}}'>
+  <image src="../../images/issue.png"></image>
+  <view style="float:left;">项目活动</view>
+  <view class='clear'></view>
+</view>
+<view class='clear'></view>
 <view class="onlyDetail">
-    <view class="proTitle">项目标题：
+  <view class="proTitle">项目标题：
     <text>{{proDetail.title}}</text>
-    </view>
-    <view class="prolist">
-        <view>项目简介：</view>
-        <view class="pabout">{{proDetail.about}}</view>
-    </view>
-    <view style="margin-top: 20rpx;">项目成立时间：{{proDetail.time}}</view>
-    <view style="margin-top: 20rpx;">项目阶段：{{proDetail.stage}}</view>
-    <view class="prolist">
+  </view>
+  <view class="prolist">
+    <view>项目简介：</view>
+    <view class="pabout">{{proDetail.about}}</view>
+  </view>
+  <view style="margin-top: 20rpx;">项目成立时间：{{proDetail.time}}</view>
+  <view style="margin-top: 20rpx;">项目阶段：{{proDetail.stage}}</view>
+  <!-- <view class="prolist">
         <view>迭代过程：</view>
         <view class="pabout">{{proDetail.iteration}}</view>
-    </view>
-    <view class="prolist">
+    </view> -->
+  <!-- <view class="prolist">
         <view>举办活动记录：</view>
         <view class="pabout">{{proDetail.activity}}</view>
-    </view>
-    <view style="margin-top: 20rpx;">项目现状：{{proDetail.actualities}}</view>
+    </view> -->
+  <!-- <view style="margin-top: 20rpx;">项目现状：{{proDetail.actualities}}</view>
     <view class="prolist">
         <view>项目未来展现：</view>
         <view class="pabout">{{proDetail.future}}</view>
+    </view> -->
+  <view class="picMain">
+    <view class="proPic" wx:for="{{proPiclist}}" wx:key="index">
+      <image src="{{item}}"></image>
     </view>
-    <view class="picMain">
-        <view class="proPic" wx:for="{{proPiclist}}" wx:key="index">
-            <image src="{{item}}"></image>
+    <view class="clear"></view>
+  </view>
+  <view style="border-top: 2px solid #d9d9d9;margin-top:50rpx;">
+    <view bindtap="searchPerson" wx:if="{{proDetail.user_avatar != '' && proDetail.user_avatar != null}}" class="botIcon" data-id="{{proDetail.user_id}}">
+      <view style="margin-top:20rpx;">项目创始人:</view>
+      <view style="margin-top:20rpx;">
+        <view class="partnerPic">
+          <image src="{{proDetail.user_avatar}}"></image>
         </view>
-        <view class="clear"></view>
+        <view style="float:left;" wx:if="{{proDetail.user_realname==''}}">{{proDetail.user_nickname}}</view>
+        <view style="float:left;" wx:else>{{proDetail.user_realname}}</view>
+      </view>
+      <view class="clear"></view>
     </view>
-    <view style="border-top: 2px solid #d9d9d9;margin-top:50rpx;">
-        <view bindtap="searchPerson" class="botIcon" data-id="{{proDetail.user_id}}">
-            <view style="margin-top:20rpx;">项目创始人:</view>
-            <view style="margin-top:20rpx;">
-                <view class="partnerPic">
-                    <image src="{{proDetail.user_avatar}}"></image>
-                </view>
-                <view style="float:left;" wx:if="{{proDetail.user_realname==''}}">{{proDetail.user_nickname}}</view>
-                <view style="float:left;" wx:else>{{proDetail.user_realname}}</view>
-            </view>
-            <view class="clear"></view>
+    <view bindtap="chartPerson" wx:if="{{proDetail.partner_avatar != '' && proDetail.partner_avatar != null}}" class="botIcon" data-id="{{proDetail.partner_id}}">
+      <view style="margin-top:20rpx;">新基石项目合伙人：</view>
+      <view style="margin-top:20rpx;">
+        <view class="partnerPic">
+          <image src="{{proDetail.partner_avatar}}"></image>
         </view>
-        <view bindtap="chartPerson" class="botIcon" data-id="{{proDetail.partner_id}}">
-            <view style="margin-top:20rpx;">项目合伙人：</view>
-            <view style="margin-top:20rpx;">
-                <view class="partnerPic">
-                    <image src="{{proDetail.partner_avatar}}"></image>
-                </view>
-                <view style="float:left;" wx:if="{{proDetail.partner_realname==null}}">{{proDetail.partner_nickname}}</view>
-                <view style="float:left;" wx:else>{{proDetail.partner_realname}}</view>
-            </view>
-            <view class="clear"></view>
-        </view>
+        <view style="float:left;" wx:if="{{proDetail.partner_realname== '' || proDetail.partner_realname== null}}">{{proDetail.partner_nickname}}</view>
+        <view style="float:left;" wx:else>{{proDetail.partner_realname}}</view>
+      </view>
+      <view class="clear"></view>
     </view>
+  </view>
+  <view class='searchSecond' data-id="{{proDetail.id}}" bindtap='searchSecond'>点击查看项目详情</view>
 </view>

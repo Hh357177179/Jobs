@@ -1,17 +1,20 @@
 <view class="phoneVerify">
-    <view class="topTitle">验证您的身份来获取权限</view>
-    <view class="phoneMain">
-        <view class="phoneList">
-            <input bindinput="userNameVal" placeholder="输入您的真实姓名" placeholderStyle="font-size:28rpx;" type="text" value="{{userName}}"></input>
-        </view>
-        <view class="phoneList phoneCode">
-            <input bindinput="phoneVal" maxlength="11" placeholder="输入您的手机号" placeholderStyle="font-size:28rpx;" type="number" value="{{userPhone}}"></input>
-        </view>
-        <button bindtap="getCode" class="codeBtn" disabled="{{codeBtn}}">{{codeMsg}}</button>
-        <view class="clear"></view>
-        <view class="phoneList">
-            <input bindinput="codeVal" maxlength="6" placeholder="填写您接收到的验证码" placeholderStyle="font-size:28rpx;" type="number" value="{{code}}"></input>
-        </view>
+  <view class="topTitle">验证您的身份来获取权限</view>
+  <view class="phoneMain">
+    <view class="phoneList">
+      <input bindinput="userNameVal" placeholder="输入您的真实姓名" placeholderStyle="font-size:28rpx;" type="text" value="{{userName}}"></input>
     </view>
-    <view bindtap="phoneClick" class="trueBtn">确认</view>
+    <view class="phoneList">
+      <input bindinput="passWordVal" password="true" placeholder="输入您的密码" placeholderStyle="font-size:28rpx;" type="number" value="{{passWord}}"></input>
+    </view>
+    <view class="phoneList phoneCode">
+      <input bindinput="phoneVal" maxlength="11" placeholder="输入您的手机号" placeholderStyle="font-size:28rpx;" type="number" value="{{userPhone}}"></input>
+    </view>
+    <button bindtap="getCode" class="codeBtn" disabled="{{codeBtn}}">{{codeMsg}}</button>
+    <view class="clear"></view>
+    <view class="phoneList">
+      <input bindinput="codeVal" maxlength="6" placeholder="填写您接收到的验证码" placeholderStyle="font-size:28rpx;" type="number" value="{{code}}"></input>
+    </view>
+  </view>
+  <view bindtap="phoneClick" class="trueBtn">确认</view>
 </view>

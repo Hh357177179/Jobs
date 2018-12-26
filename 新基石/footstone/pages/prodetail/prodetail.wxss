@@ -1,78 +1,113 @@
 .prodetail {
-    padding: 0 20rpx 50rpx;
-    font-size: 30rpx;
+  padding: 0 20rpx 50rpx;
+  font-size: 30rpx;
 }
 
 .clear {
-    clear: both;
+  clear: both;
 }
 
 .prolist {
-    margin-top: 20rpx;
+  margin-top: 20rpx;
 }
 
 .pabout {
-    margin-top: 5rpx;
-    border: 1px solid #d9d9d9;
-    border-radius: 10rpx;
-    min-height: 200rpx;
-    padding: 10rpx 20rpx;
+  margin-top: 5rpx;
+  border: 1px solid #d9d9d9;
+  border-radius: 10rpx;
+  min-height: 200rpx;
+  padding: 10rpx 20rpx;
 }
 
 .picMain {
-    margin-top: 30rpx;
+  margin-top: 30rpx;
 }
 
 .proPic {
-    width: 45%;
-    height: 320rpx;
-    border: 1px solid #d9d9d9;
-    float: left;
-    box-sizing: border-box;
-    margin-top: 20rpx;
+  width: 45%;
+  height: 320rpx;
+  border: 1px solid #d9d9d9;
+  float: left;
+  box-sizing: border-box;
+  margin-top: 20rpx;
 }
 
 .proPic:nth-of-type(2n) {
-    float: right;
+  float: right;
 }
 
 .proPic image {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .botIcon {
-    margin-top: 50rpx;
-    border-top: 2px solid #d9d9d9;
+  margin-top: 50rpx;
+  border-top: 2px solid #d9d9d9;
 }
 
 .partnerPic {
-    float: left;
-    width: 100rpx;
-    height: 100rpx;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 20rpx;
+  float: left;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20rpx;
 }
 
 .partnerPic image {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .topBtn {
-    position: absolute;
-    right: 20rpx;
-    top: 0;
-    font-size: 28rpx;
-    border: 1px solid #d9d9d9;
-    padding: 10rpx 20rpx;
-    border-radius: 10rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 0;
+  font-size: 28rpx;
+  border: 1px solid #d9d9d9;
+  padding: 10rpx 20rpx;
+  border-radius: 10rpx;
 }
 
 .topBtn image {
-    width: 30rpx;
-    height: 30rpx;
-    float: left;
-    margin-right: 10rpx;
+  width: 30rpx;
+  height: 30rpx;
+  float: left;
+  margin-right: 10rpx;
+}
+.bp{
+  margin-top: 20rpx;
+}
+.bpimg{
+  width: 200rpx;
+  height: 200rpx;
+}
+.bpimg image{
+  width: 100%;
+  height: 100%;
+}
+.amend{
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #fff;
+  text-align: center;
+  background: #dd5f1b;
+  margin: 60rpx auto;
+  border-radius: 10rpx;
+}
+.pic_mask{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0,0,0,.8);
+  z-index: 12;
+}
+
+.pic_mask image{
+  margin-top: 20vh;
 }

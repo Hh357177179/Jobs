@@ -2,7 +2,7 @@
 <view class='searchDetail'>
   <view style='background:#fff;' class='detailTit'>
     <view class='searchTop'>
-      <input type='text' focus="true" placeholder='请输入标题、导师' placeholder-class="placCss" bindblur="searchVal" bindinput="variableInput" value='{{value}}' class='searInp'></input>
+      <input type='text' focus="true" placeholder='请输入标题或图解人' placeholder-class="placCss" bindblur="searchVal" bindinput="variableInput" value='{{value}}' class='searInp'></input>
       <icon type='clear' size='20' class='clearInput' wx:if="{{clearBtn}}" bindtap='clearInput'></icon>
     </view>
     <icon type='search' size='30' class='iconSearch' bindtap='searchBtnD'></icon>

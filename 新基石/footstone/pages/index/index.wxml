@@ -1,25 +1,33 @@
 <view class="home">
-    <view wx:for="{{homeList}}" wx:key="{{item.id}}">
-        <view class="homeList" data-id="{{item.id}}">
-            <view class="listPic">
-                <image src="{{item.avatar}}"></image>
-            </view>
-            <view class="listDes">
-                <view class="originator" wx:if="{{item.realname}}">创始人：{{item.realname}}</view>
-                <view class="originator" wx:else>创始人：{{item.nickname}}</view>
-                <view>{{item.content}}</view>
-                <view class="desPic">
-                    <view class="picList" wx:for="{{item.picurl}}" wx:for-item="only" wx:key="index">
-                        <image src="{{only}}"></image>
-                    </view>
-                    <view class="clear"></view>
-                </view>
-                <view class="clear"></view>
-                <view style="font-size:28rpx;color:#666;margin-top:20rpx;">{{dateFr.getDate(item.create_time*1000,'-')}}</view>
-            </view>
-            <view class="clear"></view>
+  <view wx:for="{{homeList}}" wx:key="{{item.id}}">
+    <view class="homeList" data-id="{{item.id}}">
+      <view class="listPic">
+        <image src="{{item.avatar}}"></image>
+      </view>
+      <view class="listDes">
+        <view class="originator" wx:if="{{item.realname}}">项目创始人：{{item.realname}}</view>
+        <view class="originator" wx:else>项目创始人：{{item.nickname}}</view>
+        <view>{{item.content}}</view>
+        <view class="desPic">
+          <view class="picList" data-src='{{only}}' catchtap='sBpic' wx:for="{{item.picurl}}" wx:for-item="only" wx:key="index">
+            <image src="{{only}}"></image>
+          </view>
+          <view class="clear"></view>
         </view>
         <view class="clear"></view>
+        <view style="font-size:28rpx;color:#666;margin-top:20rpx;">{{dateFr.getDate(item.create_time*1000,'-',':')}}</view>
+      </view>
+      <view class="clear"></view>
+      <view style='padding-top: 20rpx;' data-proid='{{item.project_id}}' bindtap='rproDetail'>
+        <image class='link' src='../../images/link.png'></image>
+        <text class='rdetails'>项目详情</text>
+        <view class='clear'></view>
+      </view>
     </view>
+    <view class="clear"></view>
+  </view>
+</view>
+<view class='pic_mask' wx:if="{{showPics}}" bindtap='picMask'>
+  <image style='width: 100%;' src='{{srclocal}}'></image>
 </view>
 <wxs module="dateFr" src="../../utils/dateFr.wxs" />

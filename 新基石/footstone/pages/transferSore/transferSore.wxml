@@ -1,0 +1,17 @@
+<!--pages/transferSore/transferSore.wxml-->
+<view class='transferSore'>
+  <view class='me_sore'>我的天使点：{{sort}} TS</view>
+  <view class='sore_list'>
+    <input value='{{to_phone}}' type='number' bindinput='advto_phone' placeholder='请输入转赠的账户手机号码'></input>
+  </view>
+  <view class='sore_list'>
+    <input value='{{number}}' type='number' bindinput='advnumber' placeholder='请输入转赠的天使点数量'></input>
+  </view>
+  <view class='sore_list'>
+    <input value='{{transfer_pass}}' password='true' type='number' bindinput='advtransfer_pass' placeholder='请输入支付密码'></input>
+  </view>
+  <view class='sore_list'>
+    <input value='{{note}}' bindblur='advnote' placeholder='请输入转赠备注'></input>
+  </view>
+  <view class='transferSub' bindtap='transferSub'>确认</view>
+</view>

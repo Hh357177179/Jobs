@@ -1,26 +1,32 @@
 <!--index.wxml-->
 <view class='home'>
   <view class='home_leading'>
-    <image class='leading_pic' src='../../images/banner3.jpeg'></image>
+    <swiper style='width: 100%;height:100%;' circular="{{circular}}" interval="{{interval}}" autoplay="{{autoplay}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item.picurl}}" class="slide-image" width="100%" height="100%" />
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
   <view class='h_recommend'>
     <view class='hr_title'>喔喔云推荐</view>
   </view>
   <view class='hl_card'>
-    <block>
-      <view class='hl_list' bindtap='skipDetail'>
+    <block wx:for="{{commodityArr}}" wx:key="index">
+      <view class='hl_list' bindtap='skipDetail' data-id='{{item.id}}'>
         <view class='hl_pic'>
-          <image src='../../images/1d.jpeg'></image>
+          <image src='{{item.logo}}'></image>
         </view>
-        <view class='hf_title'>我是一个商品标题</view>
+        <view class='hf_title'>{{item.title}}</view>
         <view class='hfs_tit'>
-          <text class='hf_price'>￥699.00</text>
-          <text class='hf_keep'>库存 20</text>
+          <text class='hf_price'>￥{{item.price}}</text>
+          <text class='hf_keep'>库存 {{item.stock}}</text>
           <view class='clear'></view>
         </view>
       </view>
     </block>
     <view class='clear'></view>
   </view>
-  <view class='noData'>已经到底了哦</view>
+  <view class='noData' wx:if="{{noDataShow}}">已经到底了哦</view>
 </view>

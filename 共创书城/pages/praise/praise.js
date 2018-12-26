@@ -13,6 +13,30 @@ Page({
     praiseArr: [],
     counts: 0
   },
+
+  detailR(e) {
+    console.log(e)
+    let type = e.currentTarget.dataset.type
+    let sid = e.currentTarget.dataset.sid
+    if (type == 1) {
+      wx.navigateTo({
+        url: '/pages/picHome/picHome?pids=' + sid,
+      })
+    } else if (type == 2) {
+      wx.navigateTo({
+        url: '/pages/bookDetail/bookDetail?id=' + sid,
+      })
+    } else if (type == 3) {
+      wx.navigateTo({
+        url: '/pages/botdetail/botdetail?sid=' + sid,
+      })
+    } else if (type == 4) {
+      wx.navigateTo({
+        url: '/pages/groupDetail/groupDetail?gid=' + sid,
+      })
+    }
+  },
+
   // 获取我的点赞列表
   getPraiseList() {
     let that = this

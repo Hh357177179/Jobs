@@ -1,6 +1,9 @@
 // pages/groupDetail/groupDetail.js
 const util = require('../../utils/util.js')
-import { postRequest } from '../../utils/httpRequest.js'
+const WxParse = require('../../wxParse/wxParse.js');
+import {
+  postRequest
+} from '../../utils/httpRequest.js'
 const app = getApp()
 Page({
 
@@ -8,6 +11,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    textShow: false,
+    showMain: false,
+    commentLickArr: [],
+    bindName: 'article',
+    article_content: '',
+    noTextShow: false,
     cpicshow: false,
     createPic: '',
     pro_id: '',
@@ -34,7 +43,7 @@ Page({
     shareCardShow: false
   },
 
-  shareBtn () {
+  shareBtn() {
     let that = this
     that.setData({
       shareCardShow: true,
@@ -43,7 +52,7 @@ Page({
   },
 
   // 分享项目
-  shareProject () {
+  shareProject() {
     let that = this
     let params = {
       token: app.globalData.openid,
@@ -56,7 +65,7 @@ Page({
   },
 
   // 保存图片
-  saveLocal () {
+  saveLocal() {
     wx.downloadFile({
       url: this.data.createPic,
       success: res => {
@@ -101,7 +110,7 @@ Page({
   },
 
   // 生成图片
-  createPic () {
+  createPic() {
     let that = this
     let params = {
       token: app.globalData.openid,
@@ -120,7 +129,7 @@ Page({
   },
 
   // 关闭
-  closePic () {
+  closePic() {
     let that = this
     that.setData({
       cpicshow: false,
@@ -144,35 +153,35 @@ Page({
   },
 
   // 单条评论点赞
-  plParise(e) {
-    console.log(e)
-    let that = this
-    let indexs = e.currentTarget.dataset.index
-    let numc = 'commentArr[' + indexs + '].like_num';
-    let status = 'commentArr[' + indexs + '].is_like';
-    let comid = e.currentTarget.dataset.id
-    let likeStatus = e.currentTarget.dataset.status
-    let num = e.currentTarget.dataset.num
-    let params = {
-      token: app.globalData.openid,
-      comment_id: comid,
-    }
-    if (likeStatus == true) {
-      that.setData({
-        [numc]: num - 1,
-        [status]: false
-      })
-    } else {
-      that.setData({
-        [numc]: num + 1,
-        [status]: true
-      })
-    }
-    postRequest('/user/commetLikePublish', params, false).then(res => {
-      console.log(res)
-      util.showMsg(res)
-    })
-  },
+  // plParise(e) {
+  //   console.log(e)
+  //   let that = this
+  //   let indexs = e.currentTarget.dataset.index
+  //   let numc = 'commentArr[' + indexs + '].like_num';
+  //   let status = 'commentArr[' + indexs + '].is_like';
+  //   let comid = e.currentTarget.dataset.id
+  //   let likeStatus = e.currentTarget.dataset.status
+  //   let num = e.currentTarget.dataset.num
+  //   let params = {
+  //     token: app.globalData.openid,
+  //     comment_id: comid,
+  //   }
+  //   if (likeStatus == true) {
+  //     that.setData({
+  //       [numc]: num - 1,
+  //       [status]: false
+  //     })
+  //   } else {
+  //     that.setData({
+  //       [numc]: num + 1,
+  //       [status]: true
+  //     })
+  //   }
+  //   postRequest('/user/commetLikePublish', params, false).then(res => {
+  //     console.log(res)
+  //     util.showMsg(res)
+  //   })
+  // },
 
   // 单条评论点赞
   plParise(e) {
@@ -202,6 +211,7 @@ Page({
     postRequest('/user/commetLikePublish', params, false).then(res => {
       console.log(res)
       util.showMsg(res)
+      // that.checkLike()
     })
   },
 
@@ -252,6 +262,21 @@ Page({
         })
         console.log('弹幕', res)
       } else {
+        if (res.list.length == 0) {
+          that.setData({
+            noTextShow: true
+          })
+        }
+        for (var i = 0, len = res.list.length; i < len; i++) {
+          if (res.list[i].is_anonymous == 1) {
+            // console.log(res.list[i])
+            var num = "";
+            for (var x = 0; x < 4; x++) {
+              num += Math.floor(Math.random() * 10)
+            }
+            res.list[i].names = '共创城居民' + num
+          }
+        }
         that.setData({
           commentArr: that.data.commentArr.concat(res.list),
           counts: res.count,
@@ -281,16 +306,44 @@ Page({
     })
   },
 
+  // 查看点赞评论
+  // checkLike () {
+  //   let that = this
+  //   let params = {
+  //     token: app.globalData.openid,
+  //     type: '4',
+  //     project_id: that.data.pro_id,
+  //   }
+  //   postRequest('/user/commentListOrderByLike', params, false).then(res => {
+  //     console.log('点赞排序',res)
+  //     for (var i = 0, len = res.length; i < len; i++) {
+  //       if (res[i].is_anonymous == 1) {
+  //         // console.log(res[i])
+  //         var num = "";
+  //         for (var x = 0; x < 4; x++) {
+  //           num += Math.floor(Math.random() * 10)
+  //         }
+  //         res[i].names = '共创城居民' + num
+  //       }
+  //     }
+  //     that.setData({
+  //       commentLickArr: res
+  //     })
+  //   })
+  // },
+
   // 查看评论
   checkCom() {
     let that = this
     that.setData({
+      noTextShow: false,
       commentShow: true,
       maskShow: true,
       isAll: '0',
       page: 1,
       commentArr: []
     })
+    // that.checkLike()
     that.getCommentList()
   },
 
@@ -401,23 +454,36 @@ Page({
   //     bot: e.detail.height
   //   })
   // },
-  getDetail () {
+  getDetail() {
+    let that = this
     let params = {
-      project_id: this.data.pro_id
+      group_id: that.data.pro_id
     }
-    postRequest('/user/projectDetail', params, true).then(res => {
-      // console.log(res)
-      this.setData({
+    postRequest('/user/groupDetail', params, true).then(res => {
+      console.log(123213,res)
+      if (res == null) {
+        that.setData({
+          showMain: false,
+          textShow: true
+        })
+      } else {
+        that.setData({
+          showMain: true,
+          textShow: false
+        })
+      }
+      WxParse.wxParse('article', 'html', res.content, that, 20);
+      that.setData({
         detailObj: res
       })
-      this.addLog()
+      that.addLog()
     })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     let that = this
     console.log(options)
     if (options.gid) {
@@ -432,55 +498,59 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
-  onShareAppMessage: function (options) {
-    // console.log(res)
-    // if (options.from === 'button') {
-    //   // 来自页面内转发按钮
-    //   // console.log(res.target)
-    // }
+  onShareAppMessage: function(options) {
+    if (options.from === 'button') {
+      // 来自页面内转发按钮
+      console.log('来自页面内转发按钮')
+      this.shareProject()
+      this.getallStatus()
+      this.setData({
+        shareCardShow: false,
+        maskShow: false
+      })
+    }
     return {
       title: '小组详情',
       success: res => {
-        console.log(res)
         if (res.errMsg == 'shareAppMessage:ok') {
           this.shareProject()
           this.getallStatus()

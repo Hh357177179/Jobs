@@ -1,32 +1,96 @@
 .client {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .clear {
-    clear: both;
+  clear: both;
 }
 
 .clientList {
-    border-bottom: 1px solid #d9d9d9;
-    padding: 40rpx 30rpx;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 20rpx 30rpx;
 }
 
 .clientPic {
-    width: 120rpx;
-    height: 120rpx;
-    border-radius: 50%;
-    background: #ccc;
-    float: left;
-    margin-right: 60rpx;
-    overflow: hidden;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background: #ccc;
+  float: left;
+  margin-right: 60rpx;
+  overflow: hidden;
 }
 
 .clientPic image {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .clientText {
-    font-size: 32rpx;
+  font-size: 32rpx;
+}
+
+.bz_text {
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.bzmask{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0,0,0,.7);
+}
+.bzMain{
+  width: 460rpx;
+  margin: 200rpx auto;
+  border-radius: 10rpx;
+  background: #fff;
+  padding: 20rpx 40rpx 40rpx;
+}
+.userPic{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+}
+.userPic image {
+  width: 100%;
+  height: 100%;
+}
+.username{
+  font-size: 32rpx;
+  float: left;
+  margin-left: 40rpx;
+}
+.subSure{
+  width: 150rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #fff;
+  background: #dd5f1b;
+  text-align: center;
+  border-radius: 10rpx;
+  margin: 40rpx auto 0;
+  font-size: 30rpx;
+}
+.bzinput{
+  width: 100%;
+  height: 80rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+.bzinput input{
+  height: 100%;
+  width: 100%;
+  font-size: 30rpx;
+  text-align: center;
+}
+.closeMask{
+  text-align: right;
+  font-size: 28rpx;
 }

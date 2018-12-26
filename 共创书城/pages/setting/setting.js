@@ -1,4 +1,5 @@
 // pages/setting/setting.js
+import data from '../../utils/data.js'
 const util = require('../../utils/util.js')
 import { postRequest } from '../../utils/httpRequest.js'
 const app = getApp()
@@ -8,6 +9,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    options1: data,
+    value1: [],
+    title1: '请选择所在地',
     avatar: '',
     campnum: '',
     sexnum: '',
@@ -43,6 +47,20 @@ Page({
     ],
     local: '',  // 地址
   },
+  onOpen1() {
+    this.setData({ visible1: true })
+  },
+  onClose1() {
+    this.setData({ visible1: false })
+  },
+  onChange1(e) {
+    if (e.detail.options.length == 3) {
+      this.setData({
+        title1: e.detail.options.map((n) => n.label).join('-'),
+      })
+    }
+    console.log('onChange1', e.detail)
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -60,7 +78,7 @@ Page({
         that.setData({
           time: '请选择出生年月日',
           sexStr: '请选择性别',
-          local: '',
+          title1: '请选择所在地',
           campusStr: '请选择所属校区',
           roleStr: '请选择角色'
         })
@@ -68,7 +86,7 @@ Page({
         that.setData({
           time: res.birthday,
           sexStr: res.gender,
-          local: res.address,
+          title1: res.address,
           campusStr: res.school,
           roleStr: res.role
         })
@@ -87,12 +105,10 @@ Page({
       util.showMsg('请选择出生年月日')
     } else if (that.data.sexStr == "请选择性别") {
       util.showMsg('请选择性别')
-    } else if (that.data.local == '') {
-      util.showMsg('请输入所在地')
+    } else if (that.data.title1 == '请选择所在地') {
+      util.showMsg('请选择所在地')
     } else if (that.data.campusStr == "请选择所属校区") {
       util.showMsg('请选择所属校区')
-    } else if (that.data.roleStr == "请选择角色") {
-      util.showMsg('请选择角色')
     } else {
       let params = {
         token: app.globalData.openid,
@@ -100,9 +116,9 @@ Page({
         avatar: that.data.avatar,
         gender: that.data.sexStr,
         birthday: that.data.time,
-        address: that.data.local,
+        address: that.data.title1,
         school: that.data.campusStr,
-        role: that.data.roleStr
+        role: '1'
       }
       // console.log(params)
       postRequest('/user/infoUpdate', params, true).then(res => {

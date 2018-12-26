@@ -4,9 +4,9 @@
     <view class='userPic'>
       <image src='{{avatar}}'></image>
     </view>
-    <text class='userTitle'>欢迎来到共创城！</text>
-    <view class='clear'></view>
     <view class='userName'>{{nickName}}</view>
+    <view class='userTitle'>欢迎来到共创城！</view> 
+    <view class='clear'></view>
     <view class='set_btn'>
       <view class='home_set' bindtap='homeSet'>设置</view>
       <view class='set_me' bindtap='setMe'>我的</view>
@@ -28,7 +28,6 @@
     </view>
   </view>
   <view class='bot_text'>
-    <view>共创城是由沐新学员自发建设的非官方社群</view>
-    <view style='margin-top:10rpx;'>微信公众号：gongchuangcheng</view>
+    <view>客服微信号：gongchuangcheng</view>
   </view>
 </view>

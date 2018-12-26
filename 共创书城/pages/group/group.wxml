@@ -7,7 +7,7 @@
       </view>
       <view class='group_r'>
         <view class='group_title'>{{item.title}}</view>
-        <view class='group_content'>{{item.content}}</view>
+        <view class='group_content'>{{item.abstract}}</view>
         <view class='group_hot'>小组热度：{{item.like_num}}</view>
       </view>
       <view class='clear'></view>

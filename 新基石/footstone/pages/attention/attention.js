@@ -13,7 +13,9 @@ Page({
       },
       success: function(t) {
         if (200 == t.data.code) {
-          for (var e = t.data.data, o = 0; o < e.length; o++) e[o].picurl = JSON.parse(e[o].picurl);
+          for (var e = t.data.data, o = 0; o < e.length; o++) {
+            e[o].picurl = e[o].picurl.split('|')
+          }
           n.setData({
             attentionArr: e
           }), console.log(e);

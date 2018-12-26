@@ -1,0 +1,15 @@
+<!--pages/tslog/tslog.wxml-->
+<wxs module="dateFr" src="../../utils/dateFr.wxs" />
+<view class='tslog'> 
+  <view class='log_list' wx:for="{{logArr}}" wx:key="index">
+    <view style='float:left;'>
+      <text style='margin-right: 20rpx;'>{{dateFr.getDate(item.create_time*1000,'-',':')}}</text>
+      <text>{{item.from_name}}转给{{item.to_name}}</text>
+    </view>
+    <view style='float:right;'>
+      <text style='color: #f00;'>{{item.number}}</text>
+      TS
+    </view>
+    <view class='clear'></view>
+  </view>
+</view>

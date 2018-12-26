@@ -1,0 +1,28 @@
+<!--pages/cjoint/cjoint.wxml-->
+<view class='cjoint'>
+  <view class='cjoint_list'>
+    <checkbox-group bindchange="checkboxChange">
+      <block wx:for="{{cjointArr}}" wx:key="index">
+        <checkbox value='{{item.id}}' checked='{{item.isCheck == 1}}' color='#F68B0E' class='checks'>
+          <view class='check_pic'>
+            <image src='{{item.good_logo}}'></image>
+          </view>
+          <view class='check_info'>
+            <view class='check_text'>{{item.good_title}}</view>
+            <view class='check_num'>
+              <text class='check_price'>￥{{item.good_price}}</text>
+              <text class='check_enters'>x{{item.num}}</text>
+              <!-- <text class='check_date'>{{item.}} 购买</text> -->
+            </view>
+          </view>
+          <view class='clear'></view>
+        </checkbox>
+      </block>
+    </checkbox-group>
+  </view>
+  <view class='check_bar'>
+    <view class='cbar_left'></view>
+    <view class='cbar_right' bindtap='sureAdd'>确认添加</view>
+    <view class='clear'></view>
+  </view>
+</view>

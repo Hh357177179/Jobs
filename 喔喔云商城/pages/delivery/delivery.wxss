@@ -2,6 +2,9 @@
 page{
   background: #f6f6f6;
 }
+.delivery{
+  padding-bottom: 120rpx;
+}
 .clear{
   clear: both;
 }
@@ -164,10 +167,16 @@ page{
   font-size: 24rpx;
   color: #999;
 }
+.cTime{
+  font-size: 28rpx;
+  color: rgba(25,31,37,0.72);
+}
 .chose_time{
-  margin-top: 20rpx;
   background: #fff;
-  padding: 12rpx 30rpx;
+  padding: 0 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #f0f0f0;
 }
 .time_left{
   font-size: 28rpx;
@@ -190,14 +199,14 @@ page{
 }
 .choyear_card{
   background: #fff;
-  padding: 0 30rpx;
+  /* padding: 0 30rpx; */
   margin-top: 20rpx;
 }
-.year_list{
-  border-bottom: 1px solid #f0f0f0;
-}
+/* .year_list{ */
+  /* border-bottom: 1px solid #f0f0f0; */
+/* } */
 .cy_l{
-  padding: 20rpx 0;
+  padding: 20rpx 30rpx;
 }
 .radio{
   display: block;
@@ -220,7 +229,7 @@ page{
   margin-top: 15rpx;
   font-size: 28rpx;
   color:rgba(25,31,37,0.72);
-  padding-bottom: 30rpx;
+  padding: 0 30rpx 30rpx;
 }
 .entries_des{
   font-size: 24rpx;
@@ -237,8 +246,15 @@ page{
 .all_info{
   width: 60%;
   height: 88rpx;
-  margin-top: 10rpx;
   float: left;
+  line-height: 88rpx;
+  font-size: 28rpx;
+}
+.info_text{
+  line-height: 88rpx;
+  padding-left: 20rpx;
+  font-size: 26rpx;
+  color: rgba(25,31,37,0.4);
 }
 .bot_sub{
   float: left;
@@ -274,4 +290,113 @@ page{
 }
 .entries_right{
   float: right;
+}
+.card_info{
+  font-size: 26rpx;
+  color: rgba(25,31,37,0.4);
+  margin-left: 10rpx;
+}
+.buynum_add{
+  float: right;
+  height: 60rpx;
+  width: 210rpx;
+  border: 1px solid rgba(25,31,37,0.12);
+  border-radius: 8rpx;
+}
+.buy_subtract{
+  width: 60rpx;
+  height: 60rpx;
+  border-right: 1px solid rgba(25,31,37,0.12);
+  float: left;
+}
+.buy_add{
+  width: 60rpx;
+  height: 60rpx;
+  border-left: 1px solid rgba(25,31,37,0.12);
+  float: right;
+}
+.buy_add image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 15rpx;
+  margin-left: 15rpx;
+}
+.buy_subtract image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 15rpx;
+  margin-left: 15rpx;
+}
+.add_sub_nums{
+  float: left;
+  text-align: center;
+  line-height: 60rpx;
+  width: 86rpx;
+}
+.egg_tit{
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+.egg_num{
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.ts{
+  font-size: 24rpx;
+  text-align: left;
+  color: #F68B0E;
+}
+.cDate_time{
+  margin-left: 40rpx;
+  font-size: 28rpx;
+  color:grey;
+}
+.pick_left{
+  width: 100%;
+  height: 100%;
+  font-size:28rpx;
+  color:rgba(25,31,37,0.72);
+}
+.time_frame{
+  font-size: 28rpx;
+  color:rgba(25,31,37,0.72);
+  position: relative;
+  margin-top: 10rpx;
+}
+.buy_btn{
+  color: #000;
+  /* background: #f00; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80rpx !important;
+  font-size: 28rpx;
+  overflow: hidden;
+  width: 100%;
+}
+.prop_list{
+  margin-top: 25rpx;
+  padding: 0 30rpx 20rpx;
+}
+.radioslist{
+  float: left;
+  margin-top: 10rpx;
+  padding: 10rpx 0;
+  width: 100%;
+  /* text-align: left; */
+}
+.card_tit{
+  font-size: 30rpx;
+  color: #F68B0E;
+  text-align: center;
+}
+.scrollViews{
+  height: 50vh;
+  /* background: #ccc; */
+}
+.change_list{
+  float: left;
+  line-height: 48rpx;
+  font-size: #666;
 }

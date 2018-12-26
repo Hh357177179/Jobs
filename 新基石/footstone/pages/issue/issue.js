@@ -17,12 +17,11 @@ Page({
           filePath: e.tempFilePaths[0],
           name: "file",
           success: function(e) {
-            if (200 == e.code) {
-              var o = JSON.parse(e.data).data;
-              t.setData({
-                addPic: t.data.addPic.concat(o)
-              });
-            } else a.showMsg(e.msg);
+            console.log(e)
+            var o = JSON.parse(e.data).data;
+            t.setData({
+              addPic: t.data.addPic.concat(o)
+            });
           }
         }), t.setData({
           localImg: t.data.localImg.concat(e.tempFilePaths)
@@ -44,7 +43,7 @@ Page({
       data: {
         token: wx.getStorageSync("openid"),
         content: t.data.issueVal,
-        picurl: t.data.addPic
+        picurl: t.data.addPic.join('|')
       },
       success: function(a) {
         console.log(a), 200 == a.data.code && wx.reLaunch({

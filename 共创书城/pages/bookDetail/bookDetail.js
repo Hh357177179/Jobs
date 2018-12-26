@@ -1,8 +1,8 @@
 const myaudio = wx.createInnerAudioContext();
-// const myVideo = wx.createVideoContext();
-// pages/bookDetail/bookDetail.js
 const util = require('../../utils/util.js')
-import { postRequest } from '../../utils/httpRequest.js'
+import {
+  postRequest
+} from '../../utils/httpRequest.js'
 const app = getApp()
 var timer = null;
 var timers = null;
@@ -13,6 +13,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    textShow: false,
+    mainShow: false,
+    picUrl: '',
+    picmShow: false,
+    noTextShow: false,
     dmshow: false,
     danmuList: [],
     noVideo: false,
@@ -41,35 +46,63 @@ Page({
     freShow: false,
     bookId: '',
     bookDetail: {},
-    imgArr:[],
+    imgArr: [],
     imgLength: '',
     currentIndex: 1,
     autoFocus: false,
     anonymous: '0'
   },
-  
 
-  showVideos () {
+
+  showVideos() {
     let that = this
-    that.setData({
-      noVideo: false,
-      videoShow: true
+    wx.getNetworkType({
+      success: res => {
+        console.log(res)
+        if (res.networkType == 'wifi') {
+          console.log('无线网')
+          that.setData({
+            noVideo: false,
+            videoShow: true
+          })
+          that.videoContext.play();
+        } else {
+          console.log('流量')
+          wx.showModal({
+            title: '提示',
+            content: '当前为数据流量，是否继续播放？',
+            confirmText: '继续播放',
+            success(res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+                that.setData({
+                  noVideo: false,
+                  videoShow: true
+                })
+                that.videoContext.play();
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          })
+        }
+      }
     })
-    this.videoContext.play();
+
   },
 
   // pVideos () {
   //   let that = this
-    
+
   // },
 
-  audioPlay: function () {
+  audioPlay: function() {
     this.audioCtx.play()
   },
 
-  autoLoad: function () {
+  autoLoad: function() {
     var that = this;
-    timer = setTimeout(function () {
+    timer = setTimeout(function() {
       var arr = that.data.allCommont;
       var str = arr.shift();
       if (str) {
@@ -263,7 +296,7 @@ Page({
     }
     // console.log(params)
     postRequest('/user/commentList', params, true).then(res => {
-      console.log(123213,res)
+      // console.log(2222222,res)
       if (that.data.isAll == '1') {
         let dmArr = new Array()
         for (var i = 0, len = res.length; i < len; i++) {
@@ -282,12 +315,27 @@ Page({
         that.autoLoad();
         console.log('弹幕', res)
       } else {
+        if (res.list.length == 0) {
+          that.setData({
+            noTextShow: true
+          })
+        }
+        for (var i = 0, len = res.list.length; i < len; i++) {
+          if (res.list[i].is_anonymous == 1) {
+            // console.log(res.list[i])
+            var num = "";
+            for (var x = 0; x < 4; x++) {
+              num += Math.floor(Math.random() * 10)
+            }
+            res.list[i].names = '共创城居民' + num
+          }
+        }
         that.setData({
           commentArr: that.data.commentArr.concat(res.list),
           counts: res.count,
           // likeStatus
         })
-        console.log('评论列表', res.list)
+        // console.log('评论列表', res.list)
       }
     })
   },
@@ -315,6 +363,7 @@ Page({
   checkCom() {
     let that = this
     that.setData({
+      noTextShow: false,
       commentShow: true,
       maskShow: true,
       isAll: '0',
@@ -364,8 +413,26 @@ Page({
     })
   },
 
+  // 点击查看大图
+  searchPic (e) {
+    let that = this
+    let picUrl = e.currentTarget.dataset.pic
+    // console.log(picUrl)
+    that.setData({
+      picmShow: true,
+      picUrl: picUrl
+    })
+  },
+  closeBigPic () {
+    let that = this
+    that.setData({
+      picmShow: false,
+      picUrl: ''
+    })
+  },
+
   // 切换图片
-  changeCurrent (e) {
+  changeCurrent(e) {
     let that = this
     if (that.data.currentIndex <= that.data.imgLength) {
       that.setData({
@@ -379,55 +446,67 @@ Page({
   },
 
   // 获取书籍详情
-  getBook () {
-    wx.showLoading({
-      title: 'loading...',
-    })
+  getBook() {
+    // wx.showLoading({
+    //   title: 'loading...',
+    // })
     let that = this
     wx.request({
       url: `${util.baseUrl}/book/detail`,
       data: {
         book_id: that.data.bookId
+        // book_id: 111111111
       },
       metho: "POST",
       success: res => {
-        console.log(res)
-        if (res.data.code == 200) {
-          wx.hideLoading()
-          if (res.data.data.audio != '') {
-            that.setData({
-              freShow: true,
-            })
-            myaudio.src = res.data.data.audio
-          }
-          console.log(123,myaudio.src)
-          if (res.data.data.video != '') {
-            that.setData({
-              videoShow: false,
-              dmshow: false,
-              noVideo: true
-            })
-          } else {
-            that.setData({
-              dmshow: true
-            })
-          }
-          // console.log(res.data.data.content)
-          let arrPic = res.data.data.content.split('|')
-          let imgNum = arrPic.length
+        if (res.data.data == null) {
           that.setData({
-            bookDetail: res.data.data,
-            imgArr: arrPic,
-            imgLength: imgNum
+            mainShow: false,
+            textShow: true
           })
-          that.addLog()
         } else {
-          wx.hideLoading()
-          util.showMsg(res.data.msg)
+          that.setData({
+            mainShow: true,
+            textShow: false
+          })
+          if (res.data.code == 200) {
+            // wx.hideLoading()
+            if (res.data.data.audio != '') {
+              that.setData({
+                freShow: true,
+              })
+              myaudio.src = res.data.data.audio
+            }
+            console.log(123, myaudio.src)
+            if (res.data.data.video != '') {
+              that.setData({
+                videoShow: false,
+                dmshow: false,
+                noVideo: true
+              })
+            } else {
+              that.setData({
+                dmshow: true
+              })
+            }
+            // console.log(res.data.data.content)
+            let arrPic = res.data.data.content.split('|')
+            let imgNum = arrPic.length
+            that.setData({
+              bookDetail: res.data.data,
+              imgArr: arrPic,
+              imgLength: imgNum
+            })
+            that.addLog()
+          } else {
+            // wx.hideLoading()
+            util.showMsg(res.data.msg)
+          }
         }
+        console.log(res)
       },
-      fail(){
-        wx.hideLoading()
+      fail() {
+        // wx.hideLoading()
         util.showMsg('网络错误请重试')
       }
     })
@@ -499,7 +578,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     page = this;
     let that = this
     let bookid = options.id
@@ -514,7 +593,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
     this.audioCtx = wx.createInnerAudioContext('myAudio')
     this.videoContext = wx.createVideoContext('myVideo')
   },
@@ -522,22 +601,26 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    
+  onShow: function() {
+
   },
-  play: function () {
+  play: function() {
     myaudio.play();
     console.log(myaudio.duration);
-    this.setData({ isplay: true });
+    this.setData({
+      isplay: true
+    });
   },
   // 停止
-  stop: function () {
+  stop: function() {
     myaudio.pause();
-    this.setData({ isplay: false });
+    this.setData({
+      isplay: false
+    });
   },
 
-  go: function (str) {
-    doommList.push(new Doomm(str, Math.floor(Math.random() * (60 - 1 + 1) + 1), Math.ceil(20), getRandomColor()));
+  go: function(str) {
+    doommList.push(new Doomm(str, Math.floor(Math.random() * (60 - 1 + 1) + 1), Math.ceil(25), getRandomColor()));
     this.setData({
       doommData: doommList
     })
@@ -547,16 +630,18 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
+  onHide: function() {
+    
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
     clearTimeout(timer)
     let that = this
+    that.videoContext.play();
+    myaudio.stop();
     that.setData({
       allCommont: [],
       commentArr: [],
@@ -569,18 +654,28 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
   // 分享
-  onShareAppMessage: function (res) {
+  onShareAppMessage: function(options) {
+    if (options.from === 'button') {
+      // 来自页面内转发按钮
+      console.log('来自页面内转发按钮')
+      this.shareProject()
+      this.getallStatus()
+      this.setData({
+        shareCardShow: false,
+        maskShow: false
+      })
+    }
     return {
       title: '资料库',
       success: res => {
@@ -593,7 +688,7 @@ Page({
   }
 })
 var doommList = [];
-var i = 0;//用做唯一的wx:key
+var i = 0; //用做唯一的wx:key
 class Doomm {
   constructor(text, top, time, color) {
     this.text = text;
@@ -603,12 +698,6 @@ class Doomm {
     this.display = true;
     let that = this;
     this.id = i++;
-    // timers = setTimeout(function () {
-    //   doommList.splice(doommList.indexOf(that), 1);//动画完成，从列表中移除这项
-    //   page.setData({
-    //     doommData: doommList
-    //   })
-    // }, this.time * 3000)//定时器动画完成后执行。
   }
 }
 

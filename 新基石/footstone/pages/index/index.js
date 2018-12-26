@@ -6,8 +6,37 @@ Page({
     pagesize: 10,
     homeList: [],
     counts: "",
-    pid: ""
+    pid: "",
+    srclocal: '',
+    showPics: false
   },
+
+  rproDetail (e) {
+    console.log(e)
+    let t = this
+    let id = e.currentTarget.dataset.proid
+    wx.navigateTo({
+      url: '/pages/onlyDetail/onlyDetail?id=' + id,
+    })
+  },
+  
+  sBpic (e) {
+    let t = this
+    console.log(e.currentTarget.dataset.src)
+    let src = e.currentTarget.dataset.src
+    t.setData({
+      srclocal: src,
+      showPics: true
+    })
+  },
+
+  picMask () {
+    let t = this
+    t.setData({
+      showPics: false
+    })
+  },
+
   getSq: function() {
     var t = this,
       e = this;
@@ -39,7 +68,7 @@ Page({
                         })), wx.setStorageSync("openid", t.data.data.openid), wx.setStorageSync("avatar", t.data.data.avatar),
                       wx.setStorageSync("nickname", t.data.data.nickname), wx.setStorageSync("status", t.data.data.status),
                       wx.setStorageSync("phone", t.data.data.phone), wx.setStorageSync("realname", t.data.data.realname),
-                      wx.setStorageSync("score", t.data.data.score), wx.setStorageSync("uid", t.data.data.id)) : (console.log("没注册过的", t),
+                      wx.setStorageSync("is_chuangshiren", t.data.data.is_chuangshiren), wx.setStorageSync("is_hehuoren", t.data.data.is_hehuoren), wx.setStorageSync("is_tianshi", t.data.data.is_tianshi), wx.setStorageSync("score", t.data.data.score), wx.setStorageSync("password", t.data.data.password), wx.setStorageSync("transfer_pass", t.data.data.transfer_pass), wx.setStorageSync("uid", t.data.data.id)) : (console.log("没注册过的", t),
                       console.log("没注册过获取pid", wx.getStorageSync("qid")), wx.request({
                         url: a.baseUrl + "/user/register",
                         method: "POST",
@@ -54,7 +83,7 @@ Page({
                             wx.setStorageSync("avatar", a.data.data.avatar), wx.setStorageSync("nickname", a.data.data.nickname),
                             wx.setStorageSync("status", a.data.data.status), wx.setStorageSync("phone", a.data.data.phone),
                             wx.setStorageSync("realname", a.data.data.realname), wx.setStorageSync("score", a.data.data.score),
-                            wx.setStorageSync("uid", a.data.data.id));
+                            wx.setStorageSync("is_tianshi", a.data.data.is_tianshi), wx.setStorageSync("is_hehuoren", a.data.data.is_hehuoren), wx.setStorageSync("is_chuangshiren", a.data.data.is_chuangshiren), wx.setStorageSync("uid", a.data.data.id), wx.setStorageSync("transfer_pass", t.data.data.transfer_pass), wx.setStorageSync("password", a.data.data.password));
                         }
                       }));
                   }
@@ -81,9 +110,12 @@ Page({
       },
       success: function(a) {
         var e = a.data.data;
+        console.log(123213,e)
         if (200 == a.data.code) {
           wx.hideLoading();
-          for (var o = 0; o < e.list.length; o++) e.list[o].picurl = JSON.parse(e.list[o].picurl);
+          for (var o = 0; o < e.list.length; o++) {
+            e.list[o].picurl = e.list[o].picurl.split('|')
+          }
           t.setData({
             homeList: t.data.homeList.concat(e.list),
             counts: e.count
@@ -131,7 +163,10 @@ Page({
         var e = a.data.data;
         if (200 == a.data.code) {
           wx.stopPullDownRefresh(), wx.hideNavigationBarLoading();
-          for (var o = 0; o < e.list.length; o++) e.list[o].picurl = JSON.parse(e.list[o].picurl);
+          // for (var o = 0; o < e.list.length; o++) e.list[o].picurl = JSON.parse(e.list[o].picurl);
+          for (var o = 0; o < e.list.length; o++) {
+            e.list[o].picurl = e.list[o].picurl.split('|')
+          }
           t.setData({
             homeList: e.list,
             counts: e.count

@@ -1,0 +1,62 @@
+<!--pages/alterproject/alterproject.wxml-->
+<view class="originator">
+  <view class="smallTitle">请认真、真实地填写以下信息</view>
+  <view class="originList">
+    <text style='color:#f00;float:left;line-height: 80rpx;'>*</text>
+    <input bindinput="advproName" placeholder="项目名称" placeholderStyle="font-size: 28rpx;" value="{{proName}}"></input>
+    <view class='clear'></view>
+  </view>
+  <view style='font-size: 28rpx;margin-top:20rpx;color:#666;'>
+    <text style='color:#f00;float:left;margin-right:20rpx;'>*</text>
+    <text>项目简介</text>
+  </view>
+  <view class="case">
+    <textarea bindinput="advintroVal" maxlength="-1" placeholder="项目简介" placeholderStyle="font-size:28rpx;" value="{{introVal}}"></textarea>
+  </view>
+  <view class="originName originList">
+    <text style='color:#f00;float:left;line-height: 80rpx;'>*</text>
+    <view class="section" style='float:left;'>
+      <picker bindchange="bindDateChange" mode="date" value="{{date}}">
+        <view class="picker" style="color:#666;font-size:28rpx;line-height:80rpx;padding-left:20rpx;">{{dateText}}</view>
+      </picker>
+    </view>
+    <view class='clear'></view>
+  </view>
+  <view class="originList" style="margin-bottom:40rpx;">
+    <text style='color:#f00;float:left;line-height: 80rpx;'>*</text>
+    <input bindinput="advstageVal" placeholder="项目阶段" placeholderStyle="font-size: 28rpx;" value="{{stageVal}}"></input>
+    <view class='clear'></view>
+  </view>
+  <view class="case">
+    <textarea bindinput="adviterationVal" maxlength="-1" placeholder="项目历程" placeholderStyle="font-size:28rpx;" value="{{iterationVal}}"></textarea>
+  </view>
+  <view class="uploadPic">
+    <view style='font-size: 28rpx;color:#666;margin-bottom:10rpx;'>项目bp</view>
+    <view bindtap="bpImg" style='width: 200rpx;' class="addPic">
+      <view class="addIcon">
+        <image src="{{bpImg}}"></image>
+      </view>
+    </view>
+    <view class="clear"></view>
+  </view>
+  <view class="originList" style="margin-bottom:40rpx;">
+    <input bindinput="advsituationVal" placeholder="项目现状" placeholderStyle="font-size: 28rpx;" value="{{situationVal}}"></input>
+  </view>
+  <view class="case">
+    <textarea bindinput="advfutureVal" maxlength="-1" placeholder="项目愿景" placeholderStyle="font-size:28rpx;" value="{{futureVal}}"></textarea>
+  </view>
+  <view class="uploadPic">
+    <view class="picture" wx:for="{{proList}}" wx:key="index">
+      <view class='deletPic' data-index='{{index}}' bindtap='deletPic'>X</view>
+      <image src="{{item}}"></image>
+    </view>
+    <view bindtap="proImage" class="addPic" wx:if="{{proShowPic}}">
+      <view class="addIcon">
+        <image src="../../images/add.png"></image>
+      </view>
+      <view style="font-size:24rpx;margin-top:10rpx;color:#666;">（最大可上传6张）</view>
+    </view>
+    <view class="clear"></view>
+  </view>
+  <view bindtap="subChange" class="submitOrigin">提交修改</view>
+</view>

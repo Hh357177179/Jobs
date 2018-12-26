@@ -1,37 +1,82 @@
 <!--pages/detail/detail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
 <view class='detail'>
-  <view class='d_pic'>
-    <swiper class='swiper_pic' bindchange="changePic">
-      <block wx:for="{{banArr}}" wx:key="index">
-        <swiper-item>
-          <image src='{{item.img}}'></image>
-        </swiper-item>
-      </block>
-    </swiper>
-    <view class='banNum'>
-      <text>{{preCount}}</text>/<text>{{allCount}}</text>
-    </view>
-  </view>
-  <view class='d_commodity'>
-    <view class='dc_text'>艺术品 家居生活装饰画 已装裱 艺术品 家居生活装饰画 已装裱</view>
-    <view class='dc_infos'>
-      <view class='dc_price'>
-        <text>￥669.</text>
-        <text class="decimal">00</text>
+  <view class='detail_main'>
+    <view class='d_pic'>
+      <swiper class='swiper_pic' bindchange="changePic">
+        <block wx:for="{{banArr}}" wx:key="index">
+          <swiper-item>
+            <image src='{{item}}'></image>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class='banNum'>
+        <text>{{preCount}}</text>/
+        <text>{{allCount}}</text>
       </view>
-      <view class='dc_storage'>库存 20</view> 
-      <view class='delivery'>免费配送</view>
-      <view class='clear'></view>
     </view>
+    <view class='d_commodity'>
+      <view class='dc_text'>{{detailObj.title}}</view>
+      <view class='dc_infos'>
+        <view class='dc_price'>
+          <text>￥{{detailObj.price}}</text>
+        </view>
+        <view class='dc_storage'>库存 {{detailObj.stock}}</view>
+        <view class='delivery'>不单独配送，和鸡蛋一起配送</view>
+        <view class='clear'></view>
+      </view>
+    </view>
+    <view class='dc_introduce'>商品介绍</view>
+    <view class='introduce_text'><template is="wxParse" data="{{wxParseData:article.nodes}}" /></view>
   </view>
-  <view class='dc_introduce'>商品介绍</view>
+
   <view class='botBtn'>
     <view class='dc_customer'>
-      <image class='wcIcon' src='../../images/wechartIcon.png'></image>
+      <!-- <image class='wcIcon' src='../../images/wechartIcon.png'></image>
       <text>客服</text>
-      <view class='clear'></view>
+      <view class='clear'></view> -->
+      <button class='btn_service' open-type="contact" bindcontact="handleContact">
+        <image class='wcIcon' src='../../images/wechartIcon.png'></image>
+        <text>客服</text>
+      </button>
     </view>
-    <view class='dc_buy'>立即购买</view>
+    <view class='dc_buy'>
+      <wux-button clear='true' block class='buy_btn' bind:click="openbot">立即购买</wux-button>
+    </view>
     <view class='clear'></view>
   </view>
+
+  <!-- 购买弹窗 -->
+  <wux-popup closable visible="{{ buyShow }}" bind:close="onClose" position='bottom'>
+    <view class='bot_popup'>
+      <view class='botp_top'>
+        <view class='botp_left'>
+          <image src='{{detailObj.logo}}'></image>
+        </view>
+        <view class='botp_info'>
+          <view class='botp_des'>{{detailObj.title}}</view>
+          <view class='botp_price'>
+            <text class='price_num'>￥{{detailObj.price}}</text>
+            <text class='price_stock'>库存{{detailObj.stock}}</text>
+          </view>
+        </view>
+        <view class='clear'></view>
+      </view>
+      <view class='buy_nums'>
+        <text class='buynum_text'>购买数量：</text>
+        <view class='buynum_add'>
+          <view class='buy_subtract' bindtap='buySubtract'>
+            <image src='../../images/subtract.png'></image>
+          </view>
+          <view class='add_sub_nums'>{{buyNum}}</view>
+          <view class='buy_add' bindtap='buyAdd'>
+            <image src='../../images/addicon.png'></image>
+          </view>
+          <view class='clear'></view>
+        </view>
+        <view class='clear'></view>
+      </view>
+      <view class='buy_order_submit' bindtap='buyOrder'>立即购买</view>
+    </view>
+  </wux-popup>
 </view>
