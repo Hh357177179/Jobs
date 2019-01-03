@@ -77,5 +77,5 @@ page{
   line-height: 98rpx;
   font-size: 36rpx;
   font-weight: 400;
-  background: #F68B0E;
+  background: #98cdc6;
 }

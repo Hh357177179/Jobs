@@ -29,7 +29,8 @@
     "pages/alterproject/alterproject",
     "pages/secondPage/secondPage",
     "pages/corigin/corigin",
-    "pages/activeSome/activeSome"
+    "pages/activeSome/activeSome",
+    "pages/starList/starList"
   ],
   "window": {
     "backgroundTextStyle": "light",

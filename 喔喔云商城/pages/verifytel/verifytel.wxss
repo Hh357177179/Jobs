@@ -16,7 +16,7 @@
   height: 100%;
   line-height: 80rpx;
   width: 150rpx;
-  color: #F68B0E;
+  color: #98cdc6;
 }
 .tel_num{
   float: left;
@@ -39,7 +39,7 @@
   font-size: 26rpx;
   float: right;
   padding: 0;
-  background-color: #F68B0E;
+  background-color: #98cdc6;
   border-radius: none;
   border: none;
   color: #fff;
@@ -48,7 +48,7 @@
   width: 200rpx;
   height: 80rpx;
   font-size: 32rpx;
-  background: #F68B0E;
+  background: #98cdc6;
   text-align: center;
   line-height: 80rpx; 
   color: #fff;

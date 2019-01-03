@@ -1,29 +1,18 @@
 <template>
   <div class="home">
-   <div class="home_top clearfix">
+   <div class="home_top clearfix" @click="routerDown">
      <div class="home_search"></div>
-     <div class="down" @click="routerDown">
-      <img src="../../assets/image/downman.png" alt="">
+     <div class="down">
+      <i class="iconfont icon-sousuo" style="font-size:30px;color:#ccc;margin-top:5px;"></i>
     </div>
-   </div>
-   <div class="search_history">
-     <p class="my_search">我的搜索历史：</p>
-     <p class="hislist">离子气枪产生的噪音如何解决？</p>
-     <p class="hislist">刚入职的工厂EHS负责人会遇到哪些挑战？</p>
-     <p class="hislist">有关EHS人才可持续发展的建议？</p>
    </div>
    <div class="new_answer">
      <p class="answer_title">最新回答</p>
-     <div class="list_card" @click="rAnsdetail">
-       <div class="card_text">有关EHS人才可持续发展的建议？我是带图片的不需要折行显示，哈哈哈哈哈哈</div>
-       <!-- <div class="card_pic"></div> -->
-     </div>
-     <div class="list_card clearfix">
-       <div class="card_left">
-         我是带图片的列表，需要做到折行。
-       </div>
-       <div class="card_pic">
-         <img src="../../assets/image/demo.jpg" alt="">
+     <div class="list_card clearfix" @click="rAnsdetail(item.id)" v-for="(item, index) in homeArr" :key="index">
+       <div class="card_text">{{item.title}}</div>
+       <div class="card_contents">{{item.content}}</div>
+       <div class="card_pic" v-for="(items, indexs) in item.picurl" :key="indexs">
+         <img :src="items" alt="">
        </div>
      </div>
    </div>
@@ -31,25 +20,75 @@
 </template>
 
 <script>
+import {homeList} from '../../api/api.js'
 export default {
   data () {
     return {
-
+      page: 1,
+      pagesize: 10,
+      keyword: '',
+      homeArr: [],
+      counts: ''
     }
   },
   mounted () {
 
   },
   methods: {
+    // 获取首页列表
+    getList () {
+      let params = {
+        keyword: '',
+        page: this.page,
+        pagesize: this.pagesize
+      }
+      homeList(params).then(res => {
+        console.log(res)
+        for (let i = 0,len = res.list.length; i < len;i++) {
+          if (res.list[i].picurl != '') {
+            res.list[i].picurl = res.list[i].picurl.split('|')
+          }
+        }
+        this.homeArr = this.homeArr.concat(res.list)
+        this.counts = res.count
+      })
+    },
     // 跳转下载详情
     routerDown () {
-      this.$router.push('/down')
+      this.$router.push('/search')
     },
     // 跳转详情页
-    rAnsdetail () {
-      this.$router.push('/adetail')
-    }
-  }
+    rAnsdetail (id) {
+      this.$router.push(`/adetail/${id}`)
+    },
+    handleScroll () {
+   		//变量scrollTop是滚动条滚动时，距离顶部的距离
+   		var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+   		//变量windowHeight是可视区的高度
+   		var windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+   		//变量scrollHeight是滚动条的总高度
+   		var scrollHeight = document.documentElement.scrollHeight||document.body.scrollHeight;
+      //滚动条到底部的条件
+      if(scrollTop + windowHeight == scrollHeight){
+        console.log('loadingMore')
+        if (this.page * this.pagesize < this.counts) {
+          this.page = this.page + 1
+          console.log(this.page)
+          this.getList()
+        } else {
+          this.$toast('无更多数据')
+        }
+      }
+    },
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
+    this.getList()
+  },
+  beforeDestroy () {
+    // console.log('取消监听')
+    window.removeEventListener('scroll', this.handleScroll)
+  },
 }
 </script>
 
@@ -71,8 +110,9 @@ export default {
       }
       .down{
         float:right;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
+        margin-top: 5px;
         img{
           float: left;
           width: 20px;
@@ -95,6 +135,7 @@ export default {
     }
     .new_answer{
       margin-top: 20px;
+      padding-bottom: 50px;
       .answer_title{
         font-size: 16px;
         font-weight: 500;
@@ -105,21 +146,31 @@ export default {
         border-bottom: 1px solid #d9d9d9;
         .card_text{
           font-size: 15px;
+          color: #333;
         }
         .card_left{
           font-size: 15px;
           width: 175px;
           float: left;
+          color: #666;
+        }
+        .card_contents{
+          font-size: 15px;
+          color: #666;
         }
         .card_pic{
-          float: right;
-          width: 150px;
-          height: 100px;
+          float: left;
+          width: 160px;
+          height: 120px;
+          margin-top: 10px;
           background: #ccc;
           img{
             width: 100%;
             height: 100%;
           }
+        }
+        .card_pic:nth-of-type(2n){
+          float: right;
         }
       }
     }

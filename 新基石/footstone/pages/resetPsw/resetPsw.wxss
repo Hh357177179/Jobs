@@ -38,3 +38,10 @@
   text-align: center;
   border-radius: 10rpx;
 }
+.tel_nums{
+  font-size: 28rpx;
+  padding-left: 20rpx;
+  border-bottom: 1px solid #f0f0f0;
+  line-height: 80rpx;
+  color: #666;
+}

@@ -38,7 +38,7 @@ page{
 }
 .add_text{
   float: left;
-  color: #F68B0E;
+  color: #98cdc6;
   line-height:45rpx;
   font-size: 32rpx;
   margin-left: 16rpx;

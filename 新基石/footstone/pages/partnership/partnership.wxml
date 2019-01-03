@@ -5,7 +5,7 @@
     </view>
     <view class="parentText">
       <view>
-        <text>{{item.title}}</text>
+        <text class='titles'>{{item.title}}</text>
         <text style="color:#E51C23;float: right;">{{item.stage}}</text>
       </view>
       <view style="margin-top: 20rpx;font-size:30rpx;">项目创始人：

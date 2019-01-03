@@ -9,7 +9,7 @@ page{
 .finish_top{
   width: 100%;
   height: 120rpx;
-  background: #F68B0E;
+  background: #98cdc6;
 }
 .top_icon{
   width: 72rpx;
@@ -126,7 +126,7 @@ page{
   color:rgba(25,31,37,0.72);
 }
 .fin_num{
-  color: #F68B0E;
+  color: #98cdc6;
   font-size: 36rpx;
   line-height: 50rpx;
 }

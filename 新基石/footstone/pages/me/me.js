@@ -62,8 +62,11 @@ Page({
 
   searchXX () {
     let t = this
-    t.setData({
-      xxShow: true
+    // t.setData({
+    //   xxShow: true
+    // })
+    wx.navigateTo({
+      url: '/pages/starList/starList',
     })
   },
 
@@ -334,7 +337,7 @@ Page({
       is_tianshi: wx.getStorageSync('is_tianshi')
     });
     t.getCollectN();
-    t.getmedal()
+    // t.getmedal()
     t.getAttentionN();
     t.getParentList()
     t.getTalknum(),

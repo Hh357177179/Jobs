@@ -17,6 +17,7 @@ App({
                     code: t.code
                   },
                   success: function(e) {
+                    console.log(32323232,e)
                     200 == e.data.code ? (wx.setStorageSync("openid", e.data.data.openid), wx.setStorageSync("avatar", e.data.data.avatar),
                       wx.setStorageSync("nickname", e.data.data.nickname), wx.setStorageSync("status", e.data.data.status),
                       wx.setStorageSync("phone", e.data.data.phone), wx.setStorageSync("realname", e.data.data.realname),

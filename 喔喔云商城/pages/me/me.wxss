@@ -48,13 +48,13 @@ page{
 }
 .m_hint{
   margin-top: 20rpx;
-  color: #F68B0E;
+  color: #98cdc6;
   line-height: 33rpx;
   font-size: 24rpx;
   text-align: center;
   padding: 7rpx 44rpx;
   border-radius: 8rpx;
-  border: 1px solid #F68B0E;
+  border: 1px solid #98cdc6;
 }
 .me_order{
   margin-top: 18rpx;
@@ -168,7 +168,7 @@ page{
   line-height: 40rpx;
   padding: 12rpx 52rpx;
   border-radius: 8rpx;
-  background: #F68B0E;
+  background: #98cdc6;
   text-align: center;
   margin-top: 12rpx;
 }
@@ -218,7 +218,7 @@ page{
   width: 200rpx;
   line-height: 70rpx;
   text-align: center;
-  background: #F68B0E;
+  background: #98cdc6;
   color: #fff;
   font-size: 30rpx;
   margin: 40rpx auto 0;

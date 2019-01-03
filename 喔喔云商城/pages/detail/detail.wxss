@@ -55,13 +55,13 @@ page {
   float: left;
   font-size: 40rpx;
   font-weight: 600;
-  color: #f68b0e;
+  color: #98cdc6;
   line-height: 56rpx;
 }
 
 .decimal {
   font-size: 30rpx;
-  color: #f68b0e;
+  color: #98cdc6;
 }
 
 .dc_storage {
@@ -76,10 +76,10 @@ page {
   float: right;
   line-height: 30rpx;
   font-size: 20rpx;
-  color: #f68b0e;
+  color: #98cdc6;
   font-weight: 400;
   padding: 4rpx 10rpx;
-  border: 1rpx solid #f68b0e;
+  border: 1rpx solid #98cdc6;
   border-radius: 4rpx;
   margin-top: 10rpx;
 }
@@ -128,7 +128,7 @@ page {
   font-size: 36rpx;
   font-weight: 400;
   float: left;
-  background: #f68b0e;
+  background: #98cdc6;
   text-align: center;
   width: 67%;
   height: 100%;
@@ -190,7 +190,7 @@ page {
   margin-top: 24rpx;
 }
 .price_num{
-  color: #F68B0E;
+  color: #98cdc6;
   font-size: 40rpx;
   line-height: 56rpx;
   font-weight: 600;
@@ -256,7 +256,7 @@ page {
   height: 94rpx;
   line-height: 94rpx;
   color: #fff;
-  background: #F68B0E;
+  background: #98cdc6;
   border-radius: 10rpx;
   margin: 0 auto;
   text-align: center;

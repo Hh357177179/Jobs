@@ -7,7 +7,7 @@
 }
 .log_list{
   color: #333;
-  padding: 40rpx;
+  padding: 20rpx 40rpx;
   border-bottom: 1px solid #f0f0f0;
   font-size: 30rpx;
 }

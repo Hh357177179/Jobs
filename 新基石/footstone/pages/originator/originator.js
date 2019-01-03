@@ -3,10 +3,12 @@ import { postRequest } from '../../utils/httpRequest.js'
 
 Page({
   data: {
-    bpImg: '../../images/add.png',
+    bpImg: [],
+    bpImgStr: [],
     date: "",
     infoArr: [],
     showUpload: !0,
+    showUploads: !0,
     dateText: "项目成立时间",
     nameVal: "",
     ageVal: "",
@@ -77,10 +79,17 @@ Page({
             var e = JSON.parse(a.data).data;
             console.log('图片地址', e)
             t.setData({
-              bpImg: e
-            });
+              // bpImg: e
+              bpImg: t.data.bpImg.concat(e)
+            })
+            console.log(123213,t.data.bpImg)
           }
         })
+        t.setData({
+          bpImgStr: t.data.bpImgStr.concat(e.tempFilePaths)
+        }), 9 == t.data.bpImgStr.length && t.setData({
+          showUploads: !1
+        });
       }
     });
   },
@@ -102,7 +111,8 @@ Page({
             });
             // console.log(t.data.infoPic.join('|'))
           }
-        }), t.setData({
+        }),
+        t.setData({
           infoArr: t.data.infoArr.concat(e.tempFilePaths)
         }), 6 == t.data.infoArr.length && t.setData({
           showUpload: !1
@@ -198,7 +208,7 @@ Page({
         actualities: t.data.situationVal,
         future: t.data.futureVal,
         project_picurl: t.data.proPic.join('|'),
-        project_bp: t.data.bpImg
+        project_bp: t.data.bpImg.join('|')
       }
       console.log(params)
       postRequest('/main/founderAuth', params).then(res => {

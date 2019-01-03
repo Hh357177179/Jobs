@@ -64,7 +64,7 @@ export default new Router({
       }
     },
     {
-      path: '/adetail',
+      path: '/adetail/:id',
       name: 'adetail',
       component: () => import('./views/home/adetail.vue'),
       meta: {
@@ -72,7 +72,7 @@ export default new Router({
       }
     },
     {
-      path: '/history',
+      path: '/history/:id',
       name: 'history',
       component: () => import('./views/home/history.vue'),
       meta: {
@@ -80,7 +80,7 @@ export default new Router({
       }
     },
     {
-      path: '/someone',
+      path: '/someone/:id',
       name: 'someone',
       component: () => import('./views/home/someOne.vue'),
       meta: {
@@ -88,7 +88,7 @@ export default new Router({
       }
     },
     {
-      path: '/unanswer',
+      path: '/unanswer/:id',
       name: 'unanswer',
       component: () => import('./views/special/unanswered.vue'),
       meta: {
@@ -96,7 +96,7 @@ export default new Router({
       }
     },
     {
-      path: '/publicityd',
+      path: '/publicityd/:id',
       name: 'publicityd',
       component: () => import('./views/special/publicityd.vue'),
       meta: {
@@ -112,9 +112,25 @@ export default new Router({
       }
     },
     {
-      path: '/checkquery',
+      path: '/checkquery/:id',
       name: 'checkquery',
       component: () => import('./views/special/checkquery.vue'),
+      meta: {
+        requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录的
+      }
+    },
+    {
+      path: '/edit',
+      name: 'edit',
+      component: () => import('./views/special/edit.vue'),
+      meta: {
+        requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录的
+      }
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: () => import('./views/home/search.vue'),
       meta: {
         requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录的
       }

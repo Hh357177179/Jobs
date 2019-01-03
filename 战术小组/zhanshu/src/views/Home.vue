@@ -217,7 +217,7 @@ export default {
     padding: 5px 0 60px;
     .home_search{
       padding: 5px 10px;
-      background: #fff;
+      background: #fff; 
       width: 100%;
       left: 0;
       top: 0;

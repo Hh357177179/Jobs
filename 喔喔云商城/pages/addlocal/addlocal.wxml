@@ -29,7 +29,7 @@
   <view class='set_default'>
     <view class='set_lable'>设为默认地址</view>
     <view class='set_right'>
-      <switch color='#F68B0E' checked="{{checkedState}}" bindchange="switchChange"/>
+      <switch color='#98cdc6' checked="{{checkedState}}" bindchange="switchChange"/>
     </view>
     <view class='clear'></view>
   </view>

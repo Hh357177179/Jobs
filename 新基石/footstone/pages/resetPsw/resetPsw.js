@@ -12,7 +12,8 @@ Page({
     code: '',
     transfer_pass: '',
     codeMsg: "发送验证码",
-    codeBtn: false
+    codeBtn: false,
+    phoneTel: ''
   },
 
   advcode(e) {
@@ -90,7 +91,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    let that = this
+    that.setData({
+      phoneTel: wx.getStorageSync('phone')
+    })
   },
 
   /**

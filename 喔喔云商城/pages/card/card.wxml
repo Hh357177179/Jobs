@@ -48,7 +48,7 @@
       <view class='mc_main'>
         <radio-group class="radio-group" bindchange="radioChange">
           <block wx:for="{{buyArr}}" wx:key="index">
-            <radio value="{{item.id}}" color='#F68B0E' class='radio_list'>
+            <radio value="{{item.id}}" color='#98cdc6' class='radio_list'>
               <view class='radio_title'>{{item.title}}</view>
               <view class='radio_info'>{{item.money}}元/年，共{{item.egg_number}}枚新鲜鸡蛋</view>
             </radio>
@@ -66,10 +66,10 @@
       <view class='clear'></view>
       <view class='active_title'>激活您的喔喔云礼品卡</view>
       <view class='active_input'>
-        <input type='text' value='{{actNum}}' bindinput='advActNum' placeholder='请输入您的卡号'></input>
+        <input value='{{actNum}}' bindinput='advActNum' placeholder='请输入您的卡号'></input>
       </view>
       <view class='active_input'>
-        <input type='text' value='{{actPsw}}' bindinput='advActPsw' placeholder='请输入您的密码'></input>
+        <input value='{{actPsw}}' bindinput='advActPsw' placeholder='请输入您的密码'></input>
       </view>
       <view class='active_btn' bindtap='activeBtn'>确认激活</view>
     </view>

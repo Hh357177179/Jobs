@@ -11,5 +11,6 @@
       TS
     </view>
     <view class='clear'></view>
+    <view style='margin-top:10rpx;' wx:if="{{item.note != ''}}">备注：{{item.note}}</view>
   </view>
 </view>

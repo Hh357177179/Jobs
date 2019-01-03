@@ -22,9 +22,8 @@ Page({
 
   advActNum (e) {
     let that = this
-    let cardNums = e.detail.value
     that.setData({
-      actNum: cardNums
+      actNum: e.detail.value
     })
   },
 
@@ -49,19 +48,19 @@ Page({
         card_pass: that.data.actPsw
       }
       console.log(params)
-      postRequest('/main/cardGift', params, false).then(res => {
-        console.log(res)
-        wx.showToast({
-          title: '激活成功',
-          icon: 'success',
-          duration: 1500
-        })
-        that.setData({
-          actNum: '',
-          actPsw: '',
-          activeShow: false
-        })
-      })
+      // postRequest('/main/cardGift', params, false).then(res => {
+      //   console.log(res)
+      //   wx.showToast({
+      //     title: '激活成功',
+      //     icon: 'success',
+      //     duration: 1500
+      //   })
+      //   that.setData({
+      //     actNum: '',
+      //     actPsw: '',
+      //     activeShow: false
+      //   })
+      // })
     }
   },
 

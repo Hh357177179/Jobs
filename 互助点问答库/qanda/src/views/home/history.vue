@@ -8,35 +8,38 @@
         <span class="update_personal">内容修改人</span>
         <span class="update_reason">修改原因</span>
       </p>
-      <p class="list_main clearfix" @click="someOne">
-        <span class="list_time">2018-09-23 10:33</span>
-        <span class="list_name">王小二</span>
-        <span class="list_cause">修改错修改错别字别字</span>
-      </p>
-      <p class="list_main clearfix">
-        <span class="list_time">2018-09-23 10:33</span>
-        <span class="list_name">王小二</span>
-        <span class="list_cause">修改错修改错别字别字</span>
-      </p>
-      <p class="list_main clearfix">
-        <span class="list_time">2018-09-23 10:33</span>
-        <span class="list_name">王小二</span>
-        <span class="list_cause">修改错修改错别字别字</span>
+      <p class="list_main clearfix" @click="someOne(item.id)" v-for="(item, index) in historyList" :key="index">
+        <span class="list_time">{{item.create_time | dateFr}}</span>
+        <span class="list_name">{{item.user_nickname}}</span>
+        <span class="list_cause">{{item.reason}}</span>
       </p>
     </div>
   </div>
 </template>
 
 <script>
+import { history } from '../../api/api.js'
 export default {
   data () {
-    return {}
+    return {
+      historyList: []
+    }
   },
   methods: {
     // 跳转某一个历史版本
-    someOne () {
-      this.$router.push('/someone')
+    someOne (id) {
+      this.$router.push(`/someone/${id}`)
     }
+  },
+  mounted () {
+    // let key = JSON.parse(localStorage.getItem('token'))
+    let params = {
+      question_id: this.$route.params.id
+    }
+    history(params).then(res => {
+      console.log(res)
+      this.historyList = res
+    })
   }
 }
 </script>

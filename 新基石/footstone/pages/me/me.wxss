@@ -190,11 +190,11 @@
 }
 .me_pic{
   padding: 0 40rpx;
-  margin-top: 10rpx;
+  /* margin-top: 10rpx; */
 }
 .card_pics{
-  width: 60rpx;
-  height: 60rpx;
+  width: 100rpx;
+  height: 100rpx;
   float: left;
   margin-right: 20rpx;
   position: absolute;
@@ -207,8 +207,8 @@
   position: absolute;
   font-size: 30rpx;
   color: #fff;
-  left: 20rpx;
-  top: 10rpx;
+  left: 23rpx;
+  top: 30rpx;
 }
 .xxmask{
   width: 100%;
@@ -222,8 +222,8 @@
   padding: 40rpx 50rpx;
 }
 .xxlist{
-  width: 100rpx;
-  height: 100rpx;
+  width: 400rpx;
+  height: 400rpx;
   float: left;
   margin-right: 30rpx;
   margin-top: 40rpx;

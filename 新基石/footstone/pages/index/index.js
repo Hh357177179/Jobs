@@ -45,17 +45,21 @@ Page({
         console.log("获取用户信息", o), o.authSetting["scope.userInfo"] ? wx.getUserInfo({
           success: function(o) {
             var n = o.userInfo;
-            console.log("个人信息", n), wx.login({
+            // console.log("个人信息", n), 
+            wx.login({
               success: function(t) {
-                console.log("获取code", t.code), wx.request({
+                // console.log("获取code", t.code), 
+                wx.request({
                   url: a.baseUrl + "/user/isLogin",
                   method: "POST",
                   data: {
                     code: t.code
                   },
                   success: function(t) {
-                    console.log("检查是否注册", t), 200 == t.data.code ? (wx.getStorageSync("qid") && (console.log("获取pid", e.data.pid),
-                        console.log(t.data.data.openid), wx.request({
+                    console.log("检查是否注册", t),
+                     200 == t.data.code ? (wx.getStorageSync("qid") && (console.log("获取pid", e.data.pid),
+                        console.log(t.data.data.openid), 
+                        wx.request({
                           url: a.baseUrl + "/main/beCustomer",
                           method: "POST",
                           data: {
@@ -69,7 +73,8 @@ Page({
                       wx.setStorageSync("nickname", t.data.data.nickname), wx.setStorageSync("status", t.data.data.status),
                       wx.setStorageSync("phone", t.data.data.phone), wx.setStorageSync("realname", t.data.data.realname),
                       wx.setStorageSync("is_chuangshiren", t.data.data.is_chuangshiren), wx.setStorageSync("is_hehuoren", t.data.data.is_hehuoren), wx.setStorageSync("is_tianshi", t.data.data.is_tianshi), wx.setStorageSync("score", t.data.data.score), wx.setStorageSync("password", t.data.data.password), wx.setStorageSync("transfer_pass", t.data.data.transfer_pass), wx.setStorageSync("uid", t.data.data.id)) : (console.log("没注册过的", t),
-                      console.log("没注册过获取pid", wx.getStorageSync("qid")), wx.request({
+                      // console.log("没注册过获取pid", wx.getStorageSync("qid")), 
+                      wx.request({
                         url: a.baseUrl + "/user/register",
                         method: "POST",
                         data: {

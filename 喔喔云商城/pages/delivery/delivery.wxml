@@ -69,7 +69,7 @@
     <view class='year_list'>
       <radio-group class='cy_l' bindchange="cRadioId">
         <block wx:for="{{cardList}}" wx:key="index">
-          <radio value='{{item.id}}' color='#F68B0E' class="radio" bindtap='ctype' data-type="{{item.egg_type}}">
+          <radio value='{{item.id}}' color='#98cdc6' class="radio" bindtap='ctype' data-type="{{item.egg_type}}">
             <text class='radio_text'>{{item.title}}</text>
             <view class='card_info'>
               <text>到期时间：{{item.expire_time}}</text>
@@ -143,7 +143,7 @@
       <view class='card_tit'>选择喔喔云鸡蛋配送时间</view>
       <scroll-view class='scrollViews' scroll-y>
         <radio-group class="radioGroup" bindchange="radioListC">
-          <radio class='radioslist' value='{{item.key}}' color='#F68B0E' wx:for="{{dateArr}}" wx:key="index">
+          <radio class='radioslist' value='{{item.key}}' color='#98cdc6' wx:for="{{dateArr}}" wx:key="index">
             <view class='change_list'>
               <text style='margin-left: 20rpx;'>{{item.key}}</text>
               <text style='margin-left: 80rpx;'>剩余库存：{{item.value}}</text>

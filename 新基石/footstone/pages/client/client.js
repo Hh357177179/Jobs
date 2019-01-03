@@ -12,6 +12,23 @@ Page({
     ids: ''
   },
 
+  // 解除绑定关系
+  relieve (e) {
+    console.log(e)
+    let that = this
+    let params = {
+      token: wx.getStorageSync('openid'),
+      user_id: e.currentTarget.dataset.id
+    }
+    postRequest('/main/myCustomerDelete', params, true).then(res => {
+      console.log(res)
+      t.showMsg('解除成功！')
+      setTimeout(() => {
+        that.getClientList()
+      }, 2000)
+    })
+  },
+
   advbzinput (e) {
     let t = this
     t.setData({

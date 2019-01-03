@@ -6,7 +6,7 @@
   <view class='local_radio'>
     <radio-group class="radio-group">
       <block wx:for="{{addressArr}}" wx:key="index">
-        <radio checked='{{index == checkStatus}}' bindtap='clocals' data-num='{{index}}' class='radios' color='#F68B0E'>
+        <radio checked='{{index == checkStatus}}' bindtap='clocals' data-num='{{index}}' class='radios' color='#98cdc6'>
           <view class='list_main'>
             <view class='main_title'>
               <text class='main_name'>{{item.name}}</text>

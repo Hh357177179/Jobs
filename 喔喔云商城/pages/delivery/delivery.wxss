@@ -34,7 +34,7 @@ page{
   margin-top: 6rpx;
 }
 .add_text{
-  color: #F68B0E;
+  color: #98cdc6;
   font-size: 32rpx;
   line-height:45rpx;
   float: left;
@@ -85,8 +85,8 @@ page{
   width: 64rpx;
   text-align: center;
   font-size: 20rpx;
-  color: #F68B0E;
-  border: 1px solid #F68B0E;
+  color: #98cdc6;
+  border: 1px solid #;
   border-radius: 4rpx;
   padding: 4rpx 0;
   margin: 0 auto;
@@ -194,7 +194,7 @@ page{
   font-size: 28rpx;
   text-align: center;
   border-radius: 8rpx;
-  background: #F68B0E;
+  background: #98cdc6;
   padding: 12rpx 0;
 }
 .choyear_card{
@@ -220,7 +220,7 @@ page{
   margin-left: 10rpx;
 }
 .cho_egg{
-  color: #F68B0E;
+  color: #98cdc6;
   font-size: 24rpx;
   line-height:33rpx;
   margin-top: 30rpx;
@@ -259,7 +259,7 @@ page{
 .bot_sub{
   float: left;
   text-align: center;
-  background: #F68B0E;
+  background: #98cdc6;
   color: #fff;
   font-size: 36rpx;
   line-height: 98rpx;
@@ -276,7 +276,7 @@ page{
   line-height: 50rpx;
 }
 .price_num{
-  color: #F68B0E;
+  color: #98cdc6;
   font-size: 36rpx;
   float: left;
 }
@@ -345,7 +345,7 @@ page{
 .ts{
   font-size: 24rpx;
   text-align: left;
-  color: #F68B0E;
+  color: #98cdc6;
 }
 .cDate_time{
   margin-left: 40rpx;
@@ -388,7 +388,7 @@ page{
 }
 .card_tit{
   font-size: 30rpx;
-  color: #F68B0E;
+  color: #98cdc6;
   text-align: center;
 }
 .scrollViews{

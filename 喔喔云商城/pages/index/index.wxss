@@ -72,7 +72,7 @@ page{
 }
 .hf_price{
   font-size: 32rpx;
-  color: #F68B0E;
+  color: #98cdc6;
 }
 .hf_keep{
   font-size: 22rpx;

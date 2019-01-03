@@ -38,7 +38,8 @@ Page({
         phone: a.data.userPhone
       },
       success: function(e) {
-        if (console.log(e), 200 == e.data.code) var o = 60,
+        if (console.log(e), 200 == e.data.code) {
+          var o = 60,
           t = setInterval(function() {
             a.setData({
               codeMsg: o + "s",
@@ -48,10 +49,18 @@ Page({
               codeBtn: !1
             })), o -= 1;
           }, 1e3);
+        } else {
+          // e.showMsg(e.data.msg)
+          wx.showToast({
+            title: e.data.msg,
+            icon: 'none'
+          })
+        }
       }
     }) : e.showMsg("请输入正确手机号!");
   },
   phoneClick: function() {
+    console.log('openid', wx.getStorageSync('openid'))
     var a = this;
     "" == a.data.userName ? e.showMsg("姓名不能为空!") : "" == a.data.passWord ? e.showMsg("密码不能为空!") : "" == a.data.userPhone ? e.showMsg("电话号码不能为空!") : "" == a.data.code ? e.showMsg("验证码不能为空!") : wx.request({
       url: e.baseUrl + "/user/authentication",

@@ -13,7 +13,8 @@
     "postcss-pxtorem": "^4.0.1",
     "vant": "^1.4.4",
     "vue": "^2.5.17",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-scroller": "^2.2.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.3",

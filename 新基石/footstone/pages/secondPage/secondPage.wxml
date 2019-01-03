@@ -27,5 +27,5 @@
   </view>
 </view>
 <view class='pic_mask' wx:if="{{showPics}}" bindtap='picMask'>
-  <image style='width: 100%;' src='{{srclocal}}'></image>
+  <image style='width: 100%;' mode="widthFix" src='{{srclocal}}'></image>
 </view>

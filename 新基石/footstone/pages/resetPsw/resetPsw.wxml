@@ -1,5 +1,6 @@
 <!--pages/resetPsw/resetPsw.wxml-->
 <view class='resetPsw'>
+  <view class='tel_nums'>{{phoneTel}}</view>
   <view class='reset_list'>
     <input value='{{code}}' bindinput='advcode' placeholder='手机验证码' type='number'></input>
     <button class='getCode' bindtap='getCode' disabled='{{codeBtn}}'>{{codeMsg}}</button>

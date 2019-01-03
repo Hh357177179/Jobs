@@ -22,7 +22,7 @@
   height: 88rpx;
   width: 400rpx;
   color: #fff;
-  background: #F68B0E;
+  background: #98cdc6;
   line-height: 88rpx;
   border-radius: 40rpx;
   margin-top: 100rpx;
@@ -35,7 +35,7 @@
   width: 200rpx;
   height: 200rpx;
   border-radius: 50%;
-  border: #F68B0E solid 2px;
+  border: #98cdc6 solid 2px;
   overflow: hidden;
 }
 

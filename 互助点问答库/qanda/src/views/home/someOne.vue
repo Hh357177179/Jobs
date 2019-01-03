@@ -1,21 +1,39 @@
 <template>
   <div class="some_one">
-    <div class="one_title">这是一个历史版本，哈哈哈哈哈哈哈哈哈哈哈哈哈哈这是一个历史版本，哈哈哈哈哈哈哈哈哈哈</div>
+    <div class="one_title">这是一个历史版本，由内容修改人 {{detailObj.user_nickname}} 于 {{detailObj.create_time | dateFr}} 最后修改</div>
     <div class="one_main">
-      <p class="one_tit">这是一个标题</p>
-      <p class="one_content">我是内容啊哈哈哈哈哈哈哈哈哈哈我是内容啊哈哈哈哈哈哈哈哈哈哈我是内容啊哈哈哈哈哈哈哈哈哈哈我是内容啊哈哈哈哈哈哈哈哈哈哈我是内容啊哈哈哈哈哈哈哈哈哈哈</p>
-      <p class="one_pic">
-        <img src="../../assets/image/demo.jpg" alt="">
-      </p>
+      <p class="one_tit">修改原因：</p>
+      <p class="one_content">{{detailObj.reason}}</p>
+      <div class="clearfix">
+        <p class="one_pic" v-for="(item,index) in detailObj.picurl" :key="index">
+          <img :src="item" alt="">
+        </p>
+      </div>
     </div>
-    <div class="ans_content">专家回答的内容哈哈哈哈哈啊哈哈哈哈啊哈哈啊哈啊哈啊哈啊哈哈哈啊哈啊哈啊哈啊哈啊哈啊啊啊啊哈阿拉基</div>
+    <div class="ans_tit">修改内容：</div>
+    <div class="ans_content">{{detailObj.content}}</div>
   </div>
 </template>
 
 <script>
+import { historyDetail } from '../../api/api.js'
 export default {
   data () {
-    return {}
+    return {
+      detailObj: {},
+    }
+  },
+  mounted () {
+    let params = {
+      answer_id: this.$route.params.id
+    }
+    historyDetail(params).then(res => {
+      console.log(res)
+      if (res.picurl != '') {
+        res.picurl = res.picurl.split('|')
+      }
+      this.detailObj = res
+    })
   }
 }
 </script>
@@ -39,26 +57,38 @@ export default {
       margin-top: 10px;
       padding: 0 15px 15px;
       .one_tit{
-        font-size: 17px;
-        font-weight: bold;
+        font-size: 15px;
+        color: #333;
       }
       .one_content{
         margin-top: 5px;
         font-size: 15px;
+        color: #666;
       }
       .one_pic{
-        width: 180px;
+        width: 160px;
         height: 120px;
         margin-top: 10px;
+        float: left;
+        border: 1px solid #f0f0f0;
         img{
           width: 100%;
           height: 100%;
         }
       }
+      .one_pic:nth-of-type(2n){
+        float: right;
+      }
+    }
+    .ans_tit{
+      font-size: 15px;
+      padding: 15px;
+      color: #333;
     }
     .ans_content{
       font-size: 15px;
-      padding: 15px;
+      padding: 0 15px;
+      color: #666;
     }
   }
 </style>

@@ -27,7 +27,7 @@
   },
   "tabBar": {
     "color": "#9c9fa2",
-    "selectedColor": "#F68B0E",
+    "selectedColor": "#98cdc6",
     "list": [
       {
         "pagePath": "pages/index/index",

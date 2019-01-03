@@ -44,7 +44,7 @@ Page({
       title: '提示信息',
       content: '确认激活年卡吗？',
       cancelColor: '#666',
-      confirmColor: '#F68B0E',
+      confirmColor: '#98cdc6',
       confirmText: '激活',
       success: res => {
         if (res.confirm) {

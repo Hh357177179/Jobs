@@ -63,7 +63,8 @@
 }
 
 .pic_mask image{
-  margin-top: 20vh;
+  /* margin-top: 20vh; */
+  width: 100%;
 }
 .link{
   width: 50rpx;

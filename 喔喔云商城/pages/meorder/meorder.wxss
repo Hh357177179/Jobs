@@ -35,11 +35,11 @@ page {
 }
 
 .actives {
-  color: #f68b0e;
+  color: #98cdc6;
 }
 
 .active_bot {
-  border-bottom: 4rpx solid #f68b0e;
+  border-bottom: 4rpx solid #98cdc6;
 }
 
 .meorder_main {
@@ -68,7 +68,7 @@ page {
   float: right;
   line-height: 33rpx;
   font-weight: 400;
-  color: #f68b0e;
+  color: #98cdc6;
   font-size: 24rpx;
 }
 
@@ -134,8 +134,8 @@ page {
   float: right;
   font-size: 24rpx;
   line-height: 33rpx;
-  color: #F68B0E;
-  border: 2rpx solid #F68B0E;
+  color: #98cdc6;
+  border: 2rpx solid #98cdc6;
   padding: 10rpx 20rpx;
   border-radius: 10rpx;
 }
@@ -185,8 +185,8 @@ page {
   line-height: 50rpx;
   padding: 0 20rpx;
   margin-top: 15rpx;
-  border: 1px solid #F68B0E;
-  color: #F68B0E;
+  border: 1px solid #98cdc6;
+  color: #98cdc6;
 }
 .botegg_text{
   line-height: 50rpx;

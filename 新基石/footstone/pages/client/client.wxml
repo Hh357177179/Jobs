@@ -4,13 +4,14 @@
       <view class="clientPic">
         <image src="{{item.avatar}}"></image>
       </view>
-      <view style='float:left;width: 500rpx;'>
+      <view style='float:left;width: 400rpx;'>
         <view class="clientText">
-        <view style="margin-top:20rpx;" wx:if="{{item.realname==''}}">{{item.nickname}}</view>
-        <view style="margin-top:20rpx;" wx:else>{{item.realname}}</view>
+          <view style="margin-top:20rpx;" wx:if="{{item.realname==''}}">{{item.nickname}}</view>
+          <view style="margin-top:20rpx;" wx:else>{{item.realname}}</view>
+        </view>
+        <view class='bz_text' data-id='{{item.id}}' data-name="{{item.realname}}" data-apic='{{item.avatar}}' bindtap='bzText'>备注：{{item.remark}}</view>
       </view>
-      <view class='bz_text' data-id='{{item.id}}' data-name="{{item.realname}}" data-apic='{{item.avatar}}' bindtap='bzText'>备注：{{item.remark}}</view>
-      </view>
+      <view class='relieve' bindtap='relieve' data-id='{{item.id}}'>解除</view>
       <view class="clear"></view>
     </view>
   </view>

@@ -1,0 +1,9 @@
+<!--pages/starList/starList.wxml-->
+<view class='starList'>
+  <block>
+    <view class='starPic' wx:for='{{picList}}' wx:key='index'>
+      <image src='{{item.picurl}}'></image>
+    </view>
+  </block>
+  <view class='clear'></view>
+</view>

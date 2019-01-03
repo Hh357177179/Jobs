@@ -2,25 +2,29 @@
   <div class="adetail">
     <div class="ad_top">
       <p class="ad_title clearfix">
-        <span class="ad_smallt">我是标题哈哈</span>
-        <span class="ad_classify">分类1</span>
+        <span class="ad_smallt">{{allObj.title}}</span>
+        <span class="ad_classify">{{allObj.cate_id | types}}</span>
       </p>
       <div class="ad_content">
-        我是一大段内容我是一大段内容我是一大段内容我是一大段内容我是一大段内容我是一大段内容我是一大段内容我是一大段内容我是一大段内容我是一大段内容我是一大段内容
+        {{allObj.content}}
       </div>
-      <div class="ad_pic">
-        <img src="../../assets/image/demo.jpg" alt="">
+      <div class="clearfix">
+        <div class="ad_pic" v-for="(item, ipic) in allObj.picurl" :key="ipic">
+          <img :src="item" alt="">
+        </div>
       </div>
     </div>
     <div class="ad_expert">
       <p class="asnwer_content">
-        我是专家回答的内容~啊哈哈哈哈哈哈哈哈哈我是专家回答的内容~啊哈哈哈哈哈哈哈哈哈我是专家回答的内容~啊哈哈哈哈哈哈哈哈哈我是专家回答的内容~啊哈哈哈哈哈哈哈哈哈
+        {{answerObj.content}}
       </p>
-      <div class="asn_pic">
-        <img src="../../assets/image/demo.jpg" alt="">
+      <div class="clearfix">
+        <div class="asn_pic" v-for="(items, index) in answerObj.picurl" :key="index">
+          <img :src="items" alt="">
+        </div>
       </div>
     </div>
-    <div class="download clearfix">
+    <div class="download clearfix" v-if="fileurlShow">
       <i class="downIcon">
         <img src="../../assets/image/downIcon.png" alt="">
       </i>
@@ -29,50 +33,58 @@
     <div class="group_main">
       <p class="group_title">专家组：</p>
       <ul class="grouplist clearfix">
-         <li>
+         <li v-for="(lis, liindex) in agreeArr" :key="liindex">
           <p class="group_pic"></p>
-          <p class="group_name">专家一</p>
-        </li>
-         <li>
-          <p class="group_pic"></p>
-          <p class="group_name">专家一</p>
-        </li>
-         <li>
-          <p class="group_pic"></p>
-          <p class="group_name">专家一</p>
-        </li>
-        <li>
-          <p class="group_pic"></p>
-          <p class="group_name">专家一</p>
-        </li>
-        <li>
-          <p class="group_pic"></p>
-          <p class="group_name">专家一</p>
-        </li>
-        <li>
-          <p class="group_pic"></p>
-          <p class="group_name">专家一</p>
-        </li>
-        <li>
-          <p class="group_pic"></p>
-          <p class="group_name">专家一</p>
+          <p class="group_name">{{lis.Nickname}}</p>
         </li>
       </ul>
     </div>
-    <div class="lookhistory" @click="lookhistory">查看历史版本</div>
+    <div class="lookhistory" @click="lookhistory(allObj.id)">查看历史版本</div>
   </div>
 </template>
 
 <script>
+import { detail } from '../../api/api.js'
 export default {
   data() {
-    return {};
+    return {
+      allObj: {},
+      answerObj: {},
+      agreeArr: [],
+      fileurlShow: false
+    }
   },
   methods: {
+    // 获取普通用户详情
+    getPerList () {
+      let params = {
+        question_id: this.$route.params.id
+      }
+      console.log(params)
+      detail(params).then(res => {
+        console.log(res)
+        if (res.picurl != '') {
+          res.picurl = res.picurl.split('|')
+        }
+        if (res.answer.picurl != '') {
+          res.answer.picurl = res.answer.picurl.split('|')
+        }
+        if (res.answer.fileurl != '') {
+          this.fileurlShow = true
+        }
+        this.allObj = res
+        this.answerObj = res.answer
+        this.agreeArr = res.agree
+      })
+    },
+
     // 查看历史版本
-    lookhistory () {
-      this.$router.push('/history')
+    lookhistory (id) {
+      this.$router.push(`/history/${id}`)
     }
+  },
+  mounted () {
+    this.getPerList()
   }
 };
 </script>
@@ -102,14 +114,17 @@ export default {
       margin-top: 10px;
     }
     .ad_pic {
+      float: left;
       margin-top: 5px;
-      width: 180px;
+      width: 160px;
       height: 120px;
-      background: #ccc;
       img {
         width: 100%;
         height: 100%;
       }
+    }
+    .ad_pic:nth-of-type(2n){
+      float: right;
     }
   }
   .ad_expert {
@@ -118,14 +133,18 @@ export default {
       font-size: 15px;
     }
     .asn_pic {
+      float: left;
       margin-top: 5px;
-      width: 180px;
+      width: 160px;
       height: 120px;
       background: #ccc;
       img {
         width: 100%;
         height: 100%;
       }
+    }
+    .asn_pic:nth-of-type(2n){
+      float: right;
     }
   }
   .download {
@@ -149,6 +168,9 @@ export default {
   }
   .group_main {
     margin-bottom: 40px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #d9d9d9;
     .group_title {
       font-size: 15px;
     }

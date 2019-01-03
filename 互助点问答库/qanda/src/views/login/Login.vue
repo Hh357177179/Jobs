@@ -34,10 +34,12 @@ export default {
         // console.log(params)
         Login(params).then(res => {
           console.log(123,res)
-          let userInfo = JSON.stringify(res)
-          localStorage.setItem('token',userInfo)
-          this.$router.push('/')
-        })
+          if (res != undefined) {
+            let userInfo = JSON.stringify(res)
+            localStorage.setItem('token',userInfo)
+            this.$router.push('/')
+          }
+        }).catch({})
       }
     }
   }

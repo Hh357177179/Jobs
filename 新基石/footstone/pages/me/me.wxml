@@ -35,7 +35,8 @@
     <view class='me_pic' bindtap='searchXX'>
       <view class='card_pics'>
         <image src='../../images/xx.png'></image>
-        <text class='xxNum'>{{medalnum}}</text>
+        <!-- <text class='xxNum'>{{medalnum}}</text> -->
+        <text class='xxNum'>勋章</text>
       </view>
     </view>
     <!-- <view bindtap="integral" class="integral" wx:if="{{phone!=''}}">天使点: {{score}}</view> -->

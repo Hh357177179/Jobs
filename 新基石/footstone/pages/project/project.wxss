@@ -55,7 +55,7 @@
 
 .pName {
   display: inline-block;
-  width: 350rpx;
+  width: 330rpx;
   font-size: 28rpx;
 }
 
@@ -122,5 +122,5 @@
 }
 
 .pic_mask image{
-  margin-top: 20vh;
+  /* margin-top: 20vh; */
 }
