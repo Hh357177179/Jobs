@@ -679,12 +679,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let that = this
-    if (app.globalData.picId != null) {
-      that.setData({
-        ids: app.globalData.picId
+    if (!app.globalData.openid) {
+      wx.navigateTo({
+        url: '/pages/login/login',
       })
-      that.getOnlyPic()
+    } else {
+      console.log(1)
+      let that = this
+      if (app.globalData.picId != null) {
+        that.setData({
+          ids: app.globalData.picId
+        })
+        that.getOnlyPic()
+      }
     }
   },
 

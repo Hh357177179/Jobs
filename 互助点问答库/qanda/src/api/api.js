@@ -1,10 +1,10 @@
 import axios from 'axios'
 import app from '@/main'
-import api from '../../vue.config'
+// import api from '../../vue.config'
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 let Ax = axios.create({
-  baseURL: 'api'
+  baseURL: 'http://huzhudian.zhaodaka.net/api'
 })
 
 // 请求拦截 

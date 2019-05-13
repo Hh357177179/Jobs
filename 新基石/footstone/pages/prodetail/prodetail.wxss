@@ -105,9 +105,11 @@
   left: 0;
   top: 0;
   background: rgba(0,0,0,.8);
-  z-index: 12;
+  z-index: 222;
+  display: flex;
+  align-items: center;
 }
 
-.pic_mask image{
-  /* margin-top: 20vh; */
-}
+/* .pic_mask image{
+  margin-top: 20vh;
+} */

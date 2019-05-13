@@ -39,9 +39,10 @@
   float: left;
   width: 240rpx;
   height: 156rpx;
-  margin-right: 40rpx;
+  margin-right: 30rpx;
   position: relative;
   z-index: 11;
+  border: 1px solid #f0f0f0;
 }
 
 .projectPic image {
@@ -60,7 +61,7 @@
 }
 
 .createTime {
-  float: right;
+  float: left;
   margin-top: 20rpx;
 }
 
@@ -103,7 +104,7 @@
   width: 80rpx;
   height: 80rpx;
   border-radius: 50%;
-  border: 1px solid #dd5f1b;
+  border: 1px solid #12bcff;
   background: #f0f0f0;
 }
 .add_project image {
@@ -118,9 +119,11 @@
   left: 0;
   top: 0;
   background: rgba(0,0,0,.8);
-  z-index: 12;
+  z-index: 222;
+  display: flex;
+  align-items: center;
 }
 
-.pic_mask image{
+/* .pic_mask image{ */
   /* margin-top: 20vh; */
-}
+/* } */

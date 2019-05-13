@@ -2,7 +2,8 @@ import axios from 'axios'
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 let Ax = axios.create({
-  baseURL: 'http://g17x033694.51mypc.cn'
+  // baseURL: 'http://g17x033694.51mypc.cn'
+  baseURL: 'http://api.lyzjshop.com/'
 })
 
 // 响应拦截
@@ -55,5 +56,25 @@ export function GetCouponListByUser(params) {
    export function CouponExchange(params) {
     return Ax.post(`/Coupon/CouponExchange`, params)
    }
+
+  //  卡券下单
+  export function downOrder(params) { 
+    return Ax.post(`/Coupon/CouponOrder`, params)
+   }
+
+  //  卡卷退款
+  export function CouponRefund(params) {
+    return Ax.post(`/Coupon/CouponRefund`, params)
+  }
+
+  // 卡卷提现
+  export function CouponDonation (params) {
+    return Ax.post(`/Coupon/CouponDonation`, params)
+  }
+
+  // 获取微信配置
+  // export function getWxInfo(params) { 
+  //   return Ax.post(`/WeiXin/GetInfo`, params)
+  //  }
 
 export default Ax

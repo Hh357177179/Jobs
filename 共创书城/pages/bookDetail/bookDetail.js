@@ -13,6 +13,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    optionsid: '',
+    bannerShow: false,
     textShow: false,
     mainShow: false,
     picUrl: '',
@@ -477,7 +479,7 @@ Page({
               })
               myaudio.src = res.data.data.audio
             }
-            console.log(123, myaudio.src)
+            // console.log(123, myaudio.src)
             if (res.data.data.video != '') {
               that.setData({
                 videoShow: false,
@@ -490,12 +492,17 @@ Page({
               })
             }
             // console.log(res.data.data.content)
-            let arrPic = res.data.data.content.split('|')
-            let imgNum = arrPic.length
+            if (res.data.data.content != '') {
+              let arrPic = res.data.data.content.split('|')
+              let imgNum = arrPic.length
+              that.setData({
+                imgArr: arrPic,
+                imgLength: imgNum,
+                bannerShow: true
+              })
+            }
             that.setData({
               bookDetail: res.data.data,
-              imgArr: arrPic,
-              imgLength: imgNum
             })
             that.addLog()
           } else {
@@ -579,15 +586,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    page = this;
     let that = this
-    let bookid = options.id
     that.setData({
-      bookId: bookid
+      optionsid: options.id
     })
-    that.getBook()
-    that.getCommentList()
-    that.getallStatus()
   },
 
   /**
@@ -602,7 +604,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    console.log(1)
+    if (!app.globalData.openid) {
+      wx.navigateTo({
+        url: '/pages/login/login',
+      })
+    } else {
+      page = this;
+      let that = this
+      that.setData({
+        bookId: that.data.optionsid
+      })
+      that.getBook()
+      that.getCommentList()
+      that.getallStatus()
+    }
   },
   play: function() {
     myaudio.play();

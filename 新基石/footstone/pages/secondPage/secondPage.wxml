@@ -2,9 +2,10 @@
 <view class='secondPage'>
   <view class='bp_main'>
     <view class='bp_title'>项目bp：</view>
-    <view class='bp_img' data-src='{{proDetail.project_bp}}' catchtap='sBpic'>
-      <image src='{{proDetail.project_bp}}'></image>
+    <view class='bp_img' wx:for="{{proBpArr}}" wx:key='index' data-src='{{item}}' catchtap='sBpic'>
+      <image src='{{item}}'></image>
     </view>
+    <view class='clear'></view>
   </view>
   <view class='bp_main'>
     <view class='bp_title'>项目历程：</view>

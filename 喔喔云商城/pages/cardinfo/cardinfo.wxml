@@ -1,7 +1,0 @@
-<!--pages/cardinfo/cardinfo.wxml-->
-<import src="../../wxParse/wxParse.wxml"/>
-<view class='cardinfo'>
-  <view class='info_text'>
-    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
-  </view>
-</view>

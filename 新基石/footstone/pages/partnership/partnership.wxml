@@ -12,7 +12,7 @@
         <text wx:if="{{item.user_realname==''}}">{{item.user_nickname}}</text>
         <text wx:else>{{item.user_realname}}</text>
       </view>
-      <view style="margin-top:20rpx;font-size:28rpx;float:right;"> 成立时间：{{item.time}}</view>
+      <view style="margin-top:20rpx;font-size:28rpx;float:left;"> 成立时间：{{item.time}}</view>
     </view>
     <view class="clear"></view>
   </view>

@@ -13,7 +13,7 @@
     </div>
     <div class="detail_title">
       <span class="ds_title">{{allObj.coupon_title}}</span>
-      <span class="ds_money">{{allObj.coupon_price}}元</span>
+      <span class="ds_money">现价：{{allObj.coupon_price}}元</span>
     </div>
     <div class="ds_info_title clearfix">
       <img class="iconPic" src="../assets/img/kjIcon.png" alt="">
@@ -21,20 +21,22 @@
     </div>
     <div v-html='obj' class="ds_content"></div>
     <div class="bot_btn">
-      <div class="buy_now">立即购买</div>
+      <div class="buy_now" @click="buyNow(allObj.id)">立即购买</div>
     </div>
   </div>
 </template>
 
 <script>
-import { GetCouponById } from "../api/api.js";
+import { GetCouponById, downOrder } from "../api/api.js";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
+import wx from 'weixin-js-sdk'
 export default {
   data() {
     return {
       allObj: {},
       obj: "",
       banPic: {},
+      payInfo: {}
       // swiperOption: {
       //   spaceBetween: 20,
       //   autoplay: {
@@ -51,8 +53,38 @@ export default {
       // }
     };
   },
+  methods: {
+    // 下单
+    buyNow (cid) {
+      console.log(cid)
+      let params = {
+        coupon_id: cid,
+        agent_id: ''
+      }
+      downOrder(params).then(res => {
+        console.log(res)
+        // alert(res.appId)
+        this.payInfo = res
+        WeixinJSBridge.invoke(
+          'getBrandWCPayRequest', {
+            "appId":res.appId,     //公众号名称，由商户传入     
+            "timeStamp":res.timeStamp,         //时间戳，自1970年以来的秒数     
+            "nonceStr":res.nonceStr, //随机串     
+            "package":res.packageValue,     
+            "signType":"MD5",         //微信签名方式：     
+            "paySign":res.paySign //微信签名 
+          },
+          function(res){
+          if(res.err_msg == "get_brand_wcpay_request:ok" ){
+          // 使用以上方式判断前端返回,微信团队郑重提示：
+                //res.err_msg将在用户支付成功后返回ok，但并不保证它绝对可靠。
+          } 
+        });
+      })
+    }
+  },
   mounted() {
-    console.log(this.$route.params.id);
+    console.log(wx);
     let params = {
       id: this.$route.params.id
     };

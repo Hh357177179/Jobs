@@ -84,7 +84,7 @@ Page({
       token: wx.getStorageSync('openid')
     }
     postRequest('/user/getMedal', params).then(res => {
-      console.log(res)
+      console.log('勋章',res)
       t.setData({
         medalArr: res,
         medalnum: res.length
@@ -119,6 +119,7 @@ Page({
         token: wx.getStorageSync("openid")
       },
       success: function(t) {
+        console.log(123,t)
         200 == t.data.code && e.setData({
           attentionN: t.data.data.count
         });
@@ -191,7 +192,7 @@ Page({
     // });
     wx.login({
       success: resCode => {
-        console.log(resCode)
+        console.log(11112222,resCode)
         wx.request({
           url: t.baseUrl + '/user/isLogin',
           data: {
@@ -199,8 +200,8 @@ Page({
           },
           method: 'POST',
           success: res => {
-            // console.log(res)
             if (res.data.code == 200) {
+              console.log(66666, res)
               if (res.data.data.is_chuangshiren == 0) {
                 wx.request({
                   url: t.baseUrl + "/main/getMyProject",
@@ -209,7 +210,7 @@ Page({
                   },
                   method: 'POST',
                   success: resProject => {
-                    console.log(resProject)
+                    console.log(1232,resProject)
                     if (resProject.data.code == 1002) {
                       t.showMsg('您的资料还未通过审核！')
                     } else {
@@ -337,7 +338,7 @@ Page({
       is_tianshi: wx.getStorageSync('is_tianshi')
     });
     t.getCollectN();
-    // t.getmedal()
+    t.getmedal()
     t.getAttentionN();
     t.getParentList()
     t.getTalknum(),

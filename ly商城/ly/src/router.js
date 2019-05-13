@@ -42,6 +42,11 @@ export default new Router({
       path: '/exchange/:orderid/:coupon_id',
       name: 'exchange',
       component: () => import('./views/exchange.vue')
+    },
+    {
+      path: '/share',
+      name: 'share',
+      component: () => import('./views/share.vue')
     }
   ]
 })

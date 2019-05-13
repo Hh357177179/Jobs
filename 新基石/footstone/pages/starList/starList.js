@@ -7,7 +7,36 @@ Page({
    * 页面的初始数据
    */
   data: {
-    picList: []
+    picList: [],
+    picListFirst: {},
+    showBig: false,
+    bigSrc: '',
+    starlen: 0
+  },
+
+  srarchBig(e){
+    console.log(e)
+    let t = this
+    if (e.currentTarget.dataset.src) {
+      t.setData({
+        bigSrc: e.currentTarget.dataset.src,
+        showBig: true
+      })
+    }
+  },
+
+  closePic(){
+    let t = this
+    t.setData({
+      bigSrc: '',
+      showBig: false
+    })
+  },
+
+  routeLog(){
+    wx.navigateTo({
+      url: '/pages/starlog/starlog',
+    })
   },
 
   /**
@@ -19,9 +48,17 @@ Page({
       token: wx.getStorageSync('openid')
     }
     postRequest('/user/getMedal', params, true).then(res => {
-      console.log(res)
+      console.log(2222,res.length)
+      let sliceArr = res.slice(1, res.length + 1)
+      // console.log(sliceArr)
+      if (res.length != 0) {
+        that.setData({
+          picListFirst: res[0]
+        })
+      }
       that.setData({
-        picList: res
+        picList: sliceArr,
+        starlen: res.length
       })
     })
   },

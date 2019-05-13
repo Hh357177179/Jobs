@@ -11,6 +11,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    gid: '',
     textShow: false,
     showMain: false,
     commentLickArr: [],
@@ -484,15 +485,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    let that = this
     console.log(options)
-    if (options.gid) {
-      that.setData({
-        pro_id: options.gid
-      })
-      that.getDetail()
-      that.getallStatus()
-    }
+    let that = this
+    that.setData({
+      gid: options.gid
+    })
   },
 
   /**
@@ -506,7 +503,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    if (!app.globalData.openid) {
+      wx.navigateTo({
+        url: '/pages/login/login',
+      })
+    } else {
+      let that = this
+      if (that.data.gid) {
+        that.setData({
+          pro_id: that.data.gid
+        })
+        that.getDetail()
+        that.getallStatus()
+      }
+    }
   },
 
   /**

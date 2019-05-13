@@ -12,6 +12,7 @@ Page({
         token: wx.getStorageSync("openid")
       },
       success: function(t) {
+        console.log(213123123213213,t)
         if (200 == t.data.code) {
           for (var e = t.data.data, o = 0; o < e.length; o++) {
             e[o].picurl = e[o].picurl.split('|')

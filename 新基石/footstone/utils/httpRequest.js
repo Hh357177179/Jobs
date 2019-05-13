@@ -20,7 +20,7 @@ const defaultRequest = function ({ vurl, vmethod, params } = {}) {
           }
         },
         fail: res => {
-          reject(res)
+          reject(22222,res)
           console.log('网络错误')
         }
       })

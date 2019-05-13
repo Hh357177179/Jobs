@@ -16,7 +16,7 @@
     float: left;
     width: 300rpx;
     height: 180rpx;
-    margin-right: 30rpx;
+    margin-right: 20rpx;
 }
 
 .parentPic image {
@@ -25,5 +25,6 @@
 }
 
 .parentText {
-    font-size: 32rpx;
+    font-size: 30rpx;
+    float: left;
 }

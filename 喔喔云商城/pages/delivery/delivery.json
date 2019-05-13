@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "下单配送",
-  "usingComponents": {
-    "wux-cell-group": "../../dist/cell-group/index",
-    "wux-cell": "../../dist/cell/index",
-    "wux-button": "../../dist/button/index",
-    "wux-popup": "../../dist/popup/index"
-  }
-}

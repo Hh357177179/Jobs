@@ -30,7 +30,8 @@
     "pages/secondPage/secondPage",
     "pages/corigin/corigin",
     "pages/activeSome/activeSome",
-    "pages/starList/starList"
+    "pages/starList/starList",
+    "pages/starlog/starlog"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -41,7 +42,7 @@
   },
   "tabBar": {
     "color": "#8e8e8e",
-    "selectedColor": "#DD5F1B",
+    "selectedColor": "#12bcff",
     "list": [
       {
         "pagePath": "pages/index/index",

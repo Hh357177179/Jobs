@@ -13,9 +13,11 @@
   border-bottom: 1px solid #f0f0f0;
 }
 .bp_img{
-  width: 200rpx;
+  width: 32%;
   height: 200rpx;
   margin-top: 20rpx;
+  float: left;
+  margin-right: 1%;
 }
 .bp_img image {
   width: 100%;
@@ -48,8 +50,10 @@
   top: 0;
   background: rgba(0,0,0,.8);
   z-index: 12;
+  display: flex;
+  align-items: center;
 }
 
-.pic_mask image{
+/* .pic_mask image{ */
   /* margin-top: 20vh; */
-}
+/* } */

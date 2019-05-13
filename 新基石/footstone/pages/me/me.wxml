@@ -1,6 +1,6 @@
 <view class="userCenter">
   <view class="userCard">
-    <view style="width: 100%;height:160rpx;">
+    <view>
       <view class="userPic" bindtap='chooseInfo'>
         <image src="{{avatar}}"></image>
       </view>
@@ -8,19 +8,30 @@
         <view style="font-size:32rpx;position:relative;">
           <text class="userName" wx:if="{{realname==''}}">{{nickName}}</text>
           <text class="userName" wx:else>{{realname}}</text>
+        </view>
+        <view class='identity_list'>
+          <view wx:if="{{is_chuangshiren == 1}}" class="identity" bindtap='chooseIden'>
+            <image class='idenIcon' src='../../images/idenIcon.png'></image>
+            <text class='idenText'>项目创始人</text>
+            <view class='clear'></view>
+          </view>
+          <view wx:if="{{is_hehuoren == 1}}" class="identity">
+            <image class='idenIcon' src='../../images/idenIcon.png'></image>
+            <text class='idenText'>新基石项目合伙人</text>
+            <view class='clear'></view>
+          </view>
+        </view>
+        <view class='renzheng'>
           <block wx:if="{{phone != ''}}">
             <image class="phoneIcon" bindtap='changeTel' src="../../images/phonec.png"></image>
-            <text class='aredayText'>（已认证）</text>
+            <text class='aredayText'>已认证</text>
+            <view class='clear'></view>
           </block>
           <block wx:else>
             <image bindtap="phoneVerify" class="phoneIcon" src="../../images/phoneIcon.png"></image>
-            <text class='aredayText'>（未认证）</text>
+            <text class='aredayText'>未认证</text>
+            <view class='clear'></view>
           </block>
-        </view>
-        <view class='identity_list'>
-          <view wx:if="{{is_chuangshiren == 1}}" class="identity" bindtap='chooseIden'>项目创始人</view>
-          <view wx:if="{{is_hehuoren == 1}}" class="identity">新基石项目合伙人</view>
-          <view class='clear'></view>
         </view>
       </view>
       <view bindtap="alertCode" class="QRcodeIcon" wx:if="{{is_hehuoren == 1}}">
@@ -34,60 +45,82 @@
     </view>
     <view class='me_pic' bindtap='searchXX'>
       <view class='card_pics'>
-        <image src='../../images/xx.png'></image>
-        <!-- <text class='xxNum'>{{medalnum}}</text> -->
-        <text class='xxNum'>勋章</text>
+        <image src='../../images/logobig.png'></image>
+        <text class='xxNum'>{{medalnum}}</text>
+        <!-- <text class='xxNum'>勋章</text> -->
       </view>
     </view>
     <!-- <view bindtap="integral" class="integral" wx:if="{{phone!=''}}">天使点: {{score}}</view> -->
-    <view class="botCard" wx:if="{{phone != ''}}">
-      <view bindtap="mpClick" class="mpCard">
-        <image class="mpIcon" src="../../images/mp.png"></image>
-        <text style="float: right;line-height: 165rpx;margin-right:50rpx;">项目资料</text>
-      </view>
-    </view>
   </view>
   <view class="meList">
+    <view class="botCard" wx:if="{{phone != ''}}">
+      <view bindtap="mpClick" class="partnerList">
+        <image class="mpIcon" src="../../images/partnership.png"></image>
+        <view class="listRight">
+          <text>项目资料</text>
+          <!-- <text style="width:50rpx;display:inline-block;text-align:center;">{{parentNum}}</text> -->
+        </view>
+        <view class='rightIcons'>
+          <image class='rightJt' src='../../images/rightIcon.png'></image>
+        </view>
+        <view class='clear'></view>
+      </view>
+    </view>
     <view class="partnership" wx:if="{{is_hehuoren == 1}}">
       <view bindtap="partnerBtn" class="partnerList">
         <image src="../../images/partnership.png"></image>
         <view class="listRight">
           <text>我服务的项目</text>
-          <text style="width:50rpx;display:inline-block;text-align:center;">{{parentNum}}</text>
+          <!-- <text style="width:50rpx;display:inline-block;text-align:center;">{{parentNum}}</text> -->
+        </view>
+        <view class='rightIcons'>
+          <image class='rightJt' src='../../images/rightIcon.png'></image>
         </view>
         <view class="clear"></view>
       </view>
       <view bindtap="clientBtn" class="partnerList" wx:if="{{is_hehuoren == 1}}">
-        <image src="../../images/partner.png"></image>
+        <image src="../../images/partnership.png"></image>
         <view class="listRight">
           <text>项目天使</text>
-          <text style="width:50rpx;display:inline-block;text-align:center;">{{myCustomernum}}</text>
+          <!-- <text style="width:50rpx;display:inline-block;text-align:center;">{{myCustomernum}}</text> -->
+        </view>
+        <view class='rightIcons'>
+          <image class='rightJt' src='../../images/rightIcon.png'></image>
         </view>
         <view class="clear"></view>
       </view>
     </view>
     <view class="investor">
       <view bindtap="attentionR" class="partnerList" wx:if="{{is_tianshi == 1}}">
-        <image src="../../images/proicon.png"></image>
+        <image src="../../images/partnership.png"></image>
         <view class="listRight">
           <text>我的项目</text>
-          <text style="width:50rpx;display:inline-block;text-align:center;">{{attentionN}}</text>
+          <!-- <text style="width:50rpx;display:inline-block;text-align:center;">{{attentionN}}</text> -->
+        </view>
+        <view class='rightIcons'>
+          <image class='rightJt' src='../../images/rightIcon.png'></image>
         </view>
         <view class="clear"></view>
       </view>
       <view bindtap="collectR" class="partnerList" wx:if="{{phone != '' }}">
-        <image src="../../images/collectList.png"></image>
+        <image src="../../images/partnership.png"></image>
         <view class="listRight">
           <text>我收藏的</text>
-          <text style="width:50rpx;display:inline-block;text-align:center;">{{collectN}}</text>
+          <!-- <text style="width:50rpx;display:inline-block;text-align:center;">{{collectN}}</text> -->
+        </view>
+        <view class='rightIcons'>
+          <image class='rightJt' src='../../images/rightIcon.png'></image>
         </view>
         <view class="clear"></view>
       </view>
       <view class="partnerList" bindtap='rMessage' wx:if="{{phone != '' }}">
-        <image src="../../images/cchart.png"></image>
+        <image src="../../images/partnership.png"></image>
         <view class="listRight">
           <text>我的留言</text>
-          <text style="width:50rpx;display:inline-block;text-align:center;">{{talkNum}}</text>
+          <!-- <text style="width:50rpx;display:inline-block;text-align:center;">{{talkNum}}</text> -->
+        </view>
+        <view class='rightIcons'>
+          <image class='rightJt' src='../../images/rightIcon.png'></image>
         </view>
         <view class="clear"></view>
       </view>

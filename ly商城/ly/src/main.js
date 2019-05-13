@@ -6,10 +6,10 @@ import 'lib-flexible'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 
+
 import { Dialog, Toast } from 'vant';
 
 Vue.use(Dialog).use(Toast)
-
 Vue.config.productionTip = false
 
 const app = new Vue({

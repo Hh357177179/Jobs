@@ -3,7 +3,7 @@
     <div class="card_list" v-for="(item, index) in cardArr" :key="index" @click="rbuyD(item.orderid)">
       <div class="card_pic">
         <img :src="item.img" alt="">
-        <span class="money_only">{{item.coupon_price}}元</span>
+        <span class="money_only">现价：{{item.coupon_price}}元</span>
         <div class="card_time">有效期：{{item.createdate}}—{{item.validdate}}</div>
       </div>
       <div class="card_tit">
@@ -11,7 +11,9 @@
         <div class="title_pic" v-if="item.coupon_state == 1">已兑换</div>
         <div class="title_pic pic_give" v-if="item.coupon_state == 2">已转赠</div>
         <div class="title_pic pic_await" v-if="item.coupon_state == 0">待使用</div>
-        <div class="title_pic pic_await" v-if="item.coupon_state == 3">待使用</div>
+        <div class="title_pic pic_await" v-if="item.coupon_state == 3">转赠待使用</div>
+        <div class="title_pic pic_await" v-if="item.coupon_state == 4">已提现</div>
+        <div class="title_pic pic_await" v-if="item.coupon_state == 5">已退款</div>
       </div>
     </div>
   </div>
@@ -75,11 +77,11 @@ export default {
         height: 22px;
         line-height: 22px;
         position: absolute;
-        top: 15px;
+        top: 30px;
         right: 0;
         font-size: 12px;
         font-weight: 600;
-        padding: 0 13px;
+        padding: 0 10px;
         background: linear-gradient(
           0deg,
           rgba(207, 185, 139, 1),

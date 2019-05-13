@@ -29,7 +29,7 @@
       <view class='clear'></view>
     </view>
   </block>
-  <view class='topPic'>
+  <view class='topPic' wx:if='{{bannerShow}}'>
     <swiper style='height:100%;' bindchange="changeCurrent">
       <block wx:for="{{imgArr}}" wx:key="{{index}}">
         <swiper-item class="imgList" data-pic="{{item}}" bindtap="searchPic">

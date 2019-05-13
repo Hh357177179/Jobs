@@ -10,7 +10,8 @@ Page({
     proPiclist: [],
     id: '',
     srclocal: '',
-    showPics: false
+    showPics: false,
+    proBpArr: []
   },
 
   sBpic(e) {
@@ -42,7 +43,8 @@ Page({
           console.log(123, t.data.data)
           a.setData({
             proDetail: t.data.data,
-            proPiclist: t.data.data.picurl.split('|')
+            proPiclist: t.data.data.picurl.split('|'),
+            proBpArr: t.data.data.project_bp.split('|')
           });
         }
       }

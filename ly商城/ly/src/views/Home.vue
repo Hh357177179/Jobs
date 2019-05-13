@@ -3,7 +3,7 @@
     <div class="card"  v-for="(item, index) in cardArr" :key="index" @click="rDetailCard(item.id)">
       <div class="cardPic">
         <img :src="item.img" alt="">
-        <div class="card_money">{{item.coupon_price}}元</div>
+        <div class="card_money">现价：{{item.coupon_price}}元</div>
       </div>
       <div class="card_title">
         {{item.coupon_title}}
@@ -82,7 +82,7 @@ export default {
           background: #D5C79E;
           text-align: center;
           border-radius:11px 0px 0px 11px;
-          top: 15px;
+          bottom: 15px;
           right: 0;
         }
       }

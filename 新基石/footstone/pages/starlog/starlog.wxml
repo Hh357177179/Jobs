@@ -1,0 +1,10 @@
+<!--pages/starlog/starlog.wxml-->
+<wxs module="dateFr" src="../../utils/dateFr.wxs" />
+<view class='starlog'>
+  <view class='log_list' wx:for="{{listArr}}" wx:key="index">
+   <view wx:if='{{item.type == 1}}' class='log_title'>新基石创投教育平台颁发给您<text style='color: #dd5f1b;'>{{item.medal_name}}</text></view>
+   <view wx:if='{{item.type == 2}}' class='log_title'>新基石创投教育平台收回<text style='color: #dd5f1b;'>{{item.medal_name}}</text></view>
+   <view class='reason'>原因：{{item.reason}}</view>
+   <view class='times'>{{dateFr.getDate(item.create_time*1000,'-',':')}}</view>
+  </view>
+</view>

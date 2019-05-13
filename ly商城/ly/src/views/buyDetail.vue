@@ -26,17 +26,24 @@
       <div class="active_btn given" @click="givenC">转赠</div>
       <div class="active_btn refund" @click="refundC">退款</div>
     </div>
-    <div class="bot_btn" v-if="allObj.coupon_state == 3">
+    <!-- <div class="bot_btn" v-if="allObj.coupon_state == 1">
+      <div class="active_btn exchange" @click="exchangeC(allObj.orderid, allObj.id)">已兑换</div>
+      <div class="active_btn given" @click="givenC">转赠</div>
+      <div class="active_btn refund" @click="refundC">退款</div>
+    </div> -->
+    <!-- <div class="bot_btn" v-if="allObj.coupon_state == 3">
       <div class="active_btn exchange" @click="exchangeC(allObj.orderid, allObj.id)">兑换</div>
       <div class="active_btn given" @click="givenC">转赠</div>
       <div class="active_btn refund" @click="buyBack">回购</div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import { GetConponByUser, GetUser } from "../api/api.js";
+import { GetConponByUser, GetUser, CouponRefund, CouponDonation, getWxInfo } from "../api/api.js";
+import Ax from 'axios'
 import { swiper, swiperSlide } from "vue-awesome-swiper";
+import wx from 'weixin-js-sdk'
 export default {
   data() {
     return {
@@ -44,17 +51,7 @@ export default {
       userInfo: {},
       allObj: {},
       obj: "",
-      banPic: {},
-      // swiperOption: {
-      //   spaceBetween: 20,
-      //   autoplay: {
-      //     delay: 2000,
-      //     disableOnInteraction: false,
-      //     waitForTransition: true
-      //   },
-      //   speed: 1000,
-      //   loop: true
-      // }
+      banPic: {}
     };
   },
   methods: {
@@ -84,15 +81,15 @@ export default {
 
     // 兑换卡卷
     exchangeC(oid,id) {
-      // this.$dialog.confirm({
-      //   title: "提示",
-      //   message: "确认是否兑换该卡卷？"
-      // }).then(() => {
-      //   // on close
-      // }).catch(() => {
-      //   // on cancel
-      // });
-      this.$router.push(`/exchange/${oid}/${id}`)
+      this.$dialog.confirm({
+        title: "提示",
+        message: "确认是否兑换该卡卷？"
+      }).then(() => {
+        // on close
+        this.$router.push(`/exchange/${oid}/${id}`)
+      }).catch(() => {
+        // on cancel
+      });
     },
 
     // 回购
@@ -106,10 +103,63 @@ export default {
         title: "提示",
         message: "确认是否转赠该卡卷？"
       }).then(() => {
-        // on close
+        console.log(window.location.href.split('#')[0])
+        let params = {
+          url: window.location.href.split('#')[0]
+        }
+        Ax.post('http://g17x033694.51mypc.cn/WeiXin/GetInfo', params).then(res => {
+          console.log(res.data)
+          wx.config({
+            debug: true,
+            appId: res.data.appid,
+            timestamp: res.data.timestamp,
+            nonceStr: res.data.noncestr,
+            signature: res.data.signature,
+            jsApiList: [
+              'onMenuShareAppMessage','onMenuShareTimeline',
+              'onMenuShareQQ','onMenuShareQZone'
+            ]
+          })
+          wx.error(res => {
+            logUtil.printLog('验证失败返回的信息:',res);
+          })
+          wx.ready(() => {
+            wx.onMenuShareAppMessage({
+            title: '测试标题', // 分享标题
+            desc: '描述', // 分享描述
+            link: `http://g17x033694.51mypc.cn/Coupon/index/share`, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: '', // 分享图标
+            type: '', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function (res) {
+              // 用户确认分享后执行的回调函数
+              logUtil.printLog("分享给朋友成功返回的信息为:",res);
+            },
+            cancel: function (res) {
+              // 用户取消分享后执行的回调函数
+              logUtil.printLog("取消分享给朋友返回的信息为:",res);
+            }
+          });
+          })
+        })
       }).catch(() => {
         // on cancel
       });
+    },
+
+    // 退款请求
+    getBack() {
+      let params = {
+        orderid: this.allObj.orderid
+      }
+      console.log(params)
+      CouponRefund(params).then(res => {
+        console.log(res)
+        this.$toast('申请退款成功')
+        setTimeout(() => {
+          this.$router.back(-1)
+        }, 2000)
+      })
     },
 
     // 退款
@@ -119,6 +169,7 @@ export default {
         message: "确认是否退款？"
       }).then(() => {
         // on close
+        this.getBack()
       }).catch(() => {
         // on cancel
       });

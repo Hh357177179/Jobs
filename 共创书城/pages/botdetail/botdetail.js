@@ -406,14 +406,9 @@ Page({
    */
   onLoad: function (options) {
     let that = this
-    console.log(options)
-    if (options.sid) {
-      that.setData({
-        pro_id: options.sid
-      })
-      that.getDetail()
-      that.getallStatus()
-    }
+    that.setData({
+      optionssid: options.sid
+    })
   },
 
   /**
@@ -427,7 +422,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (!app.globalData.openid) {
+      wx.navigateTo({
+        url: '/pages/login/login',
+      })
+    } else {
+      let that = this
+      if (that.data.optionssid) {
+        that.setData({
+          pro_id: that.data.optionssid
+        })
+        that.getDetail()
+        that.getallStatus()
+      }
+    }
   },
 
   /**
