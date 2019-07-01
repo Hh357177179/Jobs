@@ -5,11 +5,11 @@
     <view class='uNamesClass'>{{uNames}}</view>
     <view class='clear'></view>
   </view>
-  <view class='title'>种子用户</view>
+  <view class='title'>用户是谁</view>
   <view class='cardMain'>{{detailObj.whouser}}</view>
-  <view class='title'>种子用户的痛点</view>
+  <view class='title'>种子苦主的痛点</view>
   <view class='cardMain'>
-    种子用户在<text class='textcolor'>{{detailObj.condition}}</text>
+    我（苦主）在<text class='textcolor'>{{detailObj.condition}}</text>
     情况（<text class='textG'>时隙、场景</text>）下，因为<text class='textcolor'>{{detailObj.hreason}}</text>的原因，必须要解决<text class='textcolor'>{{detailObj.issue}}</text>
     的问题（<text class='textG'>即：刚需</text>），如果不做这样的事情，在<text class='textcolor'>{{detailObj.appendTime}}</text>时间内，会产生<text class='textcolor'>{{detailObj.result}}</text>的严重后果，但是遇到<text class='textcolor'>{{detailObj.cause}}</text>
     障碍而解决不好，且因为<text class="textcolor">{{detailObj.nocause}}</text>供应方或潜在供应方不愿意提供，因此该刚需得不到解决，所以痛苦。
@@ -18,11 +18,11 @@
   <view class='title'>当前替代品</view>
   <view class='cardMain'>
     <view>替代品1：<text class='textcolor'>{{detailObj.freplace}}</text>因为<text class='textcolor'>{{detailObj.freason}}</text>
-    原因不能很好解决种子用户的“刚需”</view>
+    原因不能很好解决种子苦主的“刚需”</view>
     <view>替代品2：<text class='textcolor'>{{detailObj.sreplace}}</text>因为<text class='textcolor'>{{detailObj.sreason}}</text>
-    原因不能很好解决种子用户的“刚需”</view>
+    原因不能很好解决种子苦主的“刚需”</view>
     <view>替代品n：<text class='textcolor'>{{detailObj.treplace}}</text>因为<text class='textcolor'>{{detailObj.treason}}</text>
-    原因不能很好解决种子用户的“刚需”</view>
+    原因不能很好解决种子苦主的“刚需”</view>
   </view>
   <view class='title'>用户故事</view>
   <view class='cardMain'>{{detailObj.story}}</view>

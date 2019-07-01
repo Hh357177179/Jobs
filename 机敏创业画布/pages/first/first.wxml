@@ -17,9 +17,9 @@
       <textarea class='whoText bigText' maxlength="-1" value='{{whouser}}' bindinput='advWhouser' placeholder='【描述方式】1.请举出一个具体的人，并作情况介绍' placeholder-style='font-size:28rpx;'></textarea>
     </view>
   </view>
-  <view class='whoTitle'>用户的需求是什么</view>
+  <view class='whoTitle'>种子苦主的需求是什么</view>
   <view class='userNeed'>
-    <text class='textFill'>种子用户在</text>
+    <text class='textFill'>我（苦主）在</text>
     <input class='fillInput' value='{{condition}}' bindinput='advCondition'></input>
     <text class='textFill'>情况（<text class='colortext'>时隙</text></text>
     <text class='textFill'><text class='colortext'>、场景</text>）下，要解决</text>

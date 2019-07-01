@@ -9,7 +9,7 @@
   <view class='cardMain'>{{detailObj.whouser}}</view>
   <view class='title'>用户的需求是什么</view>
   <view class='cardMain'>
-    种子用户在
+    我（苦主）在
     <text class='textcolor'>{{detailObj.condition}}</text> 情况（
     <text class='textG'>时隙、场景</text>）下，要解决
     <text class='textcolor'>{{detailObj.issue}}</text> 的问题（

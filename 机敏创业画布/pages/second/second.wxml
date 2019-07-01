@@ -18,9 +18,9 @@
     </view>
   </view>
   <view class='whoUser'>
-    <view class='whoTitle'>用户的刚需是什么</view>
+    <view class='whoTitle'>种子苦主的刚需是什么</view>
     <view class='userNeed'>
-      <text class='textFill'>种子用户在</text>
+      <text class='textFill'>我（苦主）在</text>
       <input class='fillInput' value='{{condition}}' bindinput='advCondition'></input>
       <text class='textFill'>情况(<text class='colortext'>时隙</text></text>
       <text class='textFill'><text class='colortext'>、场景</text>)下，必须要解决</text>
@@ -68,7 +68,7 @@
         <text class='textFill'>原因不能很好解决种子</text>
         <text class='textFill'>用户的“刚需”；</text>
         <view class='clear'></view>
-        <view class='colortext'>【种子用户当下是用什么方式解决该痛点的？解决不好的具体原因是什么？】</view>
+        <view class='colortext'>【种子苦主当下是用什么方式解决该痛点的？解决不好的具体原因是什么？】</view>
       </view>
       <view class='clear'></view>
     </view>

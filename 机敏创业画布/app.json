@@ -44,5 +44,6 @@
         "selectedIconPath": "images/csend.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
